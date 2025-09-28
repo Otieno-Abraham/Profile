@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abraham Otieno - CV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CV Specific Styles */
+        :root {
+            --primary: #2563eb;
+            --secondary: #0f172a;
+            --gray: #64748b;
+            --light: #f8fafc;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: #f1f5f9;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+        
+        .cv-container {
+            max-width: 1000px;
+            margin: 30px auto;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .cv-header {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .cv-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .cv-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .cv-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 0;
+        }
+        
+        .cv-sidebar {
+            background: #0f172a;
+            color: #e2e8f0;
+            padding: 30px;
+        }
+        
+        .cv-main {
+            padding: 30px;
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 20px;
+            border: 4px solid #2563eb;
+        }
+        
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .section-title {
+            color: white;
+            font-size: 1.3rem;
+            margin: 25px 0 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #2563eb;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        
+        .contact-icon {
+            width: 30px;
+            height: 30px;
+            background: #2563eb;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+        
+        .skills-list, .languages-list {
+            list-style: none;
+        }
+        
+        .skills-list li, .languages-list li {
+            margin-bottom: 8px;
+            padding: 8px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 5px;
+        }
+        
+        .main-section {
+            margin-bottom: 25px;
+        }
+        
+        .main-title {
+            color: #0f172a;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #2563eb;
+        }
+        
+        .timeline-item {
+            margin-bottom: 20px;
+        }
+        
+        .timeline-title {
+            color: #0f172a;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .timeline-subtitle {
+            color: #2563eb;
+            margin-bottom: 8px;
+        }
+        
+        .timeline-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .timeline-list li {
+            margin-bottom: 6px;
+            position: relative;
+            padding-left: 15px;
+        }
+        
+        .timeline-list li:before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #2563eb;
+        }
+        
+        .current-role {
+            display: inline-block;
+            background: #dbeafe;
+            color: #1d4ed8;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+        
+        .cv-actions {
+            text-align: center;
+            padding: 20px;
+            background: #f8fafc;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            margin: 0 10px;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: #1d4ed8;
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #2563eb;
+            color: #2563eb;
+        }
+        
+        .btn-outline:hover {
+            background: #2563eb;
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .cv-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .cv-sidebar {
+                order: 2;
+            }
+            
+            .cv-main {
+                order: 1;
+            }
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            
+            .cv-container {
+                box-shadow: none;
+                margin: 0;
+            }
+            
+            .cv-actions {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <div class="cv-header">
+            <h1>Abraham Otieno</h1>
+            <p>Certified Virtual Assistant | CRM & Customer Support Specialist</p>
+        </div>
+        
+        <div class="cv-content">
+            <div class="cv-sidebar">
+                <div class="profile-img">
+                    <img src="abu.jpg" alt="Abraham Otieno">
+                </div>
+                
+                <div class="contact-info">
+                    <h3 class="section-title">Contact</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <p>abraham.otienoa@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div>
+                            <p>linkedin.com/in/abraham-otieno-665678317</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <p>Nairobi, Kenya</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <p>Full-time Remote</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skills">
+                    <h3 class="section-title">Core Skills</h3>
+                    <ul class="skills-list">
+                        <li>Executive Assistance</li>
+                        <li>CRM & Operations</li>
+                        <li>Customer Support</li>
+                        <li>Virtual Team Management</li>
+                        <li>Remote Operations</li>
+                        <li>Digital Presence</li>
+                    </ul>
+                </div>
+                
+                <div class="tools">
+                    <h3 class="section-title">Tools & Technologies</h3>
+                    <ul class="skills-list">
+                        <li>Google Workspace</li>
+                        <li>Microsoft Office</li>
+                        <li>CRM Systems</li>
+                        <li>Slack, Asana, ClickUp</li>
+                        <li>Calendly, Dubsado</li>
+                        <li>Canva, GitHub</li>
+                    </ul>
+                </div>
+                
+                <div class="languages">
+                    <h3 class="section-title">Languages</h3>
+                    <ul class="languages-list">
+                        <li>English (Fluent)</li>
+                        <li>Swahili (Native)</li>
+                    </ul>
+                </div>
+                
+                <div class="certifications">
+                    <h3 class="section-title">Certifications</h3>
+                    <ul class="skills-list">
+                        <li>Certified Virtual Assistant</li>
+                        <li>Administrative Assistance & Remote Professional Training</li>
+                        <li>CRM Management</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="cv-main">
+                <div class="main-section">
+                    <h2 class="main-title">Professional Summary</h2>
+                    <p>Tech-savvy Certified Virtual Assistant with over 6 years of experience specializing in executive assistance, remote operations, and startup support. Currently serving multiple clients, including as Executive Partner to the CEO at Pioneer Outsourcing BPO and Country Lead & Executive Assistant to the CPO at MSTRpay.</p>
+                    <p>Bring proactive, innovative solutions to streamline operations and drive growth. Instrumental in helping startups establish online presence through website revamps, CRM integrations, and digital strategies.</p>
+                </div>
+                
+                <div class="main-section">
+                    <h2 class="main-title">Work Experience</h2>
+                    
+                    <div class="timeline-item">
+                        <h3 class="timeline-title">Country Lead & Executive Assistant to CPO</h3>
+                        <div class="timeline-subtitle">MSTRpay · March 2025 – Present</div>
+                        <ul class="timeline-list">
+                            <li>Lead country operations, including JV negotiations and strategic partnerships</li>
+                            <li>Create confidential reports and presentations to support decision-making</li>
+                            <li>Manage ticketing systems and CRM workflows for efficient customer support</li>
+                            <li>Coordinate virtual teams and optimize remote processes using Asana and Slack</li>
+                        </ul>
+                        <div class="current-role">Currently Active</div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h3 class="timeline-title">Executive Partner to CEO</h3>
+                        <div class="timeline-subtitle">Pioneer Outsourcing BPO · January 2022 – Present</div>
+                        <ul class="timeline-list">
+                            <li>Spearhead website revamp and creation to enhance online presence</li>
+                            <li>Develop surveys, telephony integrations, and training materials for agents</li>
+                            <li>Handle script creation, talent recruitment, and welfare programs</li>
+                            <li>Plan travel itineraries and manage scheduling tools</li>
+                            <li>Oversee global partnerships, SEO strategies, and executive milestones</li>
+                        </ul>
+                        <div class="current-role">Currently Active</div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <h3 class="timeline-title">Non-Voice Support Executive</h3>
+                        <div class="timeline-subtitle">M-KOPA · January 2020 – September 2022</div>
+                        <ul class="timeline-list">
+                            <li>Provide efficient non-voice support via email and chat</li>
+                            <li>Optimize CRM tools and train teams on remote operations</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="main-section">
+                    <h2 class="main-title">Key Achievements</h2>
+                    <ul class="timeline-list">
+                        <li>10 Trusted Partner Companies onboarded and managed</li>
+                        <li>150+ Experienced agents recruited and trained</li>
+                        <li>15+ Successful campaigns completed with 100% success rate</li>
+                        <li>4 Ongoing campaigns currently managed</li>
+                        <li>Multiple website revamps and digital presence established</li>
+                    </ul>
+                </div>
+                
+                <div class="main-section">
+                    <h2 class="main-title">Portfolio Highlights</h2>
+                    <ul class="timeline-list">
+                        <li><strong>Pioneer Executive Dashboard:</strong> Custom dashboard showcasing strategic leadership and tech systems</li>
+                        <li><strong>Survey Reports & Analytics:</strong> Comprehensive data analysis and business recommendations</li>
+                        <li><strong>Travel Planning:</strong> Detailed executive travel itineraries and planning</li>
+                        <li><strong>Website Revamp:</strong> Complete website redesign for Pioneer Outsourcing BPO</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cv-actions">
+            <a href="index.html" class="btn">
+                <i class="fas fa-home"></i> Back to Website
+            </a>
+            <button onclick="window.print()" class="btn btn-outline">
+                <i class="fas fa-print"></i> Print CV
+            </button>
+            <a href="Abraham-Otieno-CV.pdf" download class="btn">
+                <i class="fas fa-download"></i> Download PDF
+            </a>
+        </div>
+    </div>
+</body>
+</html>
