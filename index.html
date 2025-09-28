@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abraham Otieno | Certified Virtual Assistant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #0f172a;
+            --accent: #f59e0b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --dark: #1e293b;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        h1, h2, h3, h4 {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary);
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--gray);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title p {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--secondary);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding-top: 150px;
+            padding-bottom: 100px;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .hero-text {
+            flex: 1;
+            max-width: 600px;
+        }
+        
+        .hero-text h1 {
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .video-container {
+            width: 100%;
+            max-width: 500px;
+            height: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .video-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* About Section */
+        .about {
+            background: white;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-image {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .profile-img {
+            width: 100%;
+            max-width: 400px;
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Services Section */
+        .services {
+            background: #f8fafc;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        /* Experience Section */
+        .experience {
+            background: white;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary);
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            display: flex;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            justify-content: flex-start;
+            padding-right: 50px;
+        }
+        
+        .timeline-item:nth-child(even) {
+            justify-content: flex-end;
+            padding-left: 50px;
+        }
+        
+        .timeline-content {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            width: 100%;
+            max-width: 350px;
+            position: relative;
+        }
+        
+        .timeline-content:after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background: white;
+            transform: rotate(45deg);
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content:after {
+            right: -10px;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content:after {
+            left: -10px;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+        
+        .timeline-date {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .current-role {
+            background: #dbeafe;
+            border-left: 4px solid var(--primary);
+            padding: 10px 15px;
+            margin-top: 15px;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        /* Portfolio Section */
+        .portfolio {
+            background: #f8fafc;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .portfolio-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .portfolio-img {
+            height: 200px;
+            background: var(--gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .portfolio-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .portfolio-content {
+            padding: 20px;
+        }
+        
+        .portfolio-links {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        /* Skills Section */
+        .skills {
+            background: white;
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .skills-category {
+            background: #f8fafc;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        
+        .skills-list {
+            list-style: none;
+        }
+        
+        .skills-list li {
+            margin-bottom: 10px;
+            padding: 10px;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: #f8fafc;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.7);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.8rem;
+            }
+            
+            h2 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero-text {
+                margin-bottom: 50px;
+            }
+            
+            .hero-btns {
+                justify-content: center;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .timeline:before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                justify-content: flex-start !important;
+                padding-left: 80px !important;
+                padding-right: 0 !important;
+            }
+            
+            .timeline-dot {
+                left: 21px;
+            }
+            
+            .timeline-content:after {
+                left: -10px !important;
+                right: auto !important;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                width: 100%;
+                margin-top: 20px;
+                display: none;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .nav-links li {
+                margin: 10px 0;
+            }
+            
+            .mobile-menu {
+                display: block;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 30px;
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .hero {
+                padding-top: 120px;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">Abraham Otieno</a>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Abraham Otieno</h1>
+                    <p>Certified Virtual Assistant | CRM & Customer Support Specialist | Tech-Savvy Executive Support for Startups & Global Teams</p>
+                    <p>As a tech-savvy Certified Virtual Assistant with over 6 years of experience, I specialize in executive assistance, remote operations, and startup support. Currently serving multiple clients, including as Executive Partner to the CEO at Pioneer Outsourcing BPO and Country Lead & Executive Assistant to the CPO at MSTRpay, I bring proactive, innovative solutions to streamline operations and drive growth.</p>
+                    <div class="hero-btns">
+                        <a href="#contact" class="btn">Book a Free Consult</a>
+                        <a href="#portfolio" class="btn btn-outline">View My Work</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="video-container">
+                        <iframe src="https://drive.google.com/file/d/1FZpd5i_9Fd2aAFaqkk-wRdIzVSArqwNL/preview" allow="autoplay"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>As a tech-savvy Certified Virtual Assistant with over 6 years of experience, I specialize in executive assistance, remote operations, and startup support. Currently serving multiple clients, including as Executive Partner to the CEO at Pioneer Outsourcing BPO and Country Lead & Executive Assistant to the CPO at MSTRpay, I bring proactive, innovative solutions to streamline operations and drive growth.</p>
+                    <p>Instrumental in helping startups establish online presence through website revamps, CRM integrations, and digital strategies. Fluent in English and Swahili, immediately available for full-time remote roles with flexibility for travel.</p>
+                    <a href="#contact" class="btn">Get In Touch</a>
+                </div>
+                <div class="about-image">
+                    <div class="profile-img">
+                        <img src="abu.jpg" alt="Abraham Otieno">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Services</h2>
+                <p>Comprehensive virtual assistance solutions tailored to your business needs</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Executive Assistance</h3>
+                    <p>Calendar management, travel planning, itinerary creation, JV negotiations, and C-level support.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>CRM & Operations</h3>
+                    <p>CRM setup, ticket management, surveys, telephony integration, and workflow optimization.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Customer Support & Service</h3>
+                    <p>Multi-channel customer support, ticket management, client relationship management, and service optimization.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>LinkedIn & Digital Presence</h3>
+                    <p>Outreach, lead generation, website revamp/creation, SEO, and branding strategies.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Virtual Team Management</h3>
+                    <p>Training materials, script handling, talent recruitment, and agent welfare programs.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Reporting & Analytics</h3>
+                    <p>Creating reports, presentations, dashboards, and data-driven insights for startups.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-house"></i>
+                    </div>
+                    <h3>Remote Operations & Startups</h3>
+                    <p>Tech infrastructure setup, global partnerships, and scalable solutions for emerging businesses.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-title">
+                <h2>Professional Experience</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">March 2025 – Present</div>
+                        <h3>Country Lead & Executive Assistant to CPO</h3>
+                        <h4>MSTRpay · Full-time · Remote</h4>
+                        <ul>
+                            <li>Led country operations, including JV negotiations and strategic partnerships</li>
+                            <li>Created confidential reports and presentations to support decision-making</li>
+                            <li>Managed ticketing systems and CRM workflows for efficient customer support</li>
+                            <li>Coordinated virtual teams and optimized remote processes using Asana and Slack</li>
+                        </ul>
+                        <div class="current-role">
+                            <strong>Currently Active</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">January 2022 – Present</div>
+                        <h3>Executive Partner to CEO</h3>
+                        <h4>Pioneeroutsourcingbpo.com · Full-time · Remote</h4>
+                        <ul>
+                            <li>Spearheaded website revamp and creation to enhance online presence</li>
+                            <li>Developed surveys, telephony integrations, and training materials for agents</li>
+                            <li>Handled script creation, talent recruitment, and welfare programs</li>
+                            <li>Planned travel itineraries, managed Calendly/Dubsado for scheduling, and used Canva for visuals</li>
+                            <li>Oversaw global partnerships, SEO strategies, and executive milestones like office setup</li>
+                        </ul>
+                        <div class="current-role">
+                            <strong>Currently Active</strong>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">January 2020 – September 2022</div>
+                        <h3>Non-Voice Support Executive / Customer Service Executive</h3>
+                        <h4>M-KOPA · Full-time · Remote</h4>
+                        <ul>
+                            <li>Provided efficient non-voice support via email and chat</li>
+                            <li>Optimized CRM tools and trained teams on remote operations</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">January 2019 – December 2020</div>
+                        <h3>Social Media Support Specialist</h3>
+                        <h4>Gainventure Limited Kenya · Full-time · Remote</h4>
+                        <ul>
+                            <li>Managed social campaigns, LinkedIn outreach, and virtual tasks</li>
+                            <li>Coordinated remote teams for marketing and lead generation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="section-title">
+                <h2>Portfolio Highlights</h2>
+                <p>A showcase of my recent work and accomplishments</p>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-img" style="background: #1e40af;">
+                        <i class="fas fa-tachometer-alt" style="font-size: 4rem;"></i>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Pioneer Executive Dashboard</h3>
+                        <p>Custom dashboard showcasing strategic leadership, tech systems, partnerships, and milestones. Features key metrics like 100% project success rate and tech implementations (CRM, VoIP).</p>
+                        <div class="portfolio-links">
+                            <a href="https://otieno-abraham.github.io/Pioneer-Dashboard/dashboard.html" target="_blank" class="btn">View Dashboard</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-img" style="background: #059669;">
+                        <i class="fas fa-chart-pie" style="font-size: 4rem;"></i>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Survey Reports & Analytics</h3>
+                        <p>Created comprehensive survey reports including data analysis, charts, and recommendations to inform business decisions.</p>
+                        <div class="portfolio-links">
+                            <a href="https://docs.google.com/presentation/d/1EUFVUazIWlvyOQMADdFAhtJsNFv9OWSEoQqxk3YJ7is/edit?usp=sharing" target="_blank" class="btn">View Report</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-img" style="background: #dc2626;">
+                        <i class="fas fa-plane" style="font-size: 4rem;"></i>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Travel Planning & Itineraries</h3>
+                        <p>Designed detailed travel packs, including schedules, accommodations, activities, and costs for executive trips.</p>
+                        <div class="portfolio-links">
+                            <a href="https://docs.google.com/presentation/d/1qpmESUVYUeqft5vMNKi-PF4JUOBdcTQiws3YokMc5ao/edit?usp=sharing" target="_blank" class="btn">View Itinerary</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-img" style="background: #7c3aed;">
+                        <i class="fas fa-globe" style="font-size: 4rem;"></i>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Pioneer Website Revamp</h3>
+                        <p>Complete website redesign and development to establish strong online presence for Pioneer Outsourcing BPO.</p>
+                        <div class="portfolio-links">
+                            <a href="https://pioneeroutsourcingbpo-droid.github.io/pioneer-website/" target="_blank" class="btn">View Website</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 30px;">
+                <p><em>Note: Some presentations and reports are confidential and available upon request for qualified clients.</em></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-title">
+                <h2>Skills & Tools</h2>
+            </div>
+            <div class="skills-container">
+                <div class="skills-category">
+                    <h3>Core Competencies</h3>
+                    <ul class="skills-list">
+                        <li>Executive Leadership & Assistance</li>
+                        <li>Virtual Team Management</li>
+                        <li>Remote Operations & Startup Support</li>
+                        <li>CRM & Customer Support</li>
+                        <li>LinkedIn Outreach & Lead Generation</li>
+                        <li>Travel Planning & Itinerary Creation</li>
+                        <li>JV Negotiations & Partnerships</li>
+                        <li>Customer Service Excellence</li>
+                    </ul>
+                </div>
+                <div class="skills-category">
+                    <h3>Tools & Technologies</h3>
+                    <ul class="skills-list">
+                        <li>Google Workspace, Microsoft Office</li>
+                        <li>Slack, ClickUp, Asana</li>
+                        <li>CRM Systems (Salesforce, HubSpot)</li>
+                        <li>Calendly, Dubsado, Canva</li>
+                        <li>VoIP & Telephony Tools</li>
+                        <li>SEO & Website Development Tools</li>
+                        <li>Survey & Reporting Software</li>
+                        <li>HTML, CSS, GitHub</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+                <p>Ready to streamline your operations? Let's discuss how I can help your business grow.</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>abraham.otienoa@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div>
+                            <h4>LinkedIn</h4>
+                            <p>linkedin.com/in/abraham-otieno-665678317</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Nairobi, Kenya</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4>Availability</h4>
+                            <p>Full-time remote roles; open to occasional travel.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Send Me a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <h3>Abraham Otieno</h3>
+                    <p>Certified Virtual Assistant | CRM & Customer Support Specialist</p>
+                </div>
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/abraham-otieno-665678317" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:abraham.otienoa@gmail.com"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Abraham Otieno. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+        
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.querySelector('.nav-links').classList.remove('active');
+                }
+            });
+        });
+        
+        // Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
