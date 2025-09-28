@@ -260,6 +260,31 @@
             object-fit: cover;
         }
         
+        /* Stats Section */
+        .stats {
+            background: var(--primary);
+            color: white;
+            padding: 60px 0;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+        
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 10px;
+        }
+        
+        .stat-item p {
+            color: rgba(255,255,255,0.9);
+            margin: 0;
+        }
+        
         /* Services Section */
         .services {
             background: #f8fafc;
@@ -525,6 +550,25 @@
             resize: vertical;
         }
         
+        .form-message {
+            padding: 12px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        
+        .form-message.success {
+            background: #d1fae5;
+            color: #065f46;
+            border: 1px solid #a7f3d0;
+        }
+        
+        .form-message.error {
+            background: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #fecaca;
+        }
+        
         /* Footer */
         footer {
             background: var(--secondary);
@@ -717,7 +761,7 @@
                 </div>
                 <div class="hero-image">
                     <div class="video-container">
-                        <iframe src="https://drive.google.com/file/d/1FZpd5i_9Fd2aAFaqkk-wRdIzVSArqwNL/preview" allow="autoplay"></iframe>
+                        <iframe src="https://drive.google.com/file/d/1FZpd5i_9Fd2aAFaqkk-wRdIzVSArqwNL/preview" allow="autoplay" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
@@ -740,6 +784,30 @@
                     <div class="profile-img">
                         <img src="abu.jpg" alt="Abraham Otieno">
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>10</h3>
+                    <p>Trusted Partner Companies</p>
+                </div>
+                <div class="stat-item">
+                    <h3>150</h3>
+                    <p>Experienced Agents Onboarded</p>
+                </div>
+                <div class="stat-item">
+                    <h3>15</h3>
+                    <p>Successful Campaigns Completed</p>
+                </div>
+                <div class="stat-item">
+                    <h3>4</h3>
+                    <p>Ongoing Campaigns</p>
                 </div>
             </div>
         </div>
@@ -819,11 +887,11 @@
                         <div class="timeline-date">March 2025 – Present</div>
                         <h3>Country Lead & Executive Assistant to CPO</h3>
                         <h4>MSTRpay · Full-time · Remote</h4>
-                        <ul>
-                            <li>Led country operations, including JV negotiations and strategic partnerships</li>
-                            <li>Created confidential reports and presentations to support decision-making</li>
-                            <li>Managed ticketing systems and CRM workflows for efficient customer support</li>
-                            <li>Coordinated virtual teams and optimized remote processes using Asana and Slack</li>
+                        <ul class="timeline-list">
+                            <li>Lead country operations, including JV negotiations and strategic partnerships</li>
+                            <li>Create confidential reports and presentations to support decision-making</li>
+                            <li>Manage ticketing systems and CRM workflows for efficient customer support</li>
+                            <li>Coordinate virtual teams and optimize remote processes using Asana and Slack</li>
                         </ul>
                         <div class="current-role">
                             <strong>Currently Active</strong>
@@ -836,12 +904,12 @@
                         <div class="timeline-date">January 2022 – Present</div>
                         <h3>Executive Partner to CEO</h3>
                         <h4>Pioneeroutsourcingbpo.com · Full-time · Remote</h4>
-                        <ul>
-                            <li>Spearheaded website revamp and creation to enhance online presence</li>
-                            <li>Developed surveys, telephony integrations, and training materials for agents</li>
-                            <li>Handled script creation, talent recruitment, and welfare programs</li>
-                            <li>Planned travel itineraries, managed Calendly/Dubsado for scheduling, and used Canva for visuals</li>
-                            <li>Oversaw global partnerships, SEO strategies, and executive milestones like office setup</li>
+                        <ul class="timeline-list">
+                            <li>Spearhead website revamp and creation to enhance online presence</li>
+                            <li>Develop surveys, telephony integrations, and training materials for agents</li>
+                            <li>Handle script creation, talent recruitment, and welfare programs</li>
+                            <li>Plan travel itineraries, manage Calendly/Dubsado for scheduling, and use Canva for visuals</li>
+                            <li>Oversee global partnerships, SEO strategies, and executive milestones like office setup</li>
                         </ul>
                         <div class="current-role">
                             <strong>Currently Active</strong>
@@ -854,9 +922,9 @@
                         <div class="timeline-date">January 2020 – September 2022</div>
                         <h3>Non-Voice Support Executive / Customer Service Executive</h3>
                         <h4>M-KOPA · Full-time · Remote</h4>
-                        <ul>
-                            <li>Provided efficient non-voice support via email and chat</li>
-                            <li>Optimized CRM tools and trained teams on remote operations</li>
+                        <ul class="timeline-list">
+                            <li>Provide efficient non-voice support via email and chat</li>
+                            <li>Optimize CRM tools and train teams on remote operations</li>
                         </ul>
                     </div>
                 </div>
@@ -866,9 +934,9 @@
                         <div class="timeline-date">January 2019 – December 2020</div>
                         <h3>Social Media Support Specialist</h3>
                         <h4>Gainventure Limited Kenya · Full-time · Remote</h4>
-                        <ul>
-                            <li>Managed social campaigns, LinkedIn outreach, and virtual tasks</li>
-                            <li>Coordinated remote teams for marketing and lead generation</li>
+                        <ul class="timeline-list">
+                            <li>Manage social campaigns, LinkedIn outreach, and virtual tasks</li>
+                            <li>Coordinate remote teams for marketing and lead generation</li>
                         </ul>
                     </div>
                 </div>
@@ -885,8 +953,8 @@
             </div>
             <div class="portfolio-grid">
                 <div class="portfolio-item">
-                    <div class="portfolio-img" style="background: #1e40af;">
-                        <i class="fas fa-tachometer-alt" style="font-size: 4rem;"></i>
+                    <div class="portfolio-img">
+                        <img src="Dashboard.png" alt="Pioneer Executive Dashboard">
                     </div>
                     <div class="portfolio-content">
                         <h3>Pioneer Executive Dashboard</h3>
@@ -897,8 +965,8 @@
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <div class="portfolio-img" style="background: #059669;">
-                        <i class="fas fa-chart-pie" style="font-size: 4rem;"></i>
+                    <div class="portfolio-img">
+                        <img src="Survey.png" alt="Survey Reports & Analytics">
                     </div>
                     <div class="portfolio-content">
                         <h3>Survey Reports & Analytics</h3>
@@ -909,8 +977,8 @@
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <div class="portfolio-img" style="background: #dc2626;">
-                        <i class="fas fa-plane" style="font-size: 4rem;"></i>
+                    <div class="portfolio-img">
+                        <img src="Travel.png" alt="Travel Planning & Itineraries">
                     </div>
                     <div class="portfolio-content">
                         <h3>Travel Planning & Itineraries</h3>
@@ -921,8 +989,8 @@
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <div class="portfolio-img" style="background: #7c3aed;">
-                        <i class="fas fa-globe" style="font-size: 4rem;"></i>
+                    <div class="portfolio-img">
+                        <img src="Website.png" alt="Pioneer Website Revamp">
                     </div>
                     <div class="portfolio-content">
                         <h3>Pioneer Website Revamp</h3>
@@ -970,6 +1038,20 @@
                         <li>SEO & Website Development Tools</li>
                         <li>Survey & Reporting Software</li>
                         <li>HTML, CSS, GitHub</li>
+                    </ul>
+                </div>
+                <div class="skills-category">
+                    <h3>Certifications</h3>
+                    <ul class="skills-list">
+                        <li>Certified Virtual Assistant</li>
+                        <li>
+                            <a href="https://drive.google.com/file/d/12rN_1vMkfNmohnWxJ5nvGwzSaGn6MRBQ/view?usp=sharing" target="_blank" style="color: var(--primary); text-decoration: none;">
+                                Administrative Assistance & Remote Professional Training
+                                <i class="fas fa-external-link-alt" style="margin-left: 5px; font-size: 0.8rem;"></i>
+                            </a>
+                        </li>
+                        <li>CRM Management Certification</li>
+                        <li>Project Management Fundamentals</li>
                     </ul>
                 </div>
             </div>
@@ -1025,21 +1107,55 @@
                 </div>
                 <div class="contact-form">
                     <h3>Send Me a Message</h3>
-                    <form id="contactForm">
+                    <div id="formMessage" class="form-message"></div>
+                    
+                    <form id="contactForm" action="https://formsubmit.co/abraham.otienoa@gmail.com" method="POST">
+                        <!-- FormSubmit configuration -->
+                        <input type="hidden" name="_subject" value="New Contact Form Message - Abraham Otieno Website">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="https://abrahamotieno.github.io/thank-you.html">
+                        <input type="hidden" name="_autoresponse" value="Thank you for contacting Abraham Otieno. I have received your message and will get back to you within 24 hours.">
+                        
                         <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" class="form-control" required>
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" class="form-control" required>
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
                         </div>
                         <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" class="form-control" required></textarea>
+                            <label for="company">Company (Optional)</label>
+                            <input type="text" id="company" name="company" class="form-control">
                         </div>
-                        <button type="submit" class="btn">Send Message</button>
+                        <div class="form-group">
+                            <label for="service">Service Interested In</label>
+                            <select id="service" name="service" class="form-control">
+                                <option value="">Select a service...</option>
+                                <option value="Executive Assistance">Executive Assistance</option>
+                                <option value="CRM & Operations">CRM & Operations</option>
+                                <option value="Customer Support">Customer Support</option>
+                                <option value="Digital Presence">LinkedIn & Digital Presence</option>
+                                <option value="Team Management">Virtual Team Management</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" class="form-control" placeholder="Please describe your project or inquiry..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn" id="submitBtn">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
                     </form>
+                    
+                    <div style="margin-top: 25px; padding: 15px; background: #f8fafc; border-radius: 8px;">
+                        <p style="margin: 0; font-size: 0.9rem; color: var(--gray);">
+                            <i class="fas fa-info-circle"></i> Prefer to email directly? 
+                            <a href="mailto:abraham.otienoa@gmail.com?subject=Website Inquiry&body=Hello Abraham, I saw your website and would like to connect regarding..." style="color: var(--primary);">Click here to send an email</a>
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1091,12 +1207,47 @@
             });
         });
         
-        // Form Submission
+        // Contact form handling
         document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! I will get back to you soon.');
-            this.reset();
+            const submitBtn = document.getElementById('submitBtn');
+            const originalText = submitBtn.innerHTML;
+            
+            // Show loading state
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+            
+            // Form will be submitted to FormSubmit
+            // You can add additional validation here if needed
         });
+
+        // Simple form validation
+        function validateForm() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            const formMessage = document.getElementById('formMessage');
+            
+            if (!name || !email || !message) {
+                formMessage.textContent = 'Please fill in all required fields.';
+                formMessage.className = 'form-message error';
+                formMessage.style.display = 'block';
+                return false;
+            }
+            
+            if (!isValidEmail(email)) {
+                formMessage.textContent = 'Please enter a valid email address.';
+                formMessage.className = 'form-message error';
+                formMessage.style.display = 'block';
+                return false;
+            }
+            
+            return true;
+        }
+        
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
     </script>
 </body>
 </html>
