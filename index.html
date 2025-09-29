@@ -4,14 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abraham Otieno | Certified Virtual Assistant</title>
-    
-    <!-- Preload critical resources -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
-    
-    <!-- Security headers -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; font-src https://cdnjs.cloudflare.com;">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Base Styles */
         :root {
@@ -637,24 +630,6 @@
             color: rgba(255,255,255,0.7);
         }
         
-        /* Reduced Motion Support */
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-            
-            .btn:hover {
-                transform: none;
-            }
-            
-            .service-card:hover,
-            .portfolio-item:hover {
-                transform: none;
-            }
-        }
-        
         /* Responsive Design */
         @media (max-width: 992px) {
             h1 {
@@ -783,7 +758,7 @@
                     <li><a href="#contact">Contact</a></li>
                     <li><a href="project-catalog.html">Services & Pricing</a></li>
                 </ul>
-                <div class="mobile-menu" aria-label="Toggle navigation menu" role="button" tabindex="0" aria-expanded="false">
+                <div class="mobile-menu">
                     <i class="fas fa-bars"></i>
                 </div>
             </nav>
@@ -805,12 +780,11 @@
                 </div>
                 <div class="hero-image">
                     <div class="video-container">
-                        <iframe src="https://drive.google.com/file/d/1FZpd5i_9Fd2aAFaqkk-wRdIzVSArqwNL/preview" 
-        width="100%" 
-        height="100%" 
-        allow="autoplay; encrypted-media" 
-        allowfullscreen>
-</iframe>
+                        <iframe src="https://www.youtube.com/embed/EASThDg7rMk?autoplay=1&mute=1&rel=0&modestbranding=1" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                        </iframe>
                     </div>
                 </div>
             </div>
@@ -831,7 +805,7 @@
                 </div>
                 <div class="about-image">
                     <div class="profile-img">
-                        <img src="abu.jpg" alt="Abraham Otieno" loading="lazy" onerror="this.style.display='none'">
+                        <img src="abu.jpg" alt="Abraham Otieno">
                     </div>
                 </div>
             </div>
@@ -1015,7 +989,7 @@
             <div class="portfolio-grid">
                 <div class="portfolio-item">
                     <div class="portfolio-img">
-                        <img src="Dashboard.png" alt="Pioneer Executive Dashboard" loading="lazy" onerror="this.style.display='none'">
+                        <img src="Dashboard.png" alt="Pioneer Executive Dashboard">
                     </div>
                     <div class="portfolio-content">
                         <h3>Pioneer Executive Dashboard</h3>
@@ -1027,7 +1001,7 @@
                 </div>
                 <div class="portfolio-item">
                     <div class="portfolio-img">
-                        <img src="Survey.png" alt="Survey Reports & Analytics" loading="lazy" onerror="this.style.display='none'">
+                        <img src="Survey.png" alt="Survey Reports & Analytics">
                     </div>
                     <div class="portfolio-content">
                         <h3>Survey Reports & Analytics</h3>
@@ -1039,7 +1013,7 @@
                 </div>
                 <div class="portfolio-item">
                     <div class="portfolio-img">
-                        <img src="Travel.png" alt="Travel Planning & Itineraries" loading="lazy" onerror="this.style.display='none'">
+                        <img src="Travel.png" alt="Travel Planning & Itineraries">
                     </div>
                     <div class="portfolio-content">
                         <h3>Travel Planning & Itineraries</h3>
@@ -1051,7 +1025,7 @@
                 </div>
                 <div class="portfolio-item">
                     <div class="portfolio-img">
-                        <img src="website.png" alt="Pioneer Website Revamp" loading="lazy" onerror="this.style.display='none'">
+                        <img src="website.png" alt="Pioneer Website Revamp">
                     </div>
                     <div class="portfolio-content">
                         <h3>Pioneer Website Revamp</h3>
@@ -1150,7 +1124,7 @@
                     </div>
                     <div style="text-align: right;">
                         <div style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; margin-left: auto;">
-                            <img src="abu.jpg" alt="Abraham Otieno" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy" onerror="this.style.display='none'">
+                            <img src="abu.jpg" alt="Abraham Otieno" style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                     </div>
                 </div>
@@ -1332,9 +1306,7 @@
     <script>
         // Mobile Menu Toggle
         document.querySelector('.mobile-menu').addEventListener('click', function() {
-            const navLinks = document.querySelector('.nav-links');
-            const isExpanded = navLinks.classList.toggle('active');
-            this.setAttribute('aria-expanded', isExpanded);
+            document.querySelector('.nav-links').classList.toggle('active');
         });
         
         // Smooth Scrolling
@@ -1360,38 +1332,32 @@
         
         // Contact form handling
         document.getElementById('contactForm').addEventListener('submit', function(e) {
-            if (!validateForm()) {
-                e.preventDefault();
-                return;
-            }
-            
             const submitBtn = document.getElementById('submitBtn');
             const originalText = submitBtn.innerHTML;
             
             // Show loading state
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             submitBtn.disabled = true;
-            
-            // Add timeout to reset button if form takes too long
-            setTimeout(() => {
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-            }, 10000);
         });
 
-        // Form validation functions
+        // Simple form validation
         function validateForm() {
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const message = document.getElementById('message').value.trim();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            const formMessage = document.getElementById('formMessage');
             
             if (!name || !email || !message) {
-                showFormMessage('Please fill in all required fields.', 'error');
+                formMessage.textContent = 'Please fill in all required fields.';
+                formMessage.className = 'form-message error';
+                formMessage.style.display = 'block';
                 return false;
             }
             
             if (!isValidEmail(email)) {
-                showFormMessage('Please enter a valid email address.', 'error');
+                formMessage.textContent = 'Please enter a valid email address.';
+                formMessage.className = 'form-message error';
+                formMessage.style.display = 'block';
                 return false;
             }
             
@@ -1401,16 +1367,6 @@
         function isValidEmail(email) {
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             return emailRegex.test(email);
-        }
-        
-        function showFormMessage(message, type) {
-            const formMessage = document.getElementById('formMessage');
-            formMessage.textContent = message;
-            formMessage.className = `form-message ${type}`;
-            formMessage.style.display = 'block';
-            
-            // Scroll to message
-            formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
     </script>
 </body>
