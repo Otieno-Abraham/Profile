@@ -4,7 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abraham Otieno | Certified Virtual Assistant</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    
+    <!-- Security headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; font-src https://cdnjs.cloudflare.com;">
+    
     <style>
         /* Base Styles */
         :root {
@@ -484,93 +491,24 @@
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
-        <!-- CV Section -->
-<section id="cv" class="cv">
-    <div class="container">
-        <div class="section-title">
-            <h2>My Curriculum Vitae</h2>
-            <p>Download or view my complete professional profile</p>
-        </div>
-        <div class="cv-options" style="text-align: center; margin-bottom: 40px;">
-            <a href="cv.html" target="_blank" class="btn" style="margin-right: 15px;">
-                <i class="fas fa-eye"></i> View Full CV
-            </a>
-            <a href="Abraham-Otieno-CV.pdf" download class="btn btn-outline" style="margin-right: 15px;">
-                <i class="fas fa-download"></i> Download PDF
-            </a>
-            <button onclick="window.print()" class="btn" style="background: #059669;">
-                <i class="fas fa-print"></i> Print CV
-            </button>
-        </div>
         
-        <!-- CV Preview -->
-        <div class="cv-preview" style="background: white; border-radius: 10px; padding: 40px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 30px;">
-                <div>
-                    <h1 style="color: var(--secondary); margin-bottom: 5px;">Abraham Otieno</h1>
-                    <p style="color: var(--primary); font-size: 1.2rem; margin-bottom: 15px;">Certified Virtual Assistant</p>
-                    <p style="color: var(--gray); margin-bottom: 5px;">Nairobi, Kenya</p>
-                    <p style="color: var(--gray); margin-bottom: 5px;">abraham.otienoa@gmail.com</p>
-                    <p style="color: var(--gray);">linkedin.com/in/abraham-otieno-665678317</p>
-                </div>
-                <div style="text-align: right;">
-                    <div style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; margin-left: auto;">
-                        <img src="abu.jpg" alt="Abraham Otieno" style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                </div>
-            </div>
-            
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
-                <!-- Left Column -->
-                <div>
-                    <h3 style="color: var(--secondary); border-bottom: 2px solid var(--primary); padding-bottom: 8px; margin-bottom: 15px;">Professional Summary</h3>
-                    <p style="margin-bottom: 20px;">Tech-savvy Certified Virtual Assistant with over 6 years of experience specializing in executive assistance, remote operations, and startup support.</p>
-                    
-                    <h3 style="color: var(--secondary); border-bottom: 2px solid var(--primary); padding-bottom: 8px; margin-bottom: 15px;">Core Skills</h3>
-                    <ul style="list-style: none; padding-left: 0;">
-                        <li style="margin-bottom: 8px;">✓ Executive Leadership & Assistance</li>
-                        <li style="margin-bottom: 8px;">✓ CRM & Customer Support</li>
-                        <li style="margin-bottom: 8px;">✓ Virtual Team Management</li>
-                        <li style="margin-bottom: 8px;">✓ Remote Operations</li>
-                        <li style="margin-bottom: 8px;">✓ LinkedIn & Digital Presence</li>
-                    </ul>
-                    
-                    <h3 style="color: var(--secondary); border-bottom: 2px solid var(--primary); padding-bottom: 8px; margin-bottom: 15px;">Certifications</h3>
-                    <ul style="list-style: none; padding-left: 0;">
-                        <li style="margin-bottom: 8px;">• Certified Virtual Assistant</li>
-                        <li style="margin-bottom: 8px;">• Administrative Assistance & Remote Professional Training</li>
-                        <li style="margin-bottom: 8px;">• CRM Management Certification</li>
-                    </ul>
-                </div>
-                
-                <!-- Right Column -->
-                <div>
-                    <h3 style="color: var(--secondary); border-bottom: 2px solid var(--primary); padding-bottom: 8px; margin-bottom: 15px;">Experience</h3>
-                    
-                    <div style="margin-bottom: 20px;">
-                        <h4 style="color: var(--secondary); margin-bottom: 5px;">Country Lead & Executive Assistant to CPO</h4>
-                        <p style="color: var(--primary); margin-bottom: 5px;">MSTRpay • March 2025 – Present</p>
-                        <p style="color: var(--gray); font-size: 0.9rem;">Lead country operations, JV negotiations, and strategic partnerships</p>
-                    </div>
-                    
-                    <div style="margin-bottom: 20px;">
-                        <h4 style="color: var(--secondary); margin-bottom: 5px;">Executive Partner to CEO</h4>
-                        <p style="color: var(--primary); margin-bottom: 5px;">Pioneer Outsourcing BPO • January 2022 – Present</p>
-                        <p style="color: var(--gray); font-size: 0.9rem;">Spearhead website revamps, CRM integrations, and team management</p>
-                    </div>
-                    
-                    <h3 style="color: var(--secondary); border-bottom: 2px solid var(--primary); padding-bottom: 8px; margin-bottom: 15px;">Key Achievements</h3>
-                    <ul style="list-style: none; padding-left: 0;">
-                        <li style="margin-bottom: 8px;">• 10 Trusted Partner Companies</li>
-                        <li style="margin-bottom: 8px;">• 150+ Agents Onboarded</li>
-                        <li style="margin-bottom: 8px;">• 15+ Successful Campaigns</li>
-                        <li style="margin-bottom: 8px;">• 100% Project Success Rate</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+        /* CV Section */
+        .cv {
+            background: #f8fafc;
+        }
+        
+        .cv-options {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .cv-preview {
+            background: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
         /* Contact Section */
         .contact {
             background: #f8fafc;
@@ -699,6 +637,24 @@
             color: rgba(255,255,255,0.7);
         }
         
+        /* Reduced Motion Support */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            
+            .btn:hover {
+                transform: none;
+            }
+            
+            .service-card:hover,
+            .portfolio-item:hover {
+                transform: none;
+            }
+        }
+        
         /* Responsive Design */
         @media (max-width: 992px) {
             h1 {
@@ -823,11 +779,11 @@
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#skills">Skills</a></li>
-                    <li><a href="cv.html">CV</a></li>
+                    <li><a href="#cv">CV</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li><a href="project-catalog.html">Services & Pricing</a></li>
                 </ul>
-                <div class="mobile-menu">
+                <div class="mobile-menu" aria-label="Toggle navigation menu" role="button" tabindex="0" aria-expanded="false">
                     <i class="fas fa-bars"></i>
                 </div>
             </nav>
@@ -870,7 +826,7 @@
                 </div>
                 <div class="about-image">
                     <div class="profile-img">
-                        <img src="abu.jpg" alt="Abraham Otieno">
+                        <img src="abu.jpg" alt="Abraham Otieno" loading="lazy" onerror="this.style.display='none'">
                     </div>
                 </div>
             </div>
@@ -980,6 +936,9 @@
                             <li>Create confidential reports and presentations to support decision-making</li>
                             <li>Manage ticketing systems and CRM workflows for efficient customer support</li>
                             <li>Coordinate virtual teams and optimize remote processes using Asana and Slack</li>
+                            <li>Develop and implement operational strategies for market expansion</li>
+                            <li>Monitor KPIs and performance metrics to ensure operational excellence</li>
+                            <li>Facilitate cross-functional collaboration between departments</li>
                         </ul>
                         <div class="current-role">
                             <strong>Currently Active</strong>
@@ -998,6 +957,9 @@
                             <li>Handle script creation, talent recruitment, and welfare programs</li>
                             <li>Plan travel itineraries, manage Calendly/Dubsado for scheduling, and use Canva for visuals</li>
                             <li>Oversee global partnerships, SEO strategies, and executive milestones like office setup</li>
+                            <li>Implement CRM systems to streamline customer relationship management</li>
+                            <li>Coordinate with cross-functional teams to ensure project alignment</li>
+                            <li>Analyze business metrics to identify areas for improvement</li>
                         </ul>
                         <div class="current-role">
                             <strong>Currently Active</strong>
@@ -1013,6 +975,9 @@
                         <ul class="timeline-list">
                             <li>Provide efficient non-voice support via email and chat</li>
                             <li>Optimize CRM tools and train teams on remote operations</li>
+                            <li>Resolve customer inquiries and technical issues promptly</li>
+                            <li>Document and escalate complex issues to appropriate teams</li>
+                            <li>Maintain detailed records of customer interactions</li>
                         </ul>
                     </div>
                 </div>
@@ -1025,6 +990,9 @@
                         <ul class="timeline-list">
                             <li>Manage social campaigns, LinkedIn outreach, and virtual tasks</li>
                             <li>Coordinate remote teams for marketing and lead generation</li>
+                            <li>Monitor social media channels and engage with followers</li>
+                            <li>Create content calendars and schedule posts</li>
+                            <li>Analyze social media metrics to optimize campaign performance</li>
                         </ul>
                     </div>
                 </div>
@@ -1042,7 +1010,7 @@
             <div class="portfolio-grid">
                 <div class="portfolio-item">
                     <div class="portfolio-img">
-                        <img src="Dashboard.png" alt="Pioneer Executive Dashboard">
+                        <img src="Dashboard.png" alt="Pioneer Executive Dashboard" loading="lazy" onerror="this.style.display='none'">
                     </div>
                     <div class="portfolio-content">
                         <h3>Pioneer Executive Dashboard</h3>
@@ -1054,7 +1022,7 @@
                 </div>
                 <div class="portfolio-item">
                     <div class="portfolio-img">
-                        <img src="Survey.png" alt="Survey Reports & Analytics">
+                        <img src="Survey.png" alt="Survey Reports & Analytics" loading="lazy" onerror="this.style.display='none'">
                     </div>
                     <div class="portfolio-content">
                         <h3>Survey Reports & Analytics</h3>
@@ -1066,7 +1034,7 @@
                 </div>
                 <div class="portfolio-item">
                     <div class="portfolio-img">
-                        <img src="Travel.png" alt="Travel Planning & Itineraries">
+                        <img src="Travel.png" alt="Travel Planning & Itineraries" loading="lazy" onerror="this.style.display='none'">
                     </div>
                     <div class="portfolio-content">
                         <h3>Travel Planning & Itineraries</h3>
@@ -1078,7 +1046,7 @@
                 </div>
                 <div class="portfolio-item">
                     <div class="portfolio-img">
-                        <img src="website.png" alt="Pioneer Website Revamp">
+                        <img src="website.png" alt="Pioneer Website Revamp" loading="lazy" onerror="this.style.display='none'">
                     </div>
                     <div class="portfolio-content">
                         <h3>Pioneer Website Revamp</h3>
@@ -1141,6 +1109,94 @@
                         <li>CRM Management Certification</li>
                         <li>Project Management Fundamentals</li>
                     </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CV Section -->
+    <section id="cv" class="cv">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Curriculum Vitae</h2>
+                <p>Download or view my complete professional profile</p>
+            </div>
+            <div class="cv-options">
+                <a href="cv.html" target="_blank" class="btn" style="margin-right: 15px;">
+                    <i class="fas fa-eye"></i> View Full CV
+                </a>
+                <a href="Abraham-Otieno-CV.pdf" download class="btn btn-outline" style="margin-right: 15px;">
+                    <i class="fas fa-download"></i> Download PDF
+                </a>
+                <button onclick="window.print()" class="btn" style="background: #059669;">
+                    <i class="fas fa-print"></i> Print CV
+                </button>
+            </div>
+            
+            <!-- CV Preview -->
+            <div class="cv-preview">
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 30px;">
+                    <div>
+                        <h1 style="color: var(--secondary); margin-bottom: 5px;">Abraham Otieno</h1>
+                        <p style="color: var(--primary); font-size: 1.2rem; margin-bottom: 15px;">Certified Virtual Assistant</p>
+                        <p style="color: var(--gray); margin-bottom: 5px;">Nairobi, Kenya</p>
+                        <p style="color: var(--gray); margin-bottom: 5px;">abraham.otienoa@gmail.com</p>
+                        <p style="color: var(--gray);">linkedin.com/in/abraham-otieno-665678317</p>
+                    </div>
+                    <div style="text-align: right;">
+                        <div style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; margin-left: auto;">
+                            <img src="abu.jpg" alt="Abraham Otieno" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy" onerror="this.style.display='none'">
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+                    <!-- Left Column -->
+                    <div>
+                        <h3 style="color: var(--secondary); border-bottom: 2px solid var(--primary); padding-bottom: 8px; margin-bottom: 15px;">Professional Summary</h3>
+                        <p style="margin-bottom: 20px;">Tech-savvy Certified Virtual Assistant with over 6 years of experience specializing in executive assistance, remote operations, and startup support.</p>
+                        
+                        <h3 style="color: var(--secondary); border-bottom: 2px solid var(--primary); padding-bottom: 8px; margin-bottom: 15px;">Core Skills</h3>
+                        <ul style="list-style: none; padding-left: 0;">
+                            <li style="margin-bottom: 8px;">✓ Executive Leadership & Assistance</li>
+                            <li style="margin-bottom: 8px;">✓ CRM & Customer Support</li>
+                            <li style="margin-bottom: 8px;">✓ Virtual Team Management</li>
+                            <li style="margin-bottom: 8px;">✓ Remote Operations</li>
+                            <li style="margin-bottom: 8px;">✓ LinkedIn & Digital Presence</li>
+                        </ul>
+                        
+                        <h3 style="color: var(--secondary); border-bottom: 2px solid var(--primary); padding-bottom: 8px; margin-bottom: 15px;">Certifications</h3>
+                        <ul style="list-style: none; padding-left: 0;">
+                            <li style="margin-bottom: 8px;">• Certified Virtual Assistant</li>
+                            <li style="margin-bottom: 8px;">• Administrative Assistance & Remote Professional Training</li>
+                            <li style="margin-bottom: 8px;">• CRM Management Certification</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Right Column -->
+                    <div>
+                        <h3 style="color: var(--secondary); border-bottom: 2px solid var(--primary); padding-bottom: 8px; margin-bottom: 15px;">Experience</h3>
+                        
+                        <div style="margin-bottom: 20px;">
+                            <h4 style="color: var(--secondary); margin-bottom: 5px;">Country Lead & Executive Assistant to CPO</h4>
+                            <p style="color: var(--primary); margin-bottom: 5px;">MSTRpay • March 2025 – Present</p>
+                            <p style="color: var(--gray); font-size: 0.9rem;">Lead country operations, JV negotiations, and strategic partnerships</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 20px;">
+                            <h4 style="color: var(--secondary); margin-bottom: 5px;">Executive Partner to CEO</h4>
+                            <p style="color: var(--primary); margin-bottom: 5px;">Pioneer Outsourcing BPO • January 2022 – Present</p>
+                            <p style="color: var(--gray); font-size: 0.9rem;">Spearhead website revamps, CRM integrations, and team management</p>
+                        </div>
+                        
+                        <h3 style="color: var(--secondary); border-bottom: 2px solid var(--primary); padding-bottom: 8px; margin-bottom: 15px;">Key Achievements</h3>
+                        <ul style="list-style: none; padding-left: 0;">
+                            <li style="margin-bottom: 8px;">• 10 Trusted Partner Companies</li>
+                            <li style="margin-bottom: 8px;">• 150+ Agents Onboarded</li>
+                            <li style="margin-bottom: 8px;">• 15+ Successful Campaigns</li>
+                            <li style="margin-bottom: 8px;">• 100% Project Success Rate</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1271,7 +1327,9 @@
     <script>
         // Mobile Menu Toggle
         document.querySelector('.mobile-menu').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
+            const navLinks = document.querySelector('.nav-links');
+            const isExpanded = navLinks.classList.toggle('active');
+            this.setAttribute('aria-expanded', isExpanded);
         });
         
         // Smooth Scrolling
@@ -1297,6 +1355,11 @@
         
         // Contact form handling
         document.getElementById('contactForm').addEventListener('submit', function(e) {
+            if (!validateForm()) {
+                e.preventDefault();
+                return;
+            }
+            
             const submitBtn = document.getElementById('submitBtn');
             const originalText = submitBtn.innerHTML;
             
@@ -1304,28 +1367,26 @@
             submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             submitBtn.disabled = true;
             
-            // Form will be submitted to FormSubmit
-            // You can add additional validation here if needed
+            // Add timeout to reset button if form takes too long
+            setTimeout(() => {
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }, 10000);
         });
 
-        // Simple form validation
+        // Form validation functions
         function validateForm() {
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-            const formMessage = document.getElementById('formMessage');
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
             
             if (!name || !email || !message) {
-                formMessage.textContent = 'Please fill in all required fields.';
-                formMessage.className = 'form-message error';
-                formMessage.style.display = 'block';
+                showFormMessage('Please fill in all required fields.', 'error');
                 return false;
             }
             
             if (!isValidEmail(email)) {
-                formMessage.textContent = 'Please enter a valid email address.';
-                formMessage.className = 'form-message error';
-                formMessage.style.display = 'block';
+                showFormMessage('Please enter a valid email address.', 'error');
                 return false;
             }
             
@@ -1335,6 +1396,16 @@
         function isValidEmail(email) {
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             return emailRegex.test(email);
+        }
+        
+        function showFormMessage(message, type) {
+            const formMessage = document.getElementById('formMessage');
+            formMessage.textContent = message;
+            formMessage.className = `form-message ${type}`;
+            formMessage.style.display = 'block';
+            
+            // Scroll to message
+            formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
     </script>
 </body>
