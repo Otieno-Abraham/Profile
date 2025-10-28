@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abraham Otieno | Certified Virtual Assistant</title>
-    <meta name="description" content="Abraham Otieno - Certified Virtual Assistant with 6+ years experience in executive assistance, CRM, and customer support. Based in Nairobi, Kenya.">
-    <meta name="keywords" content="virtual assistant, executive assistant, CRM, customer support, remote operations, Kenya">
+    <title>Abraham Otieno | Certified Virtual Assistant & Executive Support Specialist</title>
+    <meta name="description" content="Abraham Otieno - Certified Virtual Assistant with 6+ years experience in executive assistance, CRM, customer support, and remote operations. Based in Nairobi, Kenya.">
+    <meta name="keywords" content="virtual assistant, executive assistant, CRM, customer support, remote operations, Kenya, Abraham Otieno, executive support">
     <meta name="author" content="Abraham Otieno">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -25,6 +25,10 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
         }
         
         body {
@@ -302,6 +306,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            loading: lazy;
         }
         
         .highlight-box {
@@ -381,10 +386,28 @@
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             transition: transform 0.3s;
+            position: relative;
+            overflow: hidden;
         }
         
         .service-card:hover {
             transform: translateY(-10px);
+        }
+        
+        .service-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--primary);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover:before {
+            transform: scaleX(1);
         }
         
         .service-icon {
@@ -606,6 +629,12 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            loading: lazy;
+            transition: transform 0.5s;
+        }
+        
+        .portfolio-item:hover .portfolio-img img {
+            transform: scale(1.05);
         }
         
         .portfolio-content {
@@ -657,6 +686,11 @@
             background: #f8fafc;
             border-radius: 5px;
             border-left: 3px solid var(--primary);
+            transition: transform 0.2s;
+        }
+        
+        .skills-list li:hover {
+            transform: translateX(5px);
         }
         
         /* CV Section */
@@ -698,6 +732,15 @@
             display: flex;
             align-items: center;
             gap: 15px;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+        
+        .contact-item:hover {
+            transform: translateY(-3px);
         }
         
         .contact-icon {
@@ -736,6 +779,12 @@
             border: 1px solid #ddd;
             border-radius: 5px;
             font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
         }
         
         textarea.form-control {
@@ -804,6 +853,36 @@
             padding-top: 20px;
             border-top: 1px solid rgba(255,255,255,0.1);
             color: rgba(255,255,255,0.7);
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 100;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
         }
         
         /* Responsive Design */
@@ -890,6 +969,12 @@
             .partner-list {
                 justify-content: center;
             }
+            
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
         }
         
         @media (max-width: 576px) {
@@ -929,7 +1014,7 @@
     <div class="scroll-progress"></div>
     
     <!-- Header & Navigation -->
-    <header>
+    <header role="banner">
         <div class="container">
             <nav class="navbar" aria-label="Main navigation">
                 <a href="#" class="logo">Abraham Otieno</a>
@@ -970,7 +1055,8 @@
                         <iframe src="https://www.youtube.com/embed/EASThDg7rMk?autoplay=1&mute=1&rel=0&modestbranding=1" 
                                 frameborder="0" 
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowfullscreen>
+                                allowfullscreen
+                                title="Introduction Video">
                         </iframe>
                     </div>
                 </div>
@@ -1259,7 +1345,7 @@
                         <h3>Pioneer Executive Dashboard</h3>
                         <p>Custom dashboard showcasing strategic leadership, tech systems, partnerships, and milestones. Features key metrics like 100% project success rate and tech implementations (CRM, VoIP).</p>
                         <div class="portfolio-links">
-                            <a href="https://otieno-abraham.github.io/Pioneer-Dashboard/dashboard.html" target="_blank" class="btn">View Dashboard</a>
+                            <a href="https://otieno-abraham.github.io/Pioneer-Dashboard/dashboard.html" target="_blank" rel="noopener noreferrer" class="btn">View Dashboard</a>
                         </div>
                     </div>
                 </div>
@@ -1271,7 +1357,7 @@
                         <h3>Survey Reports & Analytics</h3>
                         <p>Created comprehensive survey reports including data analysis, charts, and recommendations to inform business decisions.</p>
                         <div class="portfolio-links">
-                            <a href="https://docs.google.com/presentation/d/1EUFVUazIWlvyOQMADdFAhtJsNFv9OWSEoQqxk3YJ7is/edit?usp=sharing" target="_blank" class="btn">View Report</a>
+                            <a href="https://docs.google.com/presentation/d/1EUFVUazIWlvyOQMADdFAhtJsNFv9OWSEoQqxk3YJ7is/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn">View Report</a>
                         </div>
                     </div>
                 </div>
@@ -1283,7 +1369,7 @@
                         <h3>Travel Planning & Itineraries</h3>
                         <p>Designed detailed travel packs, including schedules, accommodations, activities, and costs for executive trips.</p>
                         <div class="portfolio-links">
-                            <a href="https://docs.google.com/presentation/d/1qpmESUVYUeqft5vMNKi-PF4JUOBdcTQiws3YokMc5ao/edit?usp=sharing" target="_blank" class="btn">View Itinerary</a>
+                            <a href="https://docs.google.com/presentation/d/1qpmESUVYUeqft5vMNKi-PF4JUOBdcTQiws3YokMc5ao/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn">View Itinerary</a>
                         </div>
                     </div>
                 </div>
@@ -1295,7 +1381,7 @@
                         <h3>Pioneer Website Revamp</h3>
                         <p>Complete website redesign and development to establish strong online presence for Pioneer Outsourcing BPO.</p>
                         <div class="portfolio-links">
-                            <a href="https://pioneeroutsourcingbpo-droid.github.io/pioneer-website/" target="_blank" class="btn">View Website</a>
+                            <a href="https://pioneeroutsourcingbpo-droid.github.io/pioneer-website/" target="_blank" rel="noopener noreferrer" class="btn">View Website</a>
                         </div>
                     </div>
                 </div>
@@ -1344,7 +1430,7 @@
                     <ul class="skills-list">
                         <li>Certified Virtual Assistant</li>
                         <li>
-                            <a href="https://drive.google.com/file/d/12rN_1vMkfNmohnWxJ5nvGwzSaGn6MRBQ/view?usp=sharing" target="_blank" style="color: var(--primary); text-decoration: none;">
+                            <a href="https://drive.google.com/file/d/12rN_1vMkfNmohnWxJ5nvGwzSaGn6MRBQ/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="color: var(--primary); text-decoration: none;">
                                 Administrative Assistance & Remote Professional Training
                                 <i class="fas fa-external-link-alt" style="margin-left: 5px; font-size: 0.8rem;"></i>
                             </a>
@@ -1389,7 +1475,7 @@
                     </div>
                     <div style="text-align: right;">
                         <div style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; margin-left: auto;">
-                            <img src="abu.jpg" alt="Abraham Otieno" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="abu.jpg" alt="Abraham Otieno" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -1480,7 +1566,7 @@
                         </div>
                         <div>
                             <h4>WhatsApp</h4>
-                            <p><a href="https://wa.link/tnusf3" target="_blank" style="color: var(--primary); text-decoration: none;">Chat on WhatsApp</a></p>
+                            <p><a href="https://wa.link/tnusf3" target="_blank" rel="noopener noreferrer" style="color: var(--primary); text-decoration: none;">Chat on WhatsApp</a></p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -1560,7 +1646,7 @@
                         <p style="margin: 0; font-size: 0.9rem; color: var(--gray);">
                             <i class="fas fa-info-circle"></i> Prefer direct contact? 
                             <a href="mailto:abraham.otienoa@gmail.com?subject=Website Inquiry&body=Hello Abraham, I saw your website and would like to connect regarding..." style="color: var(--primary);">Email me</a> or 
-                            <a href="https://wa.link/tnusf3" target="_blank" style="color: #25D366;">WhatsApp me</a>
+                            <a href="https://wa.link/tnusf3" target="_blank" rel="noopener noreferrer" style="color: #25D366;">WhatsApp me</a>
                         </p>
                     </div>
                 </div>
@@ -1578,9 +1664,9 @@
                     <p style="font-size: 0.9rem; margin-top: 10px;">📧 abraham.otienoa@gmail.com | 📱 +254 757 272 468</p>
                 </div>
                 <div class="social-links">
-                    <a href="https://linkedin.com/in/abraham-otieno-665678317" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://linkedin.com/in/abraham-otieno-665678317" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
                     <a href="mailto:abraham.otienoa@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-                    <a href="https://wa.link/tnusf3" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://wa.link/tnusf3" target="_blank" rel="noopener noreferrer" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
             <div class="copyright">
@@ -1588,6 +1674,11 @@
             </div>
         </div>
     </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" title="Back to Top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -1644,9 +1735,7 @@
         });
         
         // Scroll Progress
-        const scrollProgress = document.createElement('div');
-        scrollProgress.className = 'scroll-progress';
-        document.body.appendChild(scrollProgress);
+        const scrollProgress = document.querySelector('.scroll-progress');
 
         window.addEventListener('scroll', () => {
             const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -1675,6 +1764,17 @@
                     link.classList.add('active');
                 }
             });
+        });
+        
+        // Back to Top Button
+        const backToTopButton = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
         });
         
         // Enhanced Contact Form Handling
@@ -1766,6 +1866,25 @@
 
         timelineItems.forEach(item => {
             observer.observe(item);
+        });
+
+        // Copy email functionality
+        const emailElements = document.querySelectorAll('.contact-item');
+        emailElements.forEach(item => {
+            if (item.textContent.includes('abraham.otienoa@gmail.com')) {
+                item.style.cursor = 'pointer';
+                item.title = 'Click to copy email';
+                item.addEventListener('click', function() {
+                    const email = 'abraham.otienoa@gmail.com';
+                    navigator.clipboard.writeText(email).then(() => {
+                        const originalText = this.querySelector('p').textContent;
+                        this.querySelector('p').textContent = 'Email copied!';
+                        setTimeout(() => {
+                            this.querySelector('p').textContent = originalText;
+                        }, 2000);
+                    });
+                });
+            }
         });
     </script>
 </body>
