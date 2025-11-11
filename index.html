@@ -8,6 +8,8 @@
     <meta name="keywords" content="virtual assistant, executive assistant, CRM, customer support, remote operations, Kenya, Abraham Otieno, executive support">
     <meta name="author" content="Abraham Otieno">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Calendly Link Widget -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <style>
         /* Base Styles */
         :root {
@@ -811,6 +813,61 @@
             border: 1px solid #fecaca;
         }
         
+        /* Calendly Section */
+        .booking {
+            background: white;
+        }
+        
+        .booking-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .booking-content {
+            padding-right: 30px;
+        }
+        
+        .booking-content h3 {
+            margin-bottom: 20px;
+        }
+        
+        .booking-features {
+            list-style: none;
+            margin: 25px 0;
+        }
+        
+        .booking-features li {
+            margin-bottom: 12px;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .booking-features li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .calendly-container {
+            background: #f8fafc;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            height: 600px;
+            overflow: hidden;
+        }
+        
+        .calendly-inline-widget {
+            height: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
         /* Footer */
         footer {
             background: var(--secondary);
@@ -930,6 +987,16 @@
                 left: -10px !important;
                 right: auto !important;
             }
+            
+            .booking-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .booking-content {
+                padding-right: 0;
+                text-align: center;
+            }
         }
         
         @media (max-width: 768px) {
@@ -975,6 +1042,10 @@
                 text-align: center;
                 gap: 10px;
             }
+            
+            .calendly-container {
+                height: 500px;
+            }
         }
         
         @media (max-width: 576px) {
@@ -1003,6 +1074,10 @@
                 width: 100%;
                 text-align: center;
             }
+            
+            .calendly-container {
+                height: 400px;
+            }
         }
     </style>
 </head>
@@ -1027,6 +1102,7 @@
                     <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#cv">CV</a></li>
+                    <li><a href="#booking">Book a Call</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
                 <div class="mobile-menu">
@@ -1042,11 +1118,11 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <h1>Abraham Otieno</h1>
-                    <p class="tagline">Certified Virtual Assistant & Executive Support Specialist</p>
+                    <p class="tagline">Tech-Enabled Executive Partner & Virtual Assistant</p>
                     <p class="intro">With 6+ years of experience driving growth for startups and global teams through strategic virtual assistance, CRM optimization, and operational excellence.</p>
                     <p>As a tech-savvy Certified Virtual Assistant with over 6 years of experience, I specialize in executive assistance, remote operations, and startup support. Currently serving multiple clients, including as Executive Partner to the CEO at Pioneer Outsourcing BPO and Country Lead & Executive Assistant to the CPO at MSTRpay, I bring proactive, innovative solutions to streamline operations and drive growth.</p>
                     <div class="hero-btns">
-                        <a href="#contact" class="btn">Book a Free Consult</a>
+                        <a href="#booking" class="btn">Book a Free Consult</a>
                         <a href="#portfolio" class="btn btn-outline">View My Work</a>
                     </div>
                 </div>
@@ -1098,7 +1174,7 @@
                     </div>
                     
                     <p>Currently also serving as Country Lead & Executive Assistant to the CPO at MSTRpay, I bring a unique blend of technical expertise, strategic thinking, and operational excellence. Fluent in English and Swahili, I'm immediately available for full-time remote roles with flexibility for occasional travel.</p>
-                    <a href="#contact" class="btn">Get In Touch</a>
+                    <a href="#booking" class="btn">Book a Discovery Call</a>
                 </div>
                 <div class="about-image">
                     <div class="profile-img">
@@ -1532,6 +1608,51 @@
         </div>
     </section>
 
+    <!-- Booking Section -->
+    <section id="booking" class="booking">
+        <div class="container">
+            <div class="section-title">
+                <h2>Book a Free Consultation</h2>
+                <p>Let's discuss how I can help streamline your operations and drive growth</p>
+            </div>
+            <div class="booking-container">
+                <div class="booking-content">
+                    <h3>Ready to Transform Your Operations?</h3>
+                    <p>Schedule a free 30-minute discovery call to discuss your specific needs and how my Tech-Enabled Executive Partnership approach can help you:</p>
+                    
+                    <ul class="booking-features">
+                        <li>Streamline your executive operations and workflows</li>
+                        <li>Implement CRM systems and automation tools</li>
+                        <li>Scale your team with effective virtual management</li>
+                        <li>Develop strategic partnerships and business relationships</li>
+                        <li>Create operational dashboards and reporting systems</li>
+                    </ul>
+                    
+                    <p><strong>During our call, we'll explore:</strong></p>
+                    <ul class="booking-features">
+                        <li>Your current operational challenges</li>
+                        <li>Specific areas where I can provide immediate value</li>
+                        <li>A customized approach to meet your business goals</li>
+                        <li>Next steps for working together</li>
+                    </ul>
+                    
+                    <div style="margin-top: 30px;">
+                        <p><i class="fas fa-clock" style="color: var(--primary); margin-right: 8px;"></i> <strong>30-minute complimentary consultation</strong></p>
+                        <p><i class="fas fa-video" style="color: var(--primary); margin-right: 8px;"></i> <strong>Video call via Google Meet or Zoom</strong></p>
+                        <p><i class="fas fa-globe" style="color: var(--primary); margin-right: 8px;"></i> <strong>Flexible scheduling for your time zone</strong></p>
+                    </div>
+                </div>
+                
+                <div class="calendly-container">
+                    <!-- Calendly inline widget begin -->
+                    <div class="calendly-inline-widget" data-url="https://calendly.com/abrahamotieno" style="min-width:320px;height:100%;"></div>
+                    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                    <!-- Calendly inline widget end -->
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
@@ -1867,10 +1988,7 @@
         timelineItems.forEach(item => {
             observer.observe(item);
         });
-<!-- Calendly inline widget begin -->
-<div class="calendly-inline-widget" data-url="https://calendly.com/abrahamotieno" style="min-width:320px;height:700px;"></div>
-<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-<!-- Calendly inline widget end -->
+
         // Copy email functionality
         const emailElements = document.querySelectorAll('.contact-item');
         emailElements.forEach(item => {
@@ -1889,6 +2007,28 @@
                 });
             }
         });
+
+        // Initialize Calendly
+        function initCalendly() {
+            if (typeof Calendly !== 'undefined') {
+                Calendly.initBadgeWidget({
+                    url: 'https://calendly.com/abrahamotieno',
+                    text: 'Schedule a free consultation',
+                    color: '#2563eb',
+                    textColor: '#ffffff',
+                    branding: true
+                });
+            }
+        }
+
+        // Load Calendly when widget script is ready
+        if (typeof Calendly !== 'undefined') {
+            initCalendly();
+        } else {
+            window.addEventListener('load', initCalendly);
+        }
     </script>
+    <!-- Calendly script -->
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </body>
 </html>
