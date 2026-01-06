@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abraham Otieno - Executive Assistant & Operations Partner Resume</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <style>
         :root {
             --primary: #0066cc;
@@ -511,7 +512,7 @@
             <div class="sidebar">
                 <div class="profile">
                     <div class="profile-img">
-                        <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 4rem; font-weight: bold;">AO</div>
+                        <img src="abu.jpg" alt="Abraham Otieno - Executive Assistant & Operations Partner">
                     </div>
                     <h2>Abraham Otieno</h2>
                     <p>Executive Assistant & Operations Partner</p>
@@ -829,8 +830,33 @@
 
     <script>
         function downloadPDF() {
-            alert('To save as PDF:\n\n1. Click OK to open the Print dialog\n2. Select "Save as PDF" or "Microsoft Print to PDF" as your printer\n3. Adjust settings if needed (recommend: margins=default, scale=fit to page)\n4. Click "Save" and choose your location\n\nYour professional resume will be saved as a PDF file!');
-            setTimeout(() => window.print(), 500);
+            // Hide the download banner before generating PDF
+            const banner = document.querySelector('.download-banner');
+            banner.style.display = 'none';
+            
+            const element = document.body;
+            const opt = {
+                margin: 0,
+                filename: 'Abraham_Otieno_Resume.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { 
+                    scale: 2,
+                    useCORS: true,
+                    logging: false,
+                    letterRendering: true
+                },
+                jsPDF: { 
+                    unit: 'mm', 
+                    format: 'a4', 
+                    orientation: 'portrait' 
+                }
+            };
+
+            // Generate PDF
+            html2pdf().set(opt).from(element).save().then(() => {
+                // Show banner again after PDF is generated
+                banner.style.display = 'block';
+            });
         }
 
         // Copy email functionality
