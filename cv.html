@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abraham Otieno - Executive Assistant & Operations Partner Resume</title>
+    <title>Abraham Otieno - Executive Assistant & Operations Partner | Professional Resume</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <style>
         :root {
             --primary: #0066cc;
@@ -26,84 +25,38 @@
         body {
             line-height: 1.6;
             color: #333;
-            background: #f1f5f9;
+            background: #f5f5f5;
+            padding: 0;
+            margin: 0;
         }
         
-        .download-banner {
+        .page-header {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             color: white;
-            padding: 25px;
+            padding: 30px 0;
             text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
         
-        .download-banner h1 {
-            margin-bottom: 10px;
-            font-size: 1.8rem;
+        .page-header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 8px;
+            font-weight: 700;
         }
         
-        .download-banner p {
-            font-size: 1rem;
+        .page-header p {
+            font-size: 1.1rem;
             opacity: 0.95;
-            margin-bottom: 15px;
         }
         
-        .btn-group {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .btn {
-            padding: 14px 28px;
-            border: none;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-size: 1rem;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .btn-primary {
-            background: white;
-            color: var(--primary);
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255,255,255,0.3);
-        }
-        
-        .btn-outline {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-        
-        .btn-outline:hover {
-            background: white;
-            color: var(--primary);
-        }
-        
-        .container {
+        .resume-container {
             max-width: 1200px;
-            margin: 20px auto;
+            margin: 30px auto;
             background: white;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            display: flex;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
             border-radius: 12px;
             overflow: hidden;
-        }
-        
-        .resume-content {
-            display: flex;
         }
         
         .sidebar {
@@ -111,11 +64,13 @@
             background: var(--sidebar-bg);
             color: var(--sidebar-text);
             padding: 40px 30px;
+            page-break-inside: avoid;
         }
         
         .profile {
             text-align: center;
             margin-bottom: 30px;
+            page-break-inside: avoid;
         }
         
         .profile-img {
@@ -125,13 +80,23 @@
             overflow: hidden;
             margin: 0 auto 20px;
             border: 4px solid var(--primary);
-            background: #ddd;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .profile-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            display: block;
+        }
+        
+        .profile-placeholder {
+            color: white;
+            font-size: 4rem;
+            font-weight: bold;
         }
         
         .profile h2 {
@@ -142,13 +107,18 @@
         
         .profile p {
             color: var(--sidebar-text);
-            font-size: 1.1rem;
+            font-size: 1.05rem;
+        }
+        
+        .sidebar-section {
+            page-break-inside: avoid;
+            margin-bottom: 28px;
         }
         
         .section-title {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             color: white;
-            margin: 25px 0 15px 0;
+            margin: 0 0 15px 0;
             padding-bottom: 8px;
             border-bottom: 2px solid var(--primary);
         }
@@ -156,7 +126,7 @@
         .contact-item {
             display: flex;
             align-items: flex-start;
-            margin-bottom: 15px;
+            margin-bottom: 14px;
         }
         
         .contact-icon {
@@ -173,17 +143,18 @@
         
         .contact-item p {
             margin: 0;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             word-break: break-word;
+            line-height: 1.4;
         }
         
         .skill-item {
-            margin-bottom: 15px;
+            margin-bottom: 14px;
         }
         
         .skill-name {
             margin-bottom: 5px;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
         
         .skill-bar {
@@ -207,20 +178,23 @@
             margin-bottom: 10px;
             display: flex;
             justify-content: space-between;
+            font-size: 0.9rem;
         }
         
         .main-content {
             width: 65%;
             padding: 40px;
+            background: white;
         }
         
         .content-title {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             color: var(--secondary);
-            margin-bottom: 20px;
+            margin-bottom: 18px;
             padding-bottom: 8px;
             border-bottom: 3px solid var(--primary);
             position: relative;
+            page-break-after: avoid;
         }
         
         .content-title:after {
@@ -234,19 +208,26 @@
         }
         
         .section {
-            margin-bottom: 35px;
+            margin-bottom: 32px;
+            page-break-inside: avoid;
+        }
+        
+        .summary {
+            page-break-inside: avoid;
         }
         
         .summary p {
-            margin-bottom: 15px;
-            line-height: 1.8;
+            margin-bottom: 14px;
+            line-height: 1.7;
+            font-size: 0.95rem;
         }
         
         .timeline-item {
-            margin-bottom: 30px;
+            margin-bottom: 28px;
             padding-left: 25px;
             border-left: 3px solid var(--primary);
             position: relative;
+            page-break-inside: avoid;
         }
         
         .timeline-item:before {
@@ -267,18 +248,21 @@
             display: flex;
             align-items: center;
             gap: 8px;
+            font-size: 0.9rem;
         }
         
         .timeline-title {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             color: var(--secondary);
             margin-bottom: 5px;
+            font-weight: 600;
         }
         
         .timeline-subtitle {
             color: #666;
             margin-bottom: 10px;
             font-style: italic;
+            font-size: 0.92rem;
         }
         
         .timeline-list {
@@ -287,10 +271,11 @@
         }
         
         .timeline-list li {
-            margin-bottom: 8px;
+            margin-bottom: 7px;
             position: relative;
             padding-left: 20px;
             line-height: 1.6;
+            font-size: 0.9rem;
         }
         
         .timeline-list li:before {
@@ -309,7 +294,7 @@
             color: var(--primary);
             padding: 6px 12px;
             border-radius: 20px;
-            font-size: 0.85rem;
+            font-size: 0.82rem;
             font-weight: 600;
             margin-top: 10px;
         }
@@ -317,19 +302,20 @@
         .achievements-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
+            gap: 18px;
         }
         
         .achievement-item {
             text-align: center;
-            padding: 20px;
+            padding: 18px;
             background: #f8fafc;
             border-radius: 8px;
             border-left: 4px solid var(--primary);
+            page-break-inside: avoid;
         }
         
         .achievement-item i {
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: var(--primary);
             margin-bottom: 10px;
         }
@@ -337,88 +323,87 @@
         .achievement-item h4 {
             margin-bottom: 8px;
             color: var(--secondary);
+            font-size: 1rem;
         }
         
         .achievement-item p {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #666;
+            line-height: 1.5;
         }
         
         .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
+            gap: 18px;
         }
         
         .portfolio-item {
             background: #f8fafc;
-            padding: 20px;
+            padding: 18px;
             border-radius: 8px;
             border-left: 4px solid var(--primary);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .portfolio-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            page-break-inside: avoid;
         }
         
         .portfolio-item h4 {
             margin-bottom: 10px;
             color: var(--secondary);
+            font-size: 1rem;
         }
         
         .portfolio-item p {
-            font-size: 0.95rem;
+            font-size: 0.88rem;
             margin-bottom: 10px;
             line-height: 1.6;
+            color: #555;
         }
         
         .portfolio-link {
             display: inline-block;
             color: var(--primary);
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 500;
         }
         
-        .portfolio-link:hover {
-            text-decoration: underline;
-        }
-        
         .education-item {
-            margin-bottom: 15px;
+            margin-bottom: 14px;
+            page-break-inside: avoid;
         }
         
         .education-title {
             font-weight: 600;
             color: var(--secondary);
+            font-size: 0.95rem;
         }
         
         .education-details {
             color: #666;
-            font-size: 0.95rem;
+            font-size: 0.88rem;
         }
         
         .how-i-work-content {
             background: #f0f8ff;
-            padding: 25px;
+            padding: 22px;
             border-radius: 10px;
             border-left: 4px solid var(--primary);
             border: 1px solid #e6f2ff;
+            page-break-inside: avoid;
         }
         
         .how-i-work-content p {
             font-style: italic;
-            margin-bottom: 15px;
+            margin-bottom: 14px;
             color: var(--dark);
+            font-size: 0.92rem;
         }
         
         .work-features {
             display: flex;
             flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 20px;
+            gap: 12px;
+            margin-top: 16px;
         }
         
         .work-feature {
@@ -426,14 +411,28 @@
             align-items: center;
             gap: 8px;
             background: white;
-            padding: 8px 16px;
+            padding: 7px 14px;
             border-radius: 20px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: var(--primary);
             border: 1px solid #e6f2ff;
         }
         
-        /* Print Styles */
+        .info-box {
+            margin-top: 25px;
+            padding: 15px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .info-box p {
+            margin: 0;
+            font-size: 0.85rem;
+            color: #93c5fd;
+        }
+        
+        /* Print Styles for Perfect PDF */
         @media print {
             @page {
                 margin: 0.5in;
@@ -444,19 +443,21 @@
                 background: white;
             }
             
-            .download-banner, .btn-group {
-                display: none !important;
+            .page-header {
+                page-break-after: avoid;
             }
             
-            .container {
+            .resume-container {
                 box-shadow: none;
                 margin: 0;
                 border-radius: 0;
+                page-break-inside: avoid;
             }
             
             .sidebar {
                 background: #f8fafc !important;
                 color: #000 !important;
+                page-break-inside: avoid;
             }
             
             .section-title, .profile h2 {
@@ -467,18 +468,38 @@
                 color: #333 !important;
             }
             
-            .resume-content {
+            .contact-item p {
+                color: #333 !important;
+            }
+            
+            .skill-name, .languages-list li {
+                color: #333 !important;
+            }
+            
+            .info-box p {
+                color: #0066cc !important;
+            }
+            
+            .timeline-item {
                 page-break-inside: avoid;
             }
             
-            .timeline-item, .achievement-item, .portfolio-item {
+            .section {
                 page-break-inside: avoid;
+            }
+            
+            .achievement-item, .portfolio-item, .education-item {
+                page-break-inside: avoid;
+            }
+            
+            a {
+                color: var(--primary) !important;
             }
         }
         
-        /* Responsive */
+        /* Responsive Design */
         @media (max-width: 992px) {
-            .resume-content {
+            .resume-container {
                 flex-direction: column;
             }
             
@@ -493,394 +514,329 @@
     </style>
 </head>
 <body>
-    <div class="download-banner">
-        <h1><i class="fas fa-file-pdf"></i> Professional Resume - Abraham Otieno</h1>
-        <p>Executive Assistant & Operations Partner | 6+ Years Experience Supporting C-Suite & Founders</p>
-        <div class="btn-group">
-            <button onclick="downloadPDF()" class="btn btn-primary">
-                <i class="fas fa-download"></i> Download as PDF
-            </button>
-            <button onclick="window.print()" class="btn btn-outline">
-                <i class="fas fa-print"></i> Print Resume
-            </button>
-        </div>
+    <div class="page-header">
+        <h1>Abraham Otieno</h1>
+        <p>Executive Assistant & Operations Partner | 6+ Years Experience</p>
     </div>
 
-    <div class="container">
-        <div class="resume-content">
-            <!-- Sidebar -->
-            <div class="sidebar">
-                <div class="profile">
-                    <div class="profile-img">
-                        <img src="abu.jpg" alt="Abraham Otieno - Executive Assistant & Operations Partner">
-                    </div>
-                    <h2>Abraham Otieno</h2>
-                    <p>Executive Assistant & Operations Partner</p>
-                    <p style="font-size: 0.9rem; color: #93c5fd; margin-top: 5px;">6+ Years Supporting C-Suite & Founders</p>
+    <div class="resume-container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="profile">
+                <div class="profile-img">
+                    <img src="abu.jpg" alt="Abraham Otieno" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'profile-placeholder\'>AO</div>'">
                 </div>
-                
-                <div>
-                    <h3 class="section-title">Contact Information</h3>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div>
-                            <p>abrahamsalasstaffing@gmail.com</p>
-                        </div>
+                <h2>Abraham Otieno</h2>
+                <p>Executive Assistant & Operations Partner</p>
+                <p style="font-size: 0.88rem; color: #93c5fd; margin-top: 5px;">Supporting C-Suite & Founders</p>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3 class="section-title">Contact Information</h3>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
                     </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div>
-                            <p>+254 757 272 468</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fab fa-linkedin"></i>
-                        </div>
-                        <div>
-                            <p>linkedin.com/in/abraham-otieno-665678317</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div>
-                            <p>Nairobi, Kenya (EAT - UTC+3)</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div>
-                            <p>Full-time remote • Open to travel</p>
-                        </div>
+                    <div>
+                        <p>abrahamsalasstaffing@gmail.com</p>
                     </div>
                 </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div>
+                        <p>+254 757 272 468</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </div>
+                    <div>
+                        <p>linkedin.com/in/abraham-otieno-665678317</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>
+                        <p>Nairobi, Kenya (EAT - UTC+3)</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div>
+                        <p>Full-time remote • Open to travel</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3 class="section-title">Top Skills</h3>
+                <div class="skill-item">
+                    <div class="skill-name">Executive Administrative Assistance</div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 95%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Strategic Operations Management</div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Virtual Team Leadership</div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 92%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">CRM & Customer Support Systems</div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 88%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Project Coordination</div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 90%"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3 class="section-title">Tools & Technologies</h3>
+                <div class="skill-item">
+                    <div class="skill-name">Google Workspace | Microsoft 365</div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 95%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">CRM: Salesforce | HubSpot | Dubsado</div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Slack | ClickUp | Asana | Trello</div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Calendly | Canva | GitHub</div>
+                    <div class="skill-bar">
+                        <div class="skill-level" style="width: 80%"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sidebar-section">
+                <h3 class="section-title">Languages & Availability</h3>
+                <ul class="languages-list">
+                    <li>
+                        <span><i class="fas fa-language"></i> English</span>
+                        <span style="color: #93c5fd;">Fluent</span>
+                    </li>
+                    <li>
+                        <span><i class="fas fa-language"></i> Swahili</span>
+                        <span style="color: #93c5fd;">Native</span>
+                    </li>
+                    <li>
+                        <span><i class="fas fa-clock"></i> Response Time</span>
+                        <span style="color: #93c5fd;">2-hour guarantee</span>
+                    </li>
+                    <li>
+                        <span><i class="fas fa-globe"></i> Time Zones</span>
+                        <span style="color: #93c5fd;">Experienced</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="info-box">
+                <p>
+                    <i class="fas fa-info-circle"></i> Open to full-time remote Executive Assistant or Operations roles
+                </p>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="section summary">
+                <h2 class="content-title">Professional Summary</h2>
+                <p><strong>Executive Assistant & Operations Partner with 6+ years of experience supporting C-Suite executives, founders, and global teams.</strong> Specializing in calendar management, strategic operations, board relations, and enhancing executive bandwidth. Proven track record in transforming operational complexity into structured, scalable systems.</p>
+                <p>Currently supporting global clients as an Executive Partner to CEOs and Country Lead for a Global CPO. Certified Virtual Assistant with expertise in CRM systems, virtual team management, and startup operations support. Successfully facilitated partnerships with 10+ companies, onboarded 150+ remote agents, and delivered 15+ campaigns with measurable outcomes.</p>
+                <p>Fluent in English and Swahili, with a 2-hour response guarantee and experience working across multiple time zones. Open to full-time remote Executive Assistant or Operations roles.</p>
+            </div>
+            
+            <div class="section">
+                <h2 class="content-title">Professional Experience</h2>
                 
-                <div>
-                    <h3 class="section-title">Top Skills</h3>
-                    <div class="skill-item">
-                        <div class="skill-name">Executive Administrative Assistance</div>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 95%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-name">Strategic Operations Management</div>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 90%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-name">Virtual Team Leadership</div>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 92%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-name">CRM & Customer Support Systems</div>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 88%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-name">Project Coordination</div>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 90%"></div>
-                        </div>
+                <div class="timeline-item">
+                    <div class="timeline-date"><i class="far fa-calendar"></i> March 2025 – Present (10 months)</div>
+                    <h3 class="timeline-title">Country Lead & Executive Assistant to Global CPO</h3>
+                    <div class="timeline-subtitle">MSTRpay | Stockholm County, Sweden (Remote)</div>
+                    <ul class="timeline-list">
+                        <li>Act as the main point of contact between the Global CPO, Founder, CEO, and Kenyan market stakeholders</li>
+                        <li>Manage executive calendars, inboxes, and high-level communications related to market expansion initiatives</li>
+                        <li>Lead market research and competitive analysis to assess viability within the Kenyan financial services landscape</li>
+                        <li>Prepare executive briefs, reports, and documentation for leadership decision-making</li>
+                        <li>Coordinate executive travel logistics and on-ground support for Kenya market visits</li>
+                        <li>Oversee country-level operational activities, partner pipeline tracking, and follow-ups</li>
+                        <li>Manage Kenya market communications, documentation, and reporting to the Global CPO</li>
+                    </ul>
+                    <div class="current-role">
+                        <i class="fas fa-star"></i> <strong>Current Role</strong>
                     </div>
                 </div>
                 
-                <div>
-                    <h3 class="section-title">Tools & Technologies</h3>
-                    <div class="skill-item">
-                        <div class="skill-name">Google Workspace | Microsoft 365</div>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 95%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-name">CRM: Salesforce | HubSpot | Dubsado</div>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 90%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-name">Slack | ClickUp | Asana | Trello</div>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 85%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-name">Calendly | Canva | GitHub</div>
-                        <div class="skill-bar">
-                            <div class="skill-level" style="width: 80%"></div>
-                        </div>
+                <div class="timeline-item">
+                    <div class="timeline-date"><i class="far fa-calendar"></i> January 2022 – Present (4 years)</div>
+                    <h3 class="timeline-title">Executive Partner to CEO</h3>
+                    <div class="timeline-subtitle">Pioneer Outsourcing BPO | Nairobi County, Kenya (Remote)</div>
+                    <ul class="timeline-list">
+                        <li>Provide end-to-end executive support: calendar management, travel coordination, and communication with stakeholders</li>
+                        <li>Act as CEO's main liaison for operations, project execution, and cross-department alignment</li>
+                        <li>Lead virtual team operations, including onboarding, performance tracking, and process documentation</li>
+                        <li>Develop and maintain standard operating procedures (SOPs), workflows, and reporting systems</li>
+                        <li>Manage internal and external communications, including executive briefs, reports, and follow-ups</li>
+                        <li>Coordinate special projects, campaigns, and client deliverables across multiple time zones</li>
+                        <li>Support business development initiatives, partner relations, and client engagement</li>
+                    </ul>
+                    <div class="current-role">
+                        <i class="fas fa-check-circle"></i> <strong>Currently Active</strong>
                     </div>
                 </div>
                 
-                <div>
-                    <h3 class="section-title">Languages & Availability</h3>
-                    <ul class="languages-list">
-                        <li>
-                            <span><i class="fas fa-language"></i> English</span>
-                            <span style="color: #93c5fd;">Fluent</span>
-                        </li>
-                        <li>
-                            <span><i class="fas fa-language"></i> Swahili</span>
-                            <span style="color: #93c5fd;">Native</span>
-                        </li>
-                        <li>
-                            <span><i class="fas fa-clock"></i> Response Time</span>
-                            <span style="color: #93c5fd;">2-hour guarantee</span>
-                        </li>
-                        <li>
-                            <span><i class="fas fa-globe"></i> Time Zones</span>
-                            <span style="color: #93c5fd;">Experienced</span>
-                        </li>
+                <div class="timeline-item">
+                    <div class="timeline-date"><i class="far fa-calendar"></i> January 2020 – September 2022 (2 years 9 months)</div>
+                    <h3 class="timeline-title">Non-Voice Support Executive / Customer Service Executive</h3>
+                    <div class="timeline-subtitle">M-KOPA | Nairobi County, Kenya (Hybrid)</div>
+                    <ul class="timeline-list">
+                        <li>Managed customer inquiries, complaints, and requests via non-voice channels</li>
+                        <li>Maintained CRM records, tracked customer interactions, and updated tickets for accurate reporting</li>
+                        <li>Supported remote operational workflows and internal processes to enhance team efficiency</li>
+                        <li>Collaborated with cross-functional teams to escalate and resolve complex customer issues</li>
+                        <li>Prepared reports and insights to guide process improvements and optimize customer experience</li>
                     </ul>
                 </div>
                 
-                <div style="margin-top: 25px; padding: 15px; background: rgba(255,255,255,0.1); border-radius: 8px; text-align: center;">
-                    <p style="margin: 0; font-size: 0.9rem; color: #93c5fd;">
-                        <i class="fas fa-info-circle"></i> Open to full-time remote Executive Assistant or Operations roles
-                    </p>
+                <div class="timeline-item">
+                    <div class="timeline-date"><i class="far fa-calendar"></i> January 2019 – December 2020 (2 years)</div>
+                    <h3 class="timeline-title">Remote Operations & Social Media Support</h3>
+                    <div class="timeline-subtitle">OKash Kenya | Nairobi County, Kenya (Hybrid)</div>
+                    <ul class="timeline-list">
+                        <li>Managed social media scheduling, posting, and monitoring for remote campaigns</li>
+                        <li>Supported administrative and operational tasks, including calendar management and internal communications</li>
+                        <li>Assisted in content creation, reporting, and performance tracking for campaigns</li>
+                        <li>Maintained remote workflows and coordinated with cross-functional teams for campaign execution</li>
+                        <li>Provided virtual assistance to management, including email organization and task follow-ups</li>
+                    </ul>
                 </div>
             </div>
             
-            <!-- Main Content -->
-            <div class="main-content">
-                <div class="section summary">
-                    <h2 class="content-title">Professional Summary</h2>
-                    <p><strong>Executive Assistant & Operations Partner with 6+ years of experience supporting C-Suite executives, founders, and global teams.</strong> Specializing in calendar management, strategic operations, board relations, and enhancing executive bandwidth. Proven track record in transforming operational complexity into structured, scalable systems.</p>
-                    <p>Currently supporting global clients as an Executive Partner to CEOs and Country Lead for a Global CPO. Certified Virtual Assistant with expertise in CRM systems, virtual team management, and startup operations support. Successfully facilitated partnerships with 10+ companies, onboarded 150+ remote agents, and delivered 15+ campaigns with measurable outcomes.</p>
-                    <p>Fluent in English and Swahili, with a 2-hour response guarantee and experience working across multiple time zones. Open to full-time remote Executive Assistant or Operations roles.</p>
+            <div class="section">
+                <h2 class="content-title">Key Achievements</h2>
+                <div class="achievements-grid">
+                    <div class="achievement-item">
+                        <i class="fas fa-handshake"></i>
+                        <h4>10+ Partner Companies</h4>
+                        <p>Facilitated strategic partnerships across multiple industries with measurable business impact</p>
+                    </div>
+                    <div class="achievement-item">
+                        <i class="fas fa-users"></i>
+                        <h4>150+ Agents Onboarded</h4>
+                        <p>Successfully onboarded, trained, and managed remote customer service teams</p>
+                    </div>
+                    <div class="achievement-item">
+                        <i class="fas fa-chart-line"></i>
+                        <h4>60% Response Time Reduction</h4>
+                        <p>Optimized CRM systems and workflows to dramatically improve operational efficiency</p>
+                    </div>
+                    <div class="achievement-item">
+                        <i class="fas fa-rocket"></i>
+                        <h4>15+ Campaigns Delivered</h4>
+                        <p>Coordinated multi-channel campaigns with measurable outcomes and ROI tracking</p>
+                    </div>
                 </div>
-                
-                <div class="section">
-                    <h2 class="content-title">Professional Experience</h2>
-                    
-                    <div class="timeline-item">
-                        <div class="timeline-date"><i class="far fa-calendar"></i> March 2025 – Present (10 months)</div>
-                        <h3 class="timeline-title">Country Lead & Executive Assistant to Global CPO</h3>
-                        <div class="timeline-subtitle">MSTRpay | Stockholm County, Sweden (Remote)</div>
-                        <ul class="timeline-list">
-                            <li>Act as the main point of contact between the Global CPO, Founder, CEO, and Kenyan market stakeholders</li>
-                            <li>Manage executive calendars, inboxes, and high-level communications related to market expansion initiatives</li>
-                            <li>Lead market research and competitive analysis to assess viability within the Kenyan financial services landscape</li>
-                            <li>Prepare executive briefs, reports, and documentation for leadership decision-making</li>
-                            <li>Coordinate executive travel logistics and on-ground support for Kenya market visits</li>
-                            <li>Oversee country-level operational activities, partner pipeline tracking, and follow-ups</li>
-                            <li>Manage Kenya market communications, documentation, and reporting to the Global CPO</li>
-                        </ul>
-                        <div class="current-role">
-                            <i class="fas fa-star"></i> <strong>Current Role</strong>
-                        </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="content-title">How I Work</h2>
+                <div class="how-i-work-content">
+                    <p>"I believe the best Executive Assistants are proactive, strategic, and calm under pressure. I anticipate challenges, communicate clearly, and bring solutions — not problems."</p>
+                    <div class="work-features">
+                        <span class="work-feature">
+                            <i class="fas fa-clock"></i> 2-hour response guarantee
+                        </span>
+                        <span class="work-feature">
+                            <i class="fas fa-globe"></i> Experienced across multiple time zones
+                        </span>
+                        <span class="work-feature">
+                            <i class="fas fa-comments"></i> Fluent in English & Swahili
+                        </span>
+                        <span class="work-feature">
+                            <i class="fas fa-briefcase"></i> Full-time remote availability
+                        </span>
                     </div>
-                    
-                    <div class="timeline-item">
-                        <div class="timeline-date"><i class="far fa-calendar"></i> January 2022 – Present (4 years)</div>
-                        <h3 class="timeline-title">Executive Partner to CEO</h3>
-                        <div class="timeline-subtitle">Pioneer Outsourcing BPO | Nairobi County, Kenya (Remote)</div>
-                        <ul class="timeline-list">
-                            <li>Provide end-to-end executive support: calendar management, travel coordination, and communication with stakeholders</li>
-                            <li>Act as CEO's main liaison for operations, project execution, and cross-department alignment</li>
-                            <li>Lead virtual team operations, including onboarding, performance tracking, and process documentation</li>
-                            <li>Develop and maintain standard operating procedures (SOPs), workflows, and reporting systems</li>
-                            <li>Manage internal and external communications, including executive briefs, reports, and follow-ups</li>
-                            <li>Coordinate special projects, campaigns, and client deliverables across multiple time zones</li>
-                            <li>Support business development initiatives, partner relations, and client engagement</li>
-                        </ul>
-                        <div class="current-role">
-                            <i class="fas fa-check-circle"></i> <strong>Currently Active</strong>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-item">
-                        <div class="timeline-date"><i class="far fa-calendar"></i> January 2020 – September 2022 (2 years 9 months)</div>
-                        <h3 class="timeline-title">Non-Voice Support Executive / Customer Service Executive</h3>
-                        <div class="timeline-subtitle">M-KOPA | Nairobi County, Kenya (Hybrid)</div>
-                        <ul class="timeline-list">
-                            <li>Managed customer inquiries, complaints, and requests via non-voice channels</li>
-                            <li>Maintained CRM records, tracked customer interactions, and updated tickets for accurate reporting</li>
-                            <li>Supported remote operational workflows and internal processes to enhance team efficiency</li>
-                            <li>Collaborated with cross-functional teams to escalate and resolve complex customer issues</li>
-                            <li>Prepared reports and insights to guide process improvements and optimize customer experience</li>
-                        </ul>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="content-title">Portfolio Highlights</h2>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item">
+                        <h4>Executive Operations Dashboard</h4>
+                        <p>Custom dashboard showcasing strategic leadership, tech systems, partnerships, and milestones. Features key metrics like 100% project success rate.</p>
+                        <a href="https://otieno-abraham.github.io/Pioneer-Dashboard/dashboard.html" target="_blank" class="portfolio-link">View Dashboard →</a>
                     </div>
                     
-                    <div class="timeline-item">
-                        <div class="timeline-date"><i class="far fa-calendar"></i> January 2019 – December 2020 (2 years)</div>
-                        <h3 class="timeline-title">Remote Operations & Social Media Support</h3>
-                        <div class="timeline-subtitle">OKash Kenya | Nairobi County, Kenya (Hybrid)</div>
-                        <ul class="timeline-list">
-                            <li>Managed social media scheduling, posting, and monitoring for remote campaigns</li>
-                            <li>Supported administrative and operational tasks, including calendar management and internal communications</li>
-                            <li>Assisted in content creation, reporting, and performance tracking for campaigns</li>
-                            <li>Maintained remote workflows and coordinated with cross-functional teams for campaign execution</li>
-                            <li>Provided virtual assistance to management, including email organization and task follow-ups</li>
-                        </ul>
+                    <div class="portfolio-item">
+                        <h4>Executive Survey Reports</h4>
+                        <p>Comprehensive survey reports including data analysis, charts, and strategic recommendations to inform executive decision-making.</p>
+                        <a href="https://docs.google.com/presentation/d/1EUFVUazIWlvyOQMADdFAhtJsNFv9OWSEoQqxk3YJ7is/edit?usp=sharing" target="_blank" class="portfolio-link">View Report →</a>
+                    </div>
+                    
+                    <div class="portfolio-item">
+                        <h4>Executive Travel Planning</h4>
+                        <p>Detailed travel packs, including schedules, accommodations, activities, and costs for executive trips. Ensuring seamless travel experiences.</p>
+                        <a href="https://docs.google.com/presentation/d/1qpmESUVYUeqft5vMNKi-PF4JUOBdcTQiws3YokMc5ao/edit?usp=sharing" target="_blank" class="portfolio-link">View Itinerary →</a>
+                    </div>
+                    
+                    <div class="portfolio-item">
+                        <h4>Website Revamp & Digital Presence</h4>
+                        <p>Complete website redesign and development to establish strong online presence, including SEO strategy and content coordination.</p>
+                        <a href="https://pioneeroutsourcingbpo-droid.github.io/pioneer-website/" target="_blank" class="portfolio-link">View Website →</a>
                     </div>
                 </div>
-                
-                <div class="section">
-                    <h2 class="content-title">Key Achievements</h2>
-                    <div class="achievements-grid">
-                        <div class="achievement-item">
-                            <i class="fas fa-handshake"></i>
-                            <h4>10+ Partner Companies</h4>
-                            <p>Facilitated strategic partnerships across multiple industries with measurable business impact</p>
-                        </div>
-                        <div class="achievement-item">
-                            <i class="fas fa-users"></i>
-                            <h4>150+ Agents Onboarded</h4>
-                            <p>Successfully onboarded, trained, and managed remote customer service teams</p>
-                        </div>
-                        <div class="achievement-item">
-                            <i class="fas fa-chart-line"></i>
-                            <h4>60% Response Time Reduction</h4>
-                            <p>Optimized CRM systems and workflows to dramatically improve operational efficiency</p>
-                        </div>
-                        <div class="achievement-item">
-                            <i class="fas fa-rocket"></i>
-                            <h4>15+ Campaigns Delivered</h4>
-                            <p>Coordinated multi-channel campaigns with measurable outcomes and ROI tracking</p>
-                        </div>
-                    </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="content-title">Education & Certifications</h2>
+                <div class="education-item">
+                    <div class="education-title">Mount Kenya University</div>
+                    <div class="education-details">Information Technology | Bachelor's Degree</div>
                 </div>
-                
-                <div class="section">
-                    <h2 class="content-title">How I Work</h2>
-                    <div class="how-i-work-content">
-                        <p>"I believe the best Executive Assistants are proactive, strategic, and calm under pressure. I anticipate challenges, communicate clearly, and bring solutions — not problems."</p>
-                        <div class="work-features">
-                            <span class="work-feature">
-                                <i class="fas fa-clock"></i> 2-hour response guarantee
-                            </span>
-                            <span class="work-feature">
-                                <i class="fas fa-globe"></i> Experienced across multiple time zones
-                            </span>
-                            <span class="work-feature">
-                                <i class="fas fa-comments"></i> Fluent in English & Swahili
-                            </span>
-                            <span class="work-feature">
-                                <i class="fas fa-briefcase"></i> Full-time remote availability
-                            </span>
-                        </div>
-                    </div>
+                <div class="education-item">
+                    <div class="education-title">The Cooperative University of Kenya</div>
+                    <div class="education-details">Hospitality Administration/Management | Diploma</div>
                 </div>
-                
-                <div class="section">
-                    <h2 class="content-title">Portfolio Highlights</h2>
-                    <div class="portfolio-grid">
-                        <div class="portfolio-item">
-                            <h4>Executive Operations Dashboard</h4>
-                            <p>Custom dashboard showcasing strategic leadership, tech systems, partnerships, and milestones. Features key metrics like 100% project success rate.</p>
-                            <a href="https://otieno-abraham.github.io/Pioneer-Dashboard/dashboard.html" target="_blank" rel="noopener noreferrer" class="portfolio-link">View Dashboard →</a>
-                        </div>
-                        
-                        <div class="portfolio-item">
-                            <h4>Executive Survey Reports</h4>
-                            <p>Comprehensive survey reports including data analysis, charts, and strategic recommendations to inform executive decision-making.</p>
-                            <a href="https://docs.google.com/presentation/d/1EUFVUazIWlvyOQMADdFAhtJsNFv9OWSEoQqxk3YJ7is/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="portfolio-link">View Report →</a>
-                        </div>
-                        
-                        <div class="portfolio-item">
-                            <h4>Executive Travel Planning</h4>
-                            <p>Detailed travel packs, including schedules, accommodations, activities, and costs for executive trips. Ensuring seamless travel experiences.</p>
-                            <a href="https://docs.google.com/presentation/d/1qpmESUVYUeqft5vMNKi-PF4JUOBdcTQiws3YokMc5ao/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="portfolio-link">View Itinerary →</a>
-                        </div>
-                        
-                        <div class="portfolio-item">
-                            <h4>Website Revamp & Digital Presence</h4>
-                            <p>Complete website redesign and development to establish strong online presence, including SEO strategy and content coordination.</p>
-                            <a href="https://pioneeroutsourcingbpo-droid.github.io/pioneer-website/" target="_blank" rel="noopener noreferrer" class="portfolio-link">View Website →</a>
-                        </div>
-                    </div>
+                <div class="education-item">
+                    <div class="education-title">Certified Virtual Assistant</div>
+                    <div class="education-details">Professional certification in virtual assistance and executive support</div>
                 </div>
-                
-                <div class="section">
-                    <h2 class="content-title">Education & Certifications</h2>
-                    <div class="education-item">
-                        <div class="education-title">Mount Kenya University</div>
-                        <div class="education-details">Information Technology | Bachelor's Degree</div>
-                    </div>
-                    <div class="education-item">
-                        <div class="education-title">The Cooperative University of Kenya</div>
-                        <div class="education-details">Hospitality Administration/Management | Diploma</div>
-                    </div>
-                    <div class="education-item">
-                        <div class="education-title">Certified Virtual Assistant</div>
-                        <div class="education-details">Professional certification in virtual assistance and executive support</div>
-                    </div>
-                    <div class="education-item">
-                        <div class="education-title">Administrative Assistance & Remote Professional Training</div>
-                        <div class="education-details">Comprehensive training in remote operations and administrative excellence</div>
-                    </div>
+                <div class="education-item">
+                    <div class="education-title">Administrative Assistance & Remote Professional Training</div>
+                    <div class="education-details">Comprehensive training in remote operations and administrative excellence</div>
                 </div>
             </div>
         </div>
     </div>
-
-    <script>
-        function downloadPDF() {
-            // Hide the download banner before generating PDF
-            const banner = document.querySelector('.download-banner');
-            banner.style.display = 'none';
-            
-            const element = document.body;
-            const opt = {
-                margin: 0,
-                filename: 'Abraham_Otieno_Resume.pdf',
-                image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { 
-                    scale: 2,
-                    useCORS: true,
-                    logging: false,
-                    letterRendering: true
-                },
-                jsPDF: { 
-                    unit: 'mm', 
-                    format: 'a4', 
-                    orientation: 'portrait' 
-                }
-            };
-
-            // Generate PDF
-            html2pdf().set(opt).from(element).save().then(() => {
-                // Show banner again after PDF is generated
-                banner.style.display = 'block';
-            });
-        }
-
-        // Copy email functionality
-        const emailItems = document.querySelectorAll('.contact-item');
-        emailItems.forEach(item => {
-            if (item.textContent.includes('abrahamsalasstaffing@gmail.com')) {
-                item.style.cursor = 'pointer';
-                item.title = 'Click to copy email';
-                item.addEventListener('click', function() {
-                    const email = 'abrahamsalasstaffing@gmail.com';
-                    navigator.clipboard.writeText(email).then(() => {
-                        const originalText = this.querySelector('p').textContent;
-                        this.querySelector('p').textContent = 'Email copied to clipboard!';
-                        this.querySelector('p').style.color = '#4ade80';
-                        setTimeout(() => {
-                            this.querySelector('p').textContent = originalText;
-                            this.querySelector('p').style.color = '';
-                        }, 2000);
-                    }).catch(err => {
-                        console.log('Copy failed:', err);
-                    });
-                });
-            }
-        });
-    </script>
 </body>
 </html>
