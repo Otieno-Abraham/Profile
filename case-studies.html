@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Case Studies & Interviews | Abraham Otieno - Executive Assistant & Operations Partner</title>
-    <meta name="description" content="Case studies and interviews showcasing Abraham Otieno's work as an Executive Assistant & Operations Partner supporting C-Suite executives and founders.">
+    <title>Case Studies & Testimonials | Abraham Otieno - Executive Assistant & Operations Partner</title>
+    <meta name="description" content="Case studies and testimonials showcasing Abraham Otieno's work as an Executive Assistant & Operations Partner supporting C-Suite executives and founders.">
     <meta name="author" content="Abraham Otieno">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
@@ -28,6 +28,34 @@
             max-width: 800px;
             margin: 0 auto;
             opacity: 0.9;
+        }
+        
+        /* About Me at the Top */
+        .about-top-section {
+            padding: 60px 0;
+            background: white;
+        }
+        
+        .about-summary-top {
+            background: linear-gradient(135deg, #f8fbff 0%, #e8f2ff 100%);
+            padding: 40px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+        
+        .about-summary-top h3 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+        }
+        
+        .about-summary-top p {
+            color: var(--gray);
+            line-height: 1.7;
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 1.1rem;
         }
         
         .case-studies-section {
@@ -76,19 +104,19 @@
         
         .case-image {
             height: 220px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             position: relative;
             overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 30px;
         }
         
-        .case-icon {
-            font-size: 4rem;
-            color: white;
-            opacity: 0.9;
+        .case-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        
+        .case-card:hover .case-image img {
+            transform: scale(1.05);
         }
         
         .case-content {
@@ -121,7 +149,7 @@
         }
         
         .case-description {
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             color: #555;
             line-height: 1.6;
             flex-grow: 1;
@@ -131,11 +159,11 @@
         .case-features {
             list-style: none;
             padding-left: 0;
-            margin: 25px 0;
+            margin: 20px 0 25px 0;
         }
         
         .case-features li {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             padding-left: 28px;
             position: relative;
             color: #555;
@@ -153,8 +181,6 @@
         
         .case-cta {
             margin-top: auto;
-            display: flex;
-            gap: 12px;
         }
         
         .case-btn {
@@ -168,7 +194,7 @@
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s;
-            flex: 1;
+            width: 100%;
             justify-content: center;
             text-align: center;
         }
@@ -179,17 +205,6 @@
             box-shadow: 0 6px 20px rgba(0,102,204,0.2);
         }
         
-        .case-btn.outline {
-            background: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
-        
-        .case-btn.outline:hover {
-            background: var(--primary);
-            color: white;
-        }
-        
         .case-btn.accent {
             background: var(--accent);
         }
@@ -198,12 +213,12 @@
             background: #ff5a1f;
         }
         
-        .interviews-section {
+        .testimonials-section {
             padding: 80px 0;
             background: white;
         }
         
-        .interview-card {
+        .testimonial-card {
             background: #f8fafc;
             padding: 50px;
             border-radius: 16px;
@@ -213,7 +228,7 @@
             overflow: hidden;
         }
         
-        .interview-card:before {
+        .testimonial-card:before {
             content: '';
             position: absolute;
             top: 0;
@@ -223,7 +238,7 @@
             background: linear-gradient(135deg, rgba(255,107,53,0.05) 0%, rgba(255,107,53,0.02) 100%);
         }
         
-        .interview-quote {
+        .testimonial-quote {
             font-size: 1.25rem;
             font-style: italic;
             color: var(--dark);
@@ -233,7 +248,7 @@
             padding-left: 40px;
         }
         
-        .interview-quote:before {
+        .testimonial-quote:before {
             content: '"';
             position: absolute;
             left: 0;
@@ -245,7 +260,7 @@
             font-weight: bold;
         }
         
-        .interview-author {
+        .testimonial-author {
             display: flex;
             align-items: center;
             gap: 25px;
@@ -312,6 +327,21 @@
             color: var(--gray);
             line-height: 1.7;
         }
+
+        /* Profile Image Styles */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .profile-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary);
+        }
         
         @media (max-width: 768px) {
             .page-header h1 {
@@ -326,16 +356,8 @@
                 grid-template-columns: 1fr;
             }
             
-            .interview-card {
+            .testimonial-card {
                 padding: 30px;
-            }
-            
-            .case-cta {
-                flex-direction: column;
-            }
-            
-            .case-btn {
-                width: 100%;
             }
             
             .cta-buttons {
@@ -345,6 +367,10 @@
             
             .cta-section h2 {
                 font-size: 2.2rem;
+            }
+            
+            .about-summary-top {
+                padding: 30px 20px;
             }
         }
     </style>
@@ -357,7 +383,10 @@
     <header role="banner">
         <div class="container">
             <nav class="navbar" aria-label="Main navigation">
-                <a href="index.html" class="logo"><i class="fas fa-user-tie"></i> Abraham <span>Otieno</span></a>
+                <a href="index.html" class="logo">
+                    <img src="abu.jpg" alt="Abraham Otieno" class="profile-img">
+                    <span>Abraham <span>Otieno</span></span>
+                </a>
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="cv.html">CV/Resume</a></li>
@@ -377,10 +406,22 @@
     <!-- Page Header -->
     <div class="page-header">
         <div class="container">
-            <h1>Case Studies & Interviews</h1>
+            <h1>Case Studies & Testimonials</h1>
             <p>Real-world examples of strategic executive support and operational excellence in action</p>
         </div>
     </div>
+
+    <!-- About Me Section at the Top -->
+    <section class="about-top-section">
+        <div class="container">
+            <div class="about-summary-top">
+                <h3>About Abraham Otieno</h3>
+                <p>
+                    With over 6 years of experience as an Executive Assistant & Operations Partner, I specialize in supporting C-Suite executives and founders to maximize their productivity and strategic impact. My expertise spans executive support, operations management, strategic planning, and stakeholder coordination. I'm passionate about creating efficient systems, streamlining processes, and enabling leaders to focus on what matters most—driving business growth and innovation.
+                </p>
+            </div>
+        </div>
+    </section>
 
     <!-- Case Studies Section -->
     <section class="case-studies-section">
@@ -393,16 +434,10 @@
                 <div class="case-card">
                     <div class="case-badge">Interactive Case Study</div>
                     <div class="case-image">
-                        <div class="case-icon">
-                            <i class="fas fa-file-alt"></i>
-                        </div>
+                        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Executive Strategy and Planning">
                     </div>
                     <div class="case-content">
                         <h3>Central Hire Executive Assistant Application</h3>
-                        <div class="case-meta">
-                            <span><i class="far fa-clock"></i> 45 min read</span>
-                            <span><i class="fas fa-chart-line"></i> Interactive</span>
-                        </div>
                         <p class="case-description">
                             A comprehensive written application showcasing strategic thinking, problem-solving skills, and executive support capabilities through detailed responses to real-world scenarios and challenges.
                         </p>
@@ -417,7 +452,7 @@
                         
                         <div class="case-cta">
                             <a href="https://otieno-abraham.github.io/Central-Hire-Written-Question/" target="_blank" class="case-btn">
-                                <i class="fas fa-external-link-alt"></i> View Full Application
+                                <i class="fas fa-external-link-alt"></i> View Presentation
                             </a>
                         </div>
                     </div>
@@ -426,17 +461,11 @@
                 <!-- Case Study 2: Hire Central Case Study Presentation -->
                 <div class="case-card">
                     <div class="case-badge">Presentation Deck</div>
-                    <div class="case-image" style="background: linear-gradient(135deg, #ff6b35 0%, #ff4d1a 100%);">
-                        <div class="case-icon">
-                            <i class="fas fa-chart-pie"></i>
-                        </div>
+                    <div class="case-image">
+                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Business Presentation and Analytics">
                     </div>
                     <div class="case-content">
                         <h3>Hire Central Case Study Presentation</h3>
-                        <div class="case-meta">
-                            <span><i class="far fa-clock"></i> 30 slides</span>
-                            <span><i class="fas fa-presentation"></i> Professional Deck</span>
-                        </div>
                         <p class="case-description">
                             A professional presentation deck outlining strategic approaches to executive support challenges, including data visualization, process optimization, and stakeholder management strategies.
                         </p>
@@ -460,17 +489,17 @@
         </div>
     </section>
 
-    <!-- Client Interviews Section -->
-    <section class="interviews-section">
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
         <div class="container">
-            <h2>Client Interviews & Testimonials</h2>
+            <h2>Client Testimonials</h2>
             <p class="section-intro">What executives and partners say about working with me on strategic projects and operational improvements.</p>
             
-            <div class="interview-card">
-                <div class="interview-quote">
+            <div class="testimonial-card">
+                <div class="testimonial-quote">
                     Abraham's exceptional coordination skills transformed our team dynamics. His ability to facilitate clear, effective communication between our stakeholders and CEO streamlined our operations significantly. He brings not just task execution, but strategic thinking to every project.
                 </div>
-                <div class="interview-author">
+                <div class="testimonial-author">
                     <div class="author-avatar">M</div>
                     <div class="author-info">
                         <h4>Mathew</h4>
@@ -479,11 +508,11 @@
                 </div>
             </div>
             
-            <div class="interview-card">
-                <div class="interview-quote">
+            <div class="testimonial-card">
+                <div class="testimonial-quote">
                     Working with Abraham during our service transition was remarkably smooth. His strategic planning and meticulous execution made what could have been a complex absorption process effortless. He anticipates challenges and comes prepared with solutions.
                 </div>
-                <div class="interview-author">
+                <div class="testimonial-author">
                     <div class="author-avatar">A</div>
                     <div class="author-info">
                         <h4>Abdul</h4>
@@ -492,11 +521,11 @@
                 </div>
             </div>
             
-            <div class="interview-card">
-                <div class="interview-quote">
+            <div class="testimonial-card">
+                <div class="testimonial-quote">
                     Abraham's professionalism and collaborative approach made our partnership coordination exceptionally smooth. His attention to detail and responsive communication ensured our initiatives were executed flawlessly. He's more than an assistant; he's a true operations partner.
                 </div>
-                <div class="interview-author">
+                <div class="testimonial-author">
                     <div class="author-avatar">S</div>
                     <div class="author-info">
                         <h4>Salome</h4>
