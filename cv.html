@@ -427,6 +427,21 @@
             color: #93c5fd;
         }
         
+        /* Profile Image Styles for Navigation */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-profile-img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary);
+        }
+        
         /* Print Styles for Perfect PDF */
         @media print {
             @page {
@@ -558,7 +573,10 @@
     <header role="banner">
         <div class="container">
             <nav class="navbar" aria-label="Main navigation">
-                <a href="index.html" class="logo"><i class="fas fa-user-tie"></i> Abraham <span>Otieno</span></a>
+                <a href="index.html" class="logo">
+                    <img src="abu.jpg" alt="Abraham Otieno" class="nav-profile-img">
+                    Abraham <span>Otieno</span>
+                </a>
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="cv.html" class="active">CV/Resume</a></li>
