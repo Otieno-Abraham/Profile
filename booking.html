@@ -7,11 +7,9 @@
     <meta name="description" content="Schedule a free 30-minute consultation with Abraham Otieno to discuss your executive support and operations needs.">
     <meta name="keywords" content="book consultation, executive assistant consultation, operations partner, free call, schedule meeting">
     <meta name="author" content="Abraham Otieno">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     
     <style>
-        /* Profile Image Styles for Navigation */
         .logo {
             display: flex;
             align-items: center;
@@ -85,17 +83,22 @@
             margin-bottom: 30px;
         }
         
-        .whatsapp-icon {
+        .logo-container {
             width: 80px;
             height: 80px;
-            background: #25D366;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 20px;
-            font-size: 2.5rem;
-            color: white;
+            overflow: hidden;
+            background: white;
+        }
+        
+        .logo-img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
         }
         
         .whatsapp-features {
@@ -163,19 +166,6 @@
         .calendar-header {
             text-align: center;
             margin-bottom: 30px;
-        }
-        
-        .calendar-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 2.5rem;
-            color: white;
         }
         
         .calendar-features {
@@ -264,19 +254,6 @@
             transform: translateY(-5px);
         }
         
-        .method-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 15px;
-            font-size: 1.8rem;
-            color: white;
-        }
-        
         .contact-method h4 {
             margin-bottom: 10px;
             color: var(--secondary);
@@ -307,15 +284,6 @@
             margin-top: 40px;
             border-left: 4px solid var(--primary);
             text-align: center;
-        }
-        
-        .response-guarantee h3 {
-            color: var(--primary);
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
         }
         
         .whatsapp-note {
@@ -373,7 +341,7 @@
                     <li><a href="booking.html" class="active">Book a Call</a></li>
                 </ul>
                 <div class="mobile-menu">
-                    <i class="fas fa-bars"></i>
+                    ☰
                 </div>
             </nav>
         </div>
@@ -401,8 +369,8 @@
                 <!-- WhatsApp Booking -->
                 <div class="whatsapp-booking">
                     <div class="whatsapp-header">
-                        <div class="whatsapp-icon">
-                            <i class="fab fa-whatsapp"></i>
+                        <div class="logo-container">
+                            <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp Logo" class="logo-img">
                         </div>
                         <h3>Book via WhatsApp</h3>
                         <p>Fast, direct communication with instant confirmation</p>
@@ -417,19 +385,19 @@
                     </ul>
                     
                     <div class="whatsapp-note">
-                        <i class="fas fa-info-circle"></i> <strong>Best for:</strong> Quick questions, urgent meetings, or if you prefer chat-based communication
+                        <strong>Best for:</strong> Quick questions, urgent meetings, or if you prefer chat-based communication
                     </div>
                     
                     <a href="https://wa.link/tnusf3" target="_blank" class="whatsapp-btn">
-                        <i class="fab fa-whatsapp"></i> Message on WhatsApp
+                        Message on WhatsApp
                     </a>
                 </div>
                 
                 <!-- Calendly Booking -->
                 <div class="calendar-booking">
                     <div class="calendar-header">
-                        <div class="calendar-icon">
-                            <i class="fas fa-calendar-check"></i>
+                        <div class="logo-container">
+                            <img src="https://cdn.iconscout.com/icon/free/png-256/calendly-2749334-2284725.png" alt="Calendly Logo" class="logo-img">
                         </div>
                         <h3>Book via Calendly</h3>
                         <p>Self-schedule at your convenience</p>
@@ -456,7 +424,7 @@
                     </div>
                     
                     <a href="https://calendly.com/abrahamotieno" target="_blank" class="calendar-btn">
-                        <i class="fas fa-external-link-alt"></i> Open Calendly in New Tab
+                        Open Calendly in New Tab
                     </a>
                 </div>
             </div>
@@ -466,8 +434,8 @@
                 <h3>Other Ways to Connect</h3>
                 <div class="contact-methods">
                     <div class="contact-method">
-                        <div class="method-icon">
-                            <i class="fas fa-envelope"></i>
+                        <div class="logo-container" style="width: 60px; height: 60px;">
+                            <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email Logo" class="logo-img">
                         </div>
                         <h4>Email</h4>
                         <p>Send a detailed message outlining your needs</p>
@@ -477,8 +445,8 @@
                     </div>
                     
                     <div class="contact-method">
-                        <div class="method-icon">
-                            <i class="fab fa-linkedin"></i>
+                        <div class="logo-container" style="width: 60px; height: 60px;">
+                            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn Logo" class="logo-img">
                         </div>
                         <h4>LinkedIn</h4>
                         <p>Connect professionally and send a message</p>
@@ -488,8 +456,8 @@
                     </div>
                     
                     <div class="contact-method">
-                        <div class="method-icon">
-                            <i class="fas fa-phone"></i>
+                        <div class="logo-container" style="width: 60px; height: 60px;">
+                            <img src="https://cdn-icons-png.flaticon.com/512/126/126509.png" alt="Phone Logo" class="logo-img">
                         </div>
                         <h4>Phone/SMS</h4>
                         <p>Direct call or text for urgent inquiries</p>
@@ -499,8 +467,8 @@
                     </div>
                     
                     <div class="contact-method">
-                        <div class="method-icon">
-                            <i class="fab fa-upwork"></i>
+                        <div class="logo-container" style="width: 60px; height: 60px;">
+                            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/upwork.svg" alt="Upwork Logo" class="logo-img">
                         </div>
                         <h4>Upwork</h4>
                         <p>Hire me through Upwork platform</p>
@@ -513,11 +481,9 @@
             
             <!-- Response Guarantee -->
             <div class="response-guarantee">
-                <h3>
-                    <i class="fas fa-clock"></i> Quick Response Guarantee
-                </h3>
+                <h3>Quick Response Guarantee</h3>
                 <p style="margin-bottom: 10px;">
-                    <strong>2-hour response guarantee</strong> during business hours (8 AM - 6 PM EAT, Monday-Friday)
+                    <strong>2-hour response guarantee</strong>
                 </p>
                 <p style="color: var(--gray); font-size: 0.95rem;">
                     I understand that time is valuable. I'm committed to responding to all booking inquiries promptly to ensure we can connect at your earliest convenience.
@@ -534,22 +500,8 @@
                     <h3>Abraham Otieno</h3>
                     <p>Executive Assistant & Operations Partner | 6+ Years Supporting C-Suite & Founders</p>
                     <p style="font-size: 0.95rem; margin-top: 15px; color: rgba(255,255,255,0.9);">
-                        📧 abrahamsalasstaffing@gmail.com | 📱 +254 757 272 468
+                        abrahamsalasstaffing@gmail.com | +254 757 272 468
                     </p>
-                </div>
-                <div class="social-links">
-                    <a href="https://linkedin.com/in/abraham-otieno-665678317" target="_blank" rel="noopener noreferrer" title="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="mailto:abrahamsalasstaffing@gmail.com" title="Email">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                    <a href="https://wa.link/tnusf3" target="_blank" rel="noopener noreferrer" title="WhatsApp">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
-                    <a href="https://www.upwork.com/freelancers/~016468049604acd788" target="_blank" rel="noopener noreferrer" title="Upwork">
-                        <i class="fab fa-upwork"></i>
-                    </a>
                 </div>
             </div>
             <div class="copyright">
@@ -560,7 +512,7 @@
 
     <!-- Back to Top Button -->
     <a href="#" class="back-to-top" title="Back to Top">
-        <i class="fas fa-chevron-up"></i>
+        ↑
     </a>
 
     <!-- JavaScript -->
