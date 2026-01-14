@@ -22,7 +22,7 @@
             --glass-border: rgba(255, 255, 255, 0.25);
         }
         
-        /* Full-screen Hero with Photo Background */
+        /* Full-screen Hero with Balanced Photo Background */
         .hero {
             position: relative;
             min-height: 100vh;
@@ -39,9 +39,11 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background-image: linear-gradient(rgba(0, 51, 102, 0.85), rgba(0, 26, 51, 0.9)), url('abu.jpg');
+            background: 
+                linear-gradient(rgba(0, 51, 102, 0.85), rgba(0, 26, 51, 0.9)),
+                url('abu.jpg');
             background-size: cover;
-            background-position: center;
+            background-position: center 30%;
             background-repeat: no-repeat;
             z-index: 1;
         }
@@ -457,7 +459,7 @@
             margin-bottom: 20px;
         }
         
-        /* Contact Section */
+        /* Contact Section with Logos */
         .contact-section {
             padding: 120px 0;
             background: linear-gradient(135deg, #1a365d 0%, #0a192f 100%);
@@ -505,7 +507,7 @@
             background: rgba(255, 255, 255, 0.15);
         }
         
-        .contact-icon {
+        .contact-logo {
             width: 60px;
             height: 60px;
             background: var(--primary);
@@ -513,9 +515,15 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            color: white;
             flex-shrink: 0;
+            overflow: hidden;
+            padding: 10px;
+        }
+        
+        .contact-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
         
         .contact-text h4 {
@@ -528,6 +536,109 @@
             color: rgba(255, 255, 255, 0.9);
             margin: 0;
             font-size: 1rem;
+        }
+        
+        /* Footer with Profile Picture */
+        footer {
+            background: linear-gradient(135deg, #0a192f 0%, #1a365d 100%);
+            color: white;
+            padding: 60px 0 20px;
+            position: relative;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-profile {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+        
+        .footer-profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--primary);
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0, 102, 204, 0.3);
+        }
+        
+        .footer-text {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .footer-text h3 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+        
+        .footer-text p {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        
+        .footer-links {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .footer-links h4 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .social-links-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        
+        .social-link-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+        
+        .social-logo {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+        }
+        
+        .social-link-text {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
         }
         
         /* Responsive Design */
@@ -611,6 +722,22 @@
             .stat-number {
                 font-size: 3rem;
             }
+            
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .footer-profile-img {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .social-links-grid {
+                grid-template-columns: 1fr;
+                max-width: 300px;
+                margin: 0 auto;
+            }
         }
         
         @media (max-width: 480px) {
@@ -629,6 +756,11 @@
             .service-content,
             .portfolio-content {
                 padding: 25px;
+            }
+            
+            .footer-profile-img {
+                width: 120px;
+                height: 120px;
             }
         }
     </style>
@@ -666,7 +798,7 @@
         </div>
     </header>
 
-    <!-- Hero Section with Full Background Photo -->
+    <!-- Hero Section with Balanced Background Photo -->
     <section id="home" class="hero">
         <div class="hero-background"></div>
         <div class="container hero-content">
@@ -804,7 +936,7 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact Section with Logos -->
     <section id="contact" class="contact-section">
         <div class="container">
             <div class="section-header" style="color: white;">
@@ -815,8 +947,8 @@
             <div class="contact-grid">
                 <div class="contact-info">
                     <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
+                        <div class="contact-logo">
+                            <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email">
                         </div>
                         <div class="contact-text">
                             <h4>Email</h4>
@@ -825,8 +957,8 @@
                     </div>
                     
                     <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
+                        <div class="contact-logo">
+                            <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp">
                         </div>
                         <div class="contact-text">
                             <h4>Phone / WhatsApp</h4>
@@ -835,8 +967,8 @@
                     </div>
                     
                     <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
+                        <div class="contact-logo">
+                            <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Location">
                         </div>
                         <div class="contact-text">
                             <h4>Location & Time Zone</h4>
@@ -857,32 +989,60 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer with Big Profile Picture -->
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-text">
+                <div class="footer-profile">
+                    <img src="abu.jpg" alt="Abraham Otieno" class="footer-profile-img">
                     <h3>Abraham Otieno</h3>
-                    <p>Executive Assistant & Operations Partner | 6+ Years Supporting C-Suite & Founders</p>
+                    <p style="color: rgba(255, 255, 255, 0.9); font-size: 0.95rem; margin-top: 10px;">
+                        Executive Assistant & Operations Partner
+                    </p>
+                </div>
+                
+                <div class="footer-text">
+                    <h3>My CV & Contact</h3>
+                    <p>6+ Years Supporting C-Suite & Founders | Enhancing Executive Bandwidth</p>
                     <p style="font-size: 0.95rem; margin-top: 15px; color: rgba(255,255,255,0.9);">
                         📧 abrahamsalasstaffing@gmail.com | 📱 +254 757 272 468
                     </p>
+                    <p style="font-size: 0.9rem; margin-top: 20px; color: rgba(255,255,255,0.8);">
+                        Nairobi, Kenya (EAT - UTC+3) | Full-time remote • Open to travel
+                    </p>
                 </div>
-                <div class="social-links">
-                    <a href="https://linkedin.com/in/abraham-otieno-665678317" target="_blank" rel="noopener noreferrer" title="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="mailto:abrahamsalasstaffing@gmail.com" title="Email">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                    <a href="https://wa.link/tnusf3" target="_blank" rel="noopener noreferrer" title="WhatsApp">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
-                    <a href="https://www.upwork.com/freelancers/~016468049604acd788" target="_blank" rel="noopener noreferrer" title="Upwork">
-                        <i class="fab fa-upwork"></i>
-                    </a>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <div class="social-links-grid">
+                        <a href="https://linkedin.com/in/abraham-otieno-665678317" target="_blank" class="social-link-item">
+                            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" class="social-logo">
+                            <span class="social-link-text">LinkedIn</span>
+                        </a>
+                        <a href="mailto:abrahamsalasstaffing@gmail.com" class="social-link-item">
+                            <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" class="social-logo">
+                            <span class="social-link-text">Email</span>
+                        </a>
+                        <a href="https://wa.link/tnusf3" target="_blank" class="social-link-item">
+                            <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp" class="social-logo">
+                            <span class="social-link-text">WhatsApp</span>
+                        </a>
+                        <a href="https://www.upwork.com/freelancers/~016468049604acd788" target="_blank" class="social-link-item">
+                            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/upwork.svg" alt="Upwork" class="social-logo">
+                            <span class="social-link-text">Upwork</span>
+                        </a>
+                        <a href="cv.html" class="social-link-item">
+                            <img src="abu.jpg" alt="Abraham Otieno" class="footer-profile-img">
+                            <span class="social-link-text">View My CV</span>
+                        </a>
+                        <a href="booking.html" class="social-link-item">
+                            <img src="https://cdn.iconscout.com/icon/free/png-256/calendly-2749334-2284725.png" alt="Book a Call" class="social-logo">
+                            <span class="social-link-text">Book a Call</span>
+                        </a>
+                    </div>
                 </div>
             </div>
+            
             <div class="copyright">
                 <p>&copy; 2025 Abraham Otieno. All Rights Reserved.</p>
             </div>
