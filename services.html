@@ -55,15 +55,24 @@
         /* Enhanced Hero Section */
         .services-hero {
             padding: 140px 0 80px;
-            background: linear-gradient(rgba(10, 25, 47, 0.95), rgba(10, 25, 47, 0.95)), 
-                        url('https://images.unsplash.com/photo-1556761175-4acf8da08467?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            background: var(--dark-bg);
             color: white;
             position: relative;
             margin-top: 80px;
             text-align: center;
+            overflow: hidden;
+        }
+        
+        .services-hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(0, 102, 204, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 107, 53, 0.1) 0%, transparent 50%);
         }
         
         .hero-container {
@@ -149,7 +158,7 @@
             letter-spacing: 1.5px;
         }
         
-        /* Services Grid with Unique Images */
+        /* Services Grid with Reliable Images */
         .services-section {
             padding: 100px 0;
             background: #f8fafc;
@@ -215,6 +224,7 @@
             width: 100%;
             overflow: hidden;
             position: relative;
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
         }
         
         .service-image:after {
@@ -236,6 +246,17 @@
         
         .service-card:hover .service-image img {
             transform: scale(1.15);
+        }
+        
+        .fallback-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: #0066cc;
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            height: 100%;
+            width: 100%;
         }
         
         .service-content {
@@ -342,6 +363,7 @@
             height: 200px;
             width: 100%;
             overflow: hidden;
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
         }
         
         .industry-image img {
@@ -418,6 +440,7 @@
             width: 100%;
             overflow: hidden;
             margin-bottom: 30px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
         }
         
         .process-image img {
@@ -516,6 +539,7 @@
             overflow: hidden;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
             height: 300px;
+            background: linear-gradient(135deg, #0f8c00 0%, #0d7a00 100%);
         }
         
         .upwork-image img {
@@ -524,21 +548,33 @@
             object-fit: cover;
         }
         
-        /* CTA Section with Background Image */
+        /* CTA Section */
         .cta-section {
             padding: 150px 0;
-            background: linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.9)), 
-                        url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            background: var(--dark-bg);
             text-align: center;
             color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(0, 102, 204, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 107, 53, 0.1) 0%, transparent 50%);
         }
         
         .cta-content {
             max-width: 800px;
             margin: 0 auto;
+            position: relative;
+            z-index: 2;
         }
         
         .cta-content h2 {
@@ -786,7 +822,9 @@
                 <!-- Executive Support -->
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Executive Support Services">
+                        <img src="https://images.pexels.com/photos/669610/pexels-photo-669610.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                             alt="Executive Support Services" 
+                             onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\"fallback-image\"><i class=\"fas fa-user-tie\"></i></div>';">
                     </div>
                     <div class="service-content">
                         <div class="service-number">01</div>
@@ -810,7 +848,9 @@
                 <!-- Operations & CRM -->
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Operations & CRM Services">
+                        <img src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                             alt="Operations & CRM Services"
+                             onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\"fallback-image\"><i class=\"fas fa-cogs\"></i></div>';">
                     </div>
                     <div class="service-content">
                         <div class="service-number">02</div>
@@ -834,7 +874,9 @@
                 <!-- Startup & Remote Team Support -->
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Startup & Remote Team Support">
+                        <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                             alt="Startup & Remote Team Support"
+                             onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\"fallback-image\"><i class=\"fas fa-rocket\"></i></div>';">
                     </div>
                     <div class="service-content">
                         <div class="service-number">03</div>
@@ -858,7 +900,9 @@
                 <!-- Virtual Team Leadership -->
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Virtual Team Leadership">
+                        <img src="https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                             alt="Virtual Team Leadership"
+                             onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\"fallback-image\"><i class=\"fas fa-users\"></i></div>';">
                     </div>
                     <div class="service-content">
                         <div class="service-number">04</div>
@@ -882,7 +926,9 @@
                 <!-- Project Coordination -->
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Project Coordination">
+                        <img src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                             alt="Project Coordination"
+                             onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\"fallback-image\"><i class=\"fas fa-tasks\"></i></div>';">
                     </div>
                     <div class="service-content">
                         <div class="service-number">05</div>
@@ -906,7 +952,9 @@
                 <!-- Strategic Communications -->
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1551836026-d5c2c26b5c2a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Strategic Communications">
+                        <img src="https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                             alt="Strategic Communications"
+                             onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\"fallback-image\"><i class=\"fas fa-bullhorn\"></i></div>';">
                     </div>
                     <div class="service-content">
                         <div class="service-number">06</div>
@@ -941,7 +989,9 @@
             <div class="industries-grid">
                 <div class="industry-card">
                     <div class="industry-image">
-                        <img src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="BPO & Outsourcing">
+                        <img src="https://images.pexels.com/photos/6804585/pexels-photo-6804585.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                             alt="BPO & Outsourcing"
+                             onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\"fallback-image\"><i class=\"fas fa-headset\"></i></div>';">
                     </div>
                     <div class="industry-content">
                         <h4>BPO & Outsourcing</h4>
@@ -951,7 +1001,9 @@
                 
                 <div class="industry-card">
                     <div class="industry-image">
-                        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Fintech">
+                        <img src="https://images.pexels.com/photos/6770637/pexels-photo-6770637.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                             alt="Fintech"
+                             onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\"fallback-image\"><i class=\"fas fa-chart-line\"></i></div>';">
                     </div>
                     <div class="industry-content">
                         <h4>Fintech</h4>
@@ -961,7 +1013,9 @@
                 
                 <div class="industry-card">
                     <div class="industry-image">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Technology Startups">
+                        <img src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                             alt="Technology Startups"
+                             onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\"fallback-image\"><i class=\"fas fa-laptop-code\"></i></div>';">
                     </div>
                     <div class="industry-content">
                         <h4>Technology Startups</h4>
@@ -971,7 +1025,9 @@
                 
                 <div class="industry-card">
                     <div class="industry-image">
-                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Translation Services">
+                        <img src="https://images.pexels.com/photos/3944405/pexels-photo-3944405.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                             alt="Translation Services"
+                             onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\"fallback-image\"><i class=\"fas fa-language\"></i></div>';">
                     </div>
                     <div class="industry-content">
                         <h4>Translation Services</h4>
@@ -993,7 +1049,9 @@
             <div class="process-steps">
                 <div class="process-step">
                     <div class="process-image">
-                        <img src="https://images.unsplash.com/photo-1556761175-4acf8da08467?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Discovery Phase">
+                        <img src="https://images.pexels.com/photos/6914221/pexels-photo-6914221.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                             alt="Discovery Phase"
+                             onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\"display:flex;align-items:center;justify-content:center;height:100%;font-size:4rem;color:rgba(255,255,255,0.2)\"><i class=\"fas fa-search\"></i></div>';">
                     </div>
                     <div class="step-number">1</div>
                     <h3>Discovery</h3>
@@ -1002,7 +1060,9 @@
                 
                 <div class="process-step">
                     <div class="process-image">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Strategy Phase">
+                        <img src="https://images.pexels.com/photos/3183156/pexels-photo-3183156.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                             alt="Strategy Phase"
+                             onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\"display:flex;align-items:center;justify-content:center;height:100%;font-size:4rem;color:rgba(255,255,255,0.2)\"><i class=\"fas fa-chess-board\"></i></div>';">
                     </div>
                     <div class="step-number">2</div>
                     <h3>Strategy</h3>
@@ -1011,7 +1071,9 @@
                 
                 <div class="process-step">
                     <div class="process-image">
-                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Implementation Phase">
+                        <img src="https://images.pexels.com/photos/5926378/pexels-photo-5926378.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                             alt="Implementation Phase"
+                             onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\"display:flex;align-items:center;justify-content:center;height:100%;font-size:4rem;color:rgba(255,255,255,0.2)\"><i class=\"fas fa-cogs\"></i></div>';">
                     </div>
                     <div class="step-number">3</div>
                     <h3>Implementation</h3>
@@ -1020,7 +1082,9 @@
                 
                 <div class="process-step">
                     <div class="process-image">
-                        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Optimization Phase">
+                        <img src="https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                             alt="Optimization Phase"
+                             onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\"display:flex;align-items:center;justify-content:center;height:100%;font-size:4rem;color:rgba(255,255,255,0.2)\"><i class=\"fas fa-chart-line\"></i></div>';">
                     </div>
                     <div class="step-number">4</div>
                     <h3>Optimization</h3>
@@ -1045,7 +1109,9 @@
                     </p>
                 </div>
                 <div class="upwork-image">
-                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Upwork Platform">
+                    <img src="https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                         alt="Upwork Platform"
+                         onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\"display:flex;align-items:center;justify-content:center;height:100%;font-size:5rem;color:rgba(255,255,255,0.2)\"><i class=\"fab fa-upwork\"></i></div>';">
                 </div>
             </div>
         </div>
@@ -1111,5 +1177,60 @@
 
     <!-- JavaScript -->
     <script src="script.js"></script>
+    <script>
+        // Image loading fallback
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('img');
+            
+            images.forEach(img => {
+                img.addEventListener('error', function() {
+                    const container = this.parentElement;
+                    const serviceName = this.alt || '';
+                    
+                    // Create fallback content
+                    const fallback = document.createElement('div');
+                    fallback.className = 'fallback-content';
+                    fallback.style.cssText = `
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+                        color: #0066cc;
+                        padding: 20px;
+                        text-align: center;
+                    `;
+                    
+                    // Use appropriate icon based on service name
+                    let iconClass = 'fas fa-image';
+                    if (serviceName.includes('Executive')) iconClass = 'fas fa-user-tie';
+                    else if (serviceName.includes('Operations')) iconClass = 'fas fa-cogs';
+                    else if (serviceName.includes('Startup')) iconClass = 'fas fa-rocket';
+                    else if (serviceName.includes('Virtual')) iconClass = 'fas fa-users';
+                    else if (serviceName.includes('Project')) iconClass = 'fas fa-tasks';
+                    else if (serviceName.includes('Communications')) iconClass = 'fas fa-bullhorn';
+                    else if (serviceName.includes('BPO')) iconClass = 'fas fa-headset';
+                    else if (serviceName.includes('Fintech')) iconClass = 'fas fa-chart-line';
+                    else if (serviceName.includes('Technology')) iconClass = 'fas fa-laptop-code';
+                    else if (serviceName.includes('Translation')) iconClass = 'fas fa-language';
+                    else if (serviceName.includes('Discovery')) iconClass = 'fas fa-search';
+                    else if (serviceName.includes('Strategy')) iconClass = 'fas fa-chess-board';
+                    else if (serviceName.includes('Implementation')) iconClass = 'fas fa-cogs';
+                    else if (serviceName.includes('Optimization')) iconClass = 'fas fa-chart-line';
+                    else if (serviceName.includes('Upwork')) iconClass = 'fab fa-upwork';
+                    
+                    fallback.innerHTML = `
+                        <i class="${iconClass}" style="font-size: 3rem; margin-bottom: 15px;"></i>
+                        <div style="font-size: 0.9rem; color: #64748b;">${serviceName}</div>
+                    `;
+                    
+                    container.innerHTML = '';
+                    container.appendChild(fallback);
+                });
+            });
+        });
+    </script>
 </body>
 </html>
