@@ -5,222 +5,712 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services | Abraham Otieno - Executive Assistant & Operations Partner</title>
     <meta name="description" content="Comprehensive executive support and operational solutions including calendar management, CRM optimization, virtual team leadership, and strategic operations.">
+    <meta name="author" content="Abraham Otieno">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     
     <style>
-        .page-header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+        :root {
+            --primary-gradient: linear-gradient(135deg, #0066cc 0%, #004d99 100%);
+            --accent-gradient: linear-gradient(135deg, #ff6b35 0%, #ff4d1a 100%);
+            --dark-bg: linear-gradient(135deg, #0a192f 0%, #1a365d 100%);
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 25px 70px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Header with Profile Image */
+        .logo-img-container {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            gap: 12px;
+        }
+        
+        .profile-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #0066cc;
+            box-shadow: 0 4px 12px rgba(0, 102, 204, 0.25);
+        }
+        
+        .profile-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .logo-text {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: #0f172a;
+        }
+        
+        .logo-text span {
+            color: #0066cc;
+        }
+        
+        /* Enhanced Hero Section */
+        .services-hero {
+            padding: 140px 0 80px;
+            background: linear-gradient(rgba(10, 25, 47, 0.95), rgba(10, 25, 47, 0.95)), 
+                        url('https://images.unsplash.com/photo-1556761175-4acf8da08467?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             color: white;
-            padding: 100px 0 60px;
+            position: relative;
+            margin-top: 80px;
             text-align: center;
         }
         
-        .page-header h1 {
-            font-size: 3rem;
-            margin-bottom: 15px;
+        .hero-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
         }
         
+        .hero-profile {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            overflow: hidden;
+            border: 6px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+        
+        .hero-profile img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ffffff 0%, #a5d8ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.4rem;
+            color: #cbd5e1;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+        
+        .hero-highlight {
+            color: #ff6b35;
+            font-weight: 600;
+        }
+        
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 60px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #ff6b35;
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            color: #cbd5e1;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+        
+        /* Services Grid with Unique Images */
         .services-section {
-            padding: 80px 0;
-            background: white;
+            padding: 100px 0;
+            background: #f8fafc;
+        }
+        
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 80px;
+        }
+        
+        .section-header h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 25px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-header h2:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 5px;
+            background: var(--accent-gradient);
+            border-radius: 3px;
+        }
+        
+        .section-header p {
+            font-size: 1.3rem;
+            color: #64748b;
+            line-height: 1.7;
+            margin-top: 30px;
         }
         
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 35px;
-            margin-top: 50px;
+            gap: 50px;
         }
         
         .service-card {
             background: white;
-            padding: 35px;
-            border-radius: 12px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
-            position: relative;
+            border-radius: 24px;
             overflow: hidden;
-            border: 1px solid #f0f0f0;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+            position: relative;
+            border: 1px solid #f1f5f9;
         }
         
         .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transform: translateY(-20px) scale(1.02);
+            box-shadow: var(--shadow-xl);
         }
         
-        .service-card:before {
+        .service-image {
+            height: 250px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .service-image:after {
             content: '';
             position: absolute;
-            top: 0;
+            bottom: 0;
             left: 0;
+            right: 0;
+            height: 60px;
+            background: linear-gradient(to top, rgba(255,255,255,0.8), transparent);
+        }
+        
+        .service-image img {
             width: 100%;
-            height: 5px;
-            background: var(--primary);
-            transform: scaleX(0);
-            transition: transform 0.3s;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
         }
         
-        .service-card:hover:before {
-            transform: scaleX(1);
+        .service-card:hover .service-image img {
+            transform: scale(1.15);
         }
         
-        .service-icon {
-            font-size: 2.8rem;
-            color: var(--primary);
+        .service-content {
+            padding: 40px;
+            position: relative;
+        }
+        
+        .service-number {
+            position: absolute;
+            top: -25px;
+            left: 40px;
+            width: 50px;
+            height: 50px;
+            background: var(--accent-gradient);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            font-weight: 800;
+            box-shadow: 0 10px 20px rgba(255, 107, 53, 0.3);
+        }
+        
+        .service-content h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin: 15px 0 20px;
+            line-height: 1.3;
+            padding-right: 40px;
+        }
+        
+        .service-description {
+            color: #64748b;
+            line-height: 1.7;
             margin-bottom: 25px;
-            display: inline-block;
-            padding: 15px;
-            background: #f0f8ff;
-            border-radius: 12px;
+            font-size: 1.05rem;
         }
         
         .service-features {
             list-style: none;
-            margin: 25px 0;
             padding: 0;
+            margin: 30px 0;
         }
         
         .service-features li {
-            margin-bottom: 10px;
-            padding-left: 25px;
+            margin-bottom: 15px;
+            padding-left: 35px;
             position: relative;
-            color: var(--gray);
+            color: #475569;
+            line-height: 1.6;
+            font-size: 1rem;
         }
         
         .service-features li:before {
             content: '✓';
             position: absolute;
             left: 0;
-            color: var(--success);
+            color: #0066cc;
             font-weight: bold;
-        }
-        
-        .service-pricing {
-            margin-top: 25px;
-            padding-top: 25px;
-            border-top: 1px solid #f0f0f0;
-        }
-        
-        .price-tag {
-            color: var(--primary);
-            font-weight: 600;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+            width: 25px;
+            height: 25px;
+            background: rgba(0, 102, 204, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .service-cta {
-            margin-top: 20px;
+            margin-top: 40px;
         }
         
+        /* Industries with Images */
         .industries-section {
-            padding: 80px 0;
-            background: #f8fafc;
+            padding: 100px 0;
+            background: white;
         }
         
         .industries-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
         }
         
-        .industry-item {
+        .industry-card {
+            background: #f8fafc;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid #f1f5f9;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .industry-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .industry-image {
+            height: 200px;
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .industry-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        
+        .industry-card:hover .industry-image img {
+            transform: scale(1.1);
+        }
+        
+        .industry-content {
+            padding: 30px;
             text-align: center;
-            padding: 25px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
         }
         
-        .industry-item:hover {
-            transform: translateY(-5px);
-        }
-        
-        .industry-icon {
-            font-size: 2rem;
-            color: var(--primary);
+        .industry-content h4 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0f172a;
             margin-bottom: 15px;
         }
         
+        /* Process Section with Images */
         .process-section {
-            padding: 80px 0;
-            background: white;
+            padding: 120px 0;
+            background: var(--dark-bg);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .process-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(0, 102, 204, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 107, 53, 0.1) 0%, transparent 50%);
         }
         
         .process-steps {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 50px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 80px;
+            position: relative;
+            z-index: 2;
         }
         
         .process-step {
-            flex: 1;
-            min-width: 250px;
             text-align: center;
-            padding: 30px;
-            position: relative;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            padding: 0 0 40px 0;
+            overflow: hidden;
+        }
+        
+        .process-step:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-10px);
+        }
+        
+        .process-image {
+            height: 200px;
+            width: 100%;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+        
+        .process-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         
         .step-number {
-            width: 50px;
-            height: 50px;
-            background: var(--primary);
+            width: 70px;
+            height: 70px;
+            background: var(--accent-gradient);
             color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin: 0 auto 20px;
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin: -35px auto 25px;
+            position: relative;
+            z-index: 3;
+            box-shadow: 0 10px 25px rgba(255, 107, 53, 0.3);
         }
         
+        .process-step h3 {
+            font-size: 1.6rem;
+            color: white;
+            margin-bottom: 15px;
+            padding: 0 20px;
+        }
+        
+        .process-step p {
+            color: #cbd5e1;
+            padding: 0 20px;
+            line-height: 1.6;
+        }
+        
+        /* Upwork Section with Image */
         .upwork-section {
-            padding: 80px 0;
+            padding: 100px 0;
             background: #f8fafc;
-            text-align: center;
+            position: relative;
         }
         
         .upwork-card {
-            background: white;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+            background: linear-gradient(135deg, #14a800 0%, #0f8c00 100%);
+            color: white;
+            padding: 80px 60px;
+            border-radius: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+            box-shadow: var(--shadow-xl);
+            position: relative;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .upwork-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+        }
+        
+        .upwork-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .upwork-content h3 {
+            font-size: 2.8rem;
+            margin-bottom: 25px;
+            line-height: 1.2;
+        }
+        
+        .upwork-content p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            line-height: 1.7;
+        }
+        
+        .upwork-image {
+            position: relative;
+            z-index: 2;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            height: 300px;
+        }
+        
+        .upwork-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* CTA Section with Background Image */
+        .cta-section {
+            padding: 150px 0;
+            background: linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.9)), 
+                        url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            text-align: center;
+            color: white;
+        }
+        
+        .cta-content {
             max-width: 800px;
             margin: 0 auto;
-            border-left: 4px solid #14a800;
         }
         
-        .upwork-icon {
-            font-size: 3rem;
-            color: #14a800;
-            margin-bottom: 20px;
+        .cta-content h2 {
+            font-size: 3.5rem;
+            margin-bottom: 30px;
+            color: white;
+            line-height: 1.2;
         }
         
-        .cta-section {
-            text-align: center;
-            padding: 80px 0;
-            background: linear-gradient(135deg, #f8fbff 0%, #e8f2ff 100%);
+        .cta-content p {
+            font-size: 1.4rem;
+            color: #cbd5e1;
+            margin-bottom: 60px;
+            line-height: 1.7;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background: var(--primary-gradient);
+            color: white;
+            padding: 18px 40px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            box-shadow: 0 10px 30px rgba(0, 102, 204, 0.3);
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 102, 204, 0.4);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 3px solid #0066cc;
+            color: #0066cc;
+            box-shadow: none;
+        }
+        
+        .btn-outline:hover {
+            background: #0066cc;
+            color: white;
+            transform: translateY(-5px) scale(1.05);
+        }
+        
+        .btn-accent {
+            background: var(--accent-gradient);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+        }
+        
+        .btn-accent:hover {
+            box-shadow: 0 20px 40px rgba(255, 107, 53, 0.4);
+        }
+        
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .upwork-card {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 40px;
+            }
+            
+            .upwork-image {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 3.2rem;
+            }
+            
+            .hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .section-header h2 {
+                font-size: 2.5rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                gap: 40px;
+            }
+            
+            .cta-content h2 {
+                font-size: 2.8rem;
+            }
         }
         
         @media (max-width: 768px) {
-            .page-header h1 {
-                font-size: 2.2rem;
+            .services-hero {
+                padding: 120px 0 60px;
+            }
+            
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .hero-profile {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
             }
             
             .services-grid {
                 grid-template-columns: 1fr;
             }
             
+            .service-content {
+                padding: 30px;
+            }
+            
+            .industries-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+            
             .process-steps {
-                flex-direction: column;
+                grid-template-columns: 1fr;
             }
             
             .upwork-card {
-                padding: 25px;
+                padding: 60px 40px;
+            }
+            
+            .upwork-content h3 {
+                font-size: 2.2rem;
+            }
+            
+            .cta-content h2 {
+                font-size: 2.3rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-stats {
+                grid-template-columns: 1fr;
+                padding: 30px 20px;
+            }
+            
+            .stat-number {
+                font-size: 2.3rem;
+            }
+            
+            .industries-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .upwork-card {
+                padding: 50px 30px;
+            }
+            
+            .cta-content h2 {
+                font-size: 2rem;
+            }
+            
+            .cta-content p {
+                font-size: 1.2rem;
             }
         }
     </style>
@@ -233,10 +723,15 @@
     <header role="banner">
         <div class="container">
             <nav class="navbar" aria-label="Main navigation">
-                <a href="index.html" class="logo"><i class="fas fa-user-tie"></i> Abraham <span>Otieno</span></a>
+                <a href="index.html" class="logo-img-container">
+                    <div class="profile-logo">
+                        <img src="abu.jpg" alt="Abraham Otieno">
+                    </div>
+                    <div class="logo-text">Abraham <span>Otieno</span></div>
+                </a>
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="cv.html">CV/Resume</a></li>
+                    <li><a href="cv.html">CV</a></li>
                     <li><a href="services.html" class="active">Services</a></li>
                     <li><a href="portfolio.html">Portfolio</a></li>
                     <li><a href="case-studies.html">Case Studies</a></li>
@@ -249,163 +744,183 @@
         </div>
     </header>
 
-    <!-- Page Header -->
-    <div class="page-header">
-        <div class="container">
-            <h1>My Services</h1>
-            <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto; opacity: 0.9;">
-                Comprehensive executive support and operational solutions for C-suite executives and founders
-            </p>
+    <!-- Services Hero -->
+    <section class="services-hero">
+        <div class="container hero-container">
+            <div class="hero-profile">
+                <img src="abu.jpg" alt="Abraham Otieno - Executive Assistant">
+            </div>
+            <h1 class="hero-title">Abraham Otieno</h1>
+            <p class="hero-subtitle">Executive Assistant & Operations Partner with <span class="hero-highlight">6+ years</span> of experience supporting C-suite executives and founders with comprehensive operational solutions and strategic partnership.</p>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">150+</div>
+                    <div class="stat-label">Remote Agents Managed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">6+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Projects Delivered</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Client Satisfaction</div>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Services Section -->
+    <!-- Services Grid -->
     <section class="services-section">
         <div class="container">
-            <h2>What I Do Best</h2>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto 30px;">
-                I provide strategic partnership that goes beyond task execution, focusing on enhancing executive bandwidth and operational efficiency.
-            </p>
+            <div class="section-header">
+                <h2>My Core Services</h2>
+                <p>Comprehensive solutions designed to streamline operations and enhance executive productivity</p>
+            </div>
             
             <div class="services-grid">
-                <!-- Service 1 -->
+                <!-- Executive Support -->
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-briefcase"></i>
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Executive Support Services">
                     </div>
-                    <h3>Executive Support</h3>
-                    <p>Complex calendar & priority management, executive travel planning & coordination, C-suite communication & stakeholder alignment, board and leadership support.</p>
-                    
-                    <ul class="service-features">
-                        <li>Calendar & priority management</li>
-                        <li>Executive travel coordination</li>
-                        <li>C-suite communication</li>
-                        <li>Board meeting support</li>
-                        <li>Stakeholder alignment</li>
-                    </ul>
-                    
-                    <div class="service-pricing">
-                        <span class="price-tag">Starting at $35/hour</span>
+                    <div class="service-content">
+                        <div class="service-number">01</div>
+                        <h3>Executive Support</h3>
+                        <p class="service-description">Complex calendar & priority management, executive travel planning & coordination, C-suite communication & stakeholder alignment, board and leadership support.</p>
+                        
+                        <ul class="service-features">
+                            <li>Calendar & priority management</li>
+                            <li>Executive travel coordination</li>
+                            <li>C-suite communication</li>
+                            <li>Board meeting support</li>
+                            <li>Stakeholder alignment</li>
+                        </ul>
+                        
                         <div class="service-cta">
                             <a href="booking.html" class="btn">Schedule Consultation</a>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Service 2 -->
+                <!-- Operations & CRM -->
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-cogs"></i>
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Operations & CRM Services">
                     </div>
-                    <h3>Operations & CRM</h3>
-                    <p>CRM setup, optimization & administration (HubSpot, Salesforce), workflow automation & process documentation, ticketing systems, telephony & inbox management.</p>
-                    
-                    <ul class="service-features">
-                        <li>CRM setup & optimization</li>
-                        <li>Workflow automation</li>
-                        <li>Process documentation</li>
-                        <li>Ticket system management</li>
-                        <li>Telephony & inbox setup</li>
-                    </ul>
-                    
-                    <div class="service-pricing">
-                        <span class="price-tag">Project-based or $40/hour</span>
+                    <div class="service-content">
+                        <div class="service-number">02</div>
+                        <h3>Operations & CRM</h3>
+                        <p class="service-description">CRM setup, optimization & administration (HubSpot, Salesforce), workflow automation & process documentation, ticketing systems, telephony & inbox management.</p>
+                        
+                        <ul class="service-features">
+                            <li>CRM setup & optimization</li>
+                            <li>Workflow automation</li>
+                            <li>Process documentation</li>
+                            <li>Ticket system management</li>
+                            <li>Telephony & inbox setup</li>
+                        </ul>
+                        
                         <div class="service-cta">
                             <a href="booking.html" class="btn">Discuss Project</a>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Service 3 -->
+                <!-- Startup & Remote Team Support -->
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-rocket"></i>
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Startup & Remote Team Support">
                     </div>
-                    <h3>Startup & Remote Team Support</h3>
-                    <p>End-to-end operational setup, website revamps & digital coordination, hiring, onboarding & training documentation, performance tracking & reporting for scaling businesses.</p>
-                    
-                    <ul class="service-features">
-                        <li>Operational setup</li>
-                        <li>Website & digital coordination</li>
-                        <li>Hiring & onboarding support</li>
-                        <li>Training documentation</li>
-                        <li>Performance tracking</li>
-                    </ul>
-                    
-                    <div class="service-pricing">
-                        <span class="price-tag">Retainer or project-based</span>
+                    <div class="service-content">
+                        <div class="service-number">03</div>
+                        <h3>Startup & Remote Team Support</h3>
+                        <p class="service-description">End-to-end operational setup, website revamps & digital coordination, hiring, onboarding & training documentation, performance tracking & reporting for scaling businesses.</p>
+                        
+                        <ul class="service-features">
+                            <li>Operational setup</li>
+                            <li>Website & digital coordination</li>
+                            <li>Hiring & onboarding support</li>
+                            <li>Training documentation</li>
+                            <li>Performance tracking</li>
+                        </ul>
+                        
                         <div class="service-cta">
                             <a href="booking.html" class="btn">Get Started</a>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Service 4 -->
+                <!-- Virtual Team Leadership -->
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-users"></i>
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Virtual Team Leadership">
                     </div>
-                    <h3>Virtual Team Leadership</h3>
-                    <p>Managed and onboarded 150+ remote agents, created SOPs, training guides & QA frameworks, supported performance improvement at scale for distributed teams.</p>
-                    
-                    <ul class="service-features">
-                        <li>Remote team onboarding</li>
-                        <li>SOP development</li>
-                        <li>Training guide creation</li>
-                        <li>QA framework setup</li>
-                        <li>Performance tracking</li>
-                    </ul>
-                    
-                    <div class="service-pricing">
-                        <span class="price-tag">Starting at $45/hour</span>
+                    <div class="service-content">
+                        <div class="service-number">04</div>
+                        <h3>Virtual Team Leadership</h3>
+                        <p class="service-description">Managed and onboarded 150+ remote agents, created SOPs, training guides & QA frameworks, supported performance improvement at scale for distributed teams.</p>
+                        
+                        <ul class="service-features">
+                            <li>Remote team onboarding</li>
+                            <li>SOP development</li>
+                            <li>Training guide creation</li>
+                            <li>QA framework setup</li>
+                            <li>Performance tracking</li>
+                        </ul>
+                        
                         <div class="service-cta">
                             <a href="booking.html" class="btn">Discuss Team Needs</a>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Service 5 -->
+                <!-- Project Coordination -->
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-project-diagram"></i>
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Project Coordination">
                     </div>
-                    <h3>Project Coordination</h3>
-                    <p>Campaign execution, milestone tracking, cross-functional team coordination, stakeholder communication, and end-to-end project delivery across multiple time zones.</p>
-                    
-                    <ul class="service-features">
-                        <li>Campaign execution</li>
-                        <li>Milestone tracking</li>
-                        <li>Cross-team coordination</li>
-                        <li>Stakeholder communication</li>
-                        <li>Multi-timezone delivery</li>
-                    </ul>
-                    
-                    <div class="service-pricing">
-                        <span class="price-tag">Project-based or $40/hour</span>
+                    <div class="service-content">
+                        <div class="service-number">05</div>
+                        <h3>Project Coordination</h3>
+                        <p class="service-description">Campaign execution, milestone tracking, cross-functional team coordination, stakeholder communication, and end-to-end project delivery across multiple time zones.</p>
+                        
+                        <ul class="service-features">
+                            <li>Campaign execution</li>
+                            <li>Milestone tracking</li>
+                            <li>Cross-team coordination</li>
+                            <li>Stakeholder communication</li>
+                            <li>Multi-timezone delivery</li>
+                        </ul>
+                        
                         <div class="service-cta">
                             <a href="booking.html" class="btn">Plan Project</a>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Service 6 -->
+                <!-- Strategic Communications -->
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-chart-line"></i>
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1551836026-d5c2c26b5c2a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Strategic Communications">
                     </div>
-                    <h3>Strategic Communications</h3>
-                    <p>LinkedIn strategy & outreach, digital presence management, content coordination, executive communications, and partnership development support.</p>
-                    
-                    <ul class="service-features">
-                        <li>LinkedIn strategy</li>
-                        <li>Digital presence management</li>
-                        <li>Content coordination</li>
-                        <li>Executive communications</li>
-                        <li>Partnership development</li>
-                    </ul>
-                    
-                    <div class="service-pricing">
-                        <span class="price-tag">Retainer packages available</span>
+                    <div class="service-content">
+                        <div class="service-number">06</div>
+                        <h3>Strategic Communications</h3>
+                        <p class="service-description">LinkedIn strategy & outreach, digital presence management, content coordination, executive communications, and partnership development support.</p>
+                        
+                        <ul class="service-features">
+                            <li>LinkedIn strategy</li>
+                            <li>Digital presence management</li>
+                            <li>Content coordination</li>
+                            <li>Executive communications</li>
+                            <li>Partnership development</li>
+                        </ul>
+                        
                         <div class="service-cta">
                             <a href="booking.html" class="btn">Boost Communications</a>
                         </div>
@@ -418,42 +933,50 @@
     <!-- Industries Section -->
     <section class="industries-section">
         <div class="container">
-            <h2>Industries I Serve</h2>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto 30px;">
-                Experience across multiple industries with proven results
-            </p>
+            <div class="section-header">
+                <h2>Industries I Serve</h2>
+                <p>Experience across multiple industries with proven results and measurable impact</p>
+            </div>
             
             <div class="industries-grid">
-                <div class="industry-item">
-                    <div class="industry-icon">
-                        <i class="fas fa-handshake"></i>
+                <div class="industry-card">
+                    <div class="industry-image">
+                        <img src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="BPO & Outsourcing">
                     </div>
-                    <h4>BPO & Outsourcing</h4>
-                    <p style="font-size: 0.9rem;">Customer service, virtual teams, process optimization</p>
+                    <div class="industry-content">
+                        <h4>BPO & Outsourcing</h4>
+                        <p style="color: #64748b; font-size: 0.95rem; margin: 10px 0 0;">Customer service, virtual teams, process optimization</p>
+                    </div>
                 </div>
                 
-                <div class="industry-item">
-                    <div class="industry-icon">
-                        <i class="fas fa-money-bill-wave"></i>
+                <div class="industry-card">
+                    <div class="industry-image">
+                        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Fintech">
                     </div>
-                    <h4>Fintech</h4>
-                    <p style="font-size: 0.9rem;">Market entry, partnerships, operational scaling</p>
+                    <div class="industry-content">
+                        <h4>Fintech</h4>
+                        <p style="color: #64748b; font-size: 0.95rem; margin: 10px 0 0;">Market entry, partnerships, operational scaling</p>
+                    </div>
                 </div>
                 
-                <div class="industry-item">
-                    <div class="industry-icon">
-                        <i class="fas fa-laptop-code"></i>
+                <div class="industry-card">
+                    <div class="industry-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Technology Startups">
                     </div>
-                    <h4>Technology Startups</h4>
-                    <p style="font-size: 0.9rem;">Operational setup, team scaling, investor relations</p>
+                    <div class="industry-content">
+                        <h4>Technology Startups</h4>
+                        <p style="color: #64748b; font-size: 0.95rem; margin: 10px 0 0;">Operational setup, team scaling, investor relations</p>
+                    </div>
                 </div>
                 
-                <div class="industry-item">
-                    <div class="industry-icon">
-                        <i class="fas fa-language"></i>
+                <div class="industry-card">
+                    <div class="industry-image">
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Translation Services">
                     </div>
-                    <h4>Translation Services</h4>
-                    <p style="font-size: 0.9rem;">Project management, client coordination</p>
+                    <div class="industry-content">
+                        <h4>Translation Services</h4>
+                        <p style="color: #64748b; font-size: 0.95rem; margin: 10px 0 0;">Project management, client coordination</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -462,31 +985,43 @@
     <!-- Process Section -->
     <section class="process-section">
         <div class="container">
-            <h2>How I Work</h2>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto 30px;">
-                A structured approach to ensure successful collaboration and measurable results
-            </p>
+            <div class="section-header">
+                <h2 style="color: white;">My Working Process</h2>
+                <p style="color: #cbd5e1;">A structured approach to ensure successful collaboration and measurable results</p>
+            </div>
             
             <div class="process-steps">
                 <div class="process-step">
+                    <div class="process-image">
+                        <img src="https://images.unsplash.com/photo-1556761175-4acf8da08467?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Discovery Phase">
+                    </div>
                     <div class="step-number">1</div>
                     <h3>Discovery</h3>
                     <p>Free 30-minute consultation to understand your needs, challenges, and goals.</p>
                 </div>
                 
                 <div class="process-step">
+                    <div class="process-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Strategy Phase">
+                    </div>
                     <div class="step-number">2</div>
                     <h3>Strategy</h3>
                     <p>Develop a customized plan outlining scope, timeline, and expected outcomes.</p>
                 </div>
                 
                 <div class="process-step">
+                    <div class="process-image">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Implementation Phase">
+                    </div>
                     <div class="step-number">3</div>
                     <h3>Implementation</h3>
                     <p>Execute the plan with regular check-ins and progress updates.</p>
                 </div>
                 
                 <div class="process-step">
+                    <div class="process-image">
+                        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Optimization Phase">
+                    </div>
                     <div class="step-number">4</div>
                     <h3>Optimization</h3>
                     <p>Continuously refine processes and measure results for ongoing improvement.</p>
@@ -498,24 +1033,20 @@
     <!-- Upwork Section -->
     <section class="upwork-section">
         <div class="container">
-            <h2>Hire Me on Upwork</h2>
             <div class="upwork-card">
-                <div class="upwork-icon">
-                    <i class="fab fa-upwork"></i>
+                <div class="upwork-content">
+                    <h3>Hire Me on Upwork</h3>
+                    <p>For verified reviews, work history, and secure hiring through Upwork's platform with payment protection. Join 50+ satisfied clients who have trusted me with their operations.</p>
+                    <a href="https://www.upwork.com/freelancers/~016468049604acd788" target="_blank" class="btn btn-accent" style="padding: 20px 50px; font-size: 1.1rem;">
+                        <i class="fab fa-upwork" style="margin-right: 10px;"></i> View Upwork Profile
+                    </a>
+                    <p style="font-size: 0.95rem; margin-top: 25px; opacity: 0.9;">
+                        <i class="fas fa-shield-alt" style="margin-right: 8px;"></i> Upwork Payment Protection • Verified Freelancer • Top Rated
+                    </p>
                 </div>
-                <h3>View My Upwork Profile</h3>
-                <p style="margin: 20px 0; color: var(--gray);">
-                    For verified reviews, work history, and secure hiring through Upwork's platform with payment protection.
-                </p>
-                <a href="https://www.upwork.com/freelancers/~016468049604acd788" 
-                   target="_blank" 
-                   class="btn"
-                   style="background: #14a800; display: inline-flex; align-items: center; gap: 10px;">
-                    <i class="fab fa-upwork"></i> View Upwork Profile
-                </a>
-                <p style="margin-top: 20px; font-size: 0.9rem; color: var(--gray);">
-                    <i class="fas fa-shield-alt"></i> Upwork Payment Protection • Verified Freelancer
-                </p>
+                <div class="upwork-image">
+                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Upwork Platform">
+                </div>
             </div>
         </div>
     </section>
@@ -523,17 +1054,20 @@
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
-            <h2>Ready to Streamline Your Operations?</h2>
-            <p style="max-width: 700px; margin: 20px auto 30px;">
-                Let's discuss how I can help enhance your executive bandwidth and operational efficiency.
-            </p>
-            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-                <a href="booking.html" class="btn">
-                    <i class="fas fa-calendar-check"></i> Book Free Consultation
-                </a>
-                <a href="cv.html" class="btn btn-outline">
-                    <i class="fas fa-file-alt"></i> View My CV
-                </a>
+            <div class="cta-content">
+                <h2>Ready to Streamline Your Operations?</h2>
+                <p>Let's discuss how I can help enhance your executive bandwidth and operational efficiency. Book a free consultation to explore how we can work together.</p>
+                <div style="display: flex; gap: 25px; justify-content: center; flex-wrap: wrap;">
+                    <a href="booking.html" class="btn btn-accent" style="padding: 22px 50px; font-size: 1.2rem;">
+                        <i class="fas fa-calendar-check" style="margin-right: 12px;"></i> Book Free Consultation
+                    </a>
+                    <a href="cv.html" class="btn btn-outline" style="padding: 22px 50px; font-size: 1.2rem;">
+                        <i class="fas fa-file-alt" style="margin-right: 12px;"></i> View My CV
+                    </a>
+                </div>
+                <p style="font-size: 1.1rem; color: #94a3b8; margin-top: 40px;">
+                    <i class="fas fa-clock" style="margin-right: 10px;"></i> Response time: Within 2 hours
+                </p>
             </div>
         </div>
     </section>
@@ -559,7 +1093,7 @@
                     <a href="https://wa.link/tnusf3" target="_blank" rel="noopener noreferrer" title="WhatsApp">
                         <i class="fab fa-whatsapp"></i>
                     </a>
-                    <a href="https://www.upwork.com/freelancers/~016468049604acd788" target="_blank" rel="noopener noreferrer" title="Upwork Profile">
+                    <a href="https://www.upwork.com/freelancers/~016468049604acd788" target="_blank" rel="noopener noreferrer" title="Upwork">
                         <i class="fab fa-upwork"></i>
                     </a>
                 </div>
