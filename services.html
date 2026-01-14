@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | Abraham Otieno - Executive Assistant & Operations Partner</title>
+    <meta name="description" content="Comprehensive executive support and operational solutions including calendar management, CRM optimization, virtual team leadership, and strategic operations.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 100px 0 60px;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        
+        .services-section {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 35px;
+            margin-top: 50px;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #f0f0f0;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        
+        .service-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--primary);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover:before {
+            transform: scaleX(1);
+        }
+        
+        .service-icon {
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 25px;
+            display: inline-block;
+            padding: 15px;
+            background: #f0f8ff;
+            border-radius: 12px;
+        }
+        
+        .service-features {
+            list-style: none;
+            margin: 25px 0;
+            padding: 0;
+        }
+        
+        .service-features li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+            color: var(--gray);
+        }
+        
+        .service-features li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+        }
+        
+        .service-pricing {
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid #f0f0f0;
+        }
+        
+        .price-tag {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .service-cta {
+            margin-top: 20px;
+        }
+        
+        .industries-section {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+        
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        
+        .industry-item {
+            text-align: center;
+            padding: 25px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .industry-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .industry-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .process-section {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .process-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .process-step {
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+            padding: 30px;
+            position: relative;
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+        
+        .upwork-section {
+            padding: 80px 0;
+            background: #f8fafc;
+            text-align: center;
+        }
+        
+        .upwork-card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+            max-width: 800px;
+            margin: 0 auto;
+            border-left: 4px solid #14a800;
+        }
+        
+        .upwork-icon {
+            font-size: 3rem;
+            color: #14a800;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section {
+            text-align: center;
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8fbff 0%, #e8f2ff 100%);
+        }
+        
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .process-steps {
+                flex-direction: column;
+            }
+            
+            .upwork-card {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Scroll Progress -->
+    <div class="scroll-progress"></div>
+    
+    <!-- Header & Navigation -->
+    <header role="banner">
+        <div class="container">
+            <nav class="navbar" aria-label="Main navigation">
+                <a href="index.html" class="logo"><i class="fas fa-user-tie"></i> Abraham <span>Otieno</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="cv.html">CV/Resume</a></li>
+                    <li><a href="services.html" class="active">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="case-studies.html">Case Studies</a></li>
+                    <li><a href="booking.html">Book a Call</a></li>
+                </ul>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <h1>My Services</h1>
+            <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto; opacity: 0.9;">
+                Comprehensive executive support and operational solutions for C-suite executives and founders
+            </p>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="container">
+            <h2>What I Do Best</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 30px;">
+                I provide strategic partnership that goes beyond task execution, focusing on enhancing executive bandwidth and operational efficiency.
+            </p>
+            
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Executive Support</h3>
+                    <p>Complex calendar & priority management, executive travel planning & coordination, C-suite communication & stakeholder alignment, board and leadership support.</p>
+                    
+                    <ul class="service-features">
+                        <li>Calendar & priority management</li>
+                        <li>Executive travel coordination</li>
+                        <li>C-suite communication</li>
+                        <li>Board meeting support</li>
+                        <li>Stakeholder alignment</li>
+                    </ul>
+                    
+                    <div class="service-pricing">
+                        <span class="price-tag">Starting at $35/hour</span>
+                        <div class="service-cta">
+                            <a href="booking.html" class="btn">Schedule Consultation</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Operations & CRM</h3>
+                    <p>CRM setup, optimization & administration (HubSpot, Salesforce), workflow automation & process documentation, ticketing systems, telephony & inbox management.</p>
+                    
+                    <ul class="service-features">
+                        <li>CRM setup & optimization</li>
+                        <li>Workflow automation</li>
+                        <li>Process documentation</li>
+                        <li>Ticket system management</li>
+                        <li>Telephony & inbox setup</li>
+                    </ul>
+                    
+                    <div class="service-pricing">
+                        <span class="price-tag">Project-based or $40/hour</span>
+                        <div class="service-cta">
+                            <a href="booking.html" class="btn">Discuss Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Startup & Remote Team Support</h3>
+                    <p>End-to-end operational setup, website revamps & digital coordination, hiring, onboarding & training documentation, performance tracking & reporting for scaling businesses.</p>
+                    
+                    <ul class="service-features">
+                        <li>Operational setup</li>
+                        <li>Website & digital coordination</li>
+                        <li>Hiring & onboarding support</li>
+                        <li>Training documentation</li>
+                        <li>Performance tracking</li>
+                    </ul>
+                    
+                    <div class="service-pricing">
+                        <span class="price-tag">Retainer or project-based</span>
+                        <div class="service-cta">
+                            <a href="booking.html" class="btn">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Virtual Team Leadership</h3>
+                    <p>Managed and onboarded 150+ remote agents, created SOPs, training guides & QA frameworks, supported performance improvement at scale for distributed teams.</p>
+                    
+                    <ul class="service-features">
+                        <li>Remote team onboarding</li>
+                        <li>SOP development</li>
+                        <li>Training guide creation</li>
+                        <li>QA framework setup</li>
+                        <li>Performance tracking</li>
+                    </ul>
+                    
+                    <div class="service-pricing">
+                        <span class="price-tag">Starting at $45/hour</span>
+                        <div class="service-cta">
+                            <a href="booking.html" class="btn">Discuss Team Needs</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3>Project Coordination</h3>
+                    <p>Campaign execution, milestone tracking, cross-functional team coordination, stakeholder communication, and end-to-end project delivery across multiple time zones.</p>
+                    
+                    <ul class="service-features">
+                        <li>Campaign execution</li>
+                        <li>Milestone tracking</li>
+                        <li>Cross-team coordination</li>
+                        <li>Stakeholder communication</li>
+                        <li>Multi-timezone delivery</li>
+                    </ul>
+                    
+                    <div class="service-pricing">
+                        <span class="price-tag">Project-based or $40/hour</span>
+                        <div class="service-cta">
+                            <a href="booking.html" class="btn">Plan Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Strategic Communications</h3>
+                    <p>LinkedIn strategy & outreach, digital presence management, content coordination, executive communications, and partnership development support.</p>
+                    
+                    <ul class="service-features">
+                        <li>LinkedIn strategy</li>
+                        <li>Digital presence management</li>
+                        <li>Content coordination</li>
+                        <li>Executive communications</li>
+                        <li>Partnership development</li>
+                    </ul>
+                    
+                    <div class="service-pricing">
+                        <span class="price-tag">Retainer packages available</span>
+                        <div class="service-cta">
+                            <a href="booking.html" class="btn">Boost Communications</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries Section -->
+    <section class="industries-section">
+        <div class="container">
+            <h2>Industries I Serve</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 30px;">
+                Experience across multiple industries with proven results
+            </p>
+            
+            <div class="industries-grid">
+                <div class="industry-item">
+                    <div class="industry-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h4>BPO & Outsourcing</h4>
+                    <p style="font-size: 0.9rem;">Customer service, virtual teams, process optimization</p>
+                </div>
+                
+                <div class="industry-item">
+                    <div class="industry-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h4>Fintech</h4>
+                    <p style="font-size: 0.9rem;">Market entry, partnerships, operational scaling</p>
+                </div>
+                
+                <div class="industry-item">
+                    <div class="industry-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h4>Technology Startups</h4>
+                    <p style="font-size: 0.9rem;">Operational setup, team scaling, investor relations</p>
+                </div>
+                
+                <div class="industry-item">
+                    <div class="industry-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h4>Translation Services</h4>
+                    <p style="font-size: 0.9rem;">Project management, client coordination</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <h2>How I Work</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 30px;">
+                A structured approach to ensure successful collaboration and measurable results
+            </p>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Discovery</h3>
+                    <p>Free 30-minute consultation to understand your needs, challenges, and goals.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Strategy</h3>
+                    <p>Develop a customized plan outlining scope, timeline, and expected outcomes.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Implementation</h3>
+                    <p>Execute the plan with regular check-ins and progress updates.</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Optimization</h3>
+                    <p>Continuously refine processes and measure results for ongoing improvement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upwork Section -->
+    <section class="upwork-section">
+        <div class="container">
+            <h2>Hire Me on Upwork</h2>
+            <div class="upwork-card">
+                <div class="upwork-icon">
+                    <i class="fab fa-upwork"></i>
+                </div>
+                <h3>View My Upwork Profile</h3>
+                <p style="margin: 20px 0; color: var(--gray);">
+                    For verified reviews, work history, and secure hiring through Upwork's platform with payment protection.
+                </p>
+                <a href="https://www.upwork.com/freelancers/~016468049604acd788" 
+                   target="_blank" 
+                   class="btn"
+                   style="background: #14a800; display: inline-flex; align-items: center; gap: 10px;">
+                    <i class="fab fa-upwork"></i> View Upwork Profile
+                </a>
+                <p style="margin-top: 20px; font-size: 0.9rem; color: var(--gray);">
+                    <i class="fas fa-shield-alt"></i> Upwork Payment Protection • Verified Freelancer
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Streamline Your Operations?</h2>
+            <p style="max-width: 700px; margin: 20px auto 30px;">
+                Let's discuss how I can help enhance your executive bandwidth and operational efficiency.
+            </p>
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <a href="booking.html" class="btn">
+                    <i class="fas fa-calendar-check"></i> Book Free Consultation
+                </a>
+                <a href="cv.html" class="btn btn-outline">
+                    <i class="fas fa-file-alt"></i> View My CV
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <h3>Abraham Otieno</h3>
+                    <p>Executive Assistant & Operations Partner | 6+ Years Supporting C-Suite & Founders</p>
+                    <p style="font-size: 0.95rem; margin-top: 15px; color: rgba(255,255,255,0.9);">
+                        📧 abrahamsalasstaffing@gmail.com | 📱 +254 757 272 468
+                    </p>
+                </div>
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/abraham-otieno-665678317" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:abrahamsalasstaffing@gmail.com" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://wa.link/tnusf3" target="_blank" rel="noopener noreferrer" title="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://www.upwork.com/freelancers/~016468049604acd788" target="_blank" rel="noopener noreferrer" title="Upwork Profile">
+                        <i class="fab fa-upwork"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Abraham Otieno. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" title="Back to Top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
