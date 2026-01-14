@@ -3,437 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank You - Abraham Otieno | Certified Virtual Assistant</title>
-    <meta name="description" content="Thank you for contacting Abraham Otieno - Certified Virtual Assistant. Your message has been received successfully.">
-    <meta name="keywords" content="thank you, contact confirmation, Abraham Otieno, virtual assistant">
-    <meta name="author" content="Abraham Otieno">
+    <title>Thank You | Abraham Otieno</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    
     <style>
-        :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --secondary: #0f172a;
-            --accent: #f59e0b;
-            --light: #f8fafc;
-            --gray: #64748b;
-            --dark: #1e293b;
-            --success: #10b981;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        .thank-you-section {
             min-height: 100vh;
-            line-height: 1.6;
-            color: var(--dark);
-        }
-        
-        .thank-you-container {
-            background: white;
-            padding: 60px 40px;
-            border-radius: 15px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            max-width: 600px;
-            width: 90%;
-            position: relative;
-            overflow: hidden;
+            background: linear-gradient(135deg, #f8fbff 0%, #e8f2ff 100%);
+            padding: 100px 20px;
         }
         
-        .thank-you-container:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
-        }
-        
-        .checkmark-container {
-            position: relative;
-            margin-bottom: 30px;
+        .thank-you-content {
+            max-width: 700px;
+            margin: 0 auto;
         }
         
         .checkmark {
-            font-size: 5rem;
-            color: var(--success);
-            margin-bottom: 10px;
-            display: inline-block;
-            animation: checkmarkPop 0.6s ease-in-out;
-        }
-        
-        @keyframes checkmarkPop {
-            0% { transform: scale(0); opacity: 0; }
-            70% { transform: scale(1.2); }
-            100% { transform: scale(1); opacity: 1; }
-        }
-        
-        .checkmark-circle {
-            width: 120px;
-            height: 120px;
+            width: 100px;
+            height: 100px;
+            background: var(--success);
             border-radius: 50%;
-            background: rgba(16, 185, 129, 0.1);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 20px;
-            animation: circlePulse 2s infinite;
-        }
-        
-        @keyframes circlePulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-        
-        h1 {
-            color: var(--secondary);
-            margin-bottom: 20px;
-            font-size: 2.5rem;
-            font-weight: 700;
-        }
-        
-        .subtitle {
-            font-size: 1.2rem;
-            color: var(--primary);
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-        
-        p {
-            color: var(--gray);
-            margin-bottom: 25px;
-            line-height: 1.6;
-            font-size: 1.1rem;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 14px 35px;
-            background: var(--primary);
+            margin: 0 auto 30px;
+            font-size: 3rem;
             color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            margin: 10px;
-            font-size: 1rem;
+            animation: bounce 1s;
         }
         
-        .btn:hover {
-            background: var(--primary-dark);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
         }
         
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
-        
-        .btn-outline:hover {
-            background: var(--primary);
-            color: white;
-        }
-        
-        .contact-info {
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
             margin-top: 40px;
-            padding-top: 30px;
-            border-top: 1px solid #e2e8f0;
-        }
-        
-        .contact-info h3 {
-            color: var(--secondary);
-            margin-bottom: 20px;
-            font-size: 1.5rem;
-        }
-        
-        .contact-details {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-bottom: 25px;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-        }
-        
-        .contact-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.1rem;
-            flex-shrink: 0;
-        }
-        
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 45px;
-            height: 45px;
-            background: #f8fafc;
-            border-radius: 50%;
-            color: var(--primary);
-            text-decoration: none;
-            transition: all 0.3s;
-            border: 1px solid #e2e8f0;
-        }
-        
-        .social-links a:hover {
-            background: var(--primary);
-            color: white;
-            transform: translateY(-3px);
-        }
-        
-        .next-steps {
-            background: #f8fafc;
-            padding: 25px;
-            border-radius: 10px;
-            margin: 30px 0;
-            text-align: left;
-        }
-        
-        .next-steps h3 {
-            color: var(--secondary);
-            margin-bottom: 15px;
-            font-size: 1.3rem;
-        }
-        
-        .next-steps ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        
-        .next-steps li {
-            margin-bottom: 12px;
-            padding-left: 25px;
-            position: relative;
-        }
-        
-        .next-steps li:before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--success);
-            font-weight: bold;
-        }
-        
-        .countdown {
-            margin-top: 20px;
-            font-size: 0.9rem;
-            color: var(--gray);
-        }
-        
-        .countdown span {
-            font-weight: 600;
-            color: var(--primary);
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .thank-you-container {
-                padding: 40px 25px;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .checkmark-circle {
-                width: 100px;
-                height: 100px;
-            }
-            
-            .checkmark {
-                font-size: 4rem;
-            }
-            
-            .btn {
-                padding: 12px 25px;
-                display: block;
-                width: 100%;
-                margin: 10px 0;
-            }
-            
-            .contact-item {
-                flex-direction: column;
-                text-align: center;
-                gap: 8px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .thank-you-container {
-                padding: 30px 20px;
-            }
-            
-            h1 {
-                font-size: 1.8rem;
-            }
-            
-            .checkmark-circle {
-                width: 80px;
-                height: 80px;
-            }
-            
-            .checkmark {
-                font-size: 3rem;
-            }
+            flex-wrap: wrap;
         }
     </style>
 </head>
 <body>
-    <div class="thank-you-container">
-        <div class="checkmark-container">
-            <div class="checkmark-circle">
+    <!-- Header & Navigation -->
+    <header role="banner">
+        <div class="container">
+            <nav class="navbar" aria-label="Main navigation">
+                <a href="index.html" class="logo"><i class="fas fa-user-tie"></i> Abraham <span>Otieno</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="cv.html">CV/Resume</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#portfolio">Portfolio</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="booking.html">Book a Call</a></li>
+                </ul>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Thank You Section -->
+    <section class="thank-you-section">
+        <div class="container">
+            <div class="thank-you-content">
                 <div class="checkmark">
                     <i class="fas fa-check"></i>
                 </div>
-            </div>
-        </div>
-        
-        <h1>Thank You!</h1>
-        <p class="subtitle">Your message has been sent successfully</p>
-        <p>I have received your inquiry and will get back to you within <strong>24 hours</strong>. I appreciate you taking the time to reach out.</p>
-        
-        <div class="next-steps">
-            <h3>What Happens Next?</h3>
-            <ul>
-                <li>I'll review your message and requirements carefully</li>
-                <li>You'll receive a personalized response with next steps</li>
-                <li>We can schedule a free consultation call to discuss your needs</li>
-                <li>I'll provide a tailored proposal for how I can help your business</li>
-            </ul>
-        </div>
-        
-        <div class="countdown">
-            <p>You will be automatically redirected to the homepage in <span id="countdown">10</span> seconds</p>
-        </div>
-        
-        <div class="action-buttons">
-            <a href="index.html" class="btn">Return to Website</a>
-            <a href="cv.html" class="btn btn-outline">View My CV</a>
-        </div>
-        
-        <div class="contact-info">
-            <h3>Connect With Me</h3>
-            <div class="contact-details">
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <div>
-                        <p>abraham.otienoa@gmail.com</p>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-phone"></i>
-                    </div>
-                    <div>
-                        <p>+254 757 272 468</p>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fab fa-linkedin"></i>
-                    </div>
-                    <div>
-                        <p>linkedin.com/in/abraham-otieno-665678317</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="social-links">
-                <a href="https://linkedin.com/in/abraham-otieno-665678317" target="_blank" rel="noopener noreferrer" title="LinkedIn">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="mailto:abraham.otienoa@gmail.com" title="Email">
-                    <i class="fas fa-envelope"></i>
-                </a>
-                <a href="https://wa.link/tnusf3" target="_blank" rel="noopener noreferrer" title="WhatsApp">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // Countdown timer for automatic redirect
-        let countdown = 10;
-        const countdownElement = document.getElementById('countdown');
-        const countdownInterval = setInterval(() => {
-            countdown--;
-            countdownElement.textContent = countdown;
-            
-            if (countdown <= 0) {
-                clearInterval(countdownInterval);
-                window.location.href = 'index.html';
-            }
-        }, 1000);
-        
-        // Add some interactive elements
-        document.addEventListener('DOMContentLoaded', function() {
-            // Add animation to buttons on hover
-            const buttons = document.querySelectorAll('.btn');
-            buttons.forEach(button => {
-                button.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-3px)';
-                });
                 
-                button.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateY(0)';
-                });
-            });
-            
-            // Copy email functionality
-            const emailElement = document.querySelector('.contact-item:nth-child(1)');
-            emailElement.style.cursor = 'pointer';
-            emailElement.title = 'Click to copy email';
-            
-            emailElement.addEventListener('click', function() {
-                const email = 'abraham.otienoa@gmail.com';
-                navigator.clipboard.writeText(email).then(() => {
-                    const originalText = this.querySelector('p').textContent;
-                    this.querySelector('p').textContent = 'Email copied to clipboard!';
-                    setTimeout(() => {
-                        this.querySelector('p').textContent = originalText;
-                    }, 2000);
-                });
-            });
-        });
-    </script>
+                <h1>Thank You!</h1>
+                <p style="font-size: 1.2rem; margin-bottom: 20px; color: var(--gray);">
+                    Your message has been successfully sent.
+                </p>
+                
+                <p style="margin-bottom: 30px;">
+                    I've received your inquiry and will get back to you within 24 hours. I look forward to connecting with you and discussing how I can help streamline your executive operations.
+                </p>
+                
+                <div class="action-buttons">
+                    <a href="index.html" class="btn">
+                        <i class="fas fa-home"></i> Return to Homepage
+                    </a>
+                    <a href="cv.html" class="btn btn-outline">
+                        <i class="fas fa-file-alt"></i> View My CV
+                    </a>
+                    <a href="booking.html" class="btn">
+                        <i class="fas fa-calendar-check"></i> Book a Call
+                    </a>
+                </div>
+                
+                <div style="margin-top: 50px; padding: 20px; background: #f0f8ff; border-radius: 10px;">
+                    <h3 style="margin-bottom: 15px; color: var(--primary);">
+                        <i class="fas fa-clock"></i> Quick Response Guarantee
+                    </h3>
+                    <p style="margin-bottom: 10px;">
+                        <strong>2-hour response guarantee</strong> during business hours
+                    </p>
+                    <p style="font-size: 0.9rem; color: var(--gray);">
+                        I'm committed to responding to all inquiries promptly. For urgent matters, you can reach me directly at +254 757 272 468.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <h3>Abraham Otieno</h3>
+                    <p>Executive Assistant & Operations Partner | 6+ Years Supporting C-Suite & Founders</p>
+                    <p style="font-size: 0.95rem; margin-top: 15px; color: rgba(255,255,255,0.9);">
+                        📧 abrahamsalasstaffing@gmail.com | 📱 +254 757 272 468
+                    </p>
+                </div>
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/abraham-otieno-665678317" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:abrahamsalasstaffing@gmail.com" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://wa.link/tnusf3" target="_blank" rel="noopener noreferrer" title="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Abraham Otieno. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" title="Back to Top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
