@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Consultation | Abraham Otieno - Executive Assistant & Operations Partner</title>
+    <meta name="description" content="Schedule a free 30-minute consultation with Abraham Otieno to discuss your executive support and operations needs.">
+    <meta name="keywords" content="book consultation, executive assistant consultation, operations partner, free call, schedule meeting">
+    <meta name="author" content="Abraham Otieno">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 100px 0 60px;
+            text-align: center;
+            margin-top: 80px;
+        }
+        
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        .booking-content {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+        
+        .booking-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .booking-info {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .booking-info h2 {
+            margin-bottom: 20px;
+        }
+        
+        .booking-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+        
+        .whatsapp-booking {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border: 1px solid #f0f0f0;
+        }
+        
+        .whatsapp-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .whatsapp-icon {
+            width: 80px;
+            height: 80px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2.5rem;
+            color: white;
+        }
+        
+        .whatsapp-features {
+            list-style: none;
+            padding: 0;
+            margin: 25px 0;
+        }
+        
+        .whatsapp-features li {
+            margin-bottom: 15px;
+            padding-left: 35px;
+            position: relative;
+            color: var(--gray);
+            text-align: left;
+        }
+        
+        .whatsapp-features li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: bold;
+            font-size: 1.2rem;
+            width: 25px;
+            height: 25px;
+            background: #f0f8ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #25D366;
+            color: white;
+            padding: 16px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            width: 100%;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+        }
+        
+        .calendar-booking {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border: 1px solid #f0f0f0;
+            height: 100%;
+        }
+        
+        .calendar-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .calendar-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2.5rem;
+            color: white;
+        }
+        
+        .calendar-features {
+            list-style: none;
+            padding: 0;
+            margin: 25px 0;
+        }
+        
+        .calendar-features li {
+            margin-bottom: 15px;
+            padding-left: 35px;
+            position: relative;
+            color: var(--gray);
+            text-align: left;
+        }
+        
+        .calendar-features li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.2rem;
+            width: 25px;
+            height: 25px;
+            background: #f0f8ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .calendar-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--primary);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            width: 100%;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .calendar-btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,102,204,0.3);
+        }
+        
+        .contact-alternatives {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            margin-top: 40px;
+            border: 1px solid #f0f0f0;
+        }
+        
+        .contact-alternatives h3 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .contact-method {
+            text-align: center;
+            padding: 25px;
+            background: #f8fafc;
+            border-radius: 10px;
+            border: 1px solid #f0f0f0;
+            transition: transform 0.3s;
+        }
+        
+        .contact-method:hover {
+            transform: translateY(-5px);
+        }
+        
+        .method-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 1.8rem;
+            color: white;
+        }
+        
+        .contact-method h4 {
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
+        
+        .contact-method p {
+            margin: 0;
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+        
+        .contact-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        .contact-link:hover {
+            text-decoration: underline;
+        }
+        
+        .response-guarantee {
+            background: linear-gradient(135deg, #f0f8ff 0%, #e8f2ff 100%);
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 40px;
+            border-left: 4px solid var(--primary);
+            text-align: center;
+        }
+        
+        .response-guarantee h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .whatsapp-note {
+            background: #dcf8c6;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border-left: 4px solid #25D366;
+            font-size: 0.9rem;
+            color: #333;
+        }
+        
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .page-header {
+                padding: 80px 0 40px;
+            }
+            
+            .booking-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .whatsapp-booking,
+            .calendar-booking {
+                padding: 25px;
+            }
+            
+            .contact-methods {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Scroll Progress -->
+    <div class="scroll-progress"></div>
+    
+    <!-- Header & Navigation -->
+    <header role="banner">
+        <div class="container">
+            <nav class="navbar" aria-label="Main navigation">
+                <a href="index.html" class="logo"><i class="fas fa-user-tie"></i> Abraham <span>Otieno</span></a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="cv.html">CV/Resume</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#portfolio">Portfolio</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="booking.html" class="active">Book a Call</a></li>
+                </ul>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <h1>Book a Free Consultation</h1>
+            <p>Let's discuss how I can help streamline your operations and enhance executive bandwidth</p>
+        </div>
+    </div>
+
+    <!-- Booking Content -->
+    <section class="booking-content">
+        <div class="container">
+            <div class="booking-info">
+                <h2>Choose Your Booking Method</h2>
+                <p style="max-width: 700px; margin: 0 auto 30px; color: var(--gray);">
+                    I offer flexible booking options to suit your preference. Book via WhatsApp for quick responses or use Calendly for self-scheduling.
+                </p>
+            </div>
+            
+            <div class="booking-grid">
+                <!-- WhatsApp Booking -->
+                <div class="whatsapp-booking">
+                    <div class="whatsapp-header">
+                        <div class="whatsapp-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <h3>Book via WhatsApp</h3>
+                        <p>Fast, direct communication with instant confirmation</p>
+                    </div>
+                    
+                    <ul class="whatsapp-features">
+                        <li>Instant response and confirmation</li>
+                        <li>Quick questions answered immediately</li>
+                        <li>Flexible scheduling adjustments</li>
+                        <li>Preferred by executives for efficiency</li>
+                        <li>Available 8 AM - 6 PM EAT (UTC+3)</li>
+                    </ul>
+                    
+                    <div class="whatsapp-note">
+                        <i class="fas fa-info-circle"></i> <strong>Best for:</strong> Quick questions, urgent meetings, or if you prefer chat-based communication
+                    </div>
+                    
+                    <a href="https://wa.link/tnusf3" target="_blank" class="whatsapp-btn">
+                        <i class="fab fa-whatsapp"></i> Message on WhatsApp
+                    </a>
+                </div>
+                
+                <!-- Calendly Booking -->
+                <div class="calendar-booking">
+                    <div class="calendar-header">
+                        <div class="calendar-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <h3>Book via Calendly</h3>
+                        <p>Self-schedule at your convenience</p>
+                    </div>
+                    
+                    <ul class="calendar-features">
+                        <li>30-minute free consultation</li>
+                        <li>See available time slots instantly</li>
+                        <li>Automatic calendar integration</li>
+                        <li>Zoom/Google Meet links provided</li>
+                        <li>Reminders sent automatically</li>
+                    </ul>
+                    
+                    <!-- Calendly Embed -->
+                    <div style="height: 400px; width: 100%; margin-top: 20px; border-radius: 8px; overflow: hidden;">
+                        <iframe 
+                            src="https://calendly.com/abrahamotieno" 
+                            width="100%" 
+                            height="100%" 
+                            frameborder="0"
+                            style="border: 1px solid #f0f0f0; border-radius: 8px;"
+                            title="Schedule a meeting with Abraham Otieno">
+                        </iframe>
+                    </div>
+                    
+                    <a href="https://calendly.com/abrahamotieno" target="_blank" class="calendar-btn">
+                        <i class="fas fa-external-link-alt"></i> Open Calendly in New Tab
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Contact Alternatives -->
+            <div class="contact-alternatives">
+                <h3>Other Ways to Connect</h3>
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <div class="method-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h4>Email</h4>
+                        <p>Send a detailed message outlining your needs</p>
+                        <a href="mailto:abrahamsalasstaffing@gmail.com?subject=Consultation Request&body=Hello Abraham, I'd like to schedule a consultation regarding..." class="contact-link">
+                            Send Email
+                        </a>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="method-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <h4>LinkedIn</h4>
+                        <p>Connect professionally and send a message</p>
+                        <a href="https://linkedin.com/in/abraham-otieno-665678317" target="_blank" class="contact-link">
+                            View Profile
+                        </a>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="method-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h4>Phone/SMS</h4>
+                        <p>Direct call or text for urgent inquiries</p>
+                        <a href="tel:+254757272468" class="contact-link">
+                            +254 757 272 468
+                        </a>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="method-icon">
+                            <i class="fab fa-upwork"></i>
+                        </div>
+                        <h4>Upwork</h4>
+                        <p>Hire me through Upwork platform</p>
+                        <a href="https://www.upwork.com/freelancers/~016468049604acd788" target="_blank" class="contact-link">
+                            View Profile
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Response Guarantee -->
+            <div class="response-guarantee">
+                <h3>
+                    <i class="fas fa-clock"></i> Quick Response Guarantee
+                </h3>
+                <p style="margin-bottom: 10px;">
+                    <strong>2-hour response guarantee</strong> during business hours (8 AM - 6 PM EAT, Monday-Friday)
+                </p>
+                <p style="color: var(--gray); font-size: 0.95rem;">
+                    I understand that time is valuable. I'm committed to responding to all booking inquiries promptly to ensure we can connect at your earliest convenience.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <h3>Abraham Otieno</h3>
+                    <p>Executive Assistant & Operations Partner | 6+ Years Supporting C-Suite & Founders</p>
+                    <p style="font-size: 0.95rem; margin-top: 15px; color: rgba(255,255,255,0.9);">
+                        📧 abrahamsalasstaffing@gmail.com | 📱 +254 757 272 468
+                    </p>
+                </div>
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/abraham-otieno-665678317" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:abrahamsalasstaffing@gmail.com" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://wa.link/tnusf3" target="_blank" rel="noopener noreferrer" title="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://www.upwork.com/freelancers/~016468049604acd788" target="_blank" rel="noopener noreferrer" title="Upwork">
+                        <i class="fab fa-upwork"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Abraham Otieno. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" title="Back to Top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
