@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Case Studies & Testimonials | Abraham Otieno - Executive Assistant & Operations Partner</title>
-    <meta name="description" content=" Case studies and testimonials showcasing Abraham Otieno's work as an Executive Assistant & Operations Partner supporting C-Suite executives and founders.">
+    <meta name="description" content="Case studies and testimonials showcasing Abraham Otieno's work as an Executive Assistant & Operations Partner supporting C-Suite executives and founders.">
     <meta name="author" content="Abraham Otieno">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
@@ -17,27 +17,62 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2) !important;
         }
         
+        /* UPDATED: White background with subtle gradient */
         .page-header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: white;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            color: #1a202c;
             padding: 100px 0 60px;
             text-align: center;
             margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* UPDATED: Added decorative elements */
+        .page-header:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+        }
+        
+        /* UPDATED: Added subtle pattern overlay */
+        .page-header:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230066cc' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.3;
+            z-index: 0;
+        }
+        
+        .page-header .container {
+            position: relative;
+            z-index: 1;
         }
         
         .page-header h1 {
-            font-size: 3rem;
-            margin-bottom: 15px;
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+            color: #1a202c;
+            font-weight: 800;
+            letter-spacing: -0.5px;
         }
         
-        /* CHANGED: Increased visibility of the subtitle text */
+        /* UPDATED: Improved subtitle visibility */
         .page-header p {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             max-width: 800px;
             margin: 0 auto;
-            opacity: 1;
-            font-weight: 500;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            color: #4a5568;
+            line-height: 1.6;
+            font-weight: 400;
         }
         
         /* About Me at the Top */
@@ -52,6 +87,7 @@
             border-radius: 16px;
             text-align: center;
             box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            border: 1px solid #e2e8f0;
         }
         
         .about-summary-top h3 {
@@ -116,6 +152,20 @@
             height: 220px;
             position: relative;
             overflow: hidden;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        /* UPDATED: Fallback background for broken images */
+        .case-image:before {
+            content: '📊';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            color: white;
+            opacity: 0.8;
+            z-index: 1;
         }
         
         .case-image img {
@@ -123,6 +173,8 @@
             height: 100%;
             object-fit: cover;
             transition: transform 0.6s ease;
+            position: relative;
+            z-index: 2;
         }
         
         .case-card:hover .case-image img {
@@ -366,11 +418,11 @@
         
         @media (max-width: 768px) {
             .page-header h1 {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
             }
             
             .page-header p {
-                font-size: 1.1rem;
+                font-size: 1.2rem;
                 padding: 0 20px;
             }
             
@@ -429,7 +481,7 @@
         </div>
     </header>
 
-    <!-- Page Header -->
+    <!-- UPDATED: White/Grey Page Header -->
     <div class="page-header">
         <div class="container">
             <h1>Case Studies & Testimonials</h1>
@@ -460,7 +512,8 @@
                 <div class="case-card">
                     <div class="case-badge">Interactive Case Study</div>
                     <div class="case-image">
-                        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Executive Strategy and Planning">
+                        <!-- Using a reliable image source -->
+                        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Executive Strategy and Planning" onerror="this.style.display='none'">
                     </div>
                     <div class="case-content">
                         <h3>Central Hire Executive Assistant Application</h3>
@@ -488,7 +541,8 @@
                 <div class="case-card">
                     <div class="case-badge">Presentation Deck</div>
                     <div class="case-image">
-                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Business Presentation and Analytics">
+                        <!-- Using a reliable image source -->
+                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Business Presentation and Analytics" onerror="this.style.display='none'">
                     </div>
                     <div class="case-content">
                         <h3>Hire Central Case Study Presentation</h3>
@@ -578,7 +632,7 @@
         </div>
     </section>
 
-    <!-- Footer - Exactly as you provided -->
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
