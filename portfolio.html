@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     
-    <style>
+   <style>
         /* Add profile image styles */
         .logo {
             display: flex;
@@ -33,29 +33,31 @@
             color: white;
         }
         
-        /* CHANGED: White page header with black text */
+        /* FIXED: Maximum visibility white page header with black text */
         .page-header {
-            background: white;
+            background: #ffffff;
             color: #000000;
             padding: 100px 0 60px;
             text-align: center;
             margin-top: 80px;
-            border-bottom: 1px solid #e2e8f0;
+            border-bottom: 2px solid #000000;
         }
         
         .page-header h1 {
-            font-size: 3rem;
-            margin-bottom: 15px;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
             color: #000000;
-            font-weight: 700;
+            font-weight: 900;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
         }
         
         .page-header p {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             max-width: 800px;
             margin: 0 auto;
-            color: #333333;
-            font-weight: 500;
+            color: #000000;
+            font-weight: 700;
+            letter-spacing: 0.5px;
         }
         
         .portfolio-section {
@@ -221,7 +223,11 @@
         
         @media (max-width: 768px) {
             .page-header h1 {
-                font-size: 2.2rem;
+                font-size: 2.8rem;
+            }
+            
+            .page-header p {
+                font-size: 1.2rem;
             }
             
             .portfolio-grid {
