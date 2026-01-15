@@ -8,63 +8,84 @@
     <meta name="author" content="Abraham Otieno">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="https://raw.githubusercontent.com/otieno-abraham/otieno-abraham.github.io/main/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     
     <style>
-        /* Header Background Color - Keep as original */
+        /* CHANGED: Grey navigation header with white text */
         header {
-            background: #ffffff !important;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+            background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%) !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            color: white;
         }
         
-        /* Page Header - WHITE BACKGROUND as requested */
+        /* CHANGED: Profile image border for grey header */
+        .profile-img {
+            border: 2px solid white;
+        }
+        
+        /* CHANGED: Navigation links white */
+        .nav-links a {
+            color: white !important;
+        }
+        
+        /* CHANGED: Logo text white */
+        .logo span {
+            color: white !important;
+        }
+        
+        /* CHANGED: Active nav link */
+        .nav-links a.active {
+            color: #ff6b35 !important;
+            font-weight: 600;
+        }
+        
+        /* Keep page header white */
         .page-header {
-            background: #ffffff;
-            color: #333333;
+            background: white;
+            color: #1a202c;
             padding: 100px 0 60px;
             text-align: center;
             margin-top: 80px;
+            border-bottom: 1px solid #e2e8f0;
         }
         
         .page-header h1 {
             font-size: 3rem;
-            margin-bottom: 15px;
-            color: #333333;
+            margin-bottom: 20px;
+            color: #1a202c;
+            font-weight: 700;
         }
         
-        /* Fixed: Make subtitle clearly visible */
         .page-header p {
             font-size: 1.2rem;
             max-width: 800px;
             margin: 0 auto;
-            color: #666666;
-            opacity: 1;
-            font-weight: 400;
+            color: #4a5568;
+            line-height: 1.6;
         }
         
-        /* About Me at the Top */
+        /* All other styles remain exactly the same as your original code */
         .about-top-section {
             padding: 60px 0;
             background: white;
         }
         
         .about-summary-top {
-            background: #f9f9f9;
+            background: linear-gradient(135deg, #f8fbff 0%, #e8f2ff 100%);
             padding: 40px;
             border-radius: 16px;
             text-align: center;
             box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-            border: 1px solid #eaeaea;
         }
         
         .about-summary-top h3 {
-            color: #333333;
+            color: var(--secondary);
             margin-bottom: 20px;
             font-size: 1.8rem;
         }
         
         .about-summary-top p {
-            color: #555555;
+            color: var(--gray);
             line-height: 1.7;
             max-width: 900px;
             margin: 0 auto;
@@ -105,7 +126,7 @@
             position: absolute;
             top: 20px;
             right: 20px;
-            background: #ff6b35;
+            background: var(--accent);
             color: white;
             padding: 8px 16px;
             border-radius: 20px;
@@ -119,10 +140,8 @@
             height: 220px;
             position: relative;
             overflow: hidden;
-            background: #f5f5f5;
         }
         
-        /* FIX: Use direct image URL or base64 placeholder */
         .case-image img {
             width: 100%;
             height: 100%;
@@ -142,7 +161,7 @@
         }
         
         .case-content h3 {
-            color: #333333;
+            color: var(--secondary);
             margin-bottom: 15px;
             font-size: 1.6rem;
             line-height: 1.3;
@@ -154,7 +173,7 @@
             gap: 20px;
             margin-bottom: 20px;
             font-size: 0.9rem;
-            color: #666666;
+            color: var(--gray);
         }
         
         .case-meta span {
@@ -189,7 +208,7 @@
             content: '✓';
             position: absolute;
             left: 0;
-            color: #28a745;
+            color: var(--success);
             font-weight: bold;
             font-size: 1.1rem;
         }
@@ -202,7 +221,7 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: #333333;
+            background: var(--primary);
             color: white;
             padding: 14px 28px;
             border-radius: 8px;
@@ -215,13 +234,13 @@
         }
         
         .case-btn:hover {
-            background: #000000;
+            background: var(--primary-dark);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 6px 20px rgba(0,102,204,0.2);
         }
         
         .case-btn.accent {
-            background: #ff6b35;
+            background: var(--accent);
         }
         
         .case-btn.accent:hover {
@@ -238,7 +257,7 @@
             padding: 50px;
             border-radius: 16px;
             margin-bottom: 30px;
-            border-left: 4px solid #ff6b35;
+            border-left: 4px solid var(--accent);
             position: relative;
             overflow: hidden;
         }
@@ -256,7 +275,7 @@
         .testimonial-quote {
             font-size: 1.25rem;
             font-style: italic;
-            color: #333333;
+            color: var(--dark);
             margin-bottom: 30px;
             line-height: 1.8;
             position: relative;
@@ -269,8 +288,8 @@
             left: 0;
             top: -20px;
             font-size: 5rem;
-            color: #cccccc;
-            opacity: 0.3;
+            color: var(--primary);
+            opacity: 0.15;
             font-family: Georgia, serif;
             font-weight: bold;
         }
@@ -284,7 +303,7 @@
         .author-avatar {
             width: 70px;
             height: 70px;
-            background: #333333;
+            background: var(--primary);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -293,39 +312,38 @@
             font-weight: 700;
             font-size: 1.8rem;
             flex-shrink: 0;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 20px rgba(0,102,204,0.2);
         }
         
         .author-info h4 {
             margin: 0;
             font-size: 1.2rem;
-            color: #333333;
+            color: var(--secondary);
             font-weight: 700;
         }
         
         .author-info p {
             margin: 8px 0 0;
             font-size: 1rem;
-            color: #666666;
+            color: var(--gray);
         }
         
         .cta-section {
             text-align: center;
             padding: 80px 0;
-            background: #f8f9fa;
+            background: linear-gradient(135deg, #f8fbff 0%, #e8f2ff 100%);
         }
         
         .cta-section h2 {
             font-size: 2.8rem;
             margin-bottom: 20px;
-            color: #333333;
         }
         
         .cta-section p {
             max-width: 700px;
             margin: 0 auto 40px;
             font-size: 1.1rem;
-            color: #666666;
+            color: var(--gray);
         }
         
         .cta-buttons {
@@ -340,11 +358,11 @@
             max-width: 900px;
             margin: 0 auto 60px;
             font-size: 1.15rem;
-            color: #666666;
+            color: var(--gray);
             line-height: 1.7;
         }
 
-        /* Profile Image Styles - FIXED */
+        /* Profile Image Styles */
         .logo {
             display: flex;
             align-items: center;
@@ -356,9 +374,6 @@
             height: 40px;
             border-radius: 50%;
             object-fit: cover;
-            border: 2px solid #333333;
-            /* Use a base64 placeholder image if GitHub image fails */
-            background: #f0f0f0 url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="%23cccccc"/><text x="50" y="55" text-anchor="middle" font-size="40" fill="white">A</text></svg>') center/contain no-repeat;
         }
         
         /* Social Icon Styles for Footer */
@@ -413,9 +428,9 @@
         <div class="container">
             <nav class="navbar" aria-label="Main navigation">
                 <a href="/" class="logo">
-                    <!-- FIX: Try different approach for image -->
-                    <img src="abu.jpg" alt="Abraham Otieno" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'profile-placeholder\'>AO</div>'">
-                    </a>
+                    <img src="abu.jpg" alt="Abraham Otieno" class="profile-img">
+                    <span>Abraham <span>Otieno</span></span>
+                </a>
                 <ul class="nav-links">
                     <li><a href="/">Home</a></li>
                     <li><a href="/cv">CV/Resume</a></li>
@@ -432,7 +447,7 @@
         </div>
     </header>
 
-    <!-- Page Header - Now white as requested -->
+    <!-- White Page Header -->
     <div class="page-header">
         <div class="container">
             <h1>Case Studies & Testimonials</h1>
@@ -463,7 +478,6 @@
                 <div class="case-card">
                     <div class="case-badge">Interactive Case Study</div>
                     <div class="case-image">
-                        <!-- Using reliable Unsplash URL -->
                         <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Executive Strategy and Planning">
                     </div>
                     <div class="case-content">
@@ -492,7 +506,6 @@
                 <div class="case-card">
                     <div class="case-badge">Presentation Deck</div>
                     <div class="case-image">
-                        <!-- Using reliable Unsplash URL -->
                         <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Business Presentation and Analytics">
                     </div>
                     <div class="case-content">
@@ -573,17 +586,17 @@
             <h2>Ready to See Similar Results?</h2>
             <p>Let's discuss how I can bring the same level of strategic thinking and operational excellence to your executive team.</p>
             <div class="cta-buttons">
-                <a href="/booking" class="btn" style="padding: 18px 40px; font-size: 1.1rem; background: #333333; color: white; border: none;">
+                <a href="/booking" class="btn" style="padding: 18px 40px; font-size: 1.1rem;">
                     <i class="fas fa-calendar-check"></i> Book a Free Consultation
                 </a>
-                <a href="/services" class="btn btn-outline" style="padding: 18px 40px; font-size: 1.1rem; border: 2px solid #333333; color: #333333; background: transparent;">
+                <a href="/services" class="btn btn-outline" style="padding: 18px 40px; font-size: 1.1rem;">
                     <i class="fas fa-cogs"></i> Explore My Services
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Your Provided Footer -->
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
