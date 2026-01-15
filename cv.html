@@ -24,24 +24,28 @@
             margin: 0;
         }
         
+        /* UPDATED: White page header with black text for visibility */
         .page-header {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: white;
+            background: white;
+            color: #000000;
             padding: 30px 0;
             text-align: center;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             margin-top: 80px; /* Account for fixed header */
+            border-bottom: 1px solid #e2e8f0;
         }
         
         .page-header h1 {
             font-size: 2.2rem;
             margin-bottom: 8px;
             font-weight: 700;
+            color: #000000;
         }
         
         .page-header p {
             font-size: 1.1rem;
-            opacity: 0.95;
+            color: #333333;
+            font-weight: 500;
         }
         
         .resume-container {
@@ -460,6 +464,16 @@
             .page-header {
                 margin-top: 0;
                 page-break-after: avoid;
+                background: white !important;
+                color: black !important;
+            }
+            
+            .page-header h1 {
+                color: black !important;
+            }
+            
+            .page-header p {
+                color: #333 !important;
             }
             
             .resume-container {
@@ -577,15 +591,15 @@
                     <img src="abu.jpg" alt="Abraham Otieno" class="nav-profile-img">
                     Abraham <span>Otieno</span>
                 </a>
-             <ul class="nav-links">
-    <li><a href="/" class="active">Home</a></li>
-    <li><a href="/cv">CV/Resume</a></li>
-    <li><a href="/services">Services</a></li>
-    <li><a href="/portfolio">Portfolio</a></li>
-    <li><a href="/case-studies">Case Studies</a></li>
-    <li><a href="/booking">Book a Call</a></li>
-    <li><a href="#contact">Contact</a></li>
-</ul>
+                <ul class="nav-links">
+                    <li><a href="/" class="active">Home</a></li>
+                    <li><a href="/cv">CV/Resume</a></li>
+                    <li><a href="/services">Services</a></li>
+                    <li><a href="/portfolio">Portfolio</a></li>
+                    <li><a href="/case-studies">Case Studies</a></li>
+                    <li><a href="/booking">Book a Call</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
                 <div class="mobile-menu">
                     <i class="fas fa-bars"></i>
                 </div>
@@ -593,7 +607,7 @@
         </div>
     </header>
 
-    <!-- CV Content -->
+    <!-- UPDATED: White header with black text -->
     <div class="page-header">
         <h1>Abraham Otieno</h1>
         <p>Executive Assistant & Operations Partner | 6+ Years Experience</p>
@@ -613,12 +627,13 @@
             
             <div class="sidebar-section">
                 <h3 class="section-title">Contact Information</h3>
+                <!-- UPDATED: Email changed to hello@abrahamotieno.com -->
                 <div class="contact-item">
                     <div class="contact-icon">
                         <i class="fas fa-envelope"></i>
                     </div>
                     <div>
-                        <p>abrahamsalasstaffing@gmail.com</p>
+                        <p>hello@abrahamotieno.com</p>
                     </div>
                 </div>
                 <div class="contact-item">
@@ -920,33 +935,36 @@
     </div>
 
     <!-- Footer -->
-   <footer>
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-text">
-                <h3>Abraham Otieno</h3>
-                <p>Executive Assistant & Operations Partner | 6+ Years Supporting C-Suite & Founders</p>
-                <p style="font-size: 0.95rem; margin-top: 15px; color: rgba(255,255,255,0.9);">
-                    📧 abrahamsalasstaffing@gmail.com | 📱 +254 757 272 468
-                </p>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <h3>Abraham Otieno</h3>
+                    <p>Executive Assistant & Operations Partner | 6+ Years Supporting C-Suite & Founders</p>
+                    <!-- UPDATED: Email changed to hello@abrahamotieno.com -->
+                    <p style="font-size: 0.95rem; margin-top: 15px; color: rgba(255,255,255,0.9);">
+                        📧 hello@abrahamotieno.com | 📱 +254 757 272 468
+                    </p>
+                </div>
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/abraham-otieno-665678317" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style="width: 20px; height: 20px;">
+                    </a>
+                    <a href="mailto:hello@abrahamotieno.com" title="Email">
+                        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" style="width: 20px; height: 20px;">
+                    </a>
+                    <a href="https://wa.link/tnusf3" target="_blank" rel="noopener noreferrer" title="WhatsApp">
+                        <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp" style="width: 20px; height: 20px;">
+                    </a>
+                    <a href="https://www.upwork.com/freelancers/~016468049604acd788" target="_blank" rel="noopener noreferrer" title="Upwork">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/upwork.svg" alt="Upwork" style="width: 20px; height: 20px;">
+                    </a>
+                </div>
             </div>
-            <div class="social-links">
-                <a href="https://linkedin.com/in/abraham-otieno-665678317" target="_blank" rel="noopener noreferrer" title="LinkedIn">
-                    <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style="width: 20px; height: 20px;">
-                </a>
-                <a href="mailto:abrahamsalasstaffing@gmail.com" title="Email">
-                    <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email" style="width: 20px; height: 20px;">
-                </a>
-                <a href="https://wa.link/tnusf3" target="_blank" rel="noopener noreferrer" title="WhatsApp">
-                    <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp" style="width: 20px; height: 20px;">
-                </a>
-                <a href="https://www.upwork.com/freelancers/~016468049604acd788" target="_blank" rel="noopener noreferrer" title="Upwork">
-                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/upwork.svg" alt="Upwork" style="width: 20px; height: 20px;">
-                </a>
+            <div class="copyright">
+                <p>&copy; 2025 Abraham Otieno. All Rights Reserved.</p>
             </div>
         </div>
-        <div class="copyright">
-            <p>&copy; 2025 Abraham Otieno. All Rights Reserved.</p>
-        </div>
-    </div>
-</footer>
+    </footer>
+</body>
+</html>
