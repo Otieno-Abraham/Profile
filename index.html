@@ -52,7 +52,7 @@
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
         }
         
-        /* PROFESSIONAL HERO SECTION WITH FITTING BACKGROUND IMAGE */
+        /* HERO SECTION - SHOWING YOUR FULL FACE WITHOUT CROPPING */
         .hero {
             position: relative;
             min-height: 100vh;
@@ -62,22 +62,22 @@
             align-items: center;
             background: 
                 linear-gradient(135deg, 
-                    rgba(26, 54, 93, 0.85) 0%, 
-                    rgba(44, 82, 130, 0.9) 50%,
-                    rgba(26, 54, 93, 0.85) 100%),
+                    rgba(26, 54, 93, 0.7) 0%, 
+                    rgba(44, 82, 130, 0.6) 50%,
+                    rgba(26, 54, 93, 0.7) 100%),
                 url('abu.jpg');
-            background-size: cover;
+            /* Show your full face without cropping - contain instead of cover */
+            background-size: contain;
             background-position: center center;
             background-repeat: no-repeat;
-            background-attachment: fixed;
+            background-color: var(--primary-dark); /* Fallback color */
             overflow: hidden;
         }
         
-        /* Ensure image covers perfectly on all devices */
-        @media (max-width: 768px) {
+        /* For smaller screens, we need to adjust */
+        @media (max-height: 700px) {
             .hero {
-                background-attachment: scroll;
-                background-position: center center;
+                background-size: cover; /* Switch to cover on very short screens */
             }
         }
         
@@ -89,7 +89,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(0, 0, 0, 0.3);
             z-index: 1;
         }
         
@@ -748,6 +748,7 @@
                 padding-top: 120px;
                 padding-bottom: 60px;
                 text-align: center;
+                background-size: cover; /* On mobile, use cover to ensure image fills screen */
             }
             
             .hero h1 {
@@ -866,7 +867,7 @@
         </div>
     </header>
 
-    <!-- Professional Hero Section with Background Image -->
+    <!-- Hero Section - Showing Your Full Face -->
     <section id="main-content" class="hero">
         <div class="hero-content">
             <p class="hero-tagline"><i class="fas fa-star"></i> Executive Assistant & Operations Partner</p>
@@ -1008,7 +1009,7 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact Section - UPDATED EMAIL -->
     <section id="contact" class="contact-section">
         <div class="container">
             <div class="section-header">
@@ -1024,7 +1025,7 @@
                         </div>
                         <div class="contact-text">
                             <h4>Email</h4>
-                            <p>abrahamsalasstaffing@gmail.com</p>
+                            <p>hello@abrahamotieno.com</p>
                         </div>
                     </div>
                     
@@ -1061,7 +1062,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer - UPDATED EMAIL -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -1077,7 +1078,7 @@
                     <h3>My CV & Contact</h3>
                     <p style="color: white;">6+ Years Supporting C-Suite & Founders | Enhancing Executive Bandwidth</p>
                     <p style="font-size: 0.9rem; margin-top: 15px; color: white;">
-                        📧 abrahamsalasstaffing@gmail.com | 📱 +254 757 272 468
+                        📧 hello@abrahamotieno.com | 📱 +254 757 272 468
                     </p>
                     <p style="font-size: 0.85rem; margin-top: 20px; color: rgba(255,255,255,0.9);">
                         Nairobi, Kenya (EAT - UTC+3) | Full-time remote • Open to travel
@@ -1091,7 +1092,7 @@
                             <i class="fab fa-linkedin"></i>
                             <span class="social-link-text">LinkedIn</span>
                         </a>
-                        <a href="mailto:abrahamsalasstaffing@gmail.com" class="social-link-item">
+                        <a href="mailto:hello@abrahamotieno.com" class="social-link-item">
                             <i class="fas fa-envelope"></i>
                             <span class="social-link-text">Email</span>
                         </a>
