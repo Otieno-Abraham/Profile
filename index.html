@@ -52,7 +52,7 @@
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
         }
         
-        /* HERO SECTION - SHOWING YOUR FULL FACE WITHOUT CROPPING */
+        /* HERO SECTION - COVERS WHOLE PAGE */
         .hero {
             position: relative;
             min-height: 100vh;
@@ -60,24 +60,25 @@
             padding-bottom: 80px;
             display: flex;
             align-items: center;
+            justify-content: center;
             background: 
                 linear-gradient(135deg, 
                     rgba(26, 54, 93, 0.7) 0%, 
                     rgba(44, 82, 130, 0.6) 50%,
                     rgba(26, 54, 93, 0.7) 100%),
                 url('abu.jpg');
-            /* Show your full face without cropping - contain instead of cover */
-            background-size: contain;
+            /* COVERS the entire hero section */
+            background-size: cover;
             background-position: center center;
             background-repeat: no-repeat;
-            background-color: var(--primary-dark); /* Fallback color */
+            background-attachment: fixed;
             overflow: hidden;
         }
         
-        /* For smaller screens, we need to adjust */
-        @media (max-height: 700px) {
+        /* Ensure image covers on mobile */
+        @media (max-width: 768px) {
             .hero {
-                background-size: cover; /* Switch to cover on very short screens */
+                background-attachment: scroll;
             }
         }
         
@@ -89,7 +90,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(0, 0, 0, 0.4);
             z-index: 1;
         }
         
@@ -748,7 +749,7 @@
                 padding-top: 120px;
                 padding-bottom: 60px;
                 text-align: center;
-                background-size: cover; /* On mobile, use cover to ensure image fills screen */
+                background-attachment: scroll;
             }
             
             .hero h1 {
@@ -867,7 +868,7 @@
         </div>
     </header>
 
-    <!-- Hero Section - Showing Your Full Face -->
+    <!-- Hero Section - COVERS ENTIRE PAGE -->
     <section id="main-content" class="hero">
         <div class="hero-content">
             <p class="hero-tagline"><i class="fas fa-star"></i> Executive Assistant & Operations Partner</p>
@@ -1009,7 +1010,7 @@
         </div>
     </section>
 
-    <!-- Contact Section - UPDATED EMAIL -->
+    <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <div class="container">
             <div class="section-header">
@@ -1062,7 +1063,7 @@
         </div>
     </section>
 
-    <!-- Footer - UPDATED EMAIL -->
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -1117,7 +1118,8 @@
             </div>
             
             <div class="copyright">
-                <p>&copy; <span id="current-year">2025</span> Abraham Otieno. All Rights Reserved.</p>
+                <!-- UPDATED TO 2025 -->
+                <p>&copy; 2025 Abraham Otieno. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
@@ -1133,7 +1135,6 @@
             const mobileMenu = document.querySelector('.mobile-menu');
             const navLinks = document.querySelector('.nav-links');
             const backToTop = document.querySelector('.back-to-top');
-            const currentYear = document.getElementById('current-year');
             
             // Mobile menu toggle
             if (mobileMenu) {
@@ -1142,11 +1143,6 @@
                     this.setAttribute('aria-expanded', !expanded);
                     navLinks.classList.toggle('active');
                 });
-            }
-            
-            // Set current year
-            if (currentYear) {
-                currentYear.textContent = new Date().getFullYear();
             }
             
             // Back to top button
