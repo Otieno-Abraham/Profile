@@ -3,11 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank You | Abraham Otieno</title>
+    
+    <!-- SEO Title - UPGRADED -->
+    <title>Thank You – Your Message Has Been Sent | Abraham Otieno</title>
+    
+    <!-- Meta Description - ADDED -->
+    <meta name="description" content="Thank you for reaching out. Your message has been received. I will respond within 24 hours. Book a call or return to the homepage in the meantime.">
+    <meta name="keywords" content="thank you, message sent, consultation request, Abraham Otieno">
+    <meta name="author" content="Abraham Otieno">
+    <meta name="robots" content="noindex, follow">
+    
+    <!-- Canonical URL - ADDED -->
+    <link rel="canonical" href="https://abrahamotieno.com/thank-you">
+    
+    <!-- Open Graph / Social Sharing - ADDED -->
+    <meta property="og:title" content="Thank You – Your Message Has Been Sent | Abraham Otieno">
+    <meta property="og:description" content="Thank you for reaching out. I'll respond within 24 hours.">
+    <meta property="og:url" content="https://abrahamotieno.com/thank-you">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://abrahamotieno.com/abu.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Thank You – Message Sent">
+    <meta name="twitter:description" content="Thank you for reaching out. I'll respond within 24 hours.">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
     
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1e3a5f;
+            --primary-dark: #0f2c4a;
+            --primary-light: #e6f0ff;
+            --accent: #e53e3e;
+            --accent-dark: #c53030;
+            --gray: #4a5568;
+            --gray-light: #f7fafc;
+            --success: #10b981;
+            --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1a202c;
+            background: white;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #e2e8f0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+        }
+
+        .logo-with-photo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .nav-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid var(--accent);
+        }
+
+        .nav-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .logo-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .logo-title {
+            font-size: 0.7rem;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            color: #1a202c;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.25s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        /* Thank You Section */
         .thank-you-section {
             min-height: 100vh;
             display: flex;
@@ -15,14 +148,14 @@
             justify-content: center;
             text-align: center;
             background: linear-gradient(135deg, #f8fbff 0%, #e8f2ff 100%);
-            padding: 100px 20px;
+            padding: 120px 20px 80px;
         }
-        
+
         .thank-you-content {
             max-width: 700px;
             margin: 0 auto;
         }
-        
+
         .checkmark {
             width: 100px;
             height: 100px;
@@ -34,36 +167,208 @@
             margin: 0 auto 30px;
             font-size: 3rem;
             color: white;
-            animation: bounce 1s;
+            animation: bounce 1s ease-in-out;
         }
-        
+
         @keyframes bounce {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-20px); }
         }
-        
+
+        .thank-you-section h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+
+        .thank-you-section p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
         .action-buttons {
             display: flex;
             gap: 15px;
             justify-content: center;
-            margin-top: 40px;
+            margin-top: 30px;
             flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 28px;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: var(--accent-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 14px rgba(229, 62, 62, 0.25);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+        }
+
+        .btn-outline:hover {
+            background: var(--accent);
+            color: white;
+        }
+
+        .response-box {
+            margin-top: 50px;
+            padding: 28px;
+            background: white;
+            border-radius: 24px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #eef2f6;
+        }
+
+        .response-box h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .response-box h3 i {
+            color: var(--accent);
+            margin-right: 8px;
+        }
+
+        /* Footer */
+        footer {
+            background: #0f172a;
+            color: white;
+            padding: 48px 0 24px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 32px;
+        }
+
+        .footer-text h3 {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+        }
+
+        .footer-text p {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            transition: all 0.25s;
+            color: white;
+            font-size: 1.2rem;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--accent);
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 99;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--accent-dark);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .navbar { flex-direction: column; align-items: flex-start; }
+            .nav-links { display: none; flex-direction: column; width: 100%; margin-top: 15px; }
+            .nav-links.active { display: flex; }
+            .mobile-menu { display: block; position: absolute; top: 25px; right: 20px; }
+            .thank-you-section { padding: 140px 20px 60px; }
+            .thank-you-section h1 { font-size: 2rem; }
+            .action-buttons { flex-direction: column; align-items: center; }
+            .btn { width: 100%; max-width: 280px; justify-content: center; }
+            .footer-content { flex-direction: column; text-align: center; }
+            .social-links { justify-content: center; }
         }
     </style>
 </head>
 <body>
-    <!-- Header & Navigation -->
     <header role="banner">
         <div class="container">
             <nav class="navbar" aria-label="Main navigation">
-                <a href="index.html" class="logo"><i class="fas fa-user-tie"></i> Abraham <span>Otieno</span></a>
+                <a href="https://abrahamotieno.com" class="logo-with-photo">
+                    <div class="nav-avatar">
+                        <img src="abu.jpg" alt="Abraham Otieno">
+                    </div>
+                    <div>
+                        <div class="logo-name">Abraham Otieno</div>
+                        <div class="logo-title">Strategic Executive Partner</div>
+                    </div>
+                </a>
                 <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="cv.html">CV/Resume</a></li>
-                    <li><a href="index.html#services">Services</a></li>
-                    <li><a href="index.html#portfolio">Portfolio</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
-                    <li><a href="booking.html">Book a Call</a></li>
+                    <li><a href="https://abrahamotieno.com">Home</a></li>
+                    <li><a href="https://abrahamotieno.com/services">Services</a></li>
+                    <li><a href="https://abrahamotieno.com/portfolio">Portfolio</a></li>
+                    <li><a href="https://abrahamotieno.com/case-studies">Case Studies</a></li>
+                    <li><a href="https://abrahamotieno.com/booking">Book a Call</a></li>
+                    <li><a href="https://abrahamotieno.com/#contact">Contact</a></li>
                 </ul>
                 <div class="mobile-menu">
                     <i class="fas fa-bars"></i>
@@ -82,34 +387,33 @@
                 
                 <h1>Thank You!</h1>
                 <p style="font-size: 1.2rem; margin-bottom: 20px; color: var(--gray);">
-                    Your message has been successfully sent.
+                    Your message has been successfully received.
                 </p>
                 
                 <p style="margin-bottom: 30px;">
-                    I've received your inquiry and will get back to you within 24 hours. I look forward to connecting with you and discussing how I can help streamline your executive operations.
+                    I've received your inquiry and will get back to you within <strong>2 hours</strong> during business hours. 
+                    I look forward to connecting with you and discussing how I can help streamline your executive operations.
                 </p>
                 
                 <div class="action-buttons">
-                    <a href="index.html" class="btn">
+                    <a href="https://abrahamotieno.com" class="btn">
                         <i class="fas fa-home"></i> Return to Homepage
                     </a>
-                    <a href="cv.html" class="btn btn-outline">
-                        <i class="fas fa-file-alt"></i> View My CV
+                    <a href="https://abrahamotieno.com/portfolio" class="btn btn-outline">
+                        <i class="fas fa-folder-open"></i> View My Portfolio
                     </a>
-                    <a href="booking.html" class="btn">
+                    <a href="https://abrahamotieno.com/booking" class="btn">
                         <i class="fas fa-calendar-check"></i> Book a Call
                     </a>
                 </div>
                 
-                <div style="margin-top: 50px; padding: 20px; background: #f0f8ff; border-radius: 10px;">
-                    <h3 style="margin-bottom: 15px; color: var(--primary);">
-                        <i class="fas fa-clock"></i> Quick Response Guarantee
-                    </h3>
+                <div class="response-box">
+                    <h3><i class="fas fa-clock"></i> Quick Response Guarantee</h3>
                     <p style="margin-bottom: 10px;">
-                        <strong>2-hour response guarantee</strong> during business hours
+                        <strong>2-hour response guarantee</strong> during business hours (8 AM - 6 PM EAT)
                     </p>
-                    <p style="font-size: 0.9rem; color: var(--gray);">
-                        I'm committed to responding to all inquiries promptly. For urgent matters, you can reach me directly at +254 757 272 468.
+                    <p style="font-size: 0.85rem; color: var(--gray);">
+                        For urgent matters, you can reach me directly at <strong>+254 757 272 468</strong> via WhatsApp or call.
                     </p>
                 </div>
             </div>
@@ -122,16 +426,16 @@
             <div class="footer-content">
                 <div class="footer-text">
                     <h3>Abraham Otieno</h3>
-                    <p>Executive Assistant & Operations Partner | 6+ Years Supporting C-Suite & Founders</p>
-                    <p style="font-size: 0.95rem; margin-top: 15px; color: rgba(255,255,255,0.9);">
-                        📧 abrahamsalasstaffing@gmail.com | 📱 +254 757 272 468
+                    <p>Strategic Executive Partner | 6+ Years Supporting C-Suite & Founders</p>
+                    <p style="font-size: 0.9rem; margin-top: 12px;">
+                        📧 hello@abrahamotieno.com | 📱 +254 757 272 468
                     </p>
                 </div>
                 <div class="social-links">
                     <a href="https://linkedin.com/in/abraham-otieno-665678317" target="_blank" rel="noopener noreferrer" title="LinkedIn">
                         <i class="fab fa-linkedin"></i>
                     </a>
-                    <a href="mailto:abrahamsalasstaffing@gmail.com" title="Email">
+                    <a href="mailto:hello@abrahamotieno.com" title="Email">
                         <i class="fas fa-envelope"></i>
                     </a>
                     <a href="https://wa.link/tnusf3" target="_blank" rel="noopener noreferrer" title="WhatsApp">
@@ -150,7 +454,44 @@
         <i class="fas fa-chevron-up"></i>
     </a>
 
-    <!-- JavaScript -->
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            const mobileBtn = document.querySelector('.mobile-menu');
+            const navLinks = document.querySelector('.nav-links');
+            
+            if (mobileBtn) {
+                mobileBtn.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                    this.innerHTML = navLinks.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+                });
+            }
+            
+            // Close mobile menu when clicking a link
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    if (mobileBtn) mobileBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                });
+            });
+            
+            // Back to top button visibility
+            const backBtn = document.querySelector('.back-to-top');
+            if (backBtn) {
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 300) {
+                        backBtn.classList.add('visible');
+                    } else {
+                        backBtn.classList.remove('visible');
+                    }
+                });
+                
+                backBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+        });
+    </script>
 </body>
 </html>
