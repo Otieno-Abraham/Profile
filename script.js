@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ===== COPY EMAIL FUNCTIONALITY (UPDATED EMAIL) =====
+    // ===== COPY EMAIL FUNCTIONALITY =====
     const contactItems = document.querySelectorAll('.contact-item');
     contactItems.forEach(item => {
         const emailText = item.textContent;
@@ -96,31 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     });
-
-    // ===== FORM VALIDATION (WITH ACTUAL MAILTO) =====
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('contactName')?.value || '';
-            const email = document.getElementById('contactEmail')?.value || '';
-            const message = document.getElementById('contactMessage')?.value || '';
-            
-            const submitBtn = this.querySelector('button[type="submit"]');
-            if (submitBtn) {
-                const originalText = submitBtn.innerHTML;
-                submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Opening email...';
-                submitBtn.disabled = true;
-                
-                window.location.href = `mailto:hello@abrahamotieno.com?subject=Message from ${name}&body=${encodeURIComponent(message + "\n\nFrom: " + email)}`;
-                
-                setTimeout(() => {
-                    alert('Your email client should open. Thank you for reaching out!');
-                    submitBtn.innerHTML = originalText;
-                    submitBtn.disabled = false;
-                }, 500);
-            }
-        });
-    }
+    
+    // NOTE: Form validation has been REMOVED because Formspree now handles the form.
+    // The form uses action="https://formspree.io/f/mpqkbaaj" method="POST"
 });
