@@ -3,9 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Abraham Otieno - Executive Assistant & Operations Partner</title>
-    <meta name="description" content="Portfolio showcasing executive dashboards, survey reports, travel planning, website revamps, and document control systems created by Abraham Otieno.">
+    
+    <!-- SEO Title -->
+    <title>Executive Dashboard & Document Control Portfolio | Abraham Otieno</title>
+    
+    <!-- Meta Description -->
+    <meta name="description" content="Portfolio showcasing executive dashboards, survey reports, travel planning, website revamps, and document control systems. Real results: 80% faster response, 200+ agents onboarded.">
+    <meta name="keywords" content="executive dashboard, survey reports, travel planning, website revamp, document control system, portfolio, Abraham Otieno, telephony, CRM, AI tools">
     <meta name="author" content="Abraham Otieno">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://abrahamotieno.com/portfolio">
+    
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:title" content="Executive Dashboard & Document Control Portfolio | Abraham Otieno">
+    <meta property="og:description" content="Portfolio showcasing executive dashboards, survey reports, travel planning, website revamps, and document control systems.">
+    <meta property="og:url" content="https://abrahamotieno.com/portfolio">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://abrahamotieno.com/abu.jpg">
+    <meta property="og:image:alt" content="Abraham Otieno - Strategic Executive Partner">
+    <meta property="og:site_name" content="Abraham Otieno Portfolio">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Executive Dashboard & Document Control Portfolio">
+    <meta name="twitter:description" content="Portfolio showcasing executive dashboards, survey reports, travel planning, and document control systems.">
+    <meta name="twitter:image" content="https://abrahamotieno.com/abu.jpg">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     
@@ -20,6 +45,8 @@
             --primary: #0066cc;
             --primary-dark: #004c99;
             --primary-light: #e6f0ff;
+            --accent: #e85d04;
+            --accent-dark: #c04e03;
             --secondary: #2c3e50;
             --gray: #5a6c7d;
             --gray-light: #f8fafc;
@@ -102,6 +129,8 @@
             font-size: 1.5rem;
             cursor: pointer;
             color: #1a202c;
+            background: none;
+            border: none;
         }
 
         /* Page Header */
@@ -313,7 +342,7 @@
             transform: translateY(-2px);
         }
 
-        /* Stats Section */
+        /* Stats Section - UPDATED WITH REAL ACHIEVEMENTS */
         .stats-section {
             padding: 80px 0;
             background: var(--gray-light);
@@ -359,7 +388,7 @@
             font-size: 0.9rem;
         }
 
-        /* Tech Stack Section */
+        /* Tech Categories - ENHANCED WITH ALL TOOLS */
         .tech-section {
             padding: 60px 0;
             background: white;
@@ -367,25 +396,50 @@
             border-bottom: 1px solid #eef2f6;
         }
 
+        .tech-category {
+            margin-bottom: 40px;
+        }
+
+        .tech-category:last-child {
+            margin-bottom: 0;
+        }
+
+        .tech-category-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--primary-light);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tech-category-title i {
+            color: var(--accent);
+            font-size: 1rem;
+        }
+
         .tech-grid {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
-            gap: 16px;
-            margin-top: 40px;
+            justify-content: flex-start;
+            gap: 12px;
         }
 
         .tech-item {
             background: var(--gray-light);
-            padding: 10px 22px;
+            padding: 8px 18px;
             border-radius: 40px;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             font-weight: 500;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: var(--secondary);
             transition: var(--transition);
+            border: 1px solid #eef2f6;
         }
 
         .tech-item:hover {
@@ -395,10 +449,10 @@
 
         .tech-item i {
             color: var(--primary);
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
 
-        /* Testimonials Section - REAL CLIENT FEEDBACK */
+        /* Testimonials Section */
         .testimonials-section {
             padding: 80px 0;
             background: var(--gray-light);
@@ -490,6 +544,37 @@
             flex-wrap: wrap;
         }
 
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--accent);
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 99;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--accent-dark);
+            transform: translateY(-3px);
+        }
+
         /* Footer */
         footer {
             background: #0f172a;
@@ -573,6 +658,7 @@
                 padding: 24px;
                 box-shadow: var(--shadow-md);
                 gap: 20px;
+                z-index: 100;
             }
             .nav-links.active {
                 display: flex;
@@ -593,6 +679,13 @@
             .testimonials-grid {
                 grid-template-columns: 1fr;
             }
+            .tech-category-title {
+                font-size: 1rem;
+            }
+            .tech-item {
+                font-size: 0.75rem;
+                padding: 6px 14px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -606,11 +699,7 @@
                 font-size: 1.8rem;
             }
             .tech-grid {
-                gap: 12px;
-            }
-            .tech-item {
-                padding: 6px 16px;
-                font-size: 0.8rem;
+                gap: 8px;
             }
         }
     </style>
@@ -620,21 +709,21 @@
     <header role="banner">
         <div class="container">
             <nav class="navbar" aria-label="Main navigation">
-                <a href="/" class="logo">
+                <a href="https://abrahamotieno.com" class="logo">
                     <img src="abu.jpg" alt="Abraham Otieno" class="profile-img">
                     Abraham <span>Otieno</span>
                 </a>
                 <ul class="nav-links">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/services">Services</a></li>
-                    <li><a href="/portfolio" class="active">Portfolio</a></li>
-                    <li><a href="/case-studies">Case Studies</a></li>
-                    <li><a href="/booking">Book a Call</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="https://abrahamotieno.com">Home</a></li>
+                    <li><a href="https://abrahamotieno.com/services">Services</a></li>
+                    <li><a href="https://abrahamotieno.com/portfolio" class="active">Portfolio</a></li>
+                    <li><a href="https://abrahamotieno.com/case-studies">Case Studies</a></li>
+                    <li><a href="https://abrahamotieno.com/booking">Book a Call</a></li>
+                    <li><a href="https://abrahamotieno.com/#contact">Contact</a></li>
                 </ul>
-                <div class="mobile-menu">
+                <button class="mobile-menu" aria-label="Toggle menu">
                     <i class="fas fa-bars"></i>
-                </div>
+                </button>
             </nav>
         </div>
     </header>
@@ -804,7 +893,7 @@
         </div>
     </section>
 
-    <!-- Portfolio Impact Section -->
+    <!-- Portfolio Impact Section - UPDATED WITH REAL ACHIEVEMENTS -->
     <section class="stats-section">
         <div class="container">
             <div class="section-header">
@@ -814,51 +903,123 @@
             <div class="stats-container">
                 <div class="stat-card">
                     <i class="fas fa-chart-line"></i>
-                    <h3>40%</h3>
-                    <p>Average Efficiency Gain Across Projects</p>
-                </div>
-                <div class="stat-card">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>3-Tier</h3>
-                    <p>Security Access Control Implemented</p>
-                </div>
-                <div class="stat-card">
-                    <i class="fas fa-globe"></i>
-                    <h3>4+</h3>
-                    <p>Live Production Deployments</p>
+                    <h3>80%</h3>
+                    <p>Faster Response Time</p>
                 </div>
                 <div class="stat-card">
                     <i class="fas fa-users"></i>
+                    <h3>200+</h3>
+                    <p>Agents Onboarded & Managed</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-check-circle"></i>
                     <h3>100%</h3>
-                    <p>Client Satisfaction Rate</p>
+                    <p>Project Success Rate</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-clock"></i>
+                    <h3>15+</h3>
+                    <p>Hours/Week Reclaimed</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Technologies & Tools - WITH GitHub, Microsoft, Power Automate, Google -->
+    <!-- Technologies & Tools - ENHANCED WITH ALL CATEGORIES -->
     <section class="tech-section">
         <div class="container">
             <div class="section-header">
                 <h2>Technologies & Tools</h2>
-                <p>Platforms and systems I leverage to deliver results</p>
+                <p>Platforms, systems, and software I leverage to deliver results</p>
             </div>
-            <div class="tech-grid">
-                <span class="tech-item"><i class="fab fa-github"></i> GitHub</span>
-                <span class="tech-item"><i class="fab fa-microsoft"></i> Microsoft 365</span>
-                <span class="tech-item"><i class="fas fa-bolt"></i> Power Automate</span>
-                <span class="tech-item"><i class="fab fa-google"></i> Google Workspace</span>
-                <span class="tech-item"><i class="fas fa-chart-pie"></i> Power BI / Looker Studio</span>
-                <span class="tech-item"><i class="fas fa-tasks"></i> Asana / ClickUp / Trello</span>
-                <span class="tech-item"><i class="fas fa-file-alt"></i> Notion / Coda</span>
-                <span class="tech-item"><i class="fas fa-robot"></i> Zapier / Make</span>
-                <span class="tech-item"><i class="fab fa-wordpress"></i> WordPress / Webflow</span>
-                <span class="tech-item"><i class="fab fa-slack"></i> Slack / Teams</span>
+            
+            <!-- Category 1: Productivity & Communication -->
+            <div class="tech-category">
+                <h3 class="tech-category-title"><i class="fas fa-envelope"></i> Productivity & Communication</h3>
+                <div class="tech-grid">
+                    <span class="tech-item"><i class="fab fa-microsoft"></i> Microsoft 365</span>
+                    <span class="tech-item"><i class="fab fa-google"></i> Google Workspace</span>
+                    <span class="tech-item"><i class="fab fa-slack"></i> Slack</span>
+                    <span class="tech-item"><i class="fab fa-microsoft"></i> Microsoft Teams</span>
+                    <span class="tech-item"><i class="fas fa-chart-line"></i> Power BI / Looker Studio</span>
+                    <span class="tech-item"><i class="fas fa-tasks"></i> Asana / ClickUp / Trello</span>
+                    <span class="tech-item"><i class="fas fa-file-alt"></i> Notion / Coda</span>
+                    <span class="tech-item"><i class="fas fa-cloud-upload-alt"></i> Google Drive / OneDrive</span>
+                </div>
+            </div>
+            
+            <!-- Category 2: Telephony & VoIP Systems -->
+            <div class="tech-category">
+                <h3 class="tech-category-title"><i class="fas fa-phone-alt"></i> Telephony & VoIP Systems</h3>
+                <div class="tech-grid">
+                    <span class="tech-item"><i class="fas fa-phone"></i> 3CX</span>
+                    <span class="tech-item"><i class="fas fa-phone"></i> Zoho Telephony</span>
+                    <span class="tech-item"><i class="fas fa-phone"></i> Ameyo</span>
+                    <span class="tech-item"><i class="fas fa-phone"></i> RingCentral</span>
+                    <span class="tech-item"><i class="fas fa-phone"></i> VoIP Integration</span>
+                </div>
+            </div>
+            
+            <!-- Category 3: CRM & Helpdesk Platforms -->
+            <div class="tech-category">
+                <h3 class="tech-category-title"><i class="fas fa-headset"></i> CRM & Helpdesk Platforms</h3>
+                <div class="tech-grid">
+                    <span class="tech-item"><i class="fas fa-ticket-alt"></i> Zendesk</span>
+                    <span class="tech-item"><i class="fas fa-ticket-alt"></i> Freshdesk</span>
+                    <span class="tech-item"><i class="fas fa-ticket-alt"></i> Ameyo</span>
+                    <span class="tech-item"><i class="fas fa-ticket-alt"></i> Dial Afrika</span>
+                    <span class="tech-item"><i class="fas fa-ticket-alt"></i> Zoho CRM</span>
+                    <span class="tech-item"><i class="fas fa-ticket-alt"></i> HubSpot (basic)</span>
+                </div>
+            </div>
+            
+            <!-- Category 4: ERP & Business Platforms -->
+            <div class="tech-category">
+                <h3 class="tech-category-title"><i class="fas fa-building"></i> ERP & Business Platforms</h3>
+                <div class="tech-grid">
+                    <span class="tech-item"><i class="fas fa-cubes"></i> Odoo</span>
+                    <span class="tech-item"><i class="fab fa-wordpress"></i> WordPress / Webflow</span>
+                    <span class="tech-item"><i class="fab fa-github"></i> GitHub</span>
+                    <span class="tech-item"><i class="fas fa-bolt"></i> Power Automate</span>
+                    <span class="tech-item"><i class="fas fa-robot"></i> Zapier / Make</span>
+                </div>
+            </div>
+            
+            <!-- Category 5: AI & Chatbots -->
+            <div class="tech-category">
+                <h3 class="tech-category-title"><i class="fas fa-robot"></i> AI & Chatbots</h3>
+                <div class="tech-grid">
+                    <span class="tech-item"><i class="fas fa-brain"></i> Gemini (Google AI)</span>
+                    <span class="tech-item"><i class="fas fa-brain"></i> ChatGPT (OpenAI)</span>
+                    <span class="tech-item"><i class="fas fa-brain"></i> Claude (Anthropic)</span>
+                    <span class="tech-item"><i class="fas fa-brain"></i> DeepSeek</span>
+                    <span class="tech-item"><i class="fas fa-comment-dots"></i> Chatbot Integration</span>
+                </div>
+            </div>
+            
+            <!-- Category 6: Design & Document Tools -->
+            <div class="tech-category">
+                <h3 class="tech-category-title"><i class="fas fa-paint-brush"></i> Design & Document Tools</h3>
+                <div class="tech-grid">
+                    <span class="tech-item"><i class="fab fa-adobe"></i> Adobe Photoshop</span>
+                    <span class="tech-item"><i class="fab fa-adobe"></i> Adobe Acrobat</span>
+                    <span class="tech-item"><i class="fas fa-file-pdf"></i> PDF Management</span>
+                    <span class="tech-item"><i class="fas fa-chalkboard"></i> Canva</span>
+                </div>
+            </div>
+            
+            <!-- Category 7: HR & People Operations -->
+            <div class="tech-category">
+                <h3 class="tech-category-title"><i class="fas fa-users"></i> HR & People Operations</h3>
+                <div class="tech-grid">
+                    <span class="tech-item"><i class="fas fa-chart-line"></i> Workpay</span>
+                    <span class="tech-item"><i class="fas fa-calendar-alt"></i> BambooHR (basic)</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Client Testimonials - REAL FEEDBACK provided by you -->
+    <!-- Client Testimonials -->
     <section class="testimonials-section">
         <div class="container">
             <div class="section-header">
@@ -912,10 +1073,10 @@
             <h2>Ready to Achieve Similar Results?</h2>
             <p>Let's discuss how I can help streamline your operations and enhance your executive effectiveness.</p>
             <div class="cta-buttons">
-                <a href="/booking" class="btn">
+                <a href="https://abrahamotieno.com/booking" class="btn">
                     <i class="fas fa-calendar-check"></i> Book Free Consultation
                 </a>
-                <a href="/services" class="btn btn-outline">
+                <a href="https://abrahamotieno.com/services" class="btn btn-outline">
                     <i class="fas fa-cogs"></i> View Services
                 </a>
             </div>
@@ -928,7 +1089,7 @@
             <div class="footer-content">
                 <div class="footer-text">
                     <h3>Abraham Otieno</h3>
-                    <p>Executive Assistant & Operations Partner | 6+ Years Supporting C-Suite & Founders</p>
+                    <p>Strategic Executive Partner | 6+ Years Supporting C-Suite & Founders</p>
                     <p style="font-size: 0.9rem; margin-top: 12px;">
                         📧 hello@abrahamotieno.com | 📱 +254 757 272 468
                     </p>
@@ -962,23 +1123,49 @@
         </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
     <!-- Mobile Menu Toggle -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const mobileMenu = document.querySelector('.mobile-menu');
             const navLinks = document.querySelector('.nav-links');
+            const backToTop = document.querySelector('.back-to-top');
             
+            // Mobile menu toggle
             if (mobileMenu) {
                 mobileMenu.addEventListener('click', function() {
-                    navLinks.classList.toggle('active');
+                    const expanded = navLinks.classList.toggle('active');
+                    this.innerHTML = expanded ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
                 });
             }
 
+            // Close mobile menu when clicking a link
             document.querySelectorAll('.nav-links a').forEach(link => {
                 link.addEventListener('click', () => {
                     navLinks.classList.remove('active');
+                    if (mobileMenu) mobileMenu.innerHTML = '<i class="fas fa-bars"></i>';
                 });
             });
+            
+            // Back to top button visibility
+            if (backToTop) {
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 300) {
+                        backToTop.classList.add('visible');
+                    } else {
+                        backToTop.classList.remove('visible');
+                    }
+                });
+                
+                backToTop.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
         });
     </script>
 </body>
