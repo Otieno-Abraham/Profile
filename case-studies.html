@@ -3,9 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Case Studies & Testimonials | Abraham Otieno - Executive Assistant & Operations Partner</title>
-    <meta name="description" content="Case studies and testimonials showcasing Abraham Otieno's work as an Executive Assistant & Operations Partner supporting C-Suite executives and founders.">
+    
+    <!-- SEO Title -->
+    <title>Executive Support Case Studies & Results | Abraham Otieno</title>
+    
+    <!-- Meta Description -->
+    <meta name="description" content="Real case studies: Executive strategy, operations frameworks, market entry, document control, and founder execution systems. See how I deliver results.">
+    <meta name="keywords" content="executive assistant case studies, operations partner results, founder support, market entry case study, document control, execution framework">
     <meta name="author" content="Abraham Otieno">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://abrahamotieno.com/case-studies">
+    
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:title" content="Executive Support Case Studies & Results | Abraham Otieno">
+    <meta property="og:description" content="Real case studies demonstrating strategic thinking, operational excellence, and measurable results.">
+    <meta property="og:url" content="https://abrahamotieno.com/case-studies">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://abrahamotieno.com/abu.jpg">
+    <meta property="og:image:alt" content="Abraham Otieno - Strategic Executive Partner">
+    <meta property="og:site_name" content="Abraham Otieno Portfolio">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Executive Support Case Studies & Results">
+    <meta name="twitter:description" content="Real case studies: Executive strategy, operations frameworks, market entry, and execution systems.">
+    <meta name="twitter:image" content="https://abrahamotieno.com/abu.jpg">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     
@@ -103,6 +128,8 @@
             font-size: 1.5rem;
             cursor: pointer;
             color: #1a202c;
+            background: none;
+            border: none;
         }
 
         .page-header {
@@ -127,6 +154,7 @@
             opacity: 0.9;
         }
 
+        /* About Section */
         .about-top-section {
             padding: 60px 0;
             background: white;
@@ -141,18 +169,106 @@
         }
 
         .about-summary-top h3 {
-            color: var(--secondary);
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 8px;
+            text-align: center;
+        }
+
+        .about-tagline {
+            font-size: 1.1rem;
+            color: var(--accent);
+            font-weight: 600;
             margin-bottom: 20px;
-            font-size: 1.8rem;
+            text-align: center;
+        }
+
+        .about-stats-mini {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 25px 0;
+            padding: 15px;
+            background: rgba(0, 102, 204, 0.05);
+            border-radius: 16px;
+        }
+
+        .about-stats-mini span {
+            font-size: 0.9rem;
+            color: var(--primary);
+        }
+
+        .about-stats-mini strong {
+            font-size: 1.2rem;
+            color: var(--accent);
+        }
+
+        .about-two-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+            text-align: left;
+        }
+
+        .about-column h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 15px;
+            border-left: 3px solid var(--accent);
+            padding-left: 12px;
+        }
+
+        .about-column ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .about-column li {
+            margin-bottom: 10px;
+            padding-left: 24px;
+            position: relative;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .about-column li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
             font-weight: 700;
         }
 
-        .about-summary-top p {
-            color: var(--gray);
-            line-height: 1.7;
-            max-width: 900px;
-            margin: 0 auto;
-            font-size: 1.05rem;
+        .about-locations {
+            margin: 25px 0;
+            text-align: center;
+        }
+
+        .about-locations h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .location-badges {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .location-badge {
+            background: white;
+            border: 1px solid var(--primary-light);
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            color: var(--primary);
         }
 
         .expertise-grid {
@@ -282,7 +398,7 @@
 
         .case-features {
             list-style: none;
-            margin: 16px 0 20px 0;
+            margin: 16px 0 20px;
         }
 
         .case-features li {
@@ -569,7 +685,7 @@
             justify-content: center;
             width: 44px;
             height: 44px;
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             transition: var(--transition);
         }
@@ -588,9 +704,39 @@
         .copyright {
             text-align: center;
             padding-top: 24px;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             font-size: 0.85rem;
             opacity: 0.7;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--accent);
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 99;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--accent-dark);
+            transform: translateY(-3px);
         }
 
         @media (max-width: 768px) {
@@ -609,6 +755,7 @@
                 padding: 24px;
                 box-shadow: var(--shadow-md);
                 gap: 20px;
+                z-index: 100;
             }
             .nav-links.active { display: flex; }
             .mobile-menu { display: block; }
@@ -617,11 +764,16 @@
             .about-summary-top { padding: 28px 20px; }
             .testimonial-card { padding: 28px; }
             .cta-buttons { flex-direction: column; align-items: center; }
+            .about-two-columns { grid-template-columns: 1fr; gap: 20px; }
+            .about-stats-mini { gap: 12px; }
+            .about-stats-mini span { font-size: 0.75rem; }
         }
 
         @media (max-width: 480px) {
             .page-header h1 { font-size: 1.8rem; }
             .case-content { padding: 20px; }
+            .about-summary-top h3 { font-size: 1.6rem; }
+            .about-tagline { font-size: 0.9rem; }
         }
     </style>
 </head>
@@ -629,21 +781,21 @@
     <header role="banner">
         <div class="container">
             <nav class="navbar" aria-label="Main navigation">
-                <a href="/" class="logo">
+                <a href="https://abrahamotieno.com" class="logo">
                     <img src="abu.jpg" alt="Abraham Otieno" class="profile-img">
                     Abraham <span>Otieno</span>
                 </a>
                 <ul class="nav-links">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/services">Services</a></li>
-                    <li><a href="/portfolio">Portfolio</a></li>
-                    <li><a href="/case-studies" class="active">Case Studies</a></li>
-                    <li><a href="/booking">Book a Call</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="https://abrahamotieno.com">Home</a></li>
+                    <li><a href="https://abrahamotieno.com/services">Services</a></li>
+                    <li><a href="https://abrahamotieno.com/portfolio">Portfolio</a></li>
+                    <li><a href="https://abrahamotieno.com/case-studies" class="active">Case Studies</a></li>
+                    <li><a href="https://abrahamotieno.com/booking">Book a Call</a></li>
+                    <li><a href="https://abrahamotieno.com/#contact">Contact</a></li>
                 </ul>
-                <div class="mobile-menu">
+                <button class="mobile-menu" aria-label="Toggle menu">
                     <i class="fas fa-bars"></i>
-                </div>
+                </button>
             </nav>
         </div>
     </header>
@@ -658,15 +810,66 @@
     <section class="about-top-section">
         <div class="container">
             <div class="about-summary-top">
-                <h3>About Abraham Otieno</h3>
-                <p>
-                    With over 6 years of experience as an Executive Assistant & Operations Partner, I specialize in supporting C-Suite executives, founders, and complex ecosystems to maximize productivity and strategic impact. My expertise spans <strong>market entry strategy, partnership development, executive support, document control, managing multiple entities, family business operations, ecosystem management, startup scaling, and operational systems implementation</strong>.
-                </p>
-                <p style="margin-top: 20px;">
-                    I've worked across Africa and global markets, helping organizations navigate ambiguity, enforce accountability, and build execution systems that scale. Whether it's structuring a founder's multi-workstream environment, managing document control for sensitive operations, or coordinating partnerships across borders, I bring clarity and momentum to complex situations.
-                </p>
+                <h3>Abraham Otieno</h3>
+                <p class="about-tagline">Strategic Executive Partner | Country Lead | Operations Lead</p>
+                
+                <div class="about-stats-mini">
+                    <span><strong>6+</strong> Years Experience</span>
+                    <span><strong>10+</strong> Companies Scaled</span>
+                    <span><strong>200+</strong> Agents Onboarded</span>
+                    <span><strong>80%</strong> Faster Response</span>
+                    <span><strong>15+</strong> Hours/Week Reclaimed</span>
+                    <span><strong>3</strong> Continents</span>
+                </div>
+                
+                <p>I serve as a <strong>Strategic Executive Partner, Country Lead, and Operations Lead</strong> for global organizations, helping founders and C‑suite executives reclaim focus, fix operational chaos, and scale efficiently. My work spans <strong>executive communication, stakeholder coordination, and operations systems</strong> – I don't just manage tasks; I become an extension of your leadership team.</p>
+                
+                <!-- CORRECTED LINE BELOW -->
+                <p style="margin-top: 20px;">Over the past 6+ years, I've held senior roles including <strong>Country Lead & Executive Assistant to the Global Chief Partnerships Officer (MSTRpay, Stockholm)</strong>, <strong>Executive Partner to the CEO (Pioneer Outsourcing BPO)</strong>, and <strong>Administrative & Operations Support (M-KOPA, OKash Kenya)</strong> – spanning executive operations, market entry, partnership coordination, customer support systems, and multi‑entity management across Africa and Europe.</p>
+                
+                <div class="about-two-columns">
+                    <div class="about-column">
+                        <h4>📋 What I've Done</h4>
+                        <ul>
+                            <li>Enabled market entry across 3 continents through joint venture coordination</li>
+                            <li>Reduced team response times by 80% via structured tracking & SLA discipline</li>
+                            <li>Onboarded and managed 200+ remote agents across BPO and customer operations</li>
+                            <li>Reclaimed 15+ hours per week for founders and executive leadership</li>
+                            <li>Designed secure document control systems for legal and admin teams</li>
+                            <li>Coordinated zero‑disruption international travel and leadership logistics</li>
+                            <li>Drafted NDAs, commercial briefs, and partnership documentation</li>
+                            <li>Managed C‑level inbox, board materials, and stakeholder communication</li>
+                        </ul>
+                    </div>
+                    <div class="about-column">
+                        <h4>🏢 Industries I've Served</h4>
+                        <ul>
+                            <li>BPO & Outsourcing (Pioneer Outsourcing BPO)</li>
+                            <li>Fintech & Financial Services (M-KOPA, OKash)</li>
+                            <li>International Payments (MSTRpay)</li>
+                            <li>Technology Startups</li>
+                            <li>International Development</li>
+                            <li>Family Business Operations</li>
+                            <li>Multi-Entity Management</li>
+                            <li>Ecosystem & Partnership Management</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="about-locations">
+                    <h4>📍 Where I Work</h4>
+                    <div class="location-badges">
+                        <span class="location-badge">🇰🇪 Nairobi, Kenya</span>
+                        <span class="location-badge">🇸🇪 Stockholm, Sweden</span>
+                        <span class="location-badge">🇺🇸 United States (Remote)</span>
+                        <span class="location-badge">🇪🇺 European Union (Remote)</span>
+                        <span class="location-badge">🌍 Africa & Worldwide</span>
+                    </div>
+                </div>
+                
                 <div class="expertise-grid">
                     <span class="expertise-tag">Market Entry</span>
+                    <span class="expertise-tag">JV Coordination</span>
                     <span class="expertise-tag">Partnership Development</span>
                     <span class="expertise-tag">Executive Support</span>
                     <span class="expertise-tag">Document Control</span>
@@ -674,7 +877,9 @@
                     <span class="expertise-tag">Family Business</span>
                     <span class="expertise-tag">Ecosystem Management</span>
                     <span class="expertise-tag">Startup Operations</span>
-                    <span class="expertise-tag">Systems Implementation</span>
+                    <span class="expertise-tag">CRM & Workflow Automation</span>
+                    <span class="expertise-tag">SLA & KPI Tracking</span>
+                    <span class="expertise-tag">Board & Investor Prep</span>
                 </div>
             </div>
         </div>
@@ -768,7 +973,7 @@
                     </div>
                 </div>
 
-                <!-- Case Study 5: Sohubox PDF Case Study - Using Google Docs Viewer -->
+                <!-- Case Study 5: Sohubox PDF -->
                 <div class="case-card">
                     <div class="case-badge pdf">Case Study</div>
                     <div class="case-image">
@@ -828,7 +1033,7 @@
                     <div class="impact-icon"><i class="fas fa-file-alt"></i></div>
                     <h3>Sohubox Written Exercise</h3>
                     <p><strong>Learning:</strong> Executive communication must balance confidence with clarity. Tailoring messages to the organization's voice (confident, conversational, empathetic, professional, forthright) is critical.</p>
-                    <p class="impact-stat">📊 Result: Assessment designated as top-tier</p>
+                    <p class="impact-stat">📊 Result: Successfully passed assessment, advanced to final interview stage</p>
                 </div>
             </div>
         </div>
@@ -890,8 +1095,8 @@
             <h2>Ready to See Similar Results?</h2>
             <p>Let's discuss how I can bring the same level of strategic thinking and operational excellence to your executive team.</p>
             <div class="cta-buttons">
-                <a href="/booking" class="btn">Book a Free Consultation</a>
-                <a href="/services" class="btn btn-outline">Explore My Services</a>
+                <a href="https://abrahamotieno.com/booking" class="btn">Book a Free Consultation</a>
+                <a href="https://abrahamotieno.com/services" class="btn btn-outline">Explore My Services</a>
             </div>
         </div>
     </section>
@@ -901,7 +1106,7 @@
             <div class="footer-content">
                 <div class="footer-text">
                     <h3>Abraham Otieno</h3>
-                    <p>Executive Assistant & Operations Partner | 6+ Years Supporting C-Suite & Founders</p>
+                    <p>Strategic Executive Partner | 6+ Years Supporting C-Suite & Founders</p>
                     <p style="font-size: 0.9rem; margin-top: 12px;">📧 hello@abrahamotieno.com | 📱 +254 757 272 468</p>
                 </div>
                 <div class="social-links">
@@ -925,22 +1130,44 @@
         </div>
     </footer>
 
+    <a href="#" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const mobileMenu = document.querySelector('.mobile-menu');
             const navLinks = document.querySelector('.nav-links');
+            const backToTop = document.querySelector('.back-to-top');
             
             if (mobileMenu) {
                 mobileMenu.addEventListener('click', function() {
-                    navLinks.classList.toggle('active');
+                    const expanded = navLinks.classList.toggle('active');
+                    this.innerHTML = expanded ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
                 });
             }
 
             document.querySelectorAll('.nav-links a').forEach(link => {
                 link.addEventListener('click', () => {
                     navLinks.classList.remove('active');
+                    if (mobileMenu) mobileMenu.innerHTML = '<i class="fas fa-bars"></i>';
                 });
             });
+            
+            if (backToTop) {
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 300) {
+                        backToTop.classList.add('visible');
+                    } else {
+                        backToTop.classList.remove('visible');
+                    }
+                });
+                
+                backToTop.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
         });
     </script>
 </body>
