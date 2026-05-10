@@ -1,0 +1,76 @@
+/* ============================================================
+   LAYOUT — container, sections, grid utilities
+   ============================================================ */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding-left: var(--container-pad);
+  padding-right: var(--container-pad);
+}
+
+.container-narrow {
+  max-width: 880px;
+  margin: 0 auto;
+  padding-left: var(--container-pad);
+  padding-right: var(--container-pad);
+}
+
+.section {
+  padding-top: var(--section-y);
+  padding-bottom: var(--section-y);
+}
+.section-tight { padding-top: var(--space-7); padding-bottom: var(--space-7); }
+.section-bg { background: var(--surface-2); }
+.section-surface { background: var(--surface); }
+
+/* Eyebrow label above headings */
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: var(--fs-micro);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: var(--space-3);
+}
+
+/* Section heading group */
+.section-heading {
+  margin-bottom: var(--space-7);
+  max-width: 760px;
+}
+.section-heading p {
+  margin-top: var(--space-3);
+  font-size: var(--fs-body-lg);
+  color: var(--ink-muted);
+}
+
+/* Grid helpers */
+.grid { display: grid; gap: var(--space-5); }
+.grid-2 { grid-template-columns: 1fr; }
+.grid-3 { grid-template-columns: 1fr; }
+.grid-4 { grid-template-columns: 1fr 1fr; }
+
+@media (min-width: 640px) {
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 768px) {
+  .grid-2 { grid-template-columns: repeat(2, 1fr); gap: var(--space-6); }
+  .grid-3 { grid-template-columns: repeat(3, 1fr); gap: var(--space-6); }
+  .grid-4 { grid-template-columns: repeat(4, 1fr); gap: var(--space-5); }
+}
+
+/* Stack utility */
+.stack > * + * { margin-top: var(--space-4); }
+.stack-lg > * + * { margin-top: var(--space-6); }
+
+/* Cluster (inline group with wrap) */
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: center;
+}

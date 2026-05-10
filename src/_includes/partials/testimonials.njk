@@ -1,0 +1,28 @@
+<section class="section section-bg" aria-labelledby="testimonials-heading">
+  <div class="container">
+    <div class="section-heading reveal">
+      <span class="eyebrow">Client Testimonials</span>
+      <h2 id="testimonials-heading">What CEOs and Operations Leaders Say</h2>
+      <p>Real engagements, real outcomes. Below are quotes from leaders I've worked with directly across BPO, partnerships, and operations.</p>
+    </div>
+
+    <div class="grid grid-3">
+      {% for r in site.testimonials %}
+        <article class="testimonial reveal" itemscope itemtype="https://schema.org/Review">
+          <div class="testimonial-stars" aria-label="{{ r.rating }} out of 5 stars">
+            {% for i in range(0, r.rating) %}<span aria-hidden="true">★</span>{% endfor %}
+            <meta itemprop="reviewRating" content="{{ r.rating }}">
+          </div>
+          <blockquote class="testimonial-quote" itemprop="reviewBody">{{ r.quote }}</blockquote>
+          <div class="testimonial-author">
+            <span class="testimonial-avatar" aria-hidden="true">{{ r.initial }}</span>
+            <div>
+              <div class="testimonial-name" itemprop="author">{{ r.author }}</div>
+              <div class="testimonial-meta">{{ r.title }}, {{ r.company }}</div>
+            </div>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

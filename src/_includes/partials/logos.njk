@@ -1,0 +1,27 @@
+<section class="logos" aria-label="Past clients">
+  <div class="container">
+    <p class="logos-label">Trusted by leaders at</p>
+    <div class="logos-grid">
+      {% for client in site.clients %}
+        <span class="logo-item" title="{{ client.name }} · {{ client.country }}">{{ client.name }}</span>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Past clients of Abraham Otieno",
+  "itemListElement": [
+    {% for client in site.clients %}
+    {
+      "@type": "ListItem",
+      "position": {{ loop.index }},
+      "item": { "@type": "Organization", "name": "{{ client.name }}", "address": { "@type": "PostalAddress", "addressCountry": "{{ client.country }}" } }
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>

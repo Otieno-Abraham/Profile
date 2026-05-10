@@ -1,0 +1,17 @@
+{
+  "name": "abrahamotieno-site",
+  "version": "2.0.0",
+  "description": "Personal site of Abraham Otieno — Executive Assistant in Kenya, Virtual EA & Chief of Staff to founders worldwide.",
+  "private": true,
+  "scripts": {
+    "build": "eleventy",
+    "dev": "eleventy --serve --quiet",
+    "clean": "rimraf _site",
+    "format": "prettier --write \"src/**/*.{njk,html,css,js,md}\""
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-navigation": "^0.3.5",
+    "rimraf": "^6.0.1"
+  }
+}

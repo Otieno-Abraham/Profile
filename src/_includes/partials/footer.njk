@@ -1,0 +1,51 @@
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>{{ site.name }}</h4>
+        <p style="color:var(--ink-muted); font-size:var(--fs-small); margin-bottom:var(--space-4); max-width:36ch;">
+          Executive Assistant & Virtual Chief of Staff. Based in {{ site.city }}, {{ site.country }} — supporting founders, CEOs, and operators worldwide.
+        </p>
+        <p style="font-size:var(--fs-small); color:var(--ink-muted);">
+          <a href="mailto:{{ site.email }}">{{ site.email }}</a><br>
+          <a href="{{ site.whatsapp }}" rel="noopener">WhatsApp · {{ site.phoneDisplay }}</a>
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Site</h4>
+        <ul>
+          {% for item in site.nav %}
+            <li><a href="{{ item.url }}">{{ item.label }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Hire me as</h4>
+        <ul>
+          <li><a href="/executive-assistant-kenya/">Executive Assistant Kenya</a></li>
+          <li><a href="/virtual-executive-assistant/">Virtual Executive Assistant</a></li>
+          <li><a href="/executive-assistant-to-ceo/">Executive Assistant to CEO</a></li>
+          <li><a href="/remote-executive-assistant-africa/">Remote EA — Africa</a></li>
+          <li><a href="/hire-executive-assistant-nairobi/">Hire EA in Nairobi</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="{{ site.linkedin }}" rel="noopener">LinkedIn</a></li>
+          <li><a href="{{ site.upwork }}" rel="noopener">Upwork</a></li>
+          <li><a href="{{ site.whatsapp }}" rel="noopener">WhatsApp</a></li>
+          <li><a href="mailto:{{ site.email }}">Email</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© {% year %} {{ site.name }}. All rights reserved.</span>
+      <span>Built in {{ site.city }}. Available worldwide.</span>
+    </div>
+  </div>
+</footer>

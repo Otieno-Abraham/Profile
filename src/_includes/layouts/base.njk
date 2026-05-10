@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en-KE" data-page="{{ pageKey or 'page' }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#FAFAF7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0B0D11" media="(prefers-color-scheme: dark)">
+
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}">
+  {% if keywords %}<meta name="keywords" content="{{ keywords }}">{% endif %}
+  <meta name="author" content="{{ site.name }}">
+  <link rel="canonical" href="{{ site.baseUrl }}{{ page.url }}">
+
+  {% if noindex %}<meta name="robots" content="noindex, follow">
+  {% else %}<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">{% endif %}
+
+  {# Hreflang #}
+  <link rel="alternate" hreflang="en-ke" href="{{ site.baseUrl }}{{ page.url }}">
+  <link rel="alternate" hreflang="en" href="{{ site.baseUrl }}{{ page.url }}">
+  <link rel="alternate" hreflang="x-default" href="{{ site.baseUrl }}{{ page.url }}">
+
+  {# Geo #}
+  <meta name="geo.placename" content="{{ site.city }}, {{ site.country }}">
+  <meta name="geo.region" content="{{ site.region }}">
+  <meta name="geo.position" content="{{ site.geo.lat }};{{ site.geo.lng }}">
+  <meta name="ICBM" content="{{ site.geo.lat }}, {{ site.geo.lng }}">
+
+  {# Open Graph #}
+  <meta property="og:title" content="{{ ogTitle or title }}">
+  <meta property="og:description" content="{{ ogDescription or description }}">
+  <meta property="og:url" content="{{ site.baseUrl }}{{ page.url }}">
+  <meta property="og:type" content="{{ ogType or 'website' }}">
+  <meta property="og:site_name" content="{{ site.name }} — {{ site.role }}">
+  <meta property="og:locale" content="{{ site.locale }}">
+  <meta property="og:image" content="{{ site.baseUrl }}{{ ogImage or '/assets/img/og-default.jpg' }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="{{ ogImageAlt or (site.name + ' — Executive Assistant in Kenya') }}">
+
+  {# Twitter Card #}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ ogTitle or title }}">
+  <meta name="twitter:description" content="{{ ogDescription or description }}">
+  <meta name="twitter:image" content="{{ site.baseUrl }}{{ ogImage or '/assets/img/og-default.jpg' }}">
+
+  {# Favicon #}
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+
+  {# Stylesheets — preload critical, swap in full #}
+  <link rel="preload" href="/assets/css/style.css" as="style">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  {# Schema: Person + ProfessionalService — present on every page so Google ties pages to the entity #}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "{{ site.baseUrl }}/#person",
+        "name": "{{ site.name }}",
+        "jobTitle": "{{ site.role }}",
+        "url": "{{ site.baseUrl }}",
+        "image": "{{ site.baseUrl }}/abu.jpg",
+        "telephone": "{{ site.phone }}",
+        "email": "{{ site.email }}",
+        "sameAs": [
+          "{{ site.linkedin }}",
+          "{{ site.upwork }}",
+          "{{ site.whatsapp }}"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "{{ site.city }}",
+          "addressCountry": "{{ site.countryCode }}"
+        },
+        "worksFor": { "@id": "{{ site.baseUrl }}/#business" },
+        "knowsAbout": [
+          "Executive Assistance", "Virtual Executive Assistant", "Chief of Staff",
+          "Executive Communication", "Stakeholder Coordination", "Operations Systems",
+          "Calendar Management", "Inbox Management", "Travel Logistics",
+          "Market Entry", "Joint Venture Coordination", "CRM Setup",
+          "Workflow Automation", "Remote Team Leadership", "Board Preparation"
+        ],
+        "hasOccupation": {
+          "@type": "Occupation",
+          "name": "Executive Assistant",
+          "alternateName": ["Virtual Executive Assistant", "Chief of Staff", "Remote Operations Partner", "Executive Assistant to CEO"],
+          "occupationLocation": [
+            {"@type": "City", "name": "Nairobi"},
+            {"@type": "Country", "name": "Kenya"},
+            {"@type": "AdministrativeArea", "name": "East Africa"},
+            {"@type": "AdministrativeArea", "name": "Worldwide Remote"}
+          ],
+          "skills": "Executive Communication, Stakeholder Coordination, Operations Systems, Calendar Management, CRM Setup, Market Entry, Joint Venture Coordination, Document Control, Multi-timezone Team Management, Board Preparation, Inbox Management, Travel Logistics"
+        },
+        "seeks": {
+          "@type": "Demand",
+          "name": "Executive Assistant or Operations Partner role",
+          "description": "Available for Executive Assistant, Virtual Executive Assistant, Chief of Staff, and Remote Operations Partner engagements with founders, CEOs, and leadership teams worldwide."
+        },
+        "potentialAction": {
+          "@type": "HireAction",
+          "target": "{{ site.baseUrl }}/booking/",
+          "name": "Book a free consultation"
+        }
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "{{ site.baseUrl }}/#business",
+        "name": "{{ site.name }} — Executive Assistant Services",
+        "description": "Executive assistant services for founders, CEOs, and operators. Virtual EA, Chief of Staff support, operations systems, market entry, stakeholder coordination. Based in Nairobi, Kenya, serving worldwide.",
+        "url": "{{ site.baseUrl }}",
+        "image": "{{ site.baseUrl }}/abu.jpg",
+        "telephone": "{{ site.phone }}",
+        "email": "{{ site.email }}",
+        "priceRange": "$$",
+        "areaServed": [
+          {% for area in site.serviceAreas %}{"@type": "Place", "name": "{{ area }}"}{% if not loop.last %},{% endif %}{% endfor %}
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "{{ site.city }}",
+          "addressRegion": "Nairobi County",
+          "addressCountry": "{{ site.countryCode }}"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": {{ site.geo.lat }},
+          "longitude": {{ site.geo.lng }}
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+          "opens": "08:00",
+          "closes": "18:00"
+        },
+        "founder": { "@id": "{{ site.baseUrl }}/#person" },
+        "serviceType": [
+          "Executive Assistant Services",
+          "Virtual Executive Assistant",
+          "Chief of Staff Support",
+          "Operations Consulting",
+          "Market Entry Support"
+        ]
+      }{% if breadcrumbs %},
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {% for crumb in breadcrumbs %}
+          {
+            "@type": "ListItem",
+            "position": {{ loop.index }},
+            "name": "{{ crumb.name }}",
+            "item": "{{ site.baseUrl }}{{ crumb.url }}"
+          }{% if not loop.last %},{% endif %}
+          {% endfor %}
+        ]
+      }{% endif %}{% if reviews %},
+      {
+        "@type": "Product",
+        "@id": "{{ site.baseUrl }}/#service-product",
+        "name": "Executive Assistant Services by Abraham Otieno",
+        "description": "Virtual EA, Chief of Staff, and operations support for founders worldwide.",
+        "brand": { "@id": "{{ site.baseUrl }}/#person" },
+        "review": [
+          {% for r in site.testimonials %}
+          {
+            "@type": "Review",
+            "reviewRating": { "@type": "Rating", "ratingValue": "{{ r.rating }}", "bestRating": "5" },
+            "author": { "@type": "Person", "name": "{{ r.author }}", "jobTitle": "{{ r.title }}", "worksFor": { "@type": "Organization", "name": "{{ r.company }}" } },
+            "reviewBody": {{ r.quote | dump | safe }},
+            "datePublished": "{{ r.datePublished }}"
+          }{% if not loop.last %},{% endif %}
+          {% endfor %}
+        ]
+      }{% endif %}{% if extraSchema %},
+      {{ extraSchema | safe }}{% endif %}
+    ]
+  }
+  </script>
+
+  {% if faq %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {% for item in faq %}
+      {
+        "@type": "Question",
+        "name": {{ item.q | dump | safe }},
+        "acceptedAnswer": { "@type": "Answer", "text": {{ item.a | dump | safe }} }
+      }{% if not loop.last %},{% endif %}
+      {% endfor %}
+    ]
+  }
+  </script>
+  {% endif %}
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  {% include "partials/header.njk" %}
+
+  <main id="main">
+    {{ content | safe }}
+  </main>
+
+  {% include "partials/footer.njk" %}
+  {% include "partials/fab-whatsapp.njk" %}
+
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>

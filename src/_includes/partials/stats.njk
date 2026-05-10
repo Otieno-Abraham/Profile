@@ -1,0 +1,10 @@
+<section class="container" aria-label="Headline metrics">
+  <dl class="stats">
+    {% for m in site.metrics %}
+      <div>
+        <dt class="stat-label">{{ m.label }}</dt>
+        <dd class="stat-value">{{ m.value }}</dd>
+      </div>
+    {% endfor %}
+  </dl>
+</section>
