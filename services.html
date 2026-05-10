@@ -26,8 +26,103 @@
     <meta name="twitter:image" content="https://abrahamotieno.com/abu.jpg">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://abrahamotieno.com/services">
-    
+    <link rel="canonical" href="https://abrahamotieno.com/services.html">
+
+    <!-- Geo / Local SEO -->
+    <meta name="geo.placename" content="Nairobi, Kenya">
+    <meta name="geo.region" content="KE-110">
+
+    <!-- Performance: Preconnect -->
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Inter font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Services structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Executive & Operations Services by Abraham Otieno",
+      "url": "https://abrahamotieno.com/services.html",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Service",
+            "name": "Executive Time Optimization",
+            "description": "Calendar management, travel logistics, and meeting preparation for founders and C-suite executives. Reclaim 15+ hours per week.",
+            "provider": {"@type": "Person", "name": "Abraham Otieno", "url": "https://abrahamotieno.com"},
+            "areaServed": "Worldwide"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Service",
+            "name": "Operational Accountability Systems",
+            "description": "CRM setup, dashboards, and process documentation to build scalable, trackable operations.",
+            "provider": {"@type": "Person", "name": "Abraham Otieno", "url": "https://abrahamotieno.com"},
+            "areaServed": "Worldwide"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Service",
+            "name": "Market Entry Without Friction",
+            "description": "Joint venture support, partner sourcing, and expansion readiness across Africa, EU, and North America.",
+            "provider": {"@type": "Person", "name": "Abraham Otieno", "url": "https://abrahamotieno.com"},
+            "areaServed": ["Africa", "European Union", "North America"]
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "Service",
+            "name": "Distributed Team Reliability",
+            "description": "Onboarding, training, and QA frameworks for remote and distributed teams. 200+ agents successfully onboarded.",
+            "provider": {"@type": "Person", "name": "Abraham Otieno", "url": "https://abrahamotieno.com"},
+            "areaServed": "Worldwide"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "Service",
+            "name": "Executive Presence & Strategic Communications",
+            "description": "LinkedIn strategy, board presentations, stakeholder messaging, and confidential C-suite correspondence.",
+            "provider": {"@type": "Person", "name": "Abraham Otieno", "url": "https://abrahamotieno.com"},
+            "areaServed": "Worldwide"
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Breadcrumb schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://abrahamotieno.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Services", "item": "https://abrahamotieno.com/services.html"}
+      ]
+    }
+    </script>
+
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     
@@ -52,7 +147,9 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-feature-settings: 'cv11', 'ss01';
+            -webkit-font-smoothing: antialiased;
             line-height: 1.6;
             color: #1a202c;
             background: white;
@@ -605,7 +702,7 @@
         <div class="container">
             <nav class="navbar">
                 <a href="/" class="logo-with-photo">
-                    <div class="nav-avatar"><img src="abu.jpg" alt="Abraham Otieno"></div>
+                    <div class="nav-avatar"><img loading="lazy" decoding="async" src="abu.jpg" alt="Abraham Otieno"></div>
                     <div>
                         <div class="logo-name">Abraham Otieno</div>
                         <div class="logo-title">Strategic Executive Partner</div>
@@ -626,11 +723,11 @@
 
     <!-- Global location strip -->
     <div class="global-strip">
-        <span><img class="flag-icon" src="https://flagcdn.com/w20/se.png" alt="Sweden"> Stockholm</span>
-        <span><img class="flag-icon" src="https://flagcdn.com/w20/ke.png" alt="Kenya"> Nairobi</span>
-        <span><img class="flag-icon" src="https://flagcdn.com/w20/us.png" alt="United States"> US</span>
-        <span><img class="flag-icon" src="https://flagcdn.com/w20/eu.png" alt="European Union"> EU</span>
-        <span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Multi‑time‑zone</span>
+        <span><img loading="lazy" decoding="async" class="flag-icon" src="https://flagcdn.com/w20/se.png" alt="Sweden"> Stockholm</span>
+        <span><img loading="lazy" decoding="async" class="flag-icon" src="https://flagcdn.com/w20/ke.png" alt="Kenya"> Nairobi</span>
+        <span><img loading="lazy" decoding="async" class="flag-icon" src="https://flagcdn.com/w20/us.png" alt="United States"> US</span>
+        <span><img loading="lazy" decoding="async" class="flag-icon" src="https://flagcdn.com/w20/eu.png" alt="European Union"> EU</span>
+        <span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Multi-time-zone</span>
     </div>
 
     <!-- Hero - improved -->
@@ -652,14 +749,14 @@
                 <!-- Service 1: Executive Time Optimisation -->
                 <div class="service-card fade-up">
                     <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=400&fit=crop" alt="Executive calendar and meeting planning">
+                        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=600&h=400&fit=crop" alt="Executive calendar and meeting planning">
                     </div>
                     <div class="service-content">
                         <h3>Executive Time Optimisation</h3>
-                        <p><strong>You get:</strong> 15+ hours back every week. No more scheduling chaos, no more travel logistics headaches, no more chasing follow‑ups.</p>
+                        <p><strong>You get:</strong> 15+ hours back every week. No more scheduling chaos, no more travel logistics headaches, no more chasing follow-ups.</p>
                         <ul class="feature-list">
-                            <li>Multi‑time‑zone calendar orchestration</li>
-                            <li>Zero‑disruption international travel</li>
+                            <li>Multi-time-zone calendar orchestration</li>
+                            <li>Zero-disruption international travel</li>
                             <li>Board & investor meeting preparation</li>
                             <li>Strict confidentiality & discretion</li>
                         </ul>
@@ -669,7 +766,7 @@
                 <!-- Service 2: Operational Accountability Systems -->
                 <div class="service-card fade-up">
                     <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" alt="Operations dashboard and analytics">
+                        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" alt="Operations dashboard and analytics">
                     </div>
                     <div class="service-content">
                         <h3>Operational Accountability Systems</h3>
@@ -686,16 +783,16 @@
                 <!-- Service 3: Market Entry Without Friction -->
                 <div class="service-card fade-up">
                     <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&h=400&fit=crop" alt="Global market entry and partnership handshake">
+                        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&h=400&fit=crop" alt="Global market entry and partnership handshake">
                     </div>
                     <div class="service-content">
                         <h3>Market Entry Without Friction</h3>
-                        <p><strong>You get:</strong> A coordinated, documented, and executed market expansion. I handle the partners, the paperwork, and the follow‑through – so you don't have to.</p>
+                        <p><strong>You get:</strong> A coordinated, documented, and executed market expansion. I handle the partners, the paperwork, and the follow-through – so you don't have to.</p>
                         <ul class="feature-list">
                             <li>Joint venture structuring support</li>
                             <li>Partner sourcing & coordination</li>
                             <li>Commercial briefs & negotiation docs</li>
-                            <li>Cross‑border expansion readiness</li>
+                            <li>Cross-border expansion readiness</li>
                         </ul>
                         <a href="/booking" class="btn-service">Enter new markets →</a>
                     </div>
@@ -703,11 +800,11 @@
                 <!-- Service 4: Distributed Team Reliability -->
                 <div class="service-card fade-up">
                     <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop" alt="Remote team collaboration and leadership">
+                        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop" alt="Remote team collaboration and leadership">
                     </div>
                     <div class="service-content">
                         <h3>Distributed Team Reliability</h3>
-                        <p><strong>You get:</strong> Remote teams that actually work. Onboarding, training, SOPs, and QA frameworks that turn 200+ agents into a predictable, high‑performing unit.</p>
+                        <p><strong>You get:</strong> Remote teams that actually work. Onboarding, training, SOPs, and QA frameworks that turn 200+ agents into a predictable, high-performing unit.</p>
                         <ul class="feature-list">
                             <li>Remote team onboarding & training</li>
                             <li>SOP & knowledge base creation</li>
@@ -720,14 +817,14 @@
                 <!-- Service 5: Project Execution & Stakeholder Alignment -->
                 <div class="service-card fade-up">
                     <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop" alt="Project coordination and sticky notes planning">
+                        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop" alt="Project coordination and sticky notes planning">
                     </div>
                     <div class="service-content">
                         <h3>Project Execution & Stakeholder Alignment</h3>
-                        <p><strong>You get:</strong> Multi‑department projects that move in sync. Clear milestones, documented decisions, and stakeholders who never have to ask "what's the status?"</p>
+                        <p><strong>You get:</strong> Multi-department projects that move in sync. Clear milestones, documented decisions, and stakeholders who never have to ask "what's the status?"</p>
                         <ul class="feature-list">
-                            <li>Multi‑department coordination</li>
-                            <li>Action tracking & follow‑through</li>
+                            <li>Multi-department coordination</li>
+                            <li>Action tracking & follow-through</li>
                             <li>Investor & partner updates</li>
                             <li>Risk identification & escalation</li>
                         </ul>
@@ -737,7 +834,7 @@
                 <!-- Service 6: Executive Presence & Strategic Communications -->
                 <div class="service-card fade-up">
                     <div class="service-image">
-                        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&h=400&fit=crop" alt="LinkedIn strategy and content creation">
+                        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&h=400&fit=crop" alt="LinkedIn strategy and content creation">
                     </div>
                     <div class="service-content">
                         <h3>Executive Presence & Strategic Communications</h3>
@@ -765,7 +862,7 @@
             <div class="industries-grid">
                 <div class="industry-card fade-up">
                     <div class="industry-image">
-                        <img src="https://images.pexels.com/photos/936137/pexels-photo-936137.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="BPO call center agents working">
+                        <img loading="lazy" decoding="async" src="https://images.pexels.com/photos/936137/pexels-photo-936137.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="BPO call center agents working">
                     </div>
                     <div class="industry-content">
                         <h4>BPO & Outsourcing</h4>
@@ -774,7 +871,7 @@
                 </div>
                 <div class="industry-card fade-up">
                     <div class="industry-image">
-                        <img src="https://images.pexels.com/photos/164527/pexels-photo-164527.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Financial analysis and operations">
+                        <img loading="lazy" decoding="async" src="https://images.pexels.com/photos/164527/pexels-photo-164527.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Financial analysis and operations">
                     </div>
                     <div class="industry-content">
                         <h4>Finance & Fintech</h4>
@@ -783,7 +880,7 @@
                 </div>
                 <div class="industry-card fade-up">
                     <div class="industry-image">
-                        <img src="https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Tech startup team collaborating">
+                        <img loading="lazy" decoding="async" src="https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Tech startup team collaborating">
                     </div>
                     <div class="industry-content">
                         <h4>Technology Startups</h4>
@@ -792,11 +889,11 @@
                 </div>
                 <div class="industry-card fade-up">
                     <div class="industry-image">
-                        <img src="https://images.pexels.com/photos/4386431/pexels-photo-4386431.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="International development and global aid">
+                        <img loading="lazy" decoding="async" src="https://images.pexels.com/photos/4386431/pexels-photo-4386431.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="International development and global aid">
                     </div>
                     <div class="industry-content">
                         <h4>International Development</h4>
-                        <p>Stakeholder coordination, donor reporting, multi‑country program support.</p>
+                        <p>Stakeholder coordination, donor reporting, multi-country program support.</p>
                     </div>
                 </div>
             </div>
@@ -811,9 +908,9 @@
                 <p>A structured approach that ensures clarity, momentum, and results.</p>
             </div>
             <div class="process-grid">
-                <div class="process-step fade-up"><div class="step-number">1</div><h3>Discovery</h3><p>Free 30‑min consultation to understand your priorities and pain points.</p></div>
+                <div class="process-step fade-up"><div class="step-number">1</div><h3>Discovery</h3><p>Free 30-min consultation to understand your priorities and pain points.</p></div>
                 <div class="process-step fade-up"><div class="step-number">2</div><h3>Strategy & Plan</h3><p>Custom roadmap with clear milestones, owners, and deadlines.</p></div>
-                <div class="process-step fade-up"><div class="step-number">3</div><h3>Execution & Tracking</h3><p>Live tracker, weekly check‑ins, and proactive follow‑through.</p></div>
+                <div class="process-step fade-up"><div class="step-number">3</div><h3>Execution & Tracking</h3><p>Live tracker, weekly check-ins, and proactive follow-through.</p></div>
                 <div class="process-step fade-up"><div class="step-number">4</div><h3>Optimization</h3><p>Continuous improvement and systems that scale with you.</p></div>
             </div>
         </div>
@@ -834,7 +931,7 @@
     <section class="cta-section">
         <div class="container">
             <h2>Ready to stop chasing execution and start leading?</h2>
-            <p>Book a free 30‑min consultation. No pitch. Just a conversation about what's blocking your progress.</p>
+            <p>Book a free 30-min consultation. No pitch. Just a conversation about what's blocking your progress.</p>
             <a href="/booking" class="btn-cta"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Book free consultation</a>
         </div>
     </section>
@@ -843,7 +940,7 @@
     <footer id="contact">
         <div class="container">
             <div class="footer-content">
-                <div><img src="abu.jpg" alt="Abraham" class="footer-profile-img"><h3>Abraham Otieno</h3><p>Strategic Executive Partner</p></div>
+                <div><img loading="lazy" decoding="async" src="abu.jpg" alt="Abraham" class="footer-profile-img"><h3>Abraham Otieno</h3><p>Strategic Executive Partner</p></div>
                 <div><h3>Contact</h3><p>📧 hello@abrahamotieno.com</p><p>📱 +254 757 272 468</p><p>📍 Nairobi / Stockholm (Remote)</p></div>
                 <div><h3>Connect</h3><div class="social-links-grid">
                     <a href="https://linkedin.com/in/abraham-otieno-665678317" class="social-link-item"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg> LinkedIn</a>
