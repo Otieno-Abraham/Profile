@@ -1,0 +1,44 @@
+---
+layout: base.njk
+permalink: /blog/
+pageKey: blog
+title: "Blog | Executive Assistance, Operations & Hiring — Abraham Otieno"
+description: "Long-form writing on hiring executive assistants, building chief-of-staff roles, operations systems, and remote work for founders."
+keywords: "executive assistant blog, EA hiring guide, chief of staff vs EA, remote operations Africa, executive assistant Kenya guide"
+ogTitle: "The Blog — Hiring & Operations for Founders"
+ogDescription: "Hiring guides, role comparisons, real cost numbers, and operating frameworks."
+breadcrumbs:
+  - { name: "Home", url: "/" }
+  - { name: "Blog", url: "/blog/" }
+---
+
+<section class="section hero" style="padding-bottom: var(--space-7);">
+  <div class="container">
+    <div class="hero-inner reveal">
+      <span class="eyebrow">Blog</span>
+      <h1>Writing on <em>Hiring, Operations &amp; Executive Support</em></h1>
+      <p class="hero-sub">Long-form pieces for founders, CEOs, and operations leaders. No fluff, no listicles, just the work.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="post-list reveal">
+      {% set posts = collections.post | reverse %}
+      {% for post in posts %}
+        <a class="post-card" href="{{ post.url }}">
+          {% if post.data.eyebrow %}<span class="eyebrow">{{ post.data.eyebrow }}</span>{% endif %}
+          <h3>{{ post.data.title }}</h3>
+          <p>{{ post.data.description }}</p>
+          <div class="post-card-meta">
+            <time datetime="{{ post.date | isoDate }}">{{ post.date.toDateString() }}</time>
+            {% if post.data.readTime %} · {{ post.data.readTime }} min read{% endif %}
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% include "partials/landing-cta.njk" %}

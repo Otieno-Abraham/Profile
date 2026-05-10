@@ -1,0 +1,114 @@
+---
+layout: base.njk
+permalink: /case-studies/
+pageKey: case-studies
+title: "Executive Assistant Case Studies — Kenya & Remote | Abraham Otieno"
+description: "Executive assistant case studies: operations frameworks, market entry, agent onboarding, founder execution. Real outcomes from Kenya & global remote work."
+keywords: "executive assistant case studies, virtual EA results, chief of staff case studies, executive support outcomes Kenya"
+ogTitle: "Executive Assistant Case Studies — Strategic Frameworks & Outcomes"
+ogDescription: "Real engagements: market entry, agent onboarding, executive frameworks, ecosystem ops."
+ogImage: /assets/img/og-case-studies.jpg
+reviews: true
+breadcrumbs:
+  - { name: "Home", url: "/" }
+  - { name: "Case Studies", url: "/case-studies/" }
+---
+
+<section class="section hero" style="padding-bottom: var(--space-7);">
+  <div class="container">
+    <div class="hero-inner reveal">
+      <span class="eyebrow">Case Studies</span>
+      <h1>Executive Assistant Case Studies — <em>Strategic Frameworks &amp; Outcomes</em></h1>
+      <p class="hero-sub">Real engagements. Real frameworks. Real results.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="grid grid-2">
+      <article class="card reveal">
+        <span class="eyebrow">BPO Onboarding</span>
+        <h3>Sohubox — Executive Assistant to the CEO</h3>
+        <p>Written exercise demonstrating the operating cadence, communication patterns, and stakeholder mapping I'd bring to a CEO-level EA role. Showcases tone calibration and organisational voice.</p>
+        <p style="color:var(--ink-muted); font-size:var(--fs-small); margin-top: var(--space-3);"><strong>Key learning:</strong> Executive communication must balance confidence with clarity, calibrated to the organisation's voice (confident, conversational, empathetic, professional, forthright).</p>
+        <a class="card-link" href="/sohubox-case-study.pdf" target="_blank" rel="noopener">Download PDF <span aria-hidden="true">→</span></a>
+      </article>
+
+      <article class="card reveal">
+        <span class="eyebrow">Workflow Automation</span>
+        <h3>Africa Rising — VA Program &amp; Content Repurposing</h3>
+        <p>Designed a workflow automation system for a virtual assistant program. Documented onboarding, content repurposing pipelines, and quality checkpoints for a growing remote team.</p>
+        <p style="color:var(--ink-muted); font-size:var(--fs-small); margin-top: var(--space-3);"><strong>Key learning:</strong> Workflow automation and content repurposing systems save 60%+ of manual effort while maintaining quality.</p>
+        <a class="card-link" href="https://otieno-abraham.github.io/AfricaRising_VA_CaseStudy/" target="_blank" rel="noopener">View case study <span aria-hidden="true">→</span></a>
+      </article>
+
+      <article class="card reveal">
+        <span class="eyebrow">Hiring Framework</span>
+        <h3>Hire Central — Executive Assistant Application</h3>
+        <p>Structured problem-solving applied to a senior EA role: scenario triage, communication patterns, and decision frameworks for a high-velocity executive office.</p>
+        <p style="color:var(--ink-muted); font-size:var(--fs-small); margin-top: var(--space-3);"><strong>Key learning:</strong> Structured problem-solving frameworks are essential for executive roles. Breaking complex scenarios into actionable responses demonstrates strategic maturity.</p>
+      </article>
+
+      <article class="card reveal">
+        <span class="eyebrow">Visual Communication</span>
+        <h3>Hire Central — Strategy Presentation</h3>
+        <p>Slide-based articulation of operational strategy for executive review. Showcases how I translate dense operational thinking into board-ready visuals.</p>
+        <p style="color:var(--ink-muted); font-size:var(--fs-small); margin-top: var(--space-3);"><strong>Key learning:</strong> Visual communication of complex operational strategies accelerates executive buy-in and alignment.</p>
+        <a class="card-link" href="https://docs.google.com/presentation/d/1qpmESUVYUeqft5vMNKi-PF4JUOBdcTQiws3YokMc5ao/edit?usp=sharing" target="_blank" rel="noopener">View presentation <span aria-hidden="true">→</span></a>
+      </article>
+
+      <article class="card reveal">
+        <span class="eyebrow">Execution Framework</span>
+        <h3>Ecosystem Manager — Structuring 72-Hour Execution</h3>
+        <p>Framework for operators who must move without perfect information. Removes decision paralysis through tight scoping, asynchronous decision logs, and parallel-track execution.</p>
+        <p style="color:var(--ink-muted); font-size:var(--fs-small); margin-top: var(--space-3);"><strong>Key learning:</strong> Founders need operators who move without perfect information. The 72-hour execution framework removes decision paralysis.</p>
+      </article>
+
+      <article class="card reveal">
+        <span class="eyebrow">Operations Build</span>
+        <h3>Generation Kenya — Stakeholder Coordination</h3>
+        <p>Coordination layer between CEO and operational stakeholders. Streamlined communication, removed redundancy, and converted ad-hoc requests into a structured cadence.</p>
+        <p style="color:var(--ink-muted); font-size:var(--fs-small); margin-top: var(--space-3);"><strong>Outcome:</strong> Transformed team dynamics, faster stakeholder turnaround, reduced founder coordination overhead.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+{# Testimonials in dark section for visual rhythm #}
+<section class="section section-dark" aria-labelledby="cs-testimonials">
+  <div class="container">
+    <div class="section-heading reveal">
+      <span class="eyebrow">In Their Words</span>
+      <h2 id="cs-testimonials">Real Quotes from Real Engagements</h2>
+    </div>
+    <div class="grid grid-3">
+      {% for r in site.testimonials %}
+        <article class="testimonial reveal">
+          <div class="testimonial-stars" aria-label="{{ r.rating }} out of 5 stars">
+            {% for i in range(0, r.rating) %}<span aria-hidden="true">★</span>{% endfor %}
+          </div>
+          <blockquote class="testimonial-quote">{{ r.quote }}</blockquote>
+          <div class="testimonial-author">
+            <span class="testimonial-avatar" aria-hidden="true">{{ r.initial }}</span>
+            <div>
+              <div class="testimonial-name">{{ r.author }}</div>
+              <div class="testimonial-meta">{{ r.title }}, {{ r.company }}</div>
+            </div>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-bg">
+  <div class="container" style="text-align:center; max-width: 720px;">
+    <div class="reveal">
+      <span class="eyebrow">Want similar results?</span>
+      <h2>Book a Free 30-Minute Consultation</h2>
+      <p style="color:var(--ink-muted); font-size:var(--fs-body-lg); margin: var(--space-4) auto var(--space-6);">We'll cover your operational pain points and the highest-leverage moves for the next 30 days.</p>
+      <a href="/booking/" class="btn btn-primary btn-lg">Book the call</a>
+    </div>
+  </div>
+</section>
