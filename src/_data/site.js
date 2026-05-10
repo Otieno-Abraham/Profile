@@ -46,14 +46,14 @@ module.exports = {
     { value: "3", label: "Continents served", numeric: 3 },
   ],
 
-  // Past clients (logo bar) — for Organization schema
-  // url: official site if confirmed; null = no link rendered
+  // Past clients (logo bar). domain used for clearbit logo lookup.
+  // If logo fails to load, name renders as styled text (handled in logos.njk).
   clients: [
-    { name: "MSTRpay", country: "Sweden", file: "mstrpay", url: null },
-    { name: "Pioneer Outsourcing BPO", country: "Kenya", file: "pioneer", url: "https://pioneeroutsourcingbpo.com" },
-    { name: "M-KOPA", country: "Kenya", file: "mkopa", url: "https://m-kopa.com" },
-    { name: "OKash Kenya", country: "Kenya", file: "okash", url: null },
-    { name: "Generation Kenya", country: "Kenya", file: "generation-kenya", url: "https://kenya.generation.org" },
+    { name: "MSTRpay",                country: "Sweden", domain: "mstrpay.com",            url: "https://mstrpay.com" },
+    { name: "Pioneer Outsourcing BPO", country: "Kenya",  domain: "pioneeroutsourcingbpo.com", url: "https://pioneeroutsourcingbpo.com" },
+    { name: "M-KOPA",                 country: "Kenya",  domain: "m-kopa.com",             url: "https://m-kopa.com" },
+    { name: "OKash Kenya",            country: "Kenya",  domain: "okash.co.ke",            url: "https://okash.co.ke" },
+    { name: "Generation Kenya",       country: "Kenya",  domain: "kenya.generation.org",   url: "https://kenya.generation.org" },
   ],
 
   // Real testimonials only — provided by user

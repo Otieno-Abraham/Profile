@@ -3,11 +3,15 @@
     <p class="logos-label">Trusted by leaders at</p>
     <div class="logos-grid">
       {% for client in site.clients %}
-        {% if client.url %}
-          <a class="logo-item" href="{{ client.url }}" rel="noopener" target="_blank" title="{{ client.name }} · {{ client.country }} — visit website">{{ client.name }}</a>
-        {% else %}
-          <span class="logo-item" title="{{ client.name }} · {{ client.country }}">{{ client.name }}</span>
-        {% endif %}
+        <a class="logo-item" href="{{ client.url }}" rel="noopener" target="_blank" title="{{ client.name }} · {{ client.country }} — visit website" aria-label="{{ client.name }} (opens in new tab)">
+          <img class="logo-img"
+               src="https://logo.clearbit.com/{{ client.domain }}?size=200"
+               alt="{{ client.name }}"
+               loading="lazy"
+               decoding="async"
+               width="200" height="60"
+               onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo-fallback',textContent:this.alt}));">
+        </a>
       {% endfor %}
     </div>
   </div>
@@ -23,7 +27,7 @@
     {
       "@type": "ListItem",
       "position": {{ loop.index }},
-      "item": { "@type": "Organization", "name": "{{ client.name }}"{% if client.url %}, "url": "{{ client.url }}"{% endif %}, "address": { "@type": "PostalAddress", "addressCountry": "{{ client.country }}" } }
+      "item": { "@type": "Organization", "name": "{{ client.name }}", "url": "{{ client.url }}", "address": { "@type": "PostalAddress", "addressCountry": "{{ client.country }}" } }
     }{% if not loop.last %},{% endif %}
     {% endfor %}
   ]

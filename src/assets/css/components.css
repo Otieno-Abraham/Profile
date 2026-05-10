@@ -322,19 +322,34 @@
   .logos-grid { grid-template-columns: repeat(5, 1fr); gap: var(--space-7); }
 }
 .logo-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  text-align: center;
+  min-height: 48px;
+  padding: var(--space-2) var(--space-3);
+  filter: grayscale(100%);
+  opacity: 0.65;
+  transition: filter var(--dur) var(--ease-out), opacity var(--dur) var(--ease-out);
+}
+.logo-item:hover { filter: grayscale(0%); opacity: 1; }
+.logo-img {
+  max-height: 40px;
+  max-width: 140px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+/* Fallback when clearbit returns no logo — render styled name text */
+.logo-fallback {
   font-family: var(--font-serif);
   font-weight: var(--fw-semibold);
   font-size: var(--fs-body-lg);
   color: var(--ink-soft);
   letter-spacing: var(--tracking-tight);
-  text-decoration: none;
-  filter: grayscale(100%);
-  opacity: 0.7;
-  transition: filter var(--dur) var(--ease-out), opacity var(--dur) var(--ease-out), color var(--dur) var(--ease-out);
-  text-align: center;
 }
-a.logo-item:hover { filter: grayscale(0%); opacity: 1; color: var(--accent); text-decoration: none; }
-span.logo-item:hover { opacity: 0.9; color: var(--ink); }
+.logo-item:hover .logo-fallback { color: var(--primary); }
 
 /* ---------- Cards ---------- */
 .card {
