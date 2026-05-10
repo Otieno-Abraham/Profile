@@ -7,7 +7,8 @@
   padding-bottom: var(--space-7);
   border-bottom: 1px solid var(--line);
   background:
-    radial-gradient(900px 500px at 90% 0%, color-mix(in srgb, var(--accent) 10%, transparent) 0%, transparent 60%),
+    radial-gradient(900px 500px at 90% 0%, color-mix(in srgb, var(--primary) 10%, transparent) 0%, transparent 60%),
+    radial-gradient(600px 400px at 10% 100%, color-mix(in srgb, var(--accent) 6%, transparent) 0%, transparent 55%),
     var(--bg);
 }
 .article-header .container { max-width: 760px; }
