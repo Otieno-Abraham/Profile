@@ -327,12 +327,14 @@
   font-size: var(--fs-body-lg);
   color: var(--ink-soft);
   letter-spacing: var(--tracking-tight);
+  text-decoration: none;
   filter: grayscale(100%);
-  opacity: 0.65;
+  opacity: 0.7;
   transition: filter var(--dur) var(--ease-out), opacity var(--dur) var(--ease-out), color var(--dur) var(--ease-out);
   text-align: center;
 }
-.logo-item:hover { filter: grayscale(0%); opacity: 1; color: var(--ink); }
+a.logo-item:hover { filter: grayscale(0%); opacity: 1; color: var(--accent); text-decoration: none; }
+span.logo-item:hover { opacity: 0.9; color: var(--ink); }
 
 /* ---------- Cards ---------- */
 .card {

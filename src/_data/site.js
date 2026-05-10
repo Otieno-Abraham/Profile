@@ -47,12 +47,13 @@ module.exports = {
   ],
 
   // Past clients (logo bar) — for Organization schema
+  // url: official site if confirmed; null = no link rendered
   clients: [
-    { name: "MSTRpay", country: "Sweden", file: "mstrpay" },
-    { name: "Pioneer Outsourcing BPO", country: "Kenya", file: "pioneer" },
-    { name: "M-KOPA", country: "Kenya", file: "mkopa" },
-    { name: "OKash Kenya", country: "Kenya", file: "okash" },
-    { name: "Generation Kenya", country: "Kenya", file: "generation-kenya" },
+    { name: "MSTRpay", country: "Sweden", file: "mstrpay", url: null },
+    { name: "Pioneer Outsourcing BPO", country: "Kenya", file: "pioneer", url: "https://pioneeroutsourcingbpo.com" },
+    { name: "M-KOPA", country: "Kenya", file: "mkopa", url: "https://m-kopa.com" },
+    { name: "OKash Kenya", country: "Kenya", file: "okash", url: null },
+    { name: "Generation Kenya", country: "Kenya", file: "generation-kenya", url: "https://kenya.generation.org" },
   ],
 
   // Real testimonials only — provided by user

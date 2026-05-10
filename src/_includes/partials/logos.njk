@@ -3,7 +3,11 @@
     <p class="logos-label">Trusted by leaders at</p>
     <div class="logos-grid">
       {% for client in site.clients %}
-        <span class="logo-item" title="{{ client.name }} · {{ client.country }}">{{ client.name }}</span>
+        {% if client.url %}
+          <a class="logo-item" href="{{ client.url }}" rel="noopener" target="_blank" title="{{ client.name }} · {{ client.country }} — visit website">{{ client.name }}</a>
+        {% else %}
+          <span class="logo-item" title="{{ client.name }} · {{ client.country }}">{{ client.name }}</span>
+        {% endif %}
       {% endfor %}
     </div>
   </div>
@@ -19,7 +23,7 @@
     {
       "@type": "ListItem",
       "position": {{ loop.index }},
-      "item": { "@type": "Organization", "name": "{{ client.name }}", "address": { "@type": "PostalAddress", "addressCountry": "{{ client.country }}" } }
+      "item": { "@type": "Organization", "name": "{{ client.name }}"{% if client.url %}, "url": "{{ client.url }}"{% endif %}, "address": { "@type": "PostalAddress", "addressCountry": "{{ client.country }}" } }
     }{% if not loop.last %},{% endif %}
     {% endfor %}
   ]
