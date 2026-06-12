@@ -536,3 +536,32 @@
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
 }
+
+/* ============================================================
+   UX POLISH — 2026-06 SEO/UX pass
+   ============================================================ */
+
+/* FIX: header "Book a call" CTA was unreadable — .nav-links a
+   (specificity 0,1,1) overrode .btn-primary's white text with
+   var(--ink-muted) on the navy pill (~1.6:1 contrast, WCAG fail). */
+.nav-links a.btn,
+.nav-links a.btn:hover,
+.nav-links a.btn[aria-current="page"] {
+  color: #fff;
+  border-bottom: none;
+}
+
+/* Balanced headline wrapping — avoids one-word orphan lines on
+   long H1/H2s (esp. mobile). No-op in older browsers. */
+h1, h2, h3, .hero-sub {
+  text-wrap: balance;
+}
+p {
+  text-wrap: pretty;
+}
+
+/* WhatsApp FAB: respect iPhone home-indicator safe area so the
+   button never sits under the gesture bar. */
+.fab-whatsapp {
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 16px);
+}

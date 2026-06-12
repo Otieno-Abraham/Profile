@@ -26,27 +26,26 @@
   <meta name="geo.position" content="{{ site.geo.lat }};{{ site.geo.lng }}">
   <meta name="ICBM" content="{{ site.geo.lat }}, {{ site.geo.lng }}">
 
-  {# Open Graph #}
+  {# Open Graph — falls back to the portrait, which is guaranteed to exist #}
   <meta property="og:title" content="{{ ogTitle or title }}">
   <meta property="og:description" content="{{ ogDescription or description }}">
   <meta property="og:url" content="{{ site.baseUrl }}{{ page.url }}">
   <meta property="og:type" content="{{ ogType or 'website' }}">
   <meta property="og:site_name" content="{{ site.name }} — {{ site.role }}">
   <meta property="og:locale" content="{{ site.locale }}">
-  <meta property="og:image" content="{{ site.baseUrl }}{{ ogImage or '/assets/img/og-default.jpg' }}">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="{{ ogImageAlt or (site.name + ' — Executive Assistant in Kenya') }}">
+  <meta property="og:image" content="{{ site.baseUrl }}{{ ogImage or '/abu.jpg' }}">
+  <meta property="og:image:width" content="{{ ogImageWidth or 896 }}">
+  <meta property="og:image:height" content="{{ ogImageHeight or 915 }}">
+  <meta property="og:image:alt" content="{{ ogImageAlt or (site.name + ' — Executive Assistant, Chief of Staff & Operations Partner in Nairobi, Kenya') }}">
 
   {# Twitter Card #}
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{ ogTitle or title }}">
   <meta name="twitter:description" content="{{ ogDescription or description }}">
-  <meta name="twitter:image" content="{{ site.baseUrl }}{{ ogImage or '/assets/img/og-default.jpg' }}">
+  <meta name="twitter:image" content="{{ site.baseUrl }}{{ ogImage or '/abu.jpg' }}">
 
   {# Favicon #}
   <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 
   {# Stylesheets — preload critical, swap in full #}
   <link rel="preload" href="/assets/css/style.css" as="style">
@@ -62,10 +61,12 @@
         "@id": "{{ site.baseUrl }}/#person",
         "name": "{{ site.name }}",
         "jobTitle": "{{ site.role }}",
+        "description": "Abraham Otieno is a Nairobi, Kenya-based Executive Assistant, Chief of Staff, and Operations Partner who supports founders, CEOs, and leadership teams remotely across East Africa, Europe, and the United States.",
         "url": "{{ site.baseUrl }}",
         "image": "{{ site.baseUrl }}/abu.jpg",
         "telephone": "{{ site.phone }}",
         "email": "{{ site.email }}",
+        "nationality": { "@type": "Country", "name": "Kenya" },
         "sameAs": [
           "{{ site.linkedin }}",
           "{{ site.upwork }}",
@@ -79,6 +80,8 @@
         "worksFor": { "@id": "{{ site.baseUrl }}/#business" },
         "knowsAbout": [
           "Executive Assistance", "Virtual Executive Assistant", "Chief of Staff",
+          "Virtual Chief of Staff", "Fractional Chief of Staff", "Operations Management",
+          "Remote Operations Management", "Business Operations", "Startup Operations",
           "Executive Communication", "Stakeholder Coordination", "Operations Systems",
           "Calendar Management", "Inbox Management", "Travel Logistics",
           "Market Entry", "Joint Venture Coordination", "CRM Setup",
@@ -87,7 +90,9 @@
         "hasOccupation": {
           "@type": "Occupation",
           "name": "Executive Assistant",
-          "alternateName": ["Virtual Executive Assistant", "Chief of Staff", "Remote Operations Partner", "Executive Assistant to CEO"],
+          "alternateName": [
+            {% for r in site.roles %}"{{ r }}"{% if not loop.last %}, {% endif %}{% endfor %}
+          ],
           "occupationLocation": [
             {"@type": "City", "name": "Nairobi"},
             {"@type": "Country", "name": "Kenya"},
@@ -98,8 +103,8 @@
         },
         "seeks": {
           "@type": "Demand",
-          "name": "Executive Assistant or Operations Partner role",
-          "description": "Available for Executive Assistant, Virtual Executive Assistant, Chief of Staff, and Remote Operations Partner engagements with founders, CEOs, and leadership teams worldwide."
+          "name": "Executive Assistant, Chief of Staff, or Operations Partner role",
+          "description": "Available for Executive Assistant, Virtual Executive Assistant, Chief of Staff, Virtual Chief of Staff, Fractional Chief of Staff, Operations Manager, and Operations Partner engagements with founders, CEOs, and leadership teams worldwide."
         },
         "potentialAction": {
           "@type": "HireAction",
@@ -110,8 +115,8 @@
       {
         "@type": "ProfessionalService",
         "@id": "{{ site.baseUrl }}/#business",
-        "name": "{{ site.name }} — Executive Assistant Services",
-        "description": "Executive assistant services for founders, CEOs, and operators. Virtual EA, Chief of Staff support, operations systems, market entry, stakeholder coordination. Based in Nairobi, Kenya, serving worldwide.",
+        "name": "{{ site.name }} — Executive Assistant & Chief of Staff Services",
+        "description": "Executive assistant, chief of staff, and operations partner services for founders, CEOs, and operators. Virtual EA, fractional chief of staff support, operations systems, market entry, stakeholder coordination. Based in Nairobi, Kenya, serving worldwide.",
         "url": "{{ site.baseUrl }}",
         "image": "{{ site.baseUrl }}/abu.jpg",
         "telephone": "{{ site.phone }}",
@@ -142,6 +147,10 @@
           "Executive Assistant Services",
           "Virtual Executive Assistant",
           "Chief of Staff Support",
+          "Virtual Chief of Staff",
+          "Fractional Chief of Staff",
+          "Operations Management",
+          "Fractional Operations Partner",
           "Operations Consulting",
           "Market Entry Support"
         ]
@@ -162,9 +171,15 @@
       {
         "@type": "Product",
         "@id": "{{ site.baseUrl }}/#service-product",
-        "name": "Executive Assistant Services by Abraham Otieno",
+        "name": "Executive Assistant & Chief of Staff Services by Abraham Otieno",
         "description": "Virtual EA, Chief of Staff, and operations support for founders worldwide.",
         "brand": { "@id": "{{ site.baseUrl }}/#person" },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5",
+          "bestRating": "5",
+          "reviewCount": "{{ site.testimonials | length }}"
+        },
         "review": [
           {% for r in site.testimonials %}
           {

@@ -4,13 +4,7 @@
     <div class="logos-grid">
       {% for client in site.clients %}
         <a class="logo-item" href="{{ client.url }}" rel="noopener" target="_blank" title="{{ client.name }} · {{ client.country }} — visit website" aria-label="{{ client.name }} (opens in new tab)">
-          <img class="logo-img"
-               src="https://logo.clearbit.com/{{ client.domain }}?size=200"
-               alt="{{ client.name }}"
-               loading="lazy"
-               decoding="async"
-               width="200" height="60"
-               onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'logo-fallback',textContent:this.alt}));">
+          <span class="logo-fallback">{{ client.name }}</span>
         </a>
       {% endfor %}
     </div>
