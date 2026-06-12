@@ -565,3 +565,17 @@ p {
 .fab-whatsapp {
   bottom: calc(env(safe-area-inset-bottom, 0px) + 16px);
 }
+
+/* FIX: mobile nav drawer rendered as an invisible 1px strip with menu
+   links painting over page text. Cause: backdrop-filter on .site-header
+   makes the header the containing block for position:fixed descendants,
+   so the drawer's viewport inset resolved against the 64px header.
+   Anchor the drawer to the header instead and give it real height. */
+.nav-drawer {
+  position: absolute;
+  inset: auto 0 auto 0;
+  top: 100%;
+  height: calc(100vh - 64px);
+  height: calc(100dvh - 64px);
+  overflow-y: auto;
+}
