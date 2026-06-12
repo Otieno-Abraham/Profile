@@ -1,7 +1,7 @@
 module.exports = {
   // Identity
   name: "Abraham Otieno",
-  role: "Executive Assistant & Virtual Chief of Staff",
+  role: "Executive Assistant, Chief of Staff & Operations Partner",
   tagline: "Founders focus on growth. I handle the rest.",
   domain: "abrahamotieno.com",
   url: "https://abrahamotieno.com",
@@ -21,6 +21,7 @@ module.exports = {
   geo: { lat: -1.2921, lng: 36.8219 },
   serviceAreas: [
     "Nairobi, Kenya",
+    "East Africa",
     "Stockholm, Sweden",
     "United States",
     "European Union",
@@ -46,14 +47,32 @@ module.exports = {
     { value: "3", label: "Continents served", numeric: 3 },
   ],
 
-  // Past clients (logo bar). domain used for clearbit logo lookup.
-  // If logo fails to load, name renders as styled text (handled in logos.njk).
+  // Role cluster — single source of truth for entity language across pages and schema.
+  // Every role a hiring decision-maker might search for.
+  roles: [
+    "Executive Assistant",
+    "Virtual Executive Assistant",
+    "Executive Assistant to CEO",
+    "Executive Assistant to Founders",
+    "Chief of Staff",
+    "Virtual Chief of Staff",
+    "Fractional Chief of Staff",
+    "Operations Manager",
+    "Remote Operations Manager",
+    "Operations Partner",
+    "Fractional Operations Partner",
+    "Executive Business Partner",
+    "Business Operations Lead",
+    "Startup Operations Lead",
+  ],
+
+  // Past clients (logo bar) — rendered as styled text, no external logo API.
   clients: [
-    { name: "MSTRpay",                country: "Sweden", domain: "mstrpay.com",            url: "https://mstrpay.com" },
-    { name: "Pioneer Outsourcing BPO", country: "Kenya",  domain: "pioneeroutsourcingbpo.com", url: "https://pioneeroutsourcingbpo.com" },
-    { name: "M-KOPA",                 country: "Kenya",  domain: "m-kopa.com",             url: "https://m-kopa.com" },
-    { name: "OKash Kenya",            country: "Kenya",  domain: "okash.co.ke",            url: "https://okash.co.ke" },
-    { name: "Generation Kenya",       country: "Kenya",  domain: "kenya.generation.org",   url: "https://kenya.generation.org" },
+    { name: "MSTRpay",                country: "Sweden", url: "https://mstrpay.com" },
+    { name: "Pioneer Outsourcing BPO", country: "Kenya",  url: "https://pioneeroutsourcingbpo.com" },
+    { name: "M-KOPA",                 country: "Kenya",  url: "https://m-kopa.com" },
+    { name: "OKash Kenya",            country: "Kenya",  url: "https://okash.co.ke" },
+    { name: "Generation Kenya",       country: "Kenya",  url: "https://kenya.generation.org" },
   ],
 
   // Real testimonials only — provided by user
@@ -93,11 +112,28 @@ module.exports = {
   // Primary navigation
   nav: [
     { url: "/", label: "Home", key: "home" },
+    { url: "/about/", label: "About", key: "about" },
     { url: "/services/", label: "Services", key: "services" },
-    { url: "/portfolio/", label: "Portfolio", key: "portfolio" },
     { url: "/case-studies/", label: "Case Studies", key: "case-studies" },
-    { url: "/contact/", label: "Contact", key: "contact" },
+    { url: "/blog/", label: "Blog", key: "blog" },
+    { url: "/hire-me/", label: "Hire Me", key: "hire-me" },
     { url: "/booking/", label: "Book a call", key: "booking", primary: true },
+  ],
+
+  // Role landing pages — used by footer + internal-link hubs
+  rolePages: [
+    { url: "/executive-assistant-kenya/", label: "Executive Assistant Kenya" },
+    { url: "/virtual-executive-assistant/", label: "Virtual Executive Assistant" },
+    { url: "/executive-assistant-to-ceo/", label: "Executive Assistant to CEO" },
+    { url: "/ea-to-founders/", label: "EA to Founders & Startup CEOs" },
+    { url: "/chief-of-staff-kenya/", label: "Chief of Staff Kenya" },
+    { url: "/virtual-chief-of-staff/", label: "Virtual Chief of Staff" },
+    { url: "/fractional-chief-of-staff/", label: "Fractional Chief of Staff" },
+    { url: "/operations-manager-kenya/", label: "Operations Manager Kenya" },
+    { url: "/operations-partner/", label: "Fractional Operations Partner" },
+    { url: "/executive-business-partner/", label: "Executive Business Partner" },
+    { url: "/remote-executive-assistant-africa/", label: "Remote EA — Africa" },
+    { url: "/hire-executive-assistant-nairobi/", label: "Hire EA in Nairobi" },
   ],
 
   // Form integration

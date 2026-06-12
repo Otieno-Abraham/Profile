@@ -4,7 +4,7 @@
       <div class="footer-col">
         <h4>{{ site.name }}</h4>
         <p style="color:var(--ink-muted); font-size:var(--fs-small); margin-bottom:var(--space-4); max-width:36ch;">
-          Executive Assistant & Virtual Chief of Staff. Based in {{ site.city }}, {{ site.country }} — supporting founders, CEOs, and operators worldwide.
+          Executive Assistant, Chief of Staff &amp; Operations Partner. Based in {{ site.city }}, {{ site.country }} — supporting founders, CEOs, and operators worldwide.
         </p>
         <p style="font-size:var(--fs-small); color:var(--ink-muted);">
           <a href="mailto:{{ site.email }}">{{ site.email }}</a><br>
@@ -18,17 +18,18 @@
           {% for item in site.nav %}
             <li><a href="{{ item.url }}">{{ item.label }}</a></li>
           {% endfor %}
+          <li><a href="/faq/">FAQ</a></li>
+          <li><a href="/portfolio/">Portfolio</a></li>
+          <li><a href="/contact/">Contact</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
         <h4>Hire me as</h4>
         <ul>
-          <li><a href="/executive-assistant-kenya/">Executive Assistant Kenya</a></li>
-          <li><a href="/virtual-executive-assistant/">Virtual Executive Assistant</a></li>
-          <li><a href="/executive-assistant-to-ceo/">Executive Assistant to CEO</a></li>
-          <li><a href="/remote-executive-assistant-africa/">Remote EA — Africa</a></li>
-          <li><a href="/hire-executive-assistant-nairobi/">Hire EA in Nairobi</a></li>
+          {% for p in site.rolePages %}
+            <li><a href="{{ p.url }}">{{ p.label }}</a></li>
+          {% endfor %}
         </ul>
       </div>
 
