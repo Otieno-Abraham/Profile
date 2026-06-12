@@ -2,12 +2,72 @@
 layout: base.njk
 permalink: /services/
 pageKey: services
-title: "Executive Assistant Services in Kenya | Virtual EA & Chief of Staff"
-description: "Executive assistant services in Kenya: calendar, inbox, operations systems, market entry, board prep. Remote support for founders and CEOs worldwide."
+title: "Executive Assistant & Chief of Staff Services — Kenya"
+description: "Executive assistant & chief of staff services in Kenya: calendar, inbox, operations systems, market entry, board prep. Remote support for founders."
 keywords: "executive assistant services Kenya, virtual EA services, chief of staff services, executive support Nairobi, remote executive assistant"
 ogTitle: "Executive Assistant Services in Kenya — Virtual EA & Chief of Staff"
 ogDescription: "Six focused workstreams: time, operations, market entry, distributed teams, projects, executive communication."
-ogImage: /assets/img/og-services.jpg
+extraSchema: |
+  {
+    "@type": "Service",
+    "@id": "https://abrahamotieno.com/services/#time-optimization",
+    "name": "Executive Time Optimization",
+    "serviceType": "Executive Assistant Services",
+    "provider": { "@id": "https://abrahamotieno.com/#person" },
+    "areaServed": [{"@type": "Place", "name": "Worldwide"}, {"@type": "Country", "name": "Kenya"}],
+    "url": "https://abrahamotieno.com/services/#time-optimization",
+    "description": "Calendar discipline, inbox triage, meeting preparation, and travel logistics — structuring an executive's week around outcomes and returning 15+ hours weekly."
+  },
+  {
+    "@type": "Service",
+    "@id": "https://abrahamotieno.com/services/#operations",
+    "name": "Operational Accountability Systems",
+    "serviceType": "Operations Management",
+    "provider": { "@id": "https://abrahamotieno.com/#person" },
+    "areaServed": [{"@type": "Place", "name": "Worldwide"}, {"@type": "Country", "name": "Kenya"}],
+    "url": "https://abrahamotieno.com/services/#operations",
+    "description": "CRM setup, SLA dashboards, process documentation, and decision logs — the systems behind 80% faster team response times."
+  },
+  {
+    "@type": "Service",
+    "@id": "https://abrahamotieno.com/services/#market-entry",
+    "name": "Market Entry & Joint Venture Coordination",
+    "serviceType": "Market Entry Support",
+    "provider": { "@id": "https://abrahamotieno.com/#person" },
+    "areaServed": [{"@type": "Place", "name": "Worldwide"}, {"@type": "AdministrativeArea", "name": "East Africa"}],
+    "url": "https://abrahamotieno.com/services/#market-entry",
+    "description": "Partner sourcing, due diligence support, agreement coordination, and regulatory readiness — market entries supported across three continents."
+  },
+  {
+    "@type": "Service",
+    "@id": "https://abrahamotieno.com/services/#team",
+    "name": "Distributed Team Reliability",
+    "serviceType": "Team Operations",
+    "provider": { "@id": "https://abrahamotieno.com/#person" },
+    "areaServed": [{"@type": "Place", "name": "Worldwide"}, {"@type": "Country", "name": "Kenya"}],
+    "url": "https://abrahamotieno.com/services/#team",
+    "description": "Onboarding playbooks, training materials, SOPs, and QA frameworks — 200+ agents brought to performance across BPO and customer operations."
+  },
+  {
+    "@type": "Service",
+    "@id": "https://abrahamotieno.com/services/#projects",
+    "name": "Project Execution & Stakeholder Alignment",
+    "serviceType": "Project Management",
+    "provider": { "@id": "https://abrahamotieno.com/#person" },
+    "areaServed": [{"@type": "Place", "name": "Worldwide"}],
+    "url": "https://abrahamotieno.com/services/#projects",
+    "description": "Cross-functional initiatives moved end-to-end with status discipline, decision logs, and dependency tracking."
+  },
+  {
+    "@type": "Service",
+    "@id": "https://abrahamotieno.com/services/#communication",
+    "name": "Executive Communication & Presence",
+    "serviceType": "Executive Communication",
+    "provider": { "@id": "https://abrahamotieno.com/#person" },
+    "areaServed": [{"@type": "Place", "name": "Worldwide"}],
+    "url": "https://abrahamotieno.com/services/#communication",
+    "description": "Stakeholder updates, board preparation, investor briefings, LinkedIn presence, and executive ghostwriting."
+  }
 breadcrumbs:
   - { name: "Home", url: "/" }
   - { name: "Services", url: "/services/" }
