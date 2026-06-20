@@ -78,9 +78,8 @@ module.exports = {
     { name: "Q360",                    country: "Kenya",  url: "https://autoauditgroup.com/companies/" },
     { name: "Axios",                   country: "Kenya",  url: "https://autoauditgroup.com/companies/" },
     { name: "Dotify",                  country: "Kenya",  url: "https://autoauditgroup.com/companies/" },
-    { name: "Jivan Wellness",          country: "Kenya" },
-    { name: "100 Acre Wood",           country: "Kenya" },
-    { name: "Gregory Swarn Enterprises", country: "Kenya" },
+    { name: "Jivan Wellness",          country: "Kenya", url: "https://jivanwellness.life" },
+    { name: "Gregory Swarn Enterprises", country: "USA", url: "https://gregoryswarnenterprises.com" },
   ],
 
   // Real testimonials only — provided by user
