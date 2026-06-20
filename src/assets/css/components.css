@@ -579,3 +579,96 @@ p {
   height: calc(100dvh - 64px);
   overflow-y: auto;
 }
+
+/* ============================================================
+   BRAND OVERRIDES — Warm Dark (brand reference 2026-06)
+   Appended last so these win the cascade.
+   ============================================================ */
+
+/* Mono kickers */
+.eyebrow { font-family: var(--font-mono); font-weight: var(--fw-medium); letter-spacing: 0.14em; }
+
+/* Selection — dark text on orange */
+::selection { background: var(--accent); color: var(--on-primary); }
+
+/* Primary button — dark text on orange for contrast (WCAG) */
+.btn-primary { color: var(--on-primary); }
+.btn-primary:hover { color: var(--on-primary); }
+
+/* Geometric display: drop synthesized italics, use weight + colour */
+.hero-sub, .testimonial-quote { font-style: normal; }
+.hero h1 em { font-style: normal; color: var(--accent); font-weight: var(--fw-medium); }
+
+/* Drifting warm glows on the hero (orange 20% + red-orange 16%) */
+.hero { background: var(--bg); }
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -25% -12% auto -12%;
+  height: 150%;
+  background:
+    radial-gradient(440px 340px at 80% 14%, rgba(242, 119, 46, 0.20), transparent 62%),
+    radial-gradient(380px 320px at 10% 90%, rgba(232, 85, 58, 0.16), transparent 62%);
+  filter: blur(22px);
+  z-index: 0;
+  pointer-events: none;
+  animation: glowdrift 20s ease-in-out infinite alternate;
+}
+.hero > .container { position: relative; z-index: 1; }
+@keyframes glowdrift {
+  0%   { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-4%, 3%, 0); }
+}
+@media (prefers-reduced-motion: reduce) { .hero::before { animation: none; } }
+
+/* Hero portrait — orange edge per brand accent rule */
+.hero-portrait { border: 1px solid var(--line); box-shadow: var(--shadow-2); }
+.hero-portrait::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 2px rgba(242, 119, 46, 0.55);
+  pointer-events: none;
+}
+.hero-portrait-tag {
+  background: rgba(21, 13, 7, 0.74);
+  color: var(--cream);
+  border: 1px solid var(--line);
+}
+
+/* Stat cards — 2px orange top border (brand accent rule) */
+.stats {
+  border-top: 0;
+  border-bottom: 0;
+  padding: 0;
+  gap: var(--space-4);
+}
+.stats > div {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--primary);
+  border-radius: var(--radius-md);
+  padding: var(--space-5) var(--space-4);
+}
+
+/* Card hover — warm accent edge */
+.card:hover { border-color: rgba(242, 119, 46, 0.45); }
+
+/* Rhythm sections — warm dark instead of navy */
+.section-dark {
+  background: linear-gradient(180deg, #1C120A 0%, #241606 100%);
+  color: var(--ink);
+}
+.section-dark h2, .section-dark h3 { color: var(--cream); }
+.section-dark p { color: var(--ink-muted); }
+.section-dark .eyebrow { color: var(--accent); }
+.section-dark .card,
+.section-dark .testimonial {
+  background: rgba(244, 236, 225, 0.05);
+  border-color: rgba(244, 236, 225, 0.12);
+  color: var(--ink);
+}
+.section-dark .testimonial-quote { color: var(--cream); }
+.section-dark .testimonial-name { color: var(--cream); }
+.section-dark .testimonial-author { border-top-color: rgba(244, 236, 225, 0.12); }

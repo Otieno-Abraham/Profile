@@ -1,31 +1,36 @@
 /* ============================================================
-   DESIGN TOKENS — "Executive Calm" (Palette A)
-   Light + dark theme, type scale, spacing, radius, motion
+   DESIGN TOKENS — Brand Reference "Warm Dark"
+   Dark-only. Space Grotesk + JetBrains Mono.
+   Palette: #150D07 bg · #F2772E orange · #F4A93B amber ·
+            #E8553A red-orange · #F4ECE1 cream
    ============================================================ */
 
 :root {
-  /* ---------- Color: light — "Boardroom Warm" ---------- */
-  --bg: #FAFAF7;                /* warm white, unchanged */
-  --surface: #FFFFFF;
-  --surface-2: #F5F2EB;
-  --ink: #0F1B2D;               /* deep navy headline + body */
-  --ink-muted: #4A5567;         /* navy-leaning gray */
-  --ink-soft: #8A8F99;
-  --primary: #1A3556;           /* boardroom navy — buttons, primary CTAs */
-  --primary-hover: #0F2540;
-  --primary-soft: #E5EAF2;
-  --accent: #B8542F;            /* terracotta — eyebrows, em, arrows, secondary */
-  --accent-hover: #9A4525;
-  --accent-soft: #F4E4DA;
-  --accent-2: #C8924D;          /* warm copper highlight, used sparingly */
-  --line: #E5E2DB;
-  --success: #2F6E4A;
-  --focus: #1A3556;
+  /* ---------- Color: warm dark ---------- */
+  --bg: #150D07;                 /* background */
+  --surface: rgba(244, 236, 225, 0.05);   /* panel fill — warm 5% */
+  --surface-2: rgba(244, 236, 225, 0.08);  /* slightly lifted panel */
+  --ink: #F4ECE1;                /* cream — primary text + headings */
+  --ink-muted: rgba(244, 236, 225, 0.55);  /* dim text */
+  --ink-soft: rgba(244, 236, 225, 0.32);   /* faint text */
+  --primary: #F2772E;            /* primary orange — buttons, CTAs */
+  --primary-hover: #F4A93B;      /* amber on hover */
+  --primary-soft: rgba(242, 119, 46, 0.12);
+  --accent: #F2772E;             /* terracotta-orange — eyebrows, em, arrows, links */
+  --accent-hover: #F4A93B;       /* amber */
+  --accent-soft: rgba(242, 119, 46, 0.14);
+  --accent-2: #F4A93B;           /* amber highlight */
+  --red-orange: #E8553A;         /* red-orange accent (glows) */
+  --cream: #F4ECE1;
+  --line: rgba(244, 236, 225, 0.12);   /* hairline */
+  --success: #5FCF8F;
+  --focus: #F2772E;
+  --on-primary: #150D07;         /* dark text on orange buttons */
 
   /* ---------- Type ---------- */
-  --font-serif: "Fraunces", "Charter", "Georgia", "Times New Roman", serif;
-  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-mono: "Geist Mono", "JetBrains Mono", "SF Mono", Consolas, "Courier New", monospace;
+  --font-serif: "Space Grotesk", "Segoe UI", system-ui, sans-serif;  /* display / headings */
+  --font-sans: "Space Grotesk", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;  /* body */
+  --font-mono: "JetBrains Mono", "SF Mono", Consolas, "Courier New", monospace;  /* labels / kickers */
 
   /* Mobile-first sizes — overrides at breakpoints below */
   --fs-display: 2.5rem;     /* 40px */
@@ -45,8 +50,8 @@
   --fw-regular: 400;
   --fw-medium: 500;
   --fw-semibold: 600;
-  --fw-bold: 700;
-  --fw-extrabold: 800;
+  --fw-bold: 600;
+  --fw-extrabold: 700;
 
   --tracking-tight: -0.02em;
   --tracking-snug: -0.01em;
@@ -54,21 +59,21 @@
   --tracking-wide: 0.02em;
 
   /* ---------- Spacing (8pt scale) ---------- */
-  --space-1: 0.25rem;   /* 4 */
-  --space-2: 0.5rem;    /* 8 */
-  --space-3: 0.75rem;   /* 12 */
-  --space-4: 1rem;      /* 16 */
-  --space-5: 1.5rem;    /* 24 */
-  --space-6: 2rem;      /* 32 */
-  --space-7: 3rem;      /* 48 */
-  --space-8: 4rem;      /* 64 */
-  --space-9: 6rem;      /* 96 */
-  --space-10: 8rem;     /* 128 */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+  --space-10: 8rem;
 
-  --section-y: var(--space-8);     /* 64 mobile */
-  --section-y-lg: var(--space-9);  /* 96 desktop */
+  --section-y: var(--space-8);
+  --section-y-lg: var(--space-9);
   --container-max: 1200px;
-  --container-pad: var(--space-5); /* 24 */
+  --container-pad: var(--space-5);
 
   /* ---------- Radius ---------- */
   --radius-sm: 6px;
@@ -76,10 +81,10 @@
   --radius-lg: 20px;
   --radius-pill: 999px;
 
-  /* ---------- Elevation (used sparingly) ---------- */
-  --shadow-1: 0 1px 2px rgba(14, 17, 22, 0.06);
-  --shadow-2: 0 8px 24px rgba(14, 17, 22, 0.08);
-  --shadow-focus: 0 0 0 3px rgba(184, 84, 47, 0.35);
+  /* ---------- Elevation ---------- */
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-2: 0 18px 50px rgba(0, 0, 0, 0.55);
+  --shadow-focus: 0 0 0 3px rgba(242, 119, 46, 0.4);
 
   /* ---------- Motion ---------- */
   --ease-out: cubic-bezier(0.2, 0, 0, 1);
@@ -91,62 +96,13 @@
   --z-header: 100;
   --z-fab: 200;
   --z-modal: 1000;
-}
 
-/* ============================================================
-   DARK MODE — applied via [data-theme="dark"] OR system pref
-   ============================================================ */
-
-[data-theme="dark"] {
-  --bg: #0A1220;
-  --surface: #11192A;
-  --surface-2: #182338;
-  --ink: #ECECE7;
-  --ink-muted: #A6B0C2;
-  --ink-soft: #6E7886;
-  --primary: #4A77B5;
-  --primary-hover: #6692D0;
-  --primary-soft: #1A2A45;
-  --accent: #E07A52;
-  --accent-hover: #F08E68;
-  --accent-soft: #2A1E18;
-  --accent-2: #D9A56A;
-  --line: #1F2C44;
-  --success: #6BBF8F;
-  --focus: #4A77B5;
-  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4);
-  --shadow-2: 0 8px 24px rgba(0, 0, 0, 0.5);
-  --shadow-focus: 0 0 0 3px rgba(74, 119, 181, 0.45);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #0A1220;
-    --surface: #11192A;
-    --surface-2: #182338;
-    --ink: #ECECE7;
-    --ink-muted: #A6B0C2;
-    --ink-soft: #6E7886;
-    --primary: #4A77B5;
-    --primary-hover: #6692D0;
-    --primary-soft: #1A2A45;
-    --accent: #E07A52;
-    --accent-hover: #F08E68;
-    --accent-soft: #2A1E18;
-    --accent-2: #D9A56A;
-    --line: #1F2C44;
-    --success: #6BBF8F;
-    --focus: #4A77B5;
-    --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4);
-    --shadow-2: 0 8px 24px rgba(0, 0, 0, 0.5);
-    --shadow-focus: 0 0 0 3px rgba(74, 119, 181, 0.45);
-  }
+  color-scheme: dark;
 }
 
 /* ============================================================
    TYPE SCALE — desktop overrides at 768px+
    ============================================================ */
-
 @media (min-width: 768px) {
   :root {
     --fs-display: 4rem;       /* 64 */
@@ -155,6 +111,6 @@
     --fs-h3: 1.375rem;        /* 22 */
     --fs-body-lg: 1.1875rem;  /* 19 */
     --section-y: var(--section-y-lg);
-    --container-pad: var(--space-7); /* 48 */
+    --container-pad: var(--space-7);
   }
 }

@@ -23,7 +23,9 @@
     return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
   }
 
-  applyTheme(localStorage.getItem(STORAGE_KEY));
+  // Dark-only brand: clear any legacy stored theme so returning visitors get the new look
+  root.removeAttribute("data-theme");
+  try { localStorage.removeItem(STORAGE_KEY); } catch (e) {}
 
   document.addEventListener("DOMContentLoaded", function () {
     const toggle = document.querySelector("[data-theme-toggle]");
