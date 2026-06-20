@@ -672,3 +672,17 @@ p {
 .section-dark .testimonial-quote { color: var(--cream); }
 .section-dark .testimonial-name { color: var(--cream); }
 .section-dark .testimonial-author { border-top-color: rgba(244, 236, 225, 0.12); }
+
+/* Hero photo — slow Ken Burns drift so the header feels "alive" */
+.hero-portrait img {
+  animation: kenburns 24s ease-in-out infinite alternate;
+  transform-origin: 50% 35%;
+  will-change: transform;
+}
+@keyframes kenburns {
+  0%   { transform: scale(1); }
+  100% { transform: scale(1.08) translate(-1.5%, -1%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-portrait img { animation: none; }
+}

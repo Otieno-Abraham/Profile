@@ -67,12 +67,20 @@ module.exports = {
   ],
 
   // Past clients (logo bar) — rendered as styled text, no external logo API.
+  // `url` is optional; entries without it render as plain text (awaiting confirmed website).
   clients: [
-    { name: "MSTRpay",                country: "Sweden", url: "https://mstrpay.com" },
+    { name: "MSTRpay",                 country: "Sweden", url: "https://mstrpay.com" },
     { name: "Pioneer Outsourcing BPO", country: "Kenya",  url: "https://pioneeroutsourcingbpo.com" },
-    { name: "M-KOPA",                 country: "Kenya",  url: "https://m-kopa.com" },
-    { name: "OKash Kenya",            country: "Kenya",  url: "https://okash.co.ke" },
-    { name: "Generation Kenya",       country: "Kenya",  url: "https://kenya.generation.org" },
+    { name: "M-KOPA",                  country: "Kenya",  url: "https://m-kopa.com" },
+    { name: "OKash Kenya",             country: "Kenya",  url: "https://okash.co.ke" },
+    { name: "Generation Kenya",        country: "Kenya",  url: "https://kenya.generation.org" },
+    { name: "Auto Audit Group",        country: "Kenya",  url: "https://autoauditgroup.com" },
+    { name: "Q360",                    country: "Kenya",  url: "https://autoauditgroup.com/companies/" },
+    { name: "Axios",                   country: "Kenya",  url: "https://autoauditgroup.com/companies/" },
+    { name: "Dotify",                  country: "Kenya",  url: "https://autoauditgroup.com/companies/" },
+    { name: "Jivan Wellness",          country: "Kenya" },
+    { name: "100 Acre Wood",           country: "Kenya" },
+    { name: "Gregory Swarn Enterprises", country: "Kenya" },
   ],
 
   // Real testimonials only — provided by user
@@ -114,6 +122,7 @@ module.exports = {
     { url: "/", label: "Home", key: "home" },
     { url: "/about/", label: "About", key: "about" },
     { url: "/services/", label: "Services", key: "services" },
+    { url: "/portfolio/", label: "Portfolio", key: "portfolio" },
     { url: "/case-studies/", label: "Case Studies", key: "case-studies" },
     { url: "/blog/", label: "Blog", key: "blog" },
     { url: "/hire-me/", label: "Hire Me", key: "hire-me" },
