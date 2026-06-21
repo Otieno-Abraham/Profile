@@ -40,6 +40,16 @@ jobs:
         with:
           path: ./_site
 
+      - name: Notify search engines (IndexNow — Bing, Yandex, etc.)
+        run: |
+          KEY="4616adff863c432fdd49583936514672"
+          URLS=$(grep -oE '<loc>[^<]+</loc>' _site/sitemap.xml | sed -E 's#</?loc>##g' | jq -R . | jq -s -c .)
+          echo "Submitting $(echo "$URLS" | jq 'length') URLs to IndexNow"
+          curl -s -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d "{\"host\":\"abrahamotieno.com\",\"key\":\"$KEY\",\"keyLocation\":\"https://abrahamotieno.com/$KEY.txt\",\"urlList\":$URLS}" \
+            -w "IndexNow HTTP %{http_code}\n" || true
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
