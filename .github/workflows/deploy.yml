@@ -4,6 +4,10 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    # Weekly rebuild every Monday 06:00 UTC (09:00 EAT) — publishes any blog
+    # post whose date has arrived (scheduled/queued posts).
+    - cron: "0 6 * * 1"
 
 permissions:
   contents: read
