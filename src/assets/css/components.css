@@ -686,3 +686,16 @@ p {
 @media (prefers-reduced-motion: reduce) {
   .hero-portrait img { animation: none; }
 }
+
+/* Visible breadcrumb trail (inner pages) */
+.breadcrumbs { padding: var(--space-5) 0 0; }
+.breadcrumbs ol {
+  list-style: none; padding: 0; margin: 0;
+  display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2);
+  font-family: var(--font-mono); font-size: var(--fs-micro); letter-spacing: 0.04em;
+}
+.breadcrumbs li { margin: 0; display: inline-flex; align-items: center; gap: var(--space-2); }
+.breadcrumbs a { color: var(--ink-muted); text-decoration: none; }
+.breadcrumbs a:hover { color: var(--accent); }
+.breadcrumbs .sep { color: var(--ink-soft); }
+.breadcrumbs [aria-current="page"] { color: var(--ink-soft); }

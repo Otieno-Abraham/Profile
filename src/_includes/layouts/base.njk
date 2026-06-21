@@ -78,7 +78,10 @@
         ],
         "address": {
           "@type": "PostalAddress",
+          "streetAddress": "{{ site.streetAddress }}",
           "addressLocality": "{{ site.city }}",
+          "addressRegion": "{{ site.addressRegion }}",
+          "postalCode": "{{ site.postalCode }}",
           "addressCountry": "{{ site.countryCode }}"
         },
         "worksFor": { "@id": "{{ site.baseUrl }}/#business" },
@@ -131,8 +134,10 @@
         ],
         "address": {
           "@type": "PostalAddress",
+          "streetAddress": "{{ site.streetAddress }}",
           "addressLocality": "{{ site.city }}",
-          "addressRegion": "Nairobi County",
+          "addressRegion": "{{ site.addressRegion }}",
+          "postalCode": "{{ site.postalCode }}",
           "addressCountry": "{{ site.countryCode }}"
         },
         "geo": {
@@ -218,11 +223,32 @@
   }
   </script>
   {% endif %}
+
+  {# BlogPosting schema — blog articles only (not the blog index) #}
+  {% if tags and "post" in tags and page.url != "/blog/" %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": {{ title | dump | safe }},
+    "description": {{ description | dump | safe }},
+    "image": "{{ site.baseUrl }}{{ ogImage or '/og-default.jpg' }}",
+    "datePublished": "{{ page.date | isoDate }}",
+    "dateModified": "{{ page.date | isoDate }}",
+    "author": { "@type": "Person", "name": "{{ site.name }}", "url": "{{ site.baseUrl }}/about/" },
+    "publisher": { "@id": "{{ site.baseUrl }}/#person" },
+    "mainEntityOfPage": "{{ site.baseUrl }}{{ page.url }}"{% if keywords %},
+    "keywords": "{{ keywords }}"{% endif %}
+  }
+  </script>
+  {% endif %}
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to main content</a>
 
   {% include "partials/header.njk" %}
+
+  {% include "partials/breadcrumbs.njk" %}
 
   <main id="main">
     {{ content | safe }}

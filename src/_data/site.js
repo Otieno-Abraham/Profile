@@ -13,12 +13,15 @@ module.exports = {
     { code: "x-default", label: "Default" },
   ],
 
-  // Location
+  // Location — NAP must match Google Business Profile exactly
+  streetAddress: "Fedha Plaza, Mpaka Road, Westlands",
   city: "Nairobi",
+  addressRegion: "Nairobi County",
+  postalCode: "00100",
   country: "Kenya",
   countryCode: "KE",
   region: "KE-110",
-  geo: { lat: -1.2921, lng: 36.8219 },
+  geo: { lat: -1.2582912, lng: 36.8050176 },
   serviceAreas: [
     "Nairobi, Kenya",
     "East Africa",
