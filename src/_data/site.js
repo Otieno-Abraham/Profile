@@ -40,7 +40,7 @@ module.exports = {
   whatsappShort: "https://wa.link/tnusf3",
   linkedin: "https://linkedin.com/in/abraham-otieno-665678317",
   upwork: "https://www.upwork.com/freelancers/~016468049604acd788",
-  facebook: "https://www.facebook.com/otieno.abraham.779",
+  facebook: "https://www.facebook.com/abrahamotieno",
 
   // Headline metrics (do not invent — these stay accurate)
   metrics: [
