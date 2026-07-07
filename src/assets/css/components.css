@@ -298,7 +298,7 @@
 
 /* ---------- Logo bar ---------- */
 .logos {
-  padding: var(--space-6) 0;
+  padding: var(--space-5) 0;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
@@ -310,8 +310,14 @@
   text-align: center;
   margin-bottom: var(--space-4);
 }
-/* Marquee: continuous auto-scroll. Track is the client list duplicated once;
-   animating -50% loops seamlessly since both halves are identical. */
+/* Marquee: continuous auto-scroll, two rows running opposite directions
+   (a "dual conveyor belt"). Each row's track is its half of the client list
+   duplicated once; animating -50% loops seamlessly since both halves match. */
+.logos-marquee-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
 .logos-marquee {
   overflow: hidden;
   width: 100%;
@@ -322,15 +328,18 @@
   display: flex;
   align-items: center;
   width: max-content;
-  animation: logos-scroll 36s linear infinite;
+  animation: logos-scroll 28s linear infinite;
+}
+.logos-track--reverse {
+  animation-direction: reverse;
 }
 .logos-set {
   display: flex;
   align-items: center;
-  gap: var(--space-7);
-  padding-right: var(--space-7);
+  gap: var(--space-6);
+  padding-right: var(--space-6);
 }
-.logos-marquee:hover .logos-track { animation-play-state: paused; }
+.logos-marquee-wrap:hover .logos-track { animation-play-state: paused; }
 @keyframes logos-scroll {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
@@ -367,11 +376,18 @@
   box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }
 .logo-img {
-  max-height: 40px;
-  max-width: 150px;
+  max-height: 48px;
+  max-width: 170px;
   width: auto;
   height: auto;
   object-fit: contain;
+}
+/* Logos with a native transparent background (their own brand colors read
+   fine on the dark page) skip the cream card and sit a touch larger since
+   they don't have card padding around them. */
+.logo-img--native {
+  max-height: 56px;
+  max-width: 190px;
 }
 /* Fallback for clients without a logo file yet — styled name text */
 .logo-fallback {

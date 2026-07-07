@@ -70,9 +70,13 @@ module.exports = {
     "Startup Operations Lead",
   ],
 
-  // Past clients (logo bar). `logo` is optional — renders the real logo image
-  // (in a card so dark/colored logo backgrounds stay legible); entries without
-  // it fall back to styled text (awaiting a logo file). `url` is also optional.
+  // Past clients (logo bar). `logo` is optional — renders the real logo image;
+  // entries without it fall back to styled text (awaiting a logo file). `url`
+  // is also optional. `logoNative: true` means the logo file already has a
+  // transparent background and its own colors read fine directly on the dark
+  // page — skip the cream card. Everything else gets the card because its
+  // source file has an opaque (white/colored/black) background that would
+  // either show as a mismatched box or vanish against the dark page.
   clients: [
     { name: "MSTRpay",                 country: "Sweden", url: "https://mstrpay.com", logo: "/clients/mstrpay.webp" },
     { name: "Pioneer Outsourcing BPO", country: "Kenya",  url: "https://pioneeroutsourcingbpo.com", logo: "/clients/pioneer-outsourcing-bpo.webp" },
@@ -80,12 +84,12 @@ module.exports = {
     { name: "OKash Kenya",             country: "Kenya",  url: "https://okash.co.ke", logo: "/clients/okash.webp" },
     { name: "Generation Kenya",        country: "Kenya",  url: "https://kenya.generation.org", logo: "/clients/generation-kenya.webp" },
     { name: "Auto Audit Group",        country: "Kenya",  url: "https://autoauditgroup.com", logo: "/clients/auto-audit-group.webp" },
-    { name: "Q360",                    country: "Kenya",  url: "https://autoauditgroup.com/companies/", logo: "/clients/q360.webp" },
+    { name: "Q360",                    country: "Kenya",  url: "https://autoauditgroup.com/companies/", logo: "/clients/q360.webp", logoNative: true },
     { name: "Axios",                   country: "Kenya",  url: "https://autoauditgroup.com/companies/", logo: "/clients/axios.webp" },
     { name: "Dotify",                  country: "Kenya",  url: "https://autoauditgroup.com/companies/", logo: "/clients/dotify.webp" },
     { name: "Jivan Wellness",          country: "Kenya", url: "https://jivanwellness.life", logo: "/clients/jivan-wellness.webp" },
-    { name: "Gregory Swarn Enterprises", country: "USA", url: "https://gregoryswarnenterprises.com", logo: "/clients/gregory-swarn.webp" },
-    { name: "Epena Law",                 country: "Kenya", url: "https://epena-law.com/", logo: "/clients/epena-law.webp" },
+    { name: "Gregory Swarn Enterprises", country: "USA", url: "https://gregoryswarnenterprises.com", logo: "/clients/gregory-swarn.webp", logoNative: true },
+    { name: "Epena Law",                 country: "Kenya", url: "https://epena-law.com/", logo: "/clients/epena-law.webp", logoNative: true },
   ],
 
   // Real testimonials only — provided by user
