@@ -310,15 +310,36 @@
   text-align: center;
   margin-bottom: var(--space-4);
 }
-.logos-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-5) var(--space-4);
-  align-items: center;
-  justify-items: center;
+/* Marquee: continuous auto-scroll. Track is the client list duplicated once;
+   animating -50% loops seamlessly since both halves are identical. */
+.logos-marquee {
+  overflow: hidden;
+  width: 100%;
+  -webkit-mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
 }
-@media (min-width: 768px) {
-  .logos-grid { grid-template-columns: repeat(5, 1fr); gap: var(--space-7); }
+.logos-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: logos-scroll 36s linear infinite;
+}
+.logos-set {
+  display: flex;
+  align-items: center;
+  gap: var(--space-7);
+  padding-right: var(--space-7);
+}
+.logos-marquee:hover .logos-track { animation-play-state: paused; }
+@keyframes logos-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .logos-track { animation: none; width: 100%; }
+  .logos-set { flex-wrap: wrap; justify-content: center; }
+  .logos-set--dup { display: none; }
+  .logos-marquee { overflow: visible; -webkit-mask-image: none; mask-image: none; }
 }
 .logo-item {
   display: inline-flex;
@@ -328,19 +349,31 @@
   text-align: center;
   min-height: 48px;
   padding: var(--space-2) var(--space-3);
-  filter: grayscale(100%);
-  opacity: 0.65;
-  transition: filter var(--dur) var(--ease-out), opacity var(--dur) var(--ease-out);
+  flex-shrink: 0;
+  opacity: 0.9;
+  transition: opacity var(--dur) var(--ease-out), transform var(--dur) var(--ease-out);
 }
-.logo-item:hover { filter: grayscale(0%); opacity: 1; }
+.logo-item:hover { opacity: 1; transform: translateY(-2px); }
+/* Real client logos vary wildly in background (transparent, white, brand-colored,
+   even black) — a uniform card keeps the row legible and consistent instead of
+   logos disappearing into the dark page background or clashing edge-to-edge. */
+.logo-card {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--cream);
+  border-radius: var(--radius-md);
+  padding: var(--space-2) var(--space-4);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
 .logo-img {
   max-height: 40px;
-  max-width: 140px;
+  max-width: 150px;
   width: auto;
   height: auto;
   object-fit: contain;
 }
-/* Fallback when clearbit returns no logo — render styled name text */
+/* Fallback for clients without a logo file yet — styled name text */
 .logo-fallback {
   font-family: var(--font-serif);
   font-weight: var(--fw-semibold);

@@ -70,21 +70,22 @@ module.exports = {
     "Startup Operations Lead",
   ],
 
-  // Past clients (logo bar) — rendered as styled text, no external logo API.
-  // `url` is optional; entries without it render as plain text (awaiting confirmed website).
+  // Past clients (logo bar). `logo` is optional — renders the real logo image
+  // (in a card so dark/colored logo backgrounds stay legible); entries without
+  // it fall back to styled text (awaiting a logo file). `url` is also optional.
   clients: [
-    { name: "MSTRpay",                 country: "Sweden", url: "https://mstrpay.com" },
-    { name: "Pioneer Outsourcing BPO", country: "Kenya",  url: "https://pioneeroutsourcingbpo.com" },
-    { name: "M-KOPA",                  country: "Kenya",  url: "https://m-kopa.com" },
-    { name: "OKash Kenya",             country: "Kenya",  url: "https://okash.co.ke" },
-    { name: "Generation Kenya",        country: "Kenya",  url: "https://kenya.generation.org" },
-    { name: "Auto Audit Group",        country: "Kenya",  url: "https://autoauditgroup.com" },
-    { name: "Q360",                    country: "Kenya",  url: "https://autoauditgroup.com/companies/" },
-    { name: "Axios",                   country: "Kenya",  url: "https://autoauditgroup.com/companies/" },
-    { name: "Dotify",                  country: "Kenya",  url: "https://autoauditgroup.com/companies/" },
-    { name: "Jivan Wellness",          country: "Kenya", url: "https://jivanwellness.life" },
-    { name: "Gregory Swarn Enterprises", country: "USA", url: "https://gregoryswarnenterprises.com" },
-    { name: "Epena Law",                 country: "Kenya", url: "https://epena-law.com/" },
+    { name: "MSTRpay",                 country: "Sweden", url: "https://mstrpay.com", logo: "/clients/mstrpay.webp" },
+    { name: "Pioneer Outsourcing BPO", country: "Kenya",  url: "https://pioneeroutsourcingbpo.com", logo: "/clients/pioneer-outsourcing-bpo.webp" },
+    { name: "M-KOPA",                  country: "Kenya",  url: "https://m-kopa.com", logo: "/clients/m-kopa.webp" },
+    { name: "OKash Kenya",             country: "Kenya",  url: "https://okash.co.ke", logo: "/clients/okash.webp" },
+    { name: "Generation Kenya",        country: "Kenya",  url: "https://kenya.generation.org", logo: "/clients/generation-kenya.webp" },
+    { name: "Auto Audit Group",        country: "Kenya",  url: "https://autoauditgroup.com", logo: "/clients/auto-audit-group.webp" },
+    { name: "Q360",                    country: "Kenya",  url: "https://autoauditgroup.com/companies/", logo: "/clients/q360.webp" },
+    { name: "Axios",                   country: "Kenya",  url: "https://autoauditgroup.com/companies/", logo: "/clients/axios.webp" },
+    { name: "Dotify",                  country: "Kenya",  url: "https://autoauditgroup.com/companies/", logo: "/clients/dotify.webp" },
+    { name: "Jivan Wellness",          country: "Kenya", url: "https://jivanwellness.life", logo: "/clients/jivan-wellness.webp" },
+    { name: "Gregory Swarn Enterprises", country: "USA", url: "https://gregoryswarnenterprises.com", logo: "/clients/gregory-swarn.webp" },
+    { name: "Epena Law",                 country: "Kenya", url: "https://epena-law.com/", logo: "/clients/epena-law.webp" },
   ],
 
   // Real testimonials only — provided by user

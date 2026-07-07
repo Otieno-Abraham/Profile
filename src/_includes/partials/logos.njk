@@ -1,18 +1,37 @@
+{% macro logoItem(client) %}
+  {% if client.url %}
+  <a class="logo-item" href="{{ client.url }}" rel="noopener" target="_blank" tabindex="-1" title="{{ client.name }} · {{ client.country }} — visit website" aria-hidden="true">
+    {% if client.logo %}
+    <span class="logo-card"><img class="logo-img" src="{{ client.logo }}" alt="" loading="lazy" width="150" height="75"></span>
+    {% else %}
+    <span class="logo-fallback">{{ client.name }}</span>
+    {% endif %}
+  </a>
+  {% else %}
+  <span class="logo-item" aria-hidden="true">
+    {% if client.logo %}
+    <span class="logo-card"><img class="logo-img" src="{{ client.logo }}" alt="" loading="lazy" width="150" height="75"></span>
+    {% else %}
+    <span class="logo-fallback">{{ client.name }}</span>
+    {% endif %}
+  </span>
+  {% endif %}
+{% endmacro %}
+
 <section class="logos" aria-label="Past clients">
   <div class="container">
     <p class="logos-label">Trusted by leaders at</p>
-    <div class="logos-grid">
-      {% for client in site.clients %}
-        {% if client.url %}
-        <a class="logo-item" href="{{ client.url }}" rel="noopener" target="_blank" title="{{ client.name }} · {{ client.country }} — visit website" aria-label="{{ client.name }} (opens in new tab)">
-          <span class="logo-fallback">{{ client.name }}</span>
-        </a>
-        {% else %}
-        <span class="logo-item" title="{{ client.name }} · {{ client.country }}">
-          <span class="logo-fallback">{{ client.name }}</span>
-        </span>
-        {% endif %}
-      {% endfor %}
+  </div>
+  {# A11y: the real, focusable, screen-reader-visible list — not part of the animated marquee #}
+  <ul class="sr-only">
+    {% for client in site.clients %}
+      <li>{{ client.name }}{% if client.url %} — <a href="{{ client.url }}" rel="noopener" target="_blank">{{ client.url }}</a>{% endif %}</li>
+    {% endfor %}
+  </ul>
+  <div class="logos-marquee">
+    <div class="logos-track">
+      <div class="logos-set">{% for client in site.clients %}{{ logoItem(client) }}{% endfor %}</div>
+      <div class="logos-set logos-set--dup">{% for client in site.clients %}{{ logoItem(client) }}{% endfor %}</div>
     </div>
   </div>
 </section>
