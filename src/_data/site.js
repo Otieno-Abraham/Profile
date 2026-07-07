@@ -84,6 +84,7 @@ module.exports = {
     { name: "Dotify",                  country: "Kenya",  url: "https://autoauditgroup.com/companies/" },
     { name: "Jivan Wellness",          country: "Kenya", url: "https://jivanwellness.life" },
     { name: "Gregory Swarn Enterprises", country: "USA", url: "https://gregoryswarnenterprises.com" },
+    { name: "Epena Law",                 country: "Kenya", url: "https://epena-law.com/" },
   ],
 
   // Real testimonials only — provided by user
