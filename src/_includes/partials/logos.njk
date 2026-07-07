@@ -1,49 +1,26 @@
-{% macro logoItem(client) %}
-  {% if client.url %}
-  <a class="logo-item" href="{{ client.url }}" rel="noopener" target="_blank" tabindex="-1" title="{{ client.name }} · {{ client.country }} — visit website" aria-hidden="true">
-    {% if client.logo and client.logoNative %}
-    <img class="logo-img logo-img--native" src="{{ client.logo }}" alt="" loading="lazy" width="170" height="85">
-    {% elif client.logo %}
-    <span class="logo-card"><img class="logo-img" src="{{ client.logo }}" alt="" loading="lazy" width="170" height="85"></span>
-    {% else %}
-    <span class="logo-fallback">{{ client.name }}</span>
-    {% endif %}
-  </a>
-  {% else %}
-  <span class="logo-item" aria-hidden="true">
-    {% if client.logo and client.logoNative %}
-    <img class="logo-img logo-img--native" src="{{ client.logo }}" alt="" loading="lazy" width="170" height="85">
-    {% elif client.logo %}
-    <span class="logo-card"><img class="logo-img" src="{{ client.logo }}" alt="" loading="lazy" width="170" height="85"></span>
-    {% else %}
-    <span class="logo-fallback">{{ client.name }}</span>
-    {% endif %}
-  </span>
-  {% endif %}
-{% endmacro %}
-
 <section class="logos" aria-label="Past clients">
   <div class="container">
     <p class="logos-label">Trusted by leaders at</p>
-  </div>
-  {# A11y: the real, focusable, screen-reader-visible list — not part of the animated marquee #}
-  <ul class="sr-only">
-    {% for client in site.clients %}
-      <li>{{ client.name }}{% if client.url %} — <a href="{{ client.url }}" rel="noopener" target="_blank">{{ client.url }}</a>{% endif %}</li>
-    {% endfor %}
-  </ul>
-  <div class="logos-marquee-wrap">
-    <div class="logos-marquee">
-      <div class="logos-track">
-        <div class="logos-set">{% for client in site.clients %}{% if loop.index0 % 2 == 0 %}{{ logoItem(client) }}{% endif %}{% endfor %}</div>
-        <div class="logos-set logos-set--dup">{% for client in site.clients %}{% if loop.index0 % 2 == 0 %}{{ logoItem(client) }}{% endif %}{% endfor %}</div>
-      </div>
-    </div>
-    <div class="logos-marquee">
-      <div class="logos-track logos-track--reverse">
-        <div class="logos-set">{% for client in site.clients %}{% if loop.index0 % 2 == 1 %}{{ logoItem(client) }}{% endif %}{% endfor %}</div>
-        <div class="logos-set logos-set--dup">{% for client in site.clients %}{% if loop.index0 % 2 == 1 %}{{ logoItem(client) }}{% endif %}{% endfor %}</div>
-      </div>
+    <div class="logos-grid">
+      {% for client in site.clients %}
+        {% if client.url %}
+        <a class="logo-item" href="{{ client.url }}" rel="noopener" target="_blank" title="{{ client.name }} · {{ client.country }} — visit website" aria-label="{{ client.name }} (opens in new tab)">
+          {% if client.logo %}
+          <span class="logo-card"><img class="logo-img" src="{{ client.logo }}" alt="{{ client.name }}" loading="lazy" width="170" height="85"></span>
+          {% else %}
+          <span class="logo-fallback">{{ client.name }}</span>
+          {% endif %}
+        </a>
+        {% else %}
+        <span class="logo-item" title="{{ client.name }} · {{ client.country }}">
+          {% if client.logo %}
+          <span class="logo-card"><img class="logo-img" src="{{ client.logo }}" alt="{{ client.name }}" loading="lazy" width="170" height="85"></span>
+          {% else %}
+          <span class="logo-fallback">{{ client.name }}</span>
+          {% endif %}
+        </span>
+        {% endif %}
+      {% endfor %}
     </div>
   </div>
 </section>
