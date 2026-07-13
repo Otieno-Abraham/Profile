@@ -1,0 +1,4 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+<defs><radialGradient id="bg" cx="60%" cy="62%" r="82%"><stop offset="0%" stop-color="#3A2A20"/><stop offset="100%" stop-color="#11131D"/></radialGradient><clipPath id="sq"><rect width="512" height="512" rx="112"/></clipPath></defs>
+<g clip-path="url(#sq)"><rect width="512" height="512" rx="112" fill="url(#bg)"/>
+<path d="M366.6,387.8 A172,172 0 1 1 401.9,164.9" fill="none" stroke="#A84F24" stroke-width="28" stroke-linecap="round"/><path d="M256,150 L334,366 L306,366 L256,300 L206,366 L178,366 Z" fill="#E9DDD2"/><rect x="216" y="238" width="80" height="28" rx="8" fill="#A84F24"/></g></svg>

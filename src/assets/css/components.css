@@ -38,8 +38,16 @@
   flex-shrink: 0;
 }
 .brand-avatar img { width: 100%; height: 100%; object-fit: cover; }
-.brand-name { font-family: var(--font-sans); font-size: var(--fs-body); letter-spacing: var(--tracking-snug); }
-.brand-role { display: block; font-size: var(--fs-micro); color: var(--ink-muted); font-weight: var(--fw-regular); margin-top: 1px; }
+.brand-name { font-family: var(--font-body); font-size: var(--fs-body); letter-spacing: var(--tracking-snug); }
+.brand-role {
+  display: block;
+  font-size: 0.6875rem;
+  color: var(--ink-muted);
+  font-weight: var(--fw-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 2px;
+}
 
 .nav-links {
   display: none;
@@ -60,7 +68,16 @@
   transition: color var(--dur) var(--ease-out), border-color var(--dur) var(--ease-out);
 }
 .nav-links a:hover,
-.nav-links a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--accent); }
+.nav-links a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--primary); }
+
+/* "Book a call" nav pill needs its own rule — .nav-links a's specificity
+   would otherwise paint it var(--ink-muted) instead of button text. */
+.nav-links a.btn,
+.nav-links a.btn:hover,
+.nav-links a.btn[aria-current="page"] {
+  color: var(--on-primary);
+  border-bottom: none;
+}
 
 @media (min-width: 900px) {
   .nav-links { display: flex; }
@@ -76,24 +93,17 @@
   color: var(--ink);
 }
 
-.theme-toggle {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px; height: 40px;
-  border-radius: var(--radius-pill);
-  color: var(--ink-muted);
-  border: 1px solid var(--line);
-  background: var(--surface);
-  transition: color var(--dur) var(--ease-out), border-color var(--dur) var(--ease-out);
-}
-.theme-toggle:hover { color: var(--ink); border-color: var(--ink-muted); }
-
-/* Mobile nav drawer */
+/* Mobile nav drawer — anchored to the header (not the viewport): backdrop-filter
+   on .site-header makes it the containing block for position:fixed descendants,
+   so a viewport-relative inset resolves against the 64px header instead. */
 .nav-drawer {
   display: none;
-  position: fixed;
-  inset: 64px 0 0 0;
+  position: absolute;
+  inset: auto 0 auto 0;
+  top: 100%;
+  height: calc(100vh - 64px);
+  height: calc(100dvh - 64px);
+  overflow-y: auto;
   background: var(--bg);
   z-index: calc(var(--z-header) - 1);
   padding: var(--space-6) var(--container-pad);
@@ -106,7 +116,7 @@
   display: block;
   padding: var(--space-4) 0;
   font-size: var(--fs-h3);
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
   color: var(--ink);
   text-decoration: none;
   border-bottom: 1px solid var(--line);
@@ -121,7 +131,7 @@
   min-height: 44px;
   padding: 0 var(--space-5);
   border-radius: var(--radius-pill);
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-size: var(--fs-body);
   font-weight: var(--fw-semibold);
   text-decoration: none;
@@ -132,10 +142,10 @@
 .btn:hover { transform: translateY(-1px); }
 .btn-primary {
   background: var(--primary);
-  color: #fff;
+  color: var(--on-primary);
   border: 1px solid var(--primary);
 }
-.btn-primary:hover { background: var(--primary-hover); border-color: var(--primary-hover); color: #fff; }
+.btn-primary:hover { background: var(--primary-hover); border-color: var(--primary-hover); color: var(--on-primary); }
 
 .btn-secondary {
   background: transparent;
@@ -154,12 +164,28 @@
   position: relative;
   padding-top: calc(var(--section-y) + var(--space-4));
   padding-bottom: var(--section-y);
-  background:
-    radial-gradient(1200px 600px at 85% -10%, color-mix(in srgb, var(--primary) 12%, transparent) 0%, transparent 60%),
-    radial-gradient(800px 500px at 0% 100%, color-mix(in srgb, var(--accent) 8%, transparent) 0%, transparent 55%),
-    var(--bg);
+  background: var(--bg);
   overflow: hidden;
 }
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -25% -12% auto -12%;
+  height: 150%;
+  background:
+    radial-gradient(440px 340px at 80% 14%, color-mix(in srgb, var(--primary) 14%, transparent), transparent 62%),
+    radial-gradient(380px 320px at 10% 90%, color-mix(in srgb, var(--taupe) 16%, transparent), transparent 62%);
+  filter: blur(22px);
+  z-index: 0;
+  pointer-events: none;
+  animation: glowdrift 20s ease-in-out infinite alternate;
+}
+.hero > .container { position: relative; z-index: 1; }
+@keyframes glowdrift {
+  0%   { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-4%, 3%, 0); }
+}
+@media (prefers-reduced-motion: reduce) { .hero::before { animation: none; } }
 .hero::after {
   content: "";
   position: absolute;
@@ -182,14 +208,13 @@
   margin-bottom: var(--space-4);
 }
 .hero h1 em {
-  font-style: italic;
-  font-weight: var(--fw-regular);
-  color: var(--accent);
-  font-feature-settings: "ss01";
+  font-style: normal;
+  font-weight: var(--fw-medium);
+  color: var(--primary);
 }
 .hero-sub {
-  font-family: var(--font-serif);
-  font-style: italic;
+  font-family: var(--font-heading);
+  font-style: normal;
   font-size: var(--fs-h3);
   color: var(--ink-muted);
   margin-bottom: var(--space-6);
@@ -207,7 +232,7 @@
   margin-top: var(--space-2);
 }
 
-/* Hero portrait card */
+/* Hero portrait card — terracotta inset edge per brand accent rule */
 .hero-portrait {
   position: relative;
   aspect-ratio: 4 / 5;
@@ -215,22 +240,42 @@
   overflow: hidden;
   box-shadow: var(--shadow-2);
   background: var(--surface-2);
+  border: 1px solid var(--line);
   max-width: 420px;
   margin: 0 auto;
+}
+.hero-portrait::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 2px color-mix(in srgb, var(--primary) 55%, transparent);
+  pointer-events: none;
 }
 .hero-portrait img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+  animation: kenburns 24s ease-in-out infinite alternate;
+  transform-origin: 50% 35%;
+  will-change: transform;
+}
+@keyframes kenburns {
+  0%   { transform: scale(1); }
+  100% { transform: scale(1.08) translate(-1.5%, -1%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-portrait img { animation: none; }
 }
 .hero-portrait-tag {
   position: absolute;
   bottom: var(--space-4);
   left: var(--space-4);
   right: var(--space-4);
-  background: color-mix(in srgb, var(--ink) 88%, transparent);
+  background: color-mix(in srgb, var(--charcoal) 88%, transparent);
   color: #fff;
+  border: 1px solid var(--dark-line);
   padding: var(--space-3) var(--space-4);
   border-radius: var(--radius-md);
   backdrop-filter: blur(8px);
@@ -250,41 +295,46 @@
   100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
 }
 
-/* Inverted dark section for visual rhythm — boardroom navy gradient */
+/* Inverted charcoal section for visual rhythm — brand's own
+   "Cream on Charcoal" pairing (13.87:1, AAA). */
 .section-dark {
-  background: linear-gradient(180deg, #0F1B2D 0%, #1A2A45 100%);
-  color: #ECECE7;
+  background: linear-gradient(180deg, #11131D 0%, #1B1E2C 100%);
+  color: var(--dark-ink);
 }
 .section-dark h2, .section-dark h3 { color: #FFFFFF; }
-.section-dark p { color: #A3A8B2; }
-.section-dark .eyebrow { color: var(--accent); }
+.section-dark p { color: var(--dark-ink-muted); }
+.section-dark .eyebrow { color: var(--accent-on-dark); }
 .section-dark .card {
-  background: rgba(255, 255, 255, 0.03);
-  border-color: rgba(255, 255, 255, 0.08);
-  color: #ECECE7;
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: var(--dark-ink);
 }
 .section-dark .testimonial {
-  background: rgba(255, 255, 255, 0.04);
-  border-color: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
 }
-.section-dark .testimonial-quote { color: #ECECE7; }
+.section-dark .testimonial-quote { color: var(--dark-ink); }
 .section-dark .testimonial-name { color: #FFFFFF; }
-.section-dark .testimonial-author { border-top-color: rgba(255, 255, 255, 0.08); }
+.section-dark .testimonial-author { border-top-color: rgba(255, 255, 255, 0.1); }
 
 /* ---------- Stats ---------- */
 .stats {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-5);
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  padding: var(--space-6) 0;
+  gap: var(--space-4);
 }
 @media (min-width: 768px) { .stats { grid-template-columns: repeat(5, 1fr); } }
+.stats > div {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-top: 2px solid var(--primary);
+  border-radius: var(--radius-md);
+  padding: var(--space-5) var(--space-4);
+}
 .stat-value {
-  font-family: var(--font-mono);
+  font-family: var(--font-heading);
   font-size: clamp(1.75rem, 4vw, 2.5rem);
-  font-weight: var(--fw-semibold);
+  font-weight: var(--fw-bold);
   letter-spacing: var(--tracking-tight);
   color: var(--ink);
   line-height: 1;
@@ -304,7 +354,7 @@
 }
 .logos-label {
   font-size: var(--fs-micro);
-  letter-spacing: 0.16em;
+  letter-spacing: var(--tracking-label);
   text-transform: uppercase;
   color: var(--ink-soft);
   text-align: center;
@@ -333,16 +383,17 @@
 }
 .logo-item:hover { opacity: 1; transform: translateY(-2px); }
 /* Real client logos vary wildly in background (transparent, white, brand-colored,
-   even black) — a uniform card keeps the row legible and consistent instead of
-   logos disappearing into the dark page background or clashing edge-to-edge. */
+   even black) — a uniform white card keeps the row legible and consistent instead
+   of logos clashing with the page's own cream background or each other. */
 .logo-card {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: var(--cream);
+  background: var(--surface);
+  border: 1px solid var(--line);
   border-radius: var(--radius-md);
   padding: var(--space-2) var(--space-4);
-  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  box-shadow: var(--shadow-1);
 }
 .logo-img {
   max-height: 48px;
@@ -353,7 +404,7 @@
 }
 /* Fallback for clients without a logo file yet — styled name text */
 .logo-fallback {
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
   font-weight: var(--fw-semibold);
   font-size: var(--fs-body-lg);
   color: var(--ink-soft);
@@ -369,7 +420,7 @@
   padding: var(--space-6);
   transition: border-color var(--dur) var(--ease-out), transform var(--dur) var(--ease-out), box-shadow var(--dur) var(--ease-out);
 }
-.card:hover { border-color: var(--ink-muted); }
+.card:hover { border-color: color-mix(in srgb, var(--primary) 45%, var(--line)); }
 
 .card-icon {
   width: 40px; height: 40px;
@@ -377,8 +428,8 @@
   align-items: center;
   justify-content: center;
   border-radius: var(--radius-sm);
-  background: var(--accent-soft);
-  color: var(--accent);
+  background: var(--primary-soft);
+  color: var(--primary);
   margin-bottom: var(--space-4);
 }
 
@@ -394,7 +445,7 @@
   text-decoration: none;
   color: var(--accent);
 }
-.card-link:hover { gap: var(--space-3); }
+.card-link:hover { gap: var(--space-3); color: var(--accent-hover); }
 
 /* ---------- Testimonials ---------- */
 .testimonial {
@@ -409,19 +460,19 @@
 .testimonial-stars {
   display: inline-flex;
   gap: 2px;
-  color: var(--accent);
+  color: var(--primary);
   font-size: var(--fs-small);
 }
 .testimonial-quote {
-  font-family: var(--font-serif);
+  font-family: var(--font-heading);
   font-size: var(--fs-body-lg);
   line-height: var(--lh-normal);
   color: var(--ink);
   font-weight: var(--fw-regular);
-  font-style: italic;
+  font-style: normal;
 }
-.testimonial-quote::before { content: "“"; font-size: 1.4em; line-height: 0; vertical-align: -0.2em; margin-right: 0.05em; color: var(--accent); }
-.testimonial-quote::after { content: "”"; font-size: 1.4em; line-height: 0; vertical-align: -0.2em; margin-left: 0.05em; color: var(--accent); }
+.testimonial-quote::before { content: "“"; font-size: 1.4em; line-height: 0; vertical-align: -0.2em; margin-right: 0.05em; color: var(--primary); }
+.testimonial-quote::after { content: "”"; font-size: 1.4em; line-height: 0; vertical-align: -0.2em; margin-left: 0.05em; color: var(--primary); }
 .testimonial-author {
   display: flex;
   align-items: center;
@@ -468,13 +519,13 @@
 }
 .form-row textarea { min-height: 120px; resize: vertical; }
 .form-row input:focus,
-.form-row textarea:focus { border-color: var(--accent); outline: none; }
+.form-row textarea:focus { border-color: var(--primary); outline: none; }
 .form-help { font-size: var(--fs-small); color: var(--ink-muted); }
 
-/* ---------- Footer ---------- */
+/* ---------- Footer — charcoal ground, brand's "Cream on Charcoal" pairing ---------- */
 .site-footer {
-  border-top: 1px solid var(--line);
-  background: var(--surface-2);
+  background: var(--dark-bg);
+  color: var(--dark-ink);
   padding: var(--space-8) 0 var(--space-6);
   margin-top: var(--space-9);
 }
@@ -487,11 +538,11 @@
 @media (min-width: 768px) { .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; } }
 .footer-col h4 {
   font-size: var(--fs-small);
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   font-weight: var(--fw-semibold);
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--ink-muted);
+  color: var(--dark-ink-muted);
   margin-bottom: var(--space-4);
 }
 .footer-col ul { list-style: none; padding: 0; margin: 0; }
@@ -499,11 +550,27 @@
 .footer-col a {
   display: inline-block;
   padding: var(--space-2) 0;
-  color: var(--ink);
+  color: var(--dark-ink);
   text-decoration: none;
   font-size: var(--fs-small);
 }
-.footer-col a:hover { color: var(--accent); }
+.footer-col a:hover { color: var(--accent-on-dark); }
+.footer-col p, .footer-col address { color: var(--dark-ink-muted); }
+.footer-col a[href^="mailto:"], .footer-col a[href^="http"] { color: var(--dark-ink-muted); }
+.footer-col a[href^="mailto:"]:hover, .footer-col a[href^="http"]:hover { color: var(--accent-on-dark); }
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-3);
+}
+.footer-brand img { width: 28px; height: 28px; }
+.footer-brand span {
+  font-family: var(--font-heading);
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-body-lg);
+  color: var(--dark-ink);
+}
 .footer-bottom {
   display: flex;
   flex-wrap: wrap;
@@ -511,15 +578,15 @@
   justify-content: space-between;
   align-items: center;
   padding-top: var(--space-5);
-  border-top: 1px solid var(--line);
+  border-top: 1px solid var(--dark-line);
   font-size: var(--fs-small);
-  color: var(--ink-muted);
+  color: var(--dark-ink-muted);
 }
 
 /* ---------- Sticky WhatsApp FAB ---------- */
 .fab-whatsapp {
   position: fixed;
-  bottom: var(--space-5);
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 16px);
   right: var(--space-5);
   width: 56px; height: 56px;
   border-radius: var(--radius-pill);
@@ -547,20 +614,6 @@
   .reveal { opacity: 1; transform: none; transition: none; }
 }
 
-/* ============================================================
-   UX POLISH — 2026-06 SEO/UX pass
-   ============================================================ */
-
-/* FIX: header "Book a call" CTA was unreadable — .nav-links a
-   (specificity 0,1,1) overrode .btn-primary's white text with
-   var(--ink-muted) on the navy pill (~1.6:1 contrast, WCAG fail). */
-.nav-links a.btn,
-.nav-links a.btn:hover,
-.nav-links a.btn[aria-current="page"] {
-  color: #fff;
-  border-bottom: none;
-}
-
 /* Balanced headline wrapping — avoids one-word orphan lines on
    long H1/H2s (esp. mobile). No-op in older browsers. */
 h1, h2, h3, .hero-sub {
@@ -570,139 +623,12 @@ p {
   text-wrap: pretty;
 }
 
-/* WhatsApp FAB: respect iPhone home-indicator safe area so the
-   button never sits under the gesture bar. */
-.fab-whatsapp {
-  bottom: calc(env(safe-area-inset-bottom, 0px) + 16px);
-}
-
-/* FIX: mobile nav drawer rendered as an invisible 1px strip with menu
-   links painting over page text. Cause: backdrop-filter on .site-header
-   makes the header the containing block for position:fixed descendants,
-   so the drawer's viewport inset resolved against the 64px header.
-   Anchor the drawer to the header instead and give it real height. */
-.nav-drawer {
-  position: absolute;
-  inset: auto 0 auto 0;
-  top: 100%;
-  height: calc(100vh - 64px);
-  height: calc(100dvh - 64px);
-  overflow-y: auto;
-}
-
-/* ============================================================
-   BRAND OVERRIDES — Warm Dark (brand reference 2026-06)
-   Appended last so these win the cascade.
-   ============================================================ */
-
-/* Mono kickers */
-.eyebrow { font-family: var(--font-mono); font-weight: var(--fw-medium); letter-spacing: 0.14em; }
-
-/* Selection — dark text on orange */
-::selection { background: var(--accent); color: var(--on-primary); }
-
-/* Primary button — dark text on orange for contrast (WCAG) */
-.btn-primary { color: var(--on-primary); }
-.btn-primary:hover { color: var(--on-primary); }
-
-/* Geometric display: drop synthesized italics, use weight + colour */
-.hero-sub, .testimonial-quote { font-style: normal; }
-.hero h1 em { font-style: normal; color: var(--accent); font-weight: var(--fw-medium); }
-
-/* Drifting warm glows on the hero (orange 20% + red-orange 16%) */
-.hero { background: var(--bg); }
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: -25% -12% auto -12%;
-  height: 150%;
-  background:
-    radial-gradient(440px 340px at 80% 14%, rgba(242, 119, 46, 0.20), transparent 62%),
-    radial-gradient(380px 320px at 10% 90%, rgba(232, 85, 58, 0.16), transparent 62%);
-  filter: blur(22px);
-  z-index: 0;
-  pointer-events: none;
-  animation: glowdrift 20s ease-in-out infinite alternate;
-}
-.hero > .container { position: relative; z-index: 1; }
-@keyframes glowdrift {
-  0%   { transform: translate3d(0, 0, 0); }
-  100% { transform: translate3d(-4%, 3%, 0); }
-}
-@media (prefers-reduced-motion: reduce) { .hero::before { animation: none; } }
-
-/* Hero portrait — orange edge per brand accent rule */
-.hero-portrait { border: 1px solid var(--line); box-shadow: var(--shadow-2); }
-.hero-portrait::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  box-shadow: inset 0 0 0 2px rgba(242, 119, 46, 0.55);
-  pointer-events: none;
-}
-.hero-portrait-tag {
-  background: rgba(21, 13, 7, 0.74);
-  color: var(--cream);
-  border: 1px solid var(--line);
-}
-
-/* Stat cards — 2px orange top border (brand accent rule) */
-.stats {
-  border-top: 0;
-  border-bottom: 0;
-  padding: 0;
-  gap: var(--space-4);
-}
-.stats > div {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-top: 2px solid var(--primary);
-  border-radius: var(--radius-md);
-  padding: var(--space-5) var(--space-4);
-}
-
-/* Card hover — warm accent edge */
-.card:hover { border-color: rgba(242, 119, 46, 0.45); }
-
-/* Rhythm sections — warm dark instead of navy */
-.section-dark {
-  background: linear-gradient(180deg, #1C120A 0%, #241606 100%);
-  color: var(--ink);
-}
-.section-dark h2, .section-dark h3 { color: var(--cream); }
-.section-dark p { color: var(--ink-muted); }
-.section-dark .eyebrow { color: var(--accent); }
-.section-dark .card,
-.section-dark .testimonial {
-  background: rgba(244, 236, 225, 0.05);
-  border-color: rgba(244, 236, 225, 0.12);
-  color: var(--ink);
-}
-.section-dark .testimonial-quote { color: var(--cream); }
-.section-dark .testimonial-name { color: var(--cream); }
-.section-dark .testimonial-author { border-top-color: rgba(244, 236, 225, 0.12); }
-
-/* Hero photo — slow Ken Burns drift so the header feels "alive" */
-.hero-portrait img {
-  animation: kenburns 24s ease-in-out infinite alternate;
-  transform-origin: 50% 35%;
-  will-change: transform;
-}
-@keyframes kenburns {
-  0%   { transform: scale(1); }
-  100% { transform: scale(1.08) translate(-1.5%, -1%); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .hero-portrait img { animation: none; }
-}
-
 /* Visible breadcrumb trail (inner pages) */
 .breadcrumbs { padding: var(--space-5) 0 0; }
 .breadcrumbs ol {
   list-style: none; padding: 0; margin: 0;
   display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2);
-  font-family: var(--font-mono); font-size: var(--fs-micro); letter-spacing: 0.04em;
+  font-family: var(--font-label); font-size: var(--fs-micro); letter-spacing: 0.04em;
 }
 .breadcrumbs li { margin: 0; display: inline-flex; align-items: center; gap: var(--space-2); }
 .breadcrumbs a { color: var(--ink-muted); text-decoration: none; }

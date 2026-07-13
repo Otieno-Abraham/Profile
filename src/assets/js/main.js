@@ -1,43 +1,11 @@
 /* ============================================================
-   main.js — theme toggle, mobile nav, scroll reveal
+   main.js — mobile nav, scroll reveal
    No frameworks. Defer-loaded.
    ============================================================ */
 (function () {
   "use strict";
 
-  const root = document.documentElement;
-  const STORAGE_KEY = "ao-theme";
-
-  // ---- Theme toggle (persists in localStorage; respects system on first visit) ----
-  function applyTheme(theme) {
-    if (theme === "dark" || theme === "light") {
-      root.setAttribute("data-theme", theme);
-    } else {
-      root.removeAttribute("data-theme");
-    }
-  }
-
-  function currentTheme() {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored === "dark" || stored === "light") return stored;
-    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-  }
-
-  // Dark-only brand: clear any legacy stored theme so returning visitors get the new look
-  root.removeAttribute("data-theme");
-  try { localStorage.removeItem(STORAGE_KEY); } catch (e) {}
-
   document.addEventListener("DOMContentLoaded", function () {
-    const toggle = document.querySelector("[data-theme-toggle]");
-    if (toggle) {
-      toggle.addEventListener("click", function () {
-        const next = currentTheme() === "dark" ? "light" : "dark";
-        localStorage.setItem(STORAGE_KEY, next);
-        applyTheme(next);
-        toggle.setAttribute("aria-pressed", String(next === "dark"));
-      });
-    }
-
     // ---- Mobile nav drawer ----
     const navToggle = document.querySelector("[data-nav-toggle]");
     const drawer = document.querySelector("[data-nav-drawer]");

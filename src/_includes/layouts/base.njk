@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="theme-color" content="#150D07">
+  <meta name="theme-color" content="#A84F24">
 
   <title>{{ title }}</title>
   <meta name="description" content="{{ description }}">
@@ -43,15 +43,17 @@
   <meta name="twitter:description" content="{{ ogDescription or description }}">
   <meta name="twitter:image" content="{{ site.baseUrl }}{{ ogImage or '/og-default.jpg' }}">
 
-  {# Favicon — branded AO monogram #}
+  {# Favicon — branded AO ring-and-A monogram #}
   <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon/favicon-48.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
 
   {# Fonts — preload brand typefaces #}
-  <link rel="preload" href="/assets/fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/assets/fonts/jetbrains-mono.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/inter-variable.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/poppins-600.woff2" as="font" type="font/woff2" crossorigin>
 
   {# Stylesheets — preload critical, swap in full #}
   <link rel="preload" href="/assets/css/style.css" as="style">

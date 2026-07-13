@@ -1,36 +1,49 @@
 /* ============================================================
-   DESIGN TOKENS — Brand Reference "Warm Dark"
-   Dark-only. Space Grotesk + JetBrains Mono.
-   Palette: #150D07 bg · #F2772E orange · #F4A93B amber ·
-            #E8553A red-orange · #F4ECE1 cream
+   DESIGN TOKENS — Brand Reference "Warm Editorial" (v2, 2026-07)
+   Light. Poppins (headings) + Inter (body).
+   Palette: #E9DDD2 cream · #A84F24 terracotta · #11131D charcoal ·
+            #CFB8A7 beige · #9A7260 taupe
+   Source of truth: abraham-otieno-brand-kit/abraham-otieno-brand-guide.html
    ============================================================ */
 
 :root {
-  /* ---------- Color: warm dark ---------- */
-  --bg: #150D07;                 /* background */
-  --surface: rgba(244, 236, 225, 0.05);   /* panel fill — warm 5% */
-  --surface-2: rgba(244, 236, 225, 0.08);  /* slightly lifted panel */
-  --ink: #F4ECE1;                /* cream — primary text + headings */
-  --ink-muted: rgba(244, 236, 225, 0.55);  /* dim text */
-  --ink-soft: rgba(244, 236, 225, 0.32);   /* faint text */
-  --primary: #F2772E;            /* primary orange — buttons, CTAs */
-  --primary-hover: #F4A93B;      /* amber on hover */
-  --primary-soft: rgba(242, 119, 46, 0.12);
-  --accent: #F2772E;             /* terracotta-orange — eyebrows, em, arrows, links */
-  --accent-hover: #F4A93B;       /* amber */
-  --accent-soft: rgba(242, 119, 46, 0.14);
-  --accent-2: #F4A93B;           /* amber highlight */
-  --red-orange: #E8553A;         /* red-orange accent (glows) */
-  --cream: #F4ECE1;
-  --line: rgba(244, 236, 225, 0.12);   /* hairline */
-  --success: #5FCF8F;
-  --focus: #F2772E;
-  --on-primary: #150D07;         /* dark text on orange buttons */
+  /* ---------- Primitive: core palette ---------- */
+  --cream: #E9DDD2;
+  --terracotta: #A84F24;
+  --terracotta-dark: #8A3D1A;
+  --charcoal: #11131D;
+  --beige: #CFB8A7;
+  --taupe: #9A7260;
+
+  /* ---------- Semantic: color ---------- */
+  --bg: var(--cream);                 /* page background */
+  --surface: #FFFFFF;                 /* card fill */
+  --surface-2: var(--beige);          /* alt-section / stat / logo-bar fill */
+  --ink: var(--charcoal);             /* primary text + headings — 13.87:1 on cream (AAA) */
+  --ink-muted: #5C4742;               /* secondary text — taupe darkened for AA (6.5:1 on cream) */
+  --ink-soft: var(--taupe);           /* tertiary text — large/bold contexts only (3.18:1) */
+  --primary: var(--terracotta);       /* buttons, CTAs */
+  --primary-hover: var(--terracotta-dark);
+  --primary-soft: rgba(168, 79, 36, 0.12);
+  --accent: var(--terracotta-dark);   /* text-sized accent — links, eyebrows, card-links (5.7:1 AA) */
+  --accent-hover: var(--terracotta);  /* brightens toward pure terracotta on hover/active */
+  --accent-soft: rgba(168, 79, 36, 0.12);
+  --line: rgba(17, 19, 29, 0.14);     /* hairline border — charcoal-tinted per brand --line */
+  --success: #2F6B34;
+  --focus: var(--terracotta);
+  --on-primary: #FFFFFF;              /* white text on terracotta buttons (5.51:1 AA) */
+
+  /* Dark surfaces (footer, rhythm sections) — brand's own "Cream on Charcoal" pairing, 13.87:1 AAA */
+  --dark-bg: var(--charcoal);
+  --dark-ink: var(--cream);
+  --dark-ink-muted: rgba(233, 221, 210, 0.62);
+  --dark-line: rgba(233, 221, 210, 0.14);
+  --accent-on-dark: #E0A987;  /* terracotta lightened for charcoal grounds — 8.98:1, per brand guide's own code-sample accent */
 
   /* ---------- Type ---------- */
-  --font-serif: "Space Grotesk", "Segoe UI", system-ui, sans-serif;  /* display / headings */
-  --font-sans: "Space Grotesk", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;  /* body */
-  --font-mono: "JetBrains Mono", "SF Mono", Consolas, "Courier New", monospace;  /* labels / kickers */
+  --font-heading: "Poppins", system-ui, sans-serif;                                        /* display / headings / wordmark */
+  --font-body: "Inter", "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif; /* body / UI */
+  --font-label: var(--font-body);     /* uppercase tracked kickers/taglines — Inter, per brand specimen */
 
   /* Mobile-first sizes — overrides at breakpoints below */
   --fs-display: 2.5rem;     /* 40px */
@@ -50,13 +63,14 @@
   --fw-regular: 400;
   --fw-medium: 500;
   --fw-semibold: 600;
-  --fw-bold: 600;
+  --fw-bold: 700;
   --fw-extrabold: 700;
 
   --tracking-tight: -0.02em;
   --tracking-snug: -0.01em;
   --tracking-normal: 0;
   --tracking-wide: 0.02em;
+  --tracking-label: 0.16em;  /* uppercase kicker/tagline tracking, per brand specimen (~0.18em) */
 
   /* ---------- Spacing (8pt scale) ---------- */
   --space-1: 0.25rem;
@@ -75,16 +89,16 @@
   --container-max: 1200px;
   --container-pad: var(--space-5);
 
-  /* ---------- Radius ---------- */
-  --radius-sm: 6px;
-  --radius-md: 12px;
-  --radius-lg: 20px;
+  /* ---------- Radius — component layer, brand: 14px card / 30px pill ---------- */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
   --radius-pill: 999px;
 
-  /* ---------- Elevation ---------- */
-  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4);
-  --shadow-2: 0 18px 50px rgba(0, 0, 0, 0.55);
-  --shadow-focus: 0 0 0 3px rgba(242, 119, 46, 0.4);
+  /* ---------- Elevation — brand tokens: shadow-sm / shadow-md ---------- */
+  --shadow-1: 0 2px 10px rgba(17, 19, 29, 0.06);
+  --shadow-2: 0 10px 30px rgba(17, 19, 29, 0.10);
+  --shadow-focus: 0 0 0 3px rgba(168, 79, 36, 0.35);
 
   /* ---------- Motion ---------- */
   --ease-out: cubic-bezier(0.2, 0, 0, 1);
@@ -97,7 +111,7 @@
   --z-fab: 200;
   --z-modal: 1000;
 
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 /* ============================================================

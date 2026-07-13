@@ -2,15 +2,18 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-col">
-        <h4>{{ site.name }}</h4>
-        <p style="color:var(--ink-muted); font-size:var(--fs-small); margin-bottom:var(--space-4); max-width:36ch;">
+        <div class="footer-brand">
+          <img src="/brand/logo-mark-dark.svg" alt="" width="28" height="28">
+          <span>{{ site.name }}</span>
+        </div>
+        <p style="font-size:var(--fs-small); margin-bottom:var(--space-4); max-width:36ch;">
           Executive Assistant, Chief of Staff &amp; Operations Partner. Based in {{ site.city }}, {{ site.country }} — supporting founders, CEOs, and operators worldwide.
         </p>
-        <p style="font-size:var(--fs-small); color:var(--ink-muted);">
+        <p style="font-size:var(--fs-small);">
           <a href="mailto:{{ site.email }}">{{ site.email }}</a><br>
           <a href="{{ site.whatsapp }}" rel="noopener">WhatsApp · {{ site.phoneDisplay }}</a>
         </p>
-        <address style="font-size:var(--fs-small); color:var(--ink-muted); font-style:normal; margin-top:var(--space-3);">
+        <address style="font-size:var(--fs-small); font-style:normal; margin-top:var(--space-3);">
           {{ site.streetAddress }}<br>{{ site.city }}, {{ site.country }}
         </address>
       </div>

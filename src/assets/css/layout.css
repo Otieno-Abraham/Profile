@@ -28,10 +28,10 @@
 /* Eyebrow label above headings */
 .eyebrow {
   display: inline-block;
-  font-family: var(--font-sans);
+  font-family: var(--font-label);
   font-size: var(--fs-micro);
   font-weight: var(--fw-semibold);
-  letter-spacing: 0.12em;
+  letter-spacing: var(--tracking-label);
   text-transform: uppercase;
   color: var(--accent);
   margin-bottom: var(--space-3);
