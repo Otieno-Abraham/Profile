@@ -25,17 +25,17 @@
   <meta name="geo.position" content="{{ site.geo.lat }};{{ site.geo.lng }}">
   <meta name="ICBM" content="{{ site.geo.lat }}, {{ site.geo.lng }}">
 
-  {# Open Graph — branded 1200x630 card is the default; pages may override via ogImage #}
+  {# Open Graph: branded 1200x630 card is the default; pages may override via ogImage #}
   <meta property="og:title" content="{{ ogTitle or title }}">
   <meta property="og:description" content="{{ ogDescription or description }}">
   <meta property="og:url" content="{{ site.baseUrl }}{{ page.url }}">
   <meta property="og:type" content="{{ ogType or 'website' }}">
-  <meta property="og:site_name" content="{{ site.name }} — {{ site.role }}">
+  <meta property="og:site_name" content="{{ site.name }}, {{ site.role }}">
   <meta property="og:locale" content="{{ site.locale }}">
   <meta property="og:image" content="{{ site.baseUrl }}{{ ogImage or '/og-default.jpg' }}">
   <meta property="og:image:width" content="{{ ogImageWidth or 1200 }}">
   <meta property="og:image:height" content="{{ ogImageHeight or 630 }}">
-  <meta property="og:image:alt" content="{{ ogImageAlt or (site.name + ' — Executive Assistant, Chief of Staff & Operations Partner in Nairobi, Kenya') }}">
+  <meta property="og:image:alt" content="{{ ogImageAlt or (site.name + ', Executive Assistant, Chief of Staff & Operations Partner in Nairobi, Kenya') }}">
 
   {# Twitter Card #}
   <meta name="twitter:card" content="summary_large_image">
@@ -43,7 +43,7 @@
   <meta name="twitter:description" content="{{ ogDescription or description }}">
   <meta name="twitter:image" content="{{ site.baseUrl }}{{ ogImage or '/og-default.jpg' }}">
 
-  {# Favicon — branded AO ring-and-A monogram #}
+  {# Favicon: branded AO ring-and-A monogram #}
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32.png">
@@ -51,15 +51,15 @@
   <link rel="icon" type="image/png" sizes="48x48" href="/favicon/favicon-48.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
 
-  {# Fonts — preload brand typefaces #}
+  {# Fonts: preload brand typefaces #}
   <link rel="preload" href="/assets/fonts/inter-variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/poppins-600.woff2" as="font" type="font/woff2" crossorigin>
 
-  {# Stylesheets — preload critical, swap in full #}
+  {# Stylesheets: preload critical, swap in full #}
   <link rel="preload" href="/assets/css/style.css" as="style">
   <link rel="stylesheet" href="/assets/css/style.css">
 
-  {# Schema: Person + ProfessionalService — present on every page so Google ties pages to the entity #}
+  {# Schema: Person + ProfessionalService, present on every page so Google ties pages to the entity #}
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -127,7 +127,7 @@
       {
         "@type": "ProfessionalService",
         "@id": "{{ site.baseUrl }}/#business",
-        "name": "{{ site.name }} — Executive Assistant & Chief of Staff Services",
+        "name": "{{ site.name }}, Executive Assistant & Chief of Staff Services",
         "description": "Executive assistant, chief of staff, and operations partner services for founders, CEOs, and operators. Virtual EA, fractional chief of staff support, operations systems, market entry, stakeholder coordination. Based in Nairobi, Kenya, serving worldwide.",
         "url": "{{ site.baseUrl }}",
         "image": "{{ site.baseUrl }}/abraham-hero.jpg",
@@ -229,7 +229,7 @@
   </script>
   {% endif %}
 
-  {# BlogPosting schema — blog articles only (not the blog index) #}
+  {# BlogPosting schema: blog articles only (not the blog index) #}
   {% if tags and "post" in tags and page.url != "/blog/" %}
   <script type="application/ld+json">
   {

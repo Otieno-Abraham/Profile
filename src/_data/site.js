@@ -13,7 +13,7 @@ module.exports = {
     { code: "x-default", label: "Default" },
   ],
 
-  // Location — NAP must match Google Business Profile exactly
+  // Location: NAP must match Google Business Profile exactly
   streetAddress: "Fedha Plaza, Mpaka Road, Westlands",
   city: "Nairobi",
   addressRegion: "Nairobi County",
@@ -42,7 +42,7 @@ module.exports = {
   upwork: "https://www.upwork.com/freelancers/~016468049604acd788",
   facebook: "https://www.facebook.com/abrahamotieno",
 
-  // Headline metrics (do not invent — these stay accurate)
+  // Headline metrics (do not invent, these stay accurate)
   metrics: [
     { value: "80%", label: "Faster team response", numeric: 80 },
     { value: "200+", label: "Agents onboarded", numeric: 200 },
@@ -51,7 +51,7 @@ module.exports = {
     { value: "3", label: "Continents served", numeric: 3 },
   ],
 
-  // Role cluster — single source of truth for entity language across pages and schema.
+  // Role cluster: single source of truth for entity language across pages and schema.
   // Every role a hiring decision-maker might search for.
   roles: [
     "Executive Assistant",
@@ -70,7 +70,7 @@ module.exports = {
     "Startup Operations Lead",
   ],
 
-  // Past clients (logo bar). `logo` is optional — renders the real logo image
+  // Past clients (logo bar). `logo` is optional, renders the real logo image
   // in a cream card (needed since several logos have opaque white/colored/
   // black backgrounds that would otherwise mismatch or vanish against the
   // dark page); entries without it fall back to styled text. `url` is optional.
@@ -89,7 +89,7 @@ module.exports = {
     { name: "Epena Law",                 country: "Kenya", url: "https://epena-law.com/", logo: "/clients/epena-law.webp" },
   ],
 
-  // Real testimonials only — provided by user
+  // Real testimonials only, provided by user
   testimonials: [
     {
       author: "Mathew",
@@ -135,7 +135,7 @@ module.exports = {
     { url: "/booking/", label: "Book a call", key: "booking", primary: true },
   ],
 
-  // Role landing pages — used by footer + internal-link hubs
+  // Role landing pages: used by footer + internal-link hubs
   rolePages: [
     { url: "/executive-assistant-kenya/", label: "Executive Assistant Kenya" },
     { url: "/virtual-executive-assistant/", label: "Virtual Executive Assistant" },
@@ -147,7 +147,7 @@ module.exports = {
     { url: "/operations-manager-kenya/", label: "Operations Manager Kenya" },
     { url: "/operations-partner/", label: "Fractional Operations Partner" },
     { url: "/executive-business-partner/", label: "Executive Business Partner" },
-    { url: "/remote-executive-assistant-africa/", label: "Remote EA — Africa" },
+    { url: "/remote-executive-assistant-africa/", label: "Remote EA, Africa" },
     { url: "/hire-executive-assistant-nairobi/", label: "Hire EA in Nairobi" },
   ],
 

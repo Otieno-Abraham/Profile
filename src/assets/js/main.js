@@ -1,5 +1,5 @@
 /* ============================================================
-   main.js — mobile nav, scroll reveal
+   main.js: mobile nav, scroll reveal
    No frameworks. Defer-loaded.
    ============================================================ */
 (function () {
