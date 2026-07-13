@@ -80,6 +80,8 @@ module.exports = {
     { name: "M-KOPA",                  country: "Kenya",  url: "https://m-kopa.com", logo: "/clients/m-kopa.webp" },
     { name: "OKash Kenya",             country: "Kenya",  url: "https://okash.co.ke", logo: "/clients/okash.webp" },
     { name: "Generation Kenya",        country: "Kenya",  url: "https://kenya.generation.org", logo: "/clients/generation-kenya.webp" },
+    { name: "Insight BPO",              country: "Kenya",  logo: "/clients/insight-bpo.webp" },
+    { name: "Dial Africa",              country: "Kenya",  logo: "/clients/dial-africa.webp" },
     { name: "Auto Audit Group",        country: "Kenya",  url: "https://autoauditgroup.com", logo: "/clients/auto-audit-group.webp" },
     { name: "Q360",                    country: "Kenya",  url: "https://autoauditgroup.com/companies/", logo: "/clients/q360.webp" },
     { name: "Axios",                   country: "Kenya",  url: "https://autoauditgroup.com/companies/", logo: "/clients/axios.webp" },
