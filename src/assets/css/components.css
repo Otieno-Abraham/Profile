@@ -212,6 +212,17 @@
   font-weight: var(--fw-medium);
   color: var(--primary);
 }
+@media (max-width: 767px) {
+  .hero h1 .hero-h1-tail {
+    display: block;
+    font-size: var(--fs-h3);
+    font-weight: var(--fw-regular);
+    letter-spacing: var(--tracking-normal);
+    line-height: var(--lh-snug);
+    color: var(--ink-muted);
+    margin-top: var(--space-2);
+  }
+}
 .hero-sub {
   font-family: var(--font-heading);
   font-style: normal;
