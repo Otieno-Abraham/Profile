@@ -201,14 +201,15 @@
           "@type": "AggregateRating",
           "ratingValue": "5",
           "bestRating": "5",
-          "reviewCount": "{{ site.testimonials | length }}"
+          "reviewCount": "{{ site.testimonials | length }}",
+          "ratingCount": "7"
         },
         "review": [
           {% for r in site.testimonials %}
           {
             "@type": "Review",
             "reviewRating": { "@type": "Rating", "ratingValue": "{{ r.rating }}", "bestRating": "5" },
-            "author": { "@type": "Person", "name": "{{ r.author }}", "jobTitle": "{{ r.title }}", "worksFor": { "@type": "Organization", "name": "{{ r.company }}" } },
+            "author": { "@type": "Person", "name": "{{ r.author }}"{% if r.company and r.company != "Google review" %}, "worksFor": { "@type": "Organization", "name": "{{ r.company }}" }{% endif %}{% if r.title %}, "jobTitle": "{{ r.title }}"{% endif %} },
             "reviewBody": {{ r.quote | dump | safe }},
             "datePublished": "{{ r.datePublished }}"
           }{% if not loop.last %},{% endif %}

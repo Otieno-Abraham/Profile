@@ -18,7 +18,7 @@
             <span class="testimonial-avatar" aria-hidden="true">{{ r.initial }}</span>
             <div>
               <div class="testimonial-name" itemprop="author">{{ r.author }}</div>
-              <div class="testimonial-meta">{{ r.title }}, {{ r.company }}</div>
+              <div class="testimonial-meta">{% if r.title %}{{ r.title }}, {% endif %}{{ r.company }}</div>
             </div>
           </div>
         </article>

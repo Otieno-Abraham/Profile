@@ -91,37 +91,69 @@ module.exports = {
     { name: "Epena Law",                 country: "Kenya", url: "https://epena-law.com/", logo: "/clients/epena-law.webp" },
   ],
 
-  // Real testimonials only, provided by user
+  // Real testimonials, sourced verbatim from verified Google Business Profile
+  // reviews (business.google.com, checked 2026-07-31). Company attributed only
+  // where the reviewer stated it themselves in the review text.
   testimonials: [
     {
-      author: "Mathew",
-      title: "Lead of Operations",
-      company: "Generation Kenya",
-      initial: "M",
-      quote:
-        "Abraham's exceptional coordination skills transformed our team dynamics. His ability to facilitate clear, effective communication between our stakeholders and CEO streamlined our operations significantly. He brings not just task execution, but strategic thinking to every project.",
-      rating: 5,
-      datePublished: "2025-09-01",
-    },
-    {
-      author: "Abdul",
-      title: "CEO",
-      company: "Insight BPO",
+      author: "Alex Omieno Omondi",
+      title: "",
+      company: "Google review",
       initial: "A",
       quote:
-        "Working with Abraham during our service transition was remarkably smooth. His strategic planning and meticulous execution made what could have been a complex absorption process effortless. He anticipates challenges and comes prepared with solutions.",
+        "Abraham is highly professional, organized, and dependable. He demonstrates excellent communication, attention to detail, and a strong ability to keep operations running smoothly. I highly recommend his services to anyone looking for a reliable Executive Assistant or Chief of Staff.",
       rating: 5,
-      datePublished: "2025-07-15",
+      datePublished: "2026-07-28",
     },
     {
-      author: "Salome",
-      title: "Lead of Partnerships",
-      company: "Dial Africa",
-      initial: "S",
+      author: "Janet Nyambura",
+      title: "",
+      company: "Google review",
+      initial: "J",
       quote:
-        "Abraham's professionalism and collaborative approach made our partnership coordination exceptionally smooth. His attention to detail and responsive communication ensured our initiatives were executed flawlessly. He's more than an assistant; he's a true operations partner.",
+        "Working with Abraham was a great experience. Professional, responsive and highly organized. He helped me optimize my LinkedIn presence and made the entire process smooth and efficient. Highly recommended.",
       rating: 5,
-      datePublished: "2025-10-10",
+      datePublished: "2026-07-28",
+    },
+    {
+      author: "Greg",
+      title: "",
+      company: "Gregory Swarn Enterprises",
+      initial: "G",
+      quote:
+        "I can't recommend Abraham highly enough! He is an exceptional Administrative Assistant with executive-level professionalism, incredible organizational skills, and a genuine commitment to excellence. He goes above and beyond, anticipates needs before they arise, and keeps everything running seamlessly.",
+      rating: 5,
+      datePublished: "2026-07-27",
+    },
+    {
+      author: "Bosibori Ruth",
+      title: "",
+      company: "Google review",
+      initial: "B",
+      quote:
+        "Abraham is a highly skilled market research professional with a deep understanding of the Nairobi market and the broader East African region. His insights are practical, well-researched, and aligned with market realities. If you are looking for a trusted executive partner who brings both strategic thinking and execution excellence, Abraham is the person to go to.",
+      rating: 5,
+      datePublished: "2026-06-19",
+    },
+    {
+      author: "Atinda Persons",
+      title: "",
+      company: "Pioneer Outsourcing BPO",
+      initial: "A",
+      quote:
+        "What stands out most about Abraham is his commitment to people. He doesn't just build businesses, he builds confidence, develops talent, and creates an environment where others can succeed. Working with him at Pioneer Outsourcing was a truly rewarding experience.",
+      rating: 5,
+      datePublished: "2026-06-19",
+    },
+    {
+      author: "Gordon Odhiambo",
+      title: "",
+      company: "Google review",
+      initial: "G",
+      quote:
+        "Abraham brought both sharp market research and solid operational support to our work together. He came prepared, asked the right questions, and delivered structured insights that actually moved things forward. A reliable partner you can trust to get things done right.",
+      rating: 5,
+      datePublished: "2026-06-19",
     },
   ],
 
