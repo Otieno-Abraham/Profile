@@ -95,9 +95,12 @@ module.exports = {
   // reviews (business.google.com, checked 2026-07-31). Company attributed only
   // where the reviewer stated it themselves in the review text; otherwise
   // source: "google" renders a Google Review badge instead of a fake company
-  // name. First-name-only display per Abraham's request. Mwema left a 5-star
-  // rating with no written text, so she's rating-only (no quote). Avatar is
-  // just an initial in a circle for now; real photos to be added later.
+  // name. First-name-only display per Abraham's request (Ruth and Purity are
+  // the reviewers' preferred first names, per Abraham -- the Google display
+  // names read "Bosibori Ruth" / "Mwema Purity"). Purity left a 5-star rating
+  // with no written text, so she's rating-only (no quote). Photos are real
+  // (Abraham-provided, cropped/converted to grayscale); `photo` is the path
+  // stem under /testimonials/ -- both .jpg and .webp exist for each.
   testimonials: [
     {
       author: "Alex",
@@ -105,6 +108,7 @@ module.exports = {
       company: "",
       source: "google",
       initial: "A",
+      photo: "/testimonials/alex",
       quote:
         "Abraham is highly professional, organized, and dependable. He demonstrates excellent communication, attention to detail, and a strong ability to keep operations running smoothly. I highly recommend his services to anyone looking for a reliable Executive Assistant or Chief of Staff.",
       rating: 5,
@@ -116,6 +120,7 @@ module.exports = {
       company: "",
       source: "google",
       initial: "J",
+      photo: "/testimonials/janet",
       quote:
         "Working with Abraham was a great experience. Professional, responsive and highly organized. He helped me optimize my LinkedIn presence and made the entire process smooth and efficient. Highly recommended.",
       rating: 5,
@@ -127,17 +132,19 @@ module.exports = {
       company: "Gregory Swarn Enterprises",
       source: "google",
       initial: "G",
+      photo: "/testimonials/greg",
       quote:
         "I can't recommend Abraham highly enough! He is an exceptional Administrative Assistant with executive-level professionalism, incredible organizational skills, and a genuine commitment to excellence. He goes above and beyond, anticipates needs before they arise, and keeps everything running seamlessly.",
       rating: 5,
       datePublished: "2026-07-27",
     },
     {
-      author: "Bosibori",
+      author: "Ruth",
       title: "",
       company: "",
       source: "google",
-      initial: "B",
+      initial: "R",
+      photo: "/testimonials/ruth",
       quote:
         "Abraham is a highly skilled market research professional with a deep understanding of the Nairobi market and the broader East African region. His insights are practical, well-researched, and aligned with market realities. If you are looking for a trusted executive partner who brings both strategic thinking and execution excellence, Abraham is the person to go to.",
       rating: 5,
@@ -149,6 +156,7 @@ module.exports = {
       company: "Pioneer Outsourcing BPO",
       source: "google",
       initial: "A",
+      photo: "/testimonials/atinda",
       quote:
         "What stands out most about Abraham is his commitment to people. He doesn't just build businesses, he builds confidence, develops talent, and creates an environment where others can succeed. Working with him at Pioneer Outsourcing was a truly rewarding experience.",
       rating: 5,
@@ -160,17 +168,19 @@ module.exports = {
       company: "",
       source: "google",
       initial: "G",
+      photo: "/testimonials/gordon",
       quote:
         "Abraham brought both sharp market research and solid operational support to our work together. He came prepared, asked the right questions, and delivered structured insights that actually moved things forward. A reliable partner you can trust to get things done right.",
       rating: 5,
       datePublished: "2026-06-19",
     },
     {
-      author: "Mwema",
+      author: "Purity",
       title: "",
       company: "",
       source: "google",
-      initial: "M",
+      initial: "P",
+      photo: "/testimonials/purity",
       quote: "",
       ratingOnly: true,
       rating: 5,

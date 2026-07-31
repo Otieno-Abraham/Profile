@@ -504,6 +504,12 @@
   font-size: var(--fs-body);
   flex-shrink: 0;
 }
+.testimonial-avatar-photo {
+  width: 40px; height: 40px;
+  border-radius: var(--radius-pill);
+  object-fit: cover;
+  flex-shrink: 0;
+}
 .testimonial-name { font-weight: var(--fw-semibold); color: var(--ink); font-size: var(--fs-body); }
 .testimonial-meta { font-size: var(--fs-small); color: var(--ink-muted); display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
 .testimonial-rating-only {

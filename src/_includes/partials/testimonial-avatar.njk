@@ -1,0 +1,8 @@
+{% if r.photo %}
+<picture>
+  <source srcset="{{ r.photo }}.webp" type="image/webp">
+  <img class="testimonial-avatar-photo" src="{{ r.photo }}.jpg" alt="" width="48" height="48" loading="lazy">
+</picture>
+{% else %}
+<span class="testimonial-avatar" aria-hidden="true">{{ r.initial }}</span>
+{% endif %}

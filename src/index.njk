@@ -177,7 +177,7 @@ faq:
             <blockquote class="testimonial-quote">{{ r.quote }}</blockquote>
           {% endif %}
           <div class="testimonial-author">
-            <span class="testimonial-avatar" aria-hidden="true">{{ r.initial }}</span>
+            {% include "partials/testimonial-avatar.njk" %}
             <div>
               <div class="testimonial-name">{{ r.author }}</div>
               <div class="testimonial-meta">
