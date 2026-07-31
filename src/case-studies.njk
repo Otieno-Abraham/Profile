@@ -84,12 +84,18 @@ breadcrumbs:
           <div class="testimonial-stars" aria-label="{{ r.rating }} out of 5 stars">
             {% for i in range(0, r.rating) %}<span aria-hidden="true">★</span>{% endfor %}
           </div>
-          <blockquote class="testimonial-quote">{{ r.quote }}</blockquote>
+          {% if r.ratingOnly %}
+            <p class="testimonial-rating-only">Left a 5-star rating.</p>
+          {% else %}
+            <blockquote class="testimonial-quote">{{ r.quote }}</blockquote>
+          {% endif %}
           <div class="testimonial-author">
             <span class="testimonial-avatar" aria-hidden="true">{{ r.initial }}</span>
             <div>
               <div class="testimonial-name">{{ r.author }}</div>
-              <div class="testimonial-meta">{{ r.title }}, {{ r.company }}</div>
+              <div class="testimonial-meta">
+                {% if r.title %}{{ r.title }}{% if r.company %}, {% endif %}{% endif %}{% if r.company %}{{ r.company }}{% elif r.source == "google" %}{% include "partials/google-badge.njk" %}{% endif %}
+              </div>
             </div>
           </div>
         </article>

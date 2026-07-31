@@ -201,15 +201,16 @@
           "@type": "AggregateRating",
           "ratingValue": "5",
           "bestRating": "5",
-          "reviewCount": "{{ site.testimonials | length }}",
+          "reviewCount": "{{ (site.testimonials | rejectattr('ratingOnly') | list) | length }}",
           "ratingCount": "7"
         },
         "review": [
-          {% for r in site.testimonials %}
+          {% set writtenReviews = site.testimonials | rejectattr('ratingOnly') | list %}
+          {% for r in writtenReviews %}
           {
             "@type": "Review",
             "reviewRating": { "@type": "Rating", "ratingValue": "{{ r.rating }}", "bestRating": "5" },
-            "author": { "@type": "Person", "name": "{{ r.author }}"{% if r.company and r.company != "Google review" %}, "worksFor": { "@type": "Organization", "name": "{{ r.company }}" }{% endif %}{% if r.title %}, "jobTitle": "{{ r.title }}"{% endif %} },
+            "author": { "@type": "Person", "name": "{{ r.author }}"{% if r.company %}, "worksFor": { "@type": "Organization", "name": "{{ r.company }}" }{% endif %}{% if r.title %}, "jobTitle": "{{ r.title }}"{% endif %} },
             "reviewBody": {{ r.quote | dump | safe }},
             "datePublished": "{{ r.datePublished }}"
           }{% if not loop.last %},{% endif %}

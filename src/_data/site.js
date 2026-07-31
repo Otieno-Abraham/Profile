@@ -93,12 +93,17 @@ module.exports = {
 
   // Real testimonials, sourced verbatim from verified Google Business Profile
   // reviews (business.google.com, checked 2026-07-31). Company attributed only
-  // where the reviewer stated it themselves in the review text.
+  // where the reviewer stated it themselves in the review text; otherwise
+  // source: "google" renders a Google Review badge instead of a fake company
+  // name. Bosibori Ruth's review exists on GBP but is deliberately excluded
+  // here per Abraham's request. Mwema Purity left a 5-star rating with no
+  // written text, so she's rating-only (no quote).
   testimonials: [
     {
       author: "Alex Omieno Omondi",
       title: "",
-      company: "Google review",
+      company: "",
+      source: "google",
       initial: "A",
       quote:
         "Abraham is highly professional, organized, and dependable. He demonstrates excellent communication, attention to detail, and a strong ability to keep operations running smoothly. I highly recommend his services to anyone looking for a reliable Executive Assistant or Chief of Staff.",
@@ -108,7 +113,8 @@ module.exports = {
     {
       author: "Janet Nyambura",
       title: "",
-      company: "Google review",
+      company: "",
+      source: "google",
       initial: "J",
       quote:
         "Working with Abraham was a great experience. Professional, responsive and highly organized. He helped me optimize my LinkedIn presence and made the entire process smooth and efficient. Highly recommended.",
@@ -119,6 +125,7 @@ module.exports = {
       author: "Greg",
       title: "",
       company: "Gregory Swarn Enterprises",
+      source: "google",
       initial: "G",
       quote:
         "I can't recommend Abraham highly enough! He is an exceptional Administrative Assistant with executive-level professionalism, incredible organizational skills, and a genuine commitment to excellence. He goes above and beyond, anticipates needs before they arise, and keeps everything running seamlessly.",
@@ -126,19 +133,10 @@ module.exports = {
       datePublished: "2026-07-27",
     },
     {
-      author: "Bosibori Ruth",
-      title: "",
-      company: "Google review",
-      initial: "B",
-      quote:
-        "Abraham is a highly skilled market research professional with a deep understanding of the Nairobi market and the broader East African region. His insights are practical, well-researched, and aligned with market realities. If you are looking for a trusted executive partner who brings both strategic thinking and execution excellence, Abraham is the person to go to.",
-      rating: 5,
-      datePublished: "2026-06-19",
-    },
-    {
       author: "Atinda Persons",
       title: "",
       company: "Pioneer Outsourcing BPO",
+      source: "google",
       initial: "A",
       quote:
         "What stands out most about Abraham is his commitment to people. He doesn't just build businesses, he builds confidence, develops talent, and creates an environment where others can succeed. Working with him at Pioneer Outsourcing was a truly rewarding experience.",
@@ -148,12 +146,24 @@ module.exports = {
     {
       author: "Gordon Odhiambo",
       title: "",
-      company: "Google review",
+      company: "",
+      source: "google",
       initial: "G",
       quote:
         "Abraham brought both sharp market research and solid operational support to our work together. He came prepared, asked the right questions, and delivered structured insights that actually moved things forward. A reliable partner you can trust to get things done right.",
       rating: 5,
       datePublished: "2026-06-19",
+    },
+    {
+      author: "Mwema Purity",
+      title: "",
+      company: "",
+      source: "google",
+      initial: "M",
+      quote: "",
+      ratingOnly: true,
+      rating: 5,
+      datePublished: "2026-07-27",
     },
   ],
 
