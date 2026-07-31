@@ -88,8 +88,12 @@ faq:
           <ul style="color:var(--ink-muted); font-size:var(--fs-small); padding-left: var(--space-5);">
             <li>BPO &amp; outsourcing operations</li>
             <li>Fintech &amp; financial services</li>
-            <li>Technology startups</li>
+            <li>Automotive technology</li>
             <li>International development / NGO</li>
+            <li>Legal services</li>
+            <li>Wellness &amp; health</li>
+            <li>Executive coaching &amp; leadership development</li>
+            <li>Multi-country business &amp; partnership services</li>
           </ul>
         </div>
         <div class="card reveal">
@@ -112,18 +116,47 @@ faq:
       <h2 style="margin-top: var(--space-7);">How I Work</h2>
       <p>Three principles, visible in every engagement. <strong>Visibility:</strong> every commitment tracked, every owner named. Dashboards replace inbox archaeology. <strong>Discipline:</strong> SLAs on response time, decisions logged, prep delivered 24 hours ahead. <strong>Async-first:</strong> documented processes and decision-ready summaries built for multi-time-zone teams. The full methodology is on <a href="/services/">the services page</a>; the receipts are in <a href="/case-studies/">the case studies</a> and <a href="/portfolio/">portfolio</a>.</p>
 
-      <h2 style="margin-top: var(--space-7);">What Clients Say</h2>
-      <blockquote style="border-left: 3px solid var(--accent); padding: var(--space-3) var(--space-5); color: var(--ink-muted); font-style: italic; margin: var(--space-4) 0;">
-        "He demonstrates excellent communication, attention to detail, and a strong ability to keep operations running smoothly." (Alex Omieno Omondi, {% include "partials/google-badge.njk" %})
-      </blockquote>
-      <blockquote style="border-left: 3px solid var(--accent); padding: var(--space-3) var(--space-5); color: var(--ink-muted); font-style: italic; margin: var(--space-4) 0;">
-        "Working with Abraham was a great experience. Professional, responsive and highly organized." (Janet Nyambura, {% include "partials/google-badge.njk" %})
-      </blockquote>
-      <blockquote style="border-left: 3px solid var(--accent); padding: var(--space-3) var(--space-5); color: var(--ink-muted); font-style: italic; margin: var(--space-4) 0;">
-        "He goes above and beyond, anticipates needs before they arise, and keeps everything running seamlessly." (Greg, Gregory Swarn Enterprises)
-      </blockquote>
+    </div>
+  </div>
+</section>
 
-      <h2 style="margin-top: var(--space-7);">Find Me Elsewhere</h2>
+<section class="section section-dark" aria-labelledby="about-testimonials">
+  <div class="container">
+    <div class="section-heading reveal">
+      <span class="eyebrow">Client Testimonials</span>
+      <h2 id="about-testimonials">What Clients Say</h2>
+      <p>Real engagements, real outcomes. Below are quotes from leaders I've worked with directly across BPO, partnerships, and operations.</p>
+    </div>
+    <div class="grid grid-3">
+      {% for r in site.testimonials %}
+        <article class="testimonial reveal">
+          <div class="testimonial-stars" aria-label="{{ r.rating }} out of 5 stars">
+            {% for i in range(0, r.rating) %}<span aria-hidden="true">★</span>{% endfor %}
+          </div>
+          {% if r.ratingOnly %}
+            <p class="testimonial-rating-only">Left a 5-star rating.</p>
+          {% else %}
+            <blockquote class="testimonial-quote">{{ r.quote }}</blockquote>
+          {% endif %}
+          <div class="testimonial-author">
+            <span class="testimonial-avatar" aria-hidden="true">{{ r.initial }}</span>
+            <div>
+              <div class="testimonial-name">{{ r.author }}</div>
+              <div class="testimonial-meta">
+                {% if r.title %}{{ r.title }}{% if r.company %}, {% endif %}{% endif %}{% if r.company %}{{ r.company }}{% elif r.source == "google" %}{% include "partials/google-badge.njk" %}{% endif %}
+              </div>
+            </div>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container-narrow">
+    <div class="reveal">
+      <h2>Find Me Elsewhere</h2>
       <p>I'm on <a href="{{ site.linkedin }}" rel="noopener">LinkedIn</a> and <a href="{{ site.upwork }}" rel="noopener">Upwork</a>, or directly at <a href="mailto:{{ site.email }}">{{ site.email }}</a> and WhatsApp <a href="{{ site.whatsapp }}" rel="noopener">{{ site.phoneDisplay }}</a>. If you're evaluating whether to work together, start with <a href="/hire-me/">the hire-me page</a> or <a href="/booking/">book the free 30-minute call</a> directly.</p>
     </div>
   </div>

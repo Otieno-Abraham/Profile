@@ -95,12 +95,12 @@ module.exports = {
   // reviews (business.google.com, checked 2026-07-31). Company attributed only
   // where the reviewer stated it themselves in the review text; otherwise
   // source: "google" renders a Google Review badge instead of a fake company
-  // name. Bosibori Ruth's review exists on GBP but is deliberately excluded
-  // here per Abraham's request. Mwema Purity left a 5-star rating with no
-  // written text, so she's rating-only (no quote).
+  // name. First-name-only display per Abraham's request. Mwema left a 5-star
+  // rating with no written text, so she's rating-only (no quote). Avatar is
+  // just an initial in a circle for now; real photos to be added later.
   testimonials: [
     {
-      author: "Alex Omieno Omondi",
+      author: "Alex",
       title: "",
       company: "",
       source: "google",
@@ -111,7 +111,7 @@ module.exports = {
       datePublished: "2026-07-28",
     },
     {
-      author: "Janet Nyambura",
+      author: "Janet",
       title: "",
       company: "",
       source: "google",
@@ -133,7 +133,18 @@ module.exports = {
       datePublished: "2026-07-27",
     },
     {
-      author: "Atinda Persons",
+      author: "Bosibori",
+      title: "",
+      company: "",
+      source: "google",
+      initial: "B",
+      quote:
+        "Abraham is a highly skilled market research professional with a deep understanding of the Nairobi market and the broader East African region. His insights are practical, well-researched, and aligned with market realities. If you are looking for a trusted executive partner who brings both strategic thinking and execution excellence, Abraham is the person to go to.",
+      rating: 5,
+      datePublished: "2026-06-19",
+    },
+    {
+      author: "Atinda",
       title: "",
       company: "Pioneer Outsourcing BPO",
       source: "google",
@@ -144,7 +155,7 @@ module.exports = {
       datePublished: "2026-06-19",
     },
     {
-      author: "Gordon Odhiambo",
+      author: "Gordon",
       title: "",
       company: "",
       source: "google",
@@ -155,7 +166,7 @@ module.exports = {
       datePublished: "2026-06-19",
     },
     {
-      author: "Mwema Purity",
+      author: "Mwema",
       title: "",
       company: "",
       source: "google",
