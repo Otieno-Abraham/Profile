@@ -92,7 +92,7 @@ module.exports = {
     { name: "Dotify",                  country: "Kenya",  status: "active", url: "https://autoauditgroup.com/companies/", logo: "/clients/dotify.webp" },
     { name: "Jivan Wellness",          country: "Kenya", status: "active", url: "https://jivanwellness.life", logo: "/clients/jivan-wellness.webp" },
     { name: "Gregory Swarn Enterprises", country: "USA", status: "active", url: "https://gregoryswarnenterprises.com", logo: "/clients/gregory-swarn.webp" },
-    { name: "Epena Law",                 country: "Kenya", status: "active", url: "https://epena-law.com/", logo: "/clients/epena-law.webp" },
+    { name: "Epena Law",                 country: "United Kingdom", status: "active", url: "https://epena-law.com/", logo: "/clients/epena-law.webp" },
   ],
 
   // Real testimonials, sourced verbatim from verified Google Business Profile
