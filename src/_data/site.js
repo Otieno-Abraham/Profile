@@ -218,6 +218,7 @@ module.exports = {
     { url: "/executive-business-partner/", label: "Executive Business Partner" },
     { url: "/remote-executive-assistant-africa/", label: "Remote EA, Africa" },
     { url: "/hire-executive-assistant-nairobi/", label: "Hire EA in Nairobi" },
+    { url: "/chief-of-staff-africa/", label: "Chief of Staff, Africa" },
   ],
 
   // Form integration
