@@ -70,25 +70,29 @@ module.exports = {
     "Startup Operations Lead",
   ],
 
-  // Past clients (logo bar). `logo` is optional, renders the real logo image
+  // Clients (logo bar). `logo` is optional, renders the real logo image
   // in a cream card (needed since several logos have opaque white/colored/
   // black backgrounds that would otherwise mismatch or vanish against the
   // dark page); entries without it fall back to styled text. `url` is optional.
+  // `status` is "active" (current, ongoing engagement) or "past" (completed
+  // engagement) -- drives the About page's Active/Past split. Keep in sync
+  // by hand; there is no automatic end-date to derive this from.
   clients: [
-    { name: "MSTRpay",                 country: "Sweden", url: "https://mstrpay.com", logo: "/clients/mstrpay.webp" },
-    { name: "Pioneer Outsourcing BPO", country: "Kenya",  url: "https://pioneeroutsourcingbpo.com", logo: "/clients/pioneer-outsourcing-bpo.webp" },
-    { name: "M-KOPA",                  country: "Kenya",  url: "https://m-kopa.com", logo: "/clients/m-kopa.webp" },
-    { name: "OKash Kenya",             country: "Kenya",  url: "https://okash.co.ke", logo: "/clients/okash.webp" },
-    { name: "Generation Kenya",        country: "Kenya",  url: "https://kenya.generation.org", logo: "/clients/generation-kenya.webp" },
-    { name: "Insight BPO",              country: "Kenya",  logo: "/clients/insight-bpo.webp" },
-    { name: "Dial Africa",              country: "Kenya",  logo: "/clients/dial-africa.webp" },
-    { name: "Auto Audit Group",        country: "Kenya",  url: "https://autoauditgroup.com", logo: "/clients/auto-audit-group.webp" },
-    { name: "Q360",                    country: "Kenya",  url: "https://autoauditgroup.com/companies/", logo: "/clients/q360.webp" },
-    { name: "Axios",                   country: "Kenya",  url: "https://autoauditgroup.com/companies/", logo: "/clients/axios.webp" },
-    { name: "Dotify",                  country: "Kenya",  url: "https://autoauditgroup.com/companies/", logo: "/clients/dotify.webp" },
-    { name: "Jivan Wellness",          country: "Kenya", url: "https://jivanwellness.life", logo: "/clients/jivan-wellness.webp" },
-    { name: "Gregory Swarn Enterprises", country: "USA", url: "https://gregoryswarnenterprises.com", logo: "/clients/gregory-swarn.webp" },
-    { name: "Epena Law",                 country: "Kenya", url: "https://epena-law.com/", logo: "/clients/epena-law.webp" },
+    { name: "MSTRpay",                 country: "Sweden", status: "past",   url: "https://mstrpay.com", logo: "/clients/mstrpay.webp" },
+    { name: "Pioneer Outsourcing BPO", country: "Kenya",  status: "active", url: "https://pioneeroutsourcingbpo.com", logo: "/clients/pioneer-outsourcing-bpo.webp" },
+    { name: "M-KOPA",                  country: "Kenya",  status: "past",   url: "https://m-kopa.com", logo: "/clients/m-kopa.webp" },
+    { name: "OKash Kenya",             country: "Kenya",  status: "past",   url: "https://okash.co.ke", logo: "/clients/okash.webp" },
+    { name: "Generation Kenya",        country: "Kenya",  status: "past",   url: "https://kenya.generation.org", logo: "/clients/generation-kenya.webp" },
+    { name: "Insight BPO",              country: "Kenya",  status: "past",   logo: "/clients/insight-bpo.webp" },
+    { name: "Dial Africa",              country: "Kenya",  status: "past",   logo: "/clients/dial-africa.webp" },
+    { name: "Hundred Acre Wood Holdings", country: "Kenya", status: "active", url: "https://www.linkedin.com/in/jai-pandit-/", logo: "/clients/hundred-acre-wood-holdings.webp" },
+    { name: "Auto Audit Group",        country: "Kenya",  status: "active", url: "https://autoauditgroup.com", logo: "/clients/auto-audit-group.webp" },
+    { name: "Q360",                    country: "Kenya",  status: "active", url: "https://autoauditgroup.com/companies/", logo: "/clients/q360.webp" },
+    { name: "Axios",                   country: "Kenya",  status: "active", url: "https://autoauditgroup.com/companies/", logo: "/clients/axios.webp" },
+    { name: "Dotify",                  country: "Kenya",  status: "active", url: "https://autoauditgroup.com/companies/", logo: "/clients/dotify.webp" },
+    { name: "Jivan Wellness",          country: "Kenya", status: "active", url: "https://jivanwellness.life", logo: "/clients/jivan-wellness.webp" },
+    { name: "Gregory Swarn Enterprises", country: "USA", status: "active", url: "https://gregoryswarnenterprises.com", logo: "/clients/gregory-swarn.webp" },
+    { name: "Epena Law",                 country: "Kenya", status: "active", url: "https://epena-law.com/", logo: "/clients/epena-law.webp" },
   ],
 
   // Real testimonials, sourced verbatim from verified Google Business Profile
