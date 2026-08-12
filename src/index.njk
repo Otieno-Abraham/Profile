@@ -28,39 +28,39 @@ faq:
     a: "Book a free 30-minute consultation at /booking, email hello@abrahamotieno.com, message WhatsApp at +254 757 272 468, or reach me on Upwork. Most engagements start within one week of the discovery call."
 ---
 
-{# ===================== HERO ===================== #}
-<section class="section hero">
-  <div class="container">
-    <div class="hero-grid">
-      <div class="hero-inner reveal">
-        <span class="eyebrow">Fractional Chief of Staff, Chief of Staff, Operations Partner &amp; Executive Assistant · Nairobi → Worldwide</span>
-        <h1>Fractional Chief of Staff, <em>Chief of Staff</em> &amp; Operations Partner<span class="hero-h1-tail"> for Kenya, East Africa &amp; Worldwide Remote</span></h1>
-        <p class="hero-sub">Founders focus on growth. I handle the rest.</p>
+{# ===================== HERO (cinematic, full-bleed) ===================== #}
+<section class="hero-cinematic">
+  <div class="hero-cinematic-media" aria-hidden="true">
+    <picture>
+      <source srcset="/abraham-hero.webp" type="image/webp">
+      <img src="/abraham-hero.jpg" alt="" width="1000" height="1250" loading="eager" fetchpriority="high">
+    </picture>
+    <div class="hero-cinematic-scrim"></div>
+  </div>
 
-        <div class="hero-ctas">
-          <a href="/booking/" class="btn btn-primary btn-lg">Book a free 30-minute call</a>
-          <a href="/portfolio/" class="btn btn-secondary btn-lg">See portfolio</a>
-        </div>
+  <div class="container hero-cinematic-inner">
+    <div class="hero-cinematic-content reveal">
+      <span class="eyebrow">Fractional Chief of Staff, Chief of Staff, Operations Partner &amp; Executive Assistant · Nairobi → Worldwide</span>
+      <h1>Fractional Chief of Staff, <em>Chief of Staff</em> &amp; Operations Partner<span class="hero-h1-tail"> for Kenya, East Africa &amp; Worldwide Remote</span></h1>
+      <p class="hero-sub">Founders focus on growth. I handle the rest.</p>
 
-        <div class="hero-meta" role="list">
-          <span role="listitem"><strong>Available now</strong> · Remote engagements</span>
-          <span role="listitem"><strong>Nairobi</strong> · EAT (UTC+3)</span>
-          <span role="listitem">Serving <strong>Kenya · EU · US · Worldwide</strong></span>
-        </div>
+      <div class="hero-ctas">
+        <a href="/booking/" class="btn btn-primary btn-lg">Book a free 30-minute call</a>
+        <a href="/portfolio/" class="btn btn-lg btn-secondary-on-dark">See portfolio</a>
       </div>
 
-      <div class="hero-portrait reveal" aria-hidden="false">
-        <picture>
-          <source srcset="/abraham-hero.webp" type="image/webp">
-          <img src="/abraham-hero.jpg" alt="Abraham Otieno, Fractional Chief of Staff, Chief of Staff and Operations Partner in Nairobi, Kenya, supporting CEOs and founders worldwide" width="1000" height="1250" loading="eager" fetchpriority="high">
-        </picture>
-        <div class="hero-portrait-tag">
-          <span class="pulse" aria-hidden="true"></span>
-          <span><strong style="color:#fff;">Available for new engagements</strong> · Replies within 24 hours</span>
-        </div>
+      <div class="hero-meta" role="list">
+        <span role="listitem"><strong>Available now</strong> · Remote engagements</span>
+        <span role="listitem"><strong>Nairobi</strong> · EAT (UTC+3)</span>
+        <span role="listitem">Serving <strong>Kenya · EU · US · Worldwide</strong></span>
       </div>
     </div>
   </div>
+
+  <a href="#trusted-by" class="hero-scroll-cue" aria-label="Scroll to see clients and results">
+    <span>Scroll</span>
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+  </a>
 </section>
 
 {# ===================== LOGO BAR (above the fold on desktop) ===================== #}
@@ -137,6 +137,9 @@ faq:
     </div>
   </div>
 </section>
+
+{# ===================== DOCUMENTED OUTCOMES ===================== #}
+{% include "partials/results-grid.njk" %}
 
 {# ===================== HIRE ME AS: role hub for internal linking ===================== #}
 <section class="section section-tight">
@@ -216,6 +219,12 @@ faq:
     </div>
   </div>
 </section>
+
+{# ===================== WHY FOUNDERS CHOOSE ME ===================== #}
+{% include "partials/why-choose.njk" %}
+
+{# ===================== WAYS TO ENGAGE ===================== #}
+{% include "partials/engage-tiers.njk" %}
 
 {# ===================== CTA BANNER ===================== #}
 <section class="section section-bg">

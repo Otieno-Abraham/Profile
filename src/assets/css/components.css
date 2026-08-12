@@ -356,6 +356,12 @@
   margin-top: var(--space-2);
   text-wrap: balance;
 }
+.stat-detail {
+  font-size: var(--fs-micro);
+  color: var(--ink-soft);
+  margin-top: var(--space-2);
+  line-height: var(--lh-snug);
+}
 
 /* ---------- Logo bar ---------- */
 .logos {
@@ -371,15 +377,34 @@
   text-align: center;
   margin-bottom: var(--space-4);
 }
-.logos-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--space-5) var(--space-4);
-  align-items: center;
-  justify-items: center;
+/* Auto-scrolling marquee: two identical .logos-set copies placed side by
+   side in a flex track, animated -50% so the loop is seamless. */
+.logos-marquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
 }
-@media (min-width: 768px) {
-  .logos-grid { grid-template-columns: repeat(5, 1fr); gap: var(--space-6); }
+.logos-track {
+  display: flex;
+  width: max-content;
+  animation: logoscroll 34s linear infinite;
+}
+.logos-marquee:hover .logos-track { animation-play-state: paused; }
+.logos-set {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: var(--space-7);
+  padding: 0 var(--space-4);
+}
+@keyframes logoscroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .logos-track { animation: none; }
+  .logos-marquee { overflow-x: auto; }
+  .logos-set[aria-hidden="true"] { display: none; }
 }
 .logo-item {
   display: inline-flex;
@@ -390,6 +415,7 @@
   min-height: 48px;
   padding: var(--space-2) var(--space-3);
   opacity: 0.9;
+  flex-shrink: 0;
   transition: opacity var(--dur) var(--ease-out), transform var(--dur) var(--ease-out);
 }
 .logo-item:hover { opacity: 1; transform: translateY(-2px); }
@@ -667,4 +693,192 @@ p {
 .breadcrumbs a { color: var(--ink-muted); text-decoration: none; }
 .breadcrumbs a:hover { color: var(--accent); }
 .breadcrumbs .sep { color: var(--ink-soft); }
+
+/* ============================================================
+   CINEMATIC HERO — homepage only. Same copy as the standard .hero,
+   just staged as a full-bleed dark scrim over the portrait photo
+   instead of the side-by-side card layout. Warm Editorial palette
+   (charcoal scrim + terracotta accent) standing in for the source
+   reference's dark/gold treatment.
+   ============================================================ */
+.hero-cinematic {
+  position: relative;
+  overflow: hidden;
+  min-height: min(92vh, 820px);
+  display: flex;
+  align-items: flex-end;
+}
+.hero-cinematic-media { position: absolute; inset: 0; z-index: 0; }
+.hero-cinematic-media picture,
+.hero-cinematic-media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 78% 18%;
+  display: block;
+}
+.hero-cinematic-scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(100deg, var(--charcoal) 0%, color-mix(in srgb, var(--charcoal) 92%, transparent) 32%, color-mix(in srgb, var(--charcoal) 55%, transparent) 55%, color-mix(in srgb, var(--charcoal) 12%, transparent) 78%, transparent 100%),
+    linear-gradient(0deg, var(--charcoal) 0%, transparent 42%);
+}
+.hero-cinematic-inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding-top: calc(var(--space-9) + var(--space-6));
+  padding-bottom: var(--space-9);
+}
+.hero-cinematic-content { max-width: 680px; }
+.hero-cinematic-content .eyebrow { color: var(--accent-on-dark); }
+.hero-cinematic-content h1 {
+  color: #FFFFFF;
+  font-size: var(--fs-display);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-tight);
+  margin-bottom: var(--space-4);
+}
+.hero-cinematic-content h1 em {
+  font-style: normal;
+  font-weight: var(--fw-medium);
+  color: var(--accent-on-dark);
+}
+.hero-cinematic-content .hero-h1-tail { color: rgba(233, 221, 210, 0.7); }
+.hero-cinematic-content .hero-sub {
+  font-family: var(--font-heading);
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-h3);
+  color: rgba(233, 221, 210, 0.85);
+  max-width: 600px;
+  margin-bottom: var(--space-6);
+}
+.hero-cinematic-content .hero-meta { color: rgba(233, 221, 210, 0.7); }
+.hero-cinematic-content .hero-meta strong { color: #FFFFFF; }
+
+.btn-secondary-on-dark {
+  background: transparent;
+  border: 1.5px solid rgba(233, 221, 210, 0.5);
+  color: #FFFFFF;
+}
+.btn-secondary-on-dark:hover { border-color: #FFFFFF; background: rgba(255, 255, 255, 0.08); color: #FFFFFF; }
+
+.hero-scroll-cue {
+  position: absolute;
+  left: 50%;
+  bottom: var(--space-5);
+  transform: translateX(-50%);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  color: rgba(233, 221, 210, 0.75);
+  font-family: var(--font-label);
+  font-size: var(--fs-micro);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  text-decoration: none;
+  animation: scrollcue 2.2s ease-in-out infinite;
+}
+.hero-scroll-cue:hover { color: #FFFFFF; }
+@keyframes scrollcue {
+  0%, 100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, 6px); }
+}
+@media (prefers-reduced-motion: reduce) { .hero-scroll-cue { animation: none; } }
+@media (max-width: 767px) {
+  .hero-cinematic { min-height: min(88vh, 640px); }
+  .hero-cinematic-content h1 { font-size: 2.25rem; }
+  .hero-cinematic-content h1 .hero-h1-tail {
+    display: block;
+    font-size: var(--fs-h3);
+    font-weight: var(--fw-regular);
+    letter-spacing: var(--tracking-normal);
+    line-height: var(--lh-snug);
+    color: rgba(233, 221, 210, 0.65);
+    margin-top: var(--space-2);
+  }
+  .hero-cinematic-media picture, .hero-cinematic-media img { object-position: 65% 15%; }
+  .hero-cinematic-scrim {
+    background:
+      linear-gradient(180deg, color-mix(in srgb, var(--charcoal) 55%, transparent) 0%, var(--charcoal) 80%),
+      linear-gradient(90deg, color-mix(in srgb, var(--charcoal) 65%, transparent), transparent);
+  }
+}
+
+/* ---------- Results grid (documented outcomes) ---------- */
+.result-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+}
+.result-kicker {
+  display: block;
+  font-family: var(--font-label);
+  font-size: var(--fs-micro);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: var(--space-3);
+}
+.result-card p { color: var(--ink-muted); font-size: var(--fs-body); }
+
+/* ---------- Engagement tiers ---------- */
+.tiers {
+  display: grid;
+  gap: var(--space-5);
+  grid-template-columns: 1fr;
+}
+@media (min-width: 768px) {
+  .tiers { grid-template-columns: repeat(2, 1fr); gap: var(--space-6); }
+}
+.tier-card {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+}
+.tier-num {
+  display: block;
+  font-family: var(--font-heading);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-h3);
+  color: var(--primary-soft);
+  -webkit-text-stroke: 1px var(--primary);
+  margin-bottom: var(--space-3);
+}
+.tier-meta {
+  font-size: var(--fs-small);
+  font-weight: var(--fw-semibold);
+  color: var(--accent);
+  margin-bottom: var(--space-2);
+}
+.tier-card p:not(.tier-meta) { color: var(--ink-muted); font-size: var(--fs-body); }
+
+/* ---------- Numbered value list (why-choose) ---------- */
+.value-list { list-style: none; padding: 0; margin: 0; }
+.value-list > li {
+  display: flex;
+  gap: var(--space-5);
+  padding: var(--space-5) 0;
+  border-top: 1px solid var(--dark-line);
+}
+.value-list > li:first-child { border-top: none; }
+.value-num {
+  font-family: var(--font-heading);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-h3);
+  color: var(--accent-on-dark);
+  flex-shrink: 0;
+  min-width: 2.5ch;
+}
+.value-list h3 { color: #FFFFFF; margin-bottom: var(--space-2); }
+.value-list p { color: var(--dark-ink-muted); font-size: var(--fs-body); }
 .breadcrumbs [aria-current="page"] { color: var(--ink-soft); }

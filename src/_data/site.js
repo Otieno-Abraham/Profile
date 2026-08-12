@@ -42,13 +42,14 @@ module.exports = {
   upwork: "https://www.upwork.com/freelancers/~016468049604acd788",
   facebook: "https://www.facebook.com/abrahamotieno",
 
-  // Headline metrics (do not invent, these stay accurate)
+  // Headline metrics (do not invent, these stay accurate). `detail` is an
+  // optional one-line caption rendered under the stat by partials/stats.njk.
   metrics: [
-    { value: "80%", label: "Faster team response", numeric: 80 },
-    { value: "200+", label: "Agents onboarded", numeric: 200 },
-    { value: "15+", label: "Hours/week reclaimed", numeric: 15 },
-    { value: "100%", label: "Project success rate", numeric: 100 },
-    { value: "3", label: "Continents served", numeric: 3 },
+    { value: "80%", label: "Faster team response", numeric: 80, detail: "Through structured tracking and SLA discipline" },
+    { value: "200+", label: "Agents onboarded", numeric: 200, detail: "Across BPO and customer operations" },
+    { value: "15+", label: "Hours/week reclaimed", numeric: 15, detail: "Time returned to founders and CEOs" },
+    { value: "100%", label: "Project success rate", numeric: 100, detail: "Across 10+ companies, zero dropped deliverables" },
+    { value: "3", label: "Continents served", numeric: 3, detail: "Market entry supported in Africa, Europe & North America" },
   ],
 
   // Role cluster: single source of truth for entity language across pages and schema.

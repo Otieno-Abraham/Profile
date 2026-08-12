@@ -4,6 +4,7 @@
       <div>
         <dt class="stat-label">{{ m.label }}</dt>
         <dd class="stat-value">{{ m.value }}</dd>
+        {% if m.detail %}<p class="stat-detail">{{ m.detail }}</p>{% endif %}
       </div>
     {% endfor %}
   </dl>

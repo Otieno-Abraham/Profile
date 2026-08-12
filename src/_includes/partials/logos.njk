@@ -1,26 +1,35 @@
-<section class="logos" aria-label="Clients">
+{% macro logoSet(hidden) %}
+<div class="logos-set"{% if hidden %} aria-hidden="true"{% endif %}>
+  {% for client in site.clients %}
+    {% if client.url %}
+    <a class="logo-item" href="{{ client.url }}" rel="noopener" target="_blank" title="{{ client.name }} · {{ client.country }}: visit website" aria-label="{{ client.name }} (opens in new tab)"{% if hidden %} tabindex="-1"{% endif %}>
+      {% if client.logo %}
+      <span class="logo-card"><img class="logo-img" src="{{ client.logo }}" alt="{{ client.name }}" loading="lazy" width="170" height="85"></span>
+      {% else %}
+      <span class="logo-fallback">{{ client.name }}</span>
+      {% endif %}
+    </a>
+    {% else %}
+    <span class="logo-item" title="{{ client.name }} · {{ client.country }}">
+      {% if client.logo %}
+      <span class="logo-card"><img class="logo-img" src="{{ client.logo }}" alt="{{ client.name }}" loading="lazy" width="170" height="85"></span>
+      {% else %}
+      <span class="logo-fallback">{{ client.name }}</span>
+      {% endif %}
+    </span>
+    {% endif %}
+  {% endfor %}
+</div>
+{% endmacro %}
+
+<section class="logos" aria-label="Clients" id="trusted-by">
   <div class="container">
     <p class="logos-label">Trusted by leaders at</p>
-    <div class="logos-grid">
-      {% for client in site.clients %}
-        {% if client.url %}
-        <a class="logo-item" href="{{ client.url }}" rel="noopener" target="_blank" title="{{ client.name }} · {{ client.country }}: visit website" aria-label="{{ client.name }} (opens in new tab)">
-          {% if client.logo %}
-          <span class="logo-card"><img class="logo-img" src="{{ client.logo }}" alt="{{ client.name }}" loading="lazy" width="170" height="85"></span>
-          {% else %}
-          <span class="logo-fallback">{{ client.name }}</span>
-          {% endif %}
-        </a>
-        {% else %}
-        <span class="logo-item" title="{{ client.name }} · {{ client.country }}">
-          {% if client.logo %}
-          <span class="logo-card"><img class="logo-img" src="{{ client.logo }}" alt="{{ client.name }}" loading="lazy" width="170" height="85"></span>
-          {% else %}
-          <span class="logo-fallback">{{ client.name }}</span>
-          {% endif %}
-        </span>
-        {% endif %}
-      {% endfor %}
+  </div>
+  <div class="logos-marquee">
+    <div class="logos-track">
+      {{ logoSet(false) }}
+      {{ logoSet(true) }}
     </div>
   </div>
 </section>
