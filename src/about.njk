@@ -24,29 +24,29 @@ faq:
     a: "Email hello@abrahamotieno.com, WhatsApp +254 757 272 468, LinkedIn, Upwork, or book a free 30-minute consultation at abrahamotieno.com/booking. He replies within 24 hours."
 ---
 
-<section class="section hero">
-  <div class="container">
-    <div class="hero-grid">
-      <div class="hero-inner reveal">
-        <span class="eyebrow">About</span>
-        <h1>Abraham Otieno, <em>Fractional Chief of Staff, Chief of Staff &amp; Operations Partner</em></h1>
-        <p class="hero-sub">Based in Nairobi, Kenya. Trusted by founders and CEOs on three continents to run the operations behind their growth.</p>
-        <div class="hero-ctas">
-          <a href="/hire-me/" class="btn btn-primary btn-lg">Work with me</a>
-          <a href="/case-studies/" class="btn btn-secondary btn-lg">See the work</a>
-        </div>
-      </div>
-      <div class="hero-portrait reveal">
-        <picture>
-          <source srcset="/abraham-hero.webp" type="image/webp">
-          <img src="/abraham-hero.jpg" alt="Portrait of Abraham Otieno, Fractional Chief of Staff and Chief of Staff based in Nairobi, Kenya" width="420" height="525" loading="eager" fetchpriority="high">
-        </picture>
-        <div class="hero-portrait-tag"><span class="pulse"></span><span><strong style="color:#fff;">Available for new engagements</strong></span></div>
+<section class="hero-cinematic hero-cinematic-short">
+  <div class="hero-cinematic-media" aria-hidden="true">
+    <picture>
+      <source srcset="/abraham-hero.webp" type="image/webp">
+      <img src="/abraham-hero.jpg" alt="" width="1000" height="1250" loading="eager" fetchpriority="high">
+    </picture>
+    <div class="hero-cinematic-scrim"></div>
+  </div>
+
+  <div class="container hero-cinematic-inner">
+    <div class="hero-cinematic-content reveal">
+      <span class="eyebrow">About</span>
+      <h1>Abraham Otieno, <em>Fractional Chief of Staff, Chief of Staff &amp; Operations Partner</em></h1>
+      <p class="hero-sub">Based in Nairobi, Kenya. Trusted by founders and CEOs on three continents to run the operations behind their growth.</p>
+      <div class="hero-ctas">
+        <a href="/hire-me/" class="btn btn-primary btn-lg">Work with me</a>
+        <a href="/case-studies/" class="btn btn-lg btn-secondary-on-dark">See the work</a>
       </div>
     </div>
   </div>
 </section>
 
+{% set logosTextOnly = true %}
 {% include "partials/logos.njk" %}
 
 {% include "partials/results-grid.njk" %}

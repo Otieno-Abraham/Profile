@@ -1,17 +1,22 @@
-{% macro logoSet(hidden) %}
-<div class="logos-set"{% if hidden %} aria-hidden="true"{% endif %}>
+{# Set `{% set logosTextOnly = true %}` before including this partial to
+   render client names as running text instead of logo images (About,
+   Services, Hire Me). Home/CV/landing pages omit the flag and keep logos. #}
+{% set textOnly = logosTextOnly or false %}
+
+{% macro logoSet(hidden, textOnly) %}
+<div class="logos-set{% if textOnly %} logos-set-text{% endif %}"{% if hidden %} aria-hidden="true"{% endif %}>
   {% for client in site.clients %}
     {% if client.url %}
-    <a class="logo-item" href="{{ client.url }}" rel="noopener" target="_blank" title="{{ client.name }} · {{ client.country }}: visit website" aria-label="{{ client.name }} (opens in new tab)"{% if hidden %} tabindex="-1"{% endif %}>
-      {% if client.logo %}
+    <a class="logo-item{% if textOnly %} logo-item-text{% endif %}" href="{{ client.url }}" rel="noopener" target="_blank" title="{{ client.name }} · {{ client.country }}: visit website" aria-label="{{ client.name }} (opens in new tab)"{% if hidden %} tabindex="-1"{% endif %}>
+      {% if client.logo and not textOnly %}
       <span class="logo-card"><img class="logo-img" src="{{ client.logo }}" alt="{{ client.name }}" loading="lazy" width="170" height="85"></span>
       {% else %}
       <span class="logo-fallback">{{ client.name }}</span>
       {% endif %}
     </a>
     {% else %}
-    <span class="logo-item" title="{{ client.name }} · {{ client.country }}">
-      {% if client.logo %}
+    <span class="logo-item{% if textOnly %} logo-item-text{% endif %}" title="{{ client.name }} · {{ client.country }}">
+      {% if client.logo and not textOnly %}
       <span class="logo-card"><img class="logo-img" src="{{ client.logo }}" alt="{{ client.name }}" loading="lazy" width="170" height="85"></span>
       {% else %}
       <span class="logo-fallback">{{ client.name }}</span>
@@ -28,8 +33,8 @@
   </div>
   <div class="logos-marquee">
     <div class="logos-track">
-      {{ logoSet(false) }}
-      {{ logoSet(true) }}
+      {{ logoSet(false, textOnly) }}
+      {{ logoSet(true, textOnly) }}
     </div>
   </div>
 </section>

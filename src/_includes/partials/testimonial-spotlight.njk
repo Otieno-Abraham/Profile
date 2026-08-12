@@ -1,0 +1,23 @@
+{# Single featured testimonial, pulled live from site.testimonials (not
+   duplicated text) so it can never drift from the source of truth. #}
+<section class="section spotlight-section">
+  <div class="container container-narrow">
+    {% for r in site.testimonials %}
+      {% if r.company == "Gregory Swarn Enterprises" %}
+      <figure class="spotlight reveal">
+        <div class="spotlight-stars" aria-label="{{ r.rating }} out of 5 stars">
+          {% for i in range(0, r.rating) %}<span aria-hidden="true">★</span>{% endfor %}
+        </div>
+        <blockquote class="spotlight-quote">&ldquo;{{ r.quote }}&rdquo;</blockquote>
+        <figcaption class="spotlight-author">
+          {% include "partials/testimonial-avatar.njk" %}
+          <div>
+            <div class="spotlight-name">{{ r.author }}</div>
+            <div class="spotlight-meta">{{ r.company }}</div>
+          </div>
+        </figcaption>
+      </figure>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
