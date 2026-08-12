@@ -720,8 +720,14 @@ p {
   min-height: min(92vh, 820px);
   display: flex;
   align-items: flex-end;
+  background: var(--charcoal);
 }
-.hero-cinematic-media { position: absolute; inset: 0; z-index: 0; }
+/* Image confined to a right-hand panel (not full-bleed) so a portrait-
+   oriented headshot doesn't get stretched into an unrecognizable sliver
+   on a very wide banner — the left stays solid charcoal for text, the
+   right panel is close enough to the photo's own aspect ratio that the
+   face crops predictably instead of drifting off-frame. */
+.hero-cinematic-media { position: absolute; inset: 0; left: 52%; z-index: 0; }
 .hero-cinematic-media picture,
 .hero-cinematic-media img {
   position: absolute;
@@ -729,15 +735,15 @@ p {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 78% 18%;
+  object-position: 50% 20%;
   display: block;
 }
+/* Soft seam where the image panel meets the solid charcoal, rather than a
+   long diagonal fade — matches the reference site's confident split. */
 .hero-cinematic-scrim {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(100deg, var(--charcoal) 0%, color-mix(in srgb, var(--charcoal) 92%, transparent) 32%, color-mix(in srgb, var(--charcoal) 55%, transparent) 55%, color-mix(in srgb, var(--charcoal) 12%, transparent) 78%, transparent 100%),
-    linear-gradient(0deg, var(--charcoal) 0%, transparent 42%);
+  background: linear-gradient(90deg, var(--charcoal) 0%, transparent 14%);
 }
 .hero-cinematic-inner {
   position: relative;
@@ -746,7 +752,7 @@ p {
   padding-top: calc(var(--space-9) + var(--space-6));
   padding-bottom: var(--space-9);
 }
-.hero-cinematic-content { max-width: 680px; }
+.hero-cinematic-content { max-width: 540px; }
 .hero-cinematic-content .eyebrow { color: var(--accent-on-dark); }
 .hero-cinematic-content h1 {
   color: #FFFFFF;
@@ -821,11 +827,13 @@ p {
     color: rgba(233, 221, 210, 0.65);
     margin-top: var(--space-2);
   }
-  .hero-cinematic-media picture, .hero-cinematic-media img { object-position: 65% 15%; }
+  /* Mobile stacks text over image rather than splitting left/right, so the
+     panel goes back to full-bleed (portrait image suits a narrow viewport
+     naturally, no left-panel trick needed here). */
+  .hero-cinematic-media { left: 0; }
+  .hero-cinematic-media picture, .hero-cinematic-media img { object-position: 50% 14%; }
   .hero-cinematic-scrim {
-    background:
-      linear-gradient(180deg, color-mix(in srgb, var(--charcoal) 55%, transparent) 0%, var(--charcoal) 80%),
-      linear-gradient(90deg, color-mix(in srgb, var(--charcoal) 65%, transparent), transparent);
+    background: linear-gradient(180deg, var(--charcoal) 0%, var(--charcoal) 40%, color-mix(in srgb, var(--charcoal) 45%, transparent) 56%, transparent 74%);
   }
 }
 
