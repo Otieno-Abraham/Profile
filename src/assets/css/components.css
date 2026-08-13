@@ -820,8 +820,22 @@ p {
 .hero-cinematic-short .hero-cinematic-inner { padding-top: var(--space-8); padding-bottom: var(--space-8); }
 
 @media (max-width: 767px) {
-  .hero-cinematic { min-height: min(88vh, 640px); min-height: min(88dvh, 640px); }
-  .hero-cinematic-short { min-height: min(72vh, 520px); min-height: min(72dvh, 520px); }
+  /* Mobile stacks a solid text panel above a dedicated photo panel instead
+     of overlaying text on the image (the desktop side-by-side split has no
+     room on a narrow screen). Overlaying was hiding the face directly
+     behind the headline - this gives the photo its own clear zone instead. */
+  .hero-cinematic {
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .hero-cinematic-short { min-height: 0; }
+  .hero-cinematic-inner {
+    order: 1;
+    padding-top: var(--space-8);
+    padding-bottom: var(--space-6);
+  }
   .hero-cinematic-content h1 { font-size: 2.25rem; }
   .hero-cinematic-content h1 .hero-h1-tail {
     display: block;
@@ -832,14 +846,21 @@ p {
     color: rgba(233, 221, 210, 0.65);
     margin-top: var(--space-2);
   }
-  /* Mobile stacks text over image rather than splitting left/right, so the
-     panel goes back to full-bleed (portrait image suits a narrow viewport
-     naturally, no left-panel trick needed here). */
-  .hero-cinematic-media { left: 0; }
-  .hero-cinematic-media picture, .hero-cinematic-media img { object-position: 50% 14%; }
-  .hero-cinematic-scrim {
-    background: linear-gradient(180deg, var(--charcoal) 0%, var(--charcoal) 40%, color-mix(in srgb, var(--charcoal) 45%, transparent) 56%, transparent 74%);
+  .hero-cinematic-media {
+    order: 2;
+    position: relative;
+    inset: auto;
+    left: auto;
+    height: 46vh;
+    height: 46dvh;
+    min-height: 340px;
   }
+  .hero-cinematic-short .hero-cinematic-media { height: 38vh; height: 38dvh; min-height: 300px; }
+  .hero-cinematic-media picture, .hero-cinematic-media img { object-position: 50% 24%; }
+  .hero-cinematic-scrim {
+    background: linear-gradient(180deg, var(--charcoal) 0%, transparent 14%, transparent 78%, var(--charcoal) 100%);
+  }
+  .hero-scroll-cue { bottom: var(--space-4); }
 }
 
 /* ---------- Results grid (documented outcomes) ---------- */
