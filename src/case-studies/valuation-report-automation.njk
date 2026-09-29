@@ -1,0 +1,162 @@
+---
+layout: false
+permalink: /case-studies/valuation-report-automation/
+title: "Case study: Valuation report automation"
+description: "A private, browser-based tool that reads motor valuation reports and builds the monthly Excel schedule automatically."
+eleventyExcludeFromCollections: false
+---
+{% raw %}
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="canonical" href="https://abrahamotieno.com/case-studies/valuation-report-automation/">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Case study: Valuation report automation</title>
+<meta name="description" content="A private, browser-based tool that reads motor valuation reports and builds the monthly Excel schedule automatically, with nothing uploaded or stored.">
+<style>
+  :root{--bg:#f7f8fa;--card:#fff;--ink:#17202b;--mute:#5b6675;--line:#e1e5eb;--brand:#1f5fbf;--brand-ink:#fff;--ok:#1d7a46;--okbg:#e6f4ec;--accent:#e8f0fc}
+  @media(prefers-color-scheme:dark){:root{--bg:#12161c;--card:#1b212a;--ink:#e8ecf2;--mute:#9aa6b6;--line:#2b3340;--brand:#6ea3f2;--brand-ink:#0d1420;--ok:#6fd39a;--okbg:#17372a;--accent:#1d2a3f}}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  .wrap{max-width:960px;margin:0 auto;padding:0 20px}
+  header.hero{padding:56px 0 36px}
+  .eyebrow{color:var(--brand);font-weight:600;font-size:14px;letter-spacing:.06em;text-transform:uppercase}
+  h1{font-size:clamp(30px,5vw,46px);line-height:1.15;margin:.3em 0 .4em}
+  .lead{font-size:clamp(18px,2.4vw,21px);color:var(--mute);max-width:720px;margin:0}
+  .meta{display:flex;flex-wrap:wrap;gap:8px 28px;margin-top:26px;color:var(--mute);font-size:15px}
+  .meta b{color:var(--ink);font-weight:600}
+  h2{font-size:26px;margin:0 0 12px}
+  section{padding:34px 0;border-top:1px solid var(--line)}
+  p{margin:0 0 14px}
+  .grid{display:grid;gap:16px}
+  .g3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+  .g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .card h3{margin:0 0 6px;font-size:18px}
+  .card p{margin:0;color:var(--mute);font-size:15.5px}
+  .stat{font-size:34px;font-weight:700;color:var(--brand);line-height:1.1}
+  .stat small{display:block;font-size:14px;font-weight:500;color:var(--mute);margin-top:6px}
+  .shot{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--card);box-shadow:0 8px 30px rgba(0,0,0,.08)}
+  .shot img{display:block;width:100%;height:auto}
+  figcaption{color:var(--mute);font-size:14.5px;margin-top:10px}
+  figure{margin:0}
+  ol.steps{counter-reset:s;list-style:none;margin:0;padding:0;display:grid;gap:14px}
+  ol.steps li{counter-increment:s;display:flex;gap:16px;align-items:flex-start}
+  ol.steps li::before{content:counter(s);flex:none;width:34px;height:34px;border-radius:50%;background:var(--brand);color:var(--brand-ink);display:grid;place-items:center;font-weight:700;font-size:15px}
+  ol.steps b{display:block}
+  ol.steps span{color:var(--mute);font-size:15.5px}
+  table{width:100%;border-collapse:collapse;font-size:15px;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+  th{background:var(--accent);font-weight:600}
+  tr:last-child td{border-bottom:0}
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+  .tags li{background:var(--accent);color:var(--ink);padding:5px 12px;border-radius:99px;font-size:14px}
+  .note{background:var(--okbg);color:var(--ok);border-radius:12px;padding:14px 16px;font-size:15.5px}
+  a.btn{display:inline-block;background:var(--brand);color:var(--brand-ink);text-decoration:none;padding:11px 18px;border-radius:10px;font-weight:600;font-size:15.5px}
+  a.btn.alt{background:transparent;color:var(--brand);border:1px solid var(--brand)}
+  .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+  footer{padding:30px 0 60px;color:var(--mute);font-size:14px;border-top:1px solid var(--line)}
+  code{background:var(--accent);padding:1px 6px;border-radius:5px;font-size:.92em}
+</style>
+</head>
+<body>
+
+<header class="hero"><div class="wrap">
+  <div class="eyebrow">Case study · Automation</div>
+  <h1>From re-typing reports to one drag-and-drop</h1>
+  <p class="lead">A private, browser-based tool that reads motor valuation reports and builds the monthly Excel schedule automatically. No uploads, no storage, and every figure checked before it reaches the spreadsheet.</p>
+  <div class="meta">
+    <span><b>Built by</b> Abraham Otieno</span>
+    <span><b>For</b> an independent vehicle valuation firm (client kept confidential)</span>
+    <span><b>Type</b> Workflow automation · Data extraction · Web tool</span>
+  </div>
+</div></header>
+
+<main class="wrap">
+
+<section>
+  <h2>The problem</h2>
+  <p>Every valuation report is a multi-page PDF. To bill insurers, someone had to open each one and copy five details into a monthly Excel schedule: inspection date, insurer, registration, policy number and report reference. Then work out the valuation type and the fee, and check that no report had been entered twice.</p>
+  <p>It was slow, easy to get wrong, and the documents are highly confidential, so sending them to an online service was not an option.</p>
+</section>
+
+<section>
+  <h2>The solution</h2>
+  <p>Drop a report, a whole folder, or a scan into the page. The tool reads it, fills in the row, works out the fee, warns about anything doubtful, and produces a ready-to-use Excel file that matches the firm's existing template. Nothing else from the report leaves the page.</p>
+  <figure>
+    <div class="shot"><img src="assets/screenshot-batch.jpg" alt="The tool showing four sample reports: two ready, two flagged as repeats, with the report page and highlighted source values beside the editable row"></div>
+    <figcaption>Sample reports (fictional data). Clicking a field highlights exactly where on the report that value was read from.</figcaption>
+  </figure>
+</section>
+
+<section>
+  <h2>How it works</h2>
+  <ol class="steps">
+    <li><div><b>Drop in reports</b><span>PDFs, scanned PDFs, photos or entire folders. Digital PDFs are read directly; scans go through OCR.</span></div></li>
+    <li><div><b>Each value is found by its label</b><span>The reader locates a label such as "Policy No" and takes the text beside it, including wrapped lines, so a value always belongs to its own label, whatever order the PDF stores its text in.</span></div></li>
+    <li><div><b>Type and fee come from the report heading</b><span>"Valuation Report" is Standard (1,000). "Digital Report" or "AI Report" is Digital/AI (900). Nothing to select by hand.</span></div></li>
+    <li><div><b>Checks run automatically</b><span>Cross-checks, repeat detection and OCR safeguards (below) decide whether a row is Ready or needs a human look.</span></div></li>
+    <li><div><b>Download the Excel schedule</b><span>Only clean rows are exported, in the firm's own column layout with the Month and lookup formulas intact.</span></div></li>
+  </ol>
+</section>
+
+<section>
+  <h2>Built for accuracy</h2>
+  <div class="grid g3">
+    <div class="card"><h3>Cross-checks</h3><p>The inspection date is compared with the date embedded in the report reference and with photo timestamps. The registration is compared with the file name. Any mismatch is flagged.</p></div>
+    <div class="card"><h3>Repeat detection</h3><p>Catches the same file, the same report reference, or the same vehicle, policy and date, within a batch and against an existing schedule the user attaches.</p></div>
+    <div class="card"><h3>Human in the loop for scans</h3><p>OCR can misread characters, so every scanned field is flagged and must be confirmed against the page image before it is exported.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Confidentiality by design</h2>
+  <div class="note">The reports never leave the user's computer.</div>
+  <div class="grid g2" style="margin-top:16px">
+    <div class="card"><h3>Runs entirely in the browser</h3><p>There is no server, database or upload. The PDF reader, OCR engine and Excel writer are bundled with the tool and run locally.</p></div>
+    <div class="card"><h3>Locked to its own origin</h3><p>A strict Content-Security-Policy stops the page sending data anywhere else. It was tested with zero blocked or attempted outside requests.</p></div>
+    <div class="card"><h3>Nothing is stored</h3><p>No cookies, local storage or caches. Closing the tab erases everything, and it wipes itself after 30 minutes of inactivity.</p></div>
+    <div class="card"><h3>One output</h3><p>The only thing that leaves is the Excel file the user chooses to download, containing just the schedule columns.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Results</h2>
+  <div class="grid g3">
+    <div class="card"><div class="stat">~20 ms<small>to read one digital report</small></div></div>
+    <div class="card"><div class="stat">~9 s<small>for 100 reports of about 5 MB each</small></div></div>
+    <div class="card"><div class="stat">2–4 s<small>per scanned page, several read in parallel</small></div></div>
+  </div>
+  <p style="margin-top:16px;color:var(--mute);font-size:15px">Measured in a browser test on a laptop. Reading a batch does not freeze the page; page previews load only when a file is opened.</p>
+</section>
+
+<section>
+  <h2>Try it with sample data</h2>
+  <p>All files below are fictional and created for this demonstration. No real client, vehicle or policy is shown.</p>
+  <table>
+    <tr><th>Sample file</th><th>What it shows</th></tr>
+    <tr><td><a href="assets/sample-valuation-report.pdf">sample-valuation-report.pdf</a></td><td>A "Valuation Report": read as <b>Standard, 1,000</b></td></tr>
+    <tr><td><a href="assets/sample-digital-report.pdf">sample-digital-report.pdf</a></td><td>A "Digital Report": read as <b>Digital/AI, 900</b></td></tr>
+    <tr><td><a href="assets/sample-output.xlsx">sample-output.xlsx</a></td><td>The Excel schedule the tool produces from those two reports</td></tr>
+  </table>
+  <!-- If you host the tool, add: <div class="row"><a class="btn" href="/valuation-tool/">Open the live demo</a></div> -->
+</section>
+
+<section>
+  <h2>Under the hood</h2>
+  <ul class="tags">
+    <li>JavaScript</li><li>pdf.js</li><li>Tesseract OCR (WebAssembly)</li><li>ExcelJS</li>
+    <li>Content-Security-Policy</li><li>Web Workers</li><li>Layout-aware text extraction</li><li>Windows one-click launcher</li>
+  </ul>
+  <p style="margin-top:16px">It is delivered as a small folder that runs on the user's own machine (or on a private page), with no installation and no accounts.</p>
+</section>
+
+</main>
+
+<footer><div class="wrap">Sample data and screenshots are fictional. The client's identity and real documents are not shown. © Abraham Otieno</div></footer>
+</body>
+</html>
+
+{% endraw %}

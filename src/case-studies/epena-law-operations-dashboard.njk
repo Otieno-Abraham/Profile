@@ -1,77 +1,225 @@
 ---
-layout: base.njk
+layout: false
 permalink: /case-studies/epena-law-operations-dashboard/
-pageKey: case-studies
-title: "Epena Law operations dashboard case study | Abraham Otieno"
-description: "How a fractional Chief of Staff built a secure, live operations dashboard for Epena Law on Microsoft 365: twice-weekly matter updates, automatic reminders, partner oversight and privacy by design."
-keywords: "chief of staff case study, law firm operations dashboard, legal operations, matter tracking, Microsoft 365 dashboard, compliance tracking law firm, fractional chief of staff Africa"
-ogTitle: "Epena Law: a live operations dashboard for a cross-border law firm"
-ogDescription: "From scattered status updates to one secure view of every matter, with twice-weekly updates, reminders and partner oversight."
-breadcrumbs:
-  - { name: "Home", url: "/" }
-  - { name: "Case Studies", url: "/case-studies/" }
-  - { name: "Epena Law operations dashboard", url: "/case-studies/epena-law-operations-dashboard/" }
+title: "Case study: Law firm operations dashboard"
+description: "A secure operations dashboard on a law firm's own Microsoft 365, with twice-weekly updates, automatic reminders and partner oversight."
+eleventyExcludeFromCollections: false
 ---
+{% raw %}
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="canonical" href="https://abrahamotieno.com/case-studies/epena-law-operations-dashboard/">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Case study: Law firm operations dashboard</title>
+<meta name="description" content="A secure operations dashboard built on a law firm's own Microsoft 365: every matter, its next action and owner in one view, with twice-weekly updates, automatic reminders and partner oversight.">
+<style>
+  :root{--bg:#f7f8fa;--card:#fff;--ink:#17202b;--mute:#5b6675;--line:#e1e5eb;--brand:#1f5fbf;--brand-ink:#fff;--ok:#1d7a46;--okbg:#e6f4ec;--accent:#e8f0fc;--amber:#b45309;--amberbg:#fdf1e3;--red:#b42318;--redbg:#fdecea}
+  @media(prefers-color-scheme:dark){:root{--bg:#12161c;--card:#1b212a;--ink:#e8ecf2;--mute:#9aa6b6;--line:#2b3340;--brand:#6ea3f2;--brand-ink:#0d1420;--ok:#6fd39a;--okbg:#17372a;--accent:#1d2a3f;--amber:#f0b35f;--amberbg:#3a2a12;--red:#f39b93;--redbg:#3a1a18}}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  .wrap{max-width:960px;margin:0 auto;padding:0 20px}
+  header.hero{padding:56px 0 36px}
+  .eyebrow{color:var(--brand);font-weight:600;font-size:14px;letter-spacing:.06em;text-transform:uppercase}
+  h1{font-size:clamp(30px,5vw,46px);line-height:1.15;margin:.3em 0 .4em}
+  .lead{font-size:clamp(18px,2.4vw,21px);color:var(--mute);max-width:720px;margin:0}
+  .meta{display:flex;flex-wrap:wrap;gap:8px 28px;margin-top:26px;color:var(--mute);font-size:15px}
+  .meta b{color:var(--ink);font-weight:600}
+  h2{font-size:26px;margin:0 0 12px}
+  section{padding:34px 0;border-top:1px solid var(--line)}
+  p{margin:0 0 14px}
+  .grid{display:grid;gap:16px}
+  .g3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+  .g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .card h3{margin:0 0 6px;font-size:18px}
+  .card p{margin:0;color:var(--mute);font-size:15.5px}
+  .stat{font-size:34px;font-weight:700;color:var(--brand);line-height:1.1}
+  .stat small{display:block;font-size:14px;font-weight:500;color:var(--mute);margin-top:6px}
+  .shot{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--card);box-shadow:0 8px 30px rgba(0,0,0,.08)}
+  .shot img{display:block;width:100%;height:auto}
+  figcaption{color:var(--mute);font-size:14.5px;margin-top:10px}
+  figure{margin:0}
+  ol.steps{counter-reset:s;list-style:none;margin:0;padding:0;display:grid;gap:14px}
+  ol.steps li{counter-increment:s;display:flex;gap:16px;align-items:flex-start}
+  ol.steps li::before{content:counter(s);flex:none;width:34px;height:34px;border-radius:50%;background:var(--brand);color:var(--brand-ink);display:grid;place-items:center;font-weight:700;font-size:15px}
+  ol.steps b{display:block}
+  ol.steps span{color:var(--mute);font-size:15.5px}
+  table{width:100%;border-collapse:collapse;font-size:15px;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+  th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+  th{background:var(--accent);font-weight:600}
+  tr:last-child td{border-bottom:0}
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+  .tags li{background:var(--accent);color:var(--ink);padding:5px 12px;border-radius:99px;font-size:14px}
+  .note{background:var(--okbg);color:var(--ok);border-radius:12px;padding:14px 16px;font-size:15.5px}
+  a.btn{display:inline-block;background:var(--brand);color:var(--brand-ink);text-decoration:none;padding:11px 18px;border-radius:10px;font-weight:600;font-size:15.5px}
+  a.btn.alt{background:transparent;color:var(--brand);border:1px solid var(--brand)}
+  .row{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+  footer{padding:30px 0 60px;color:var(--mute);font-size:14px;border-top:1px solid var(--line)}
+  code{background:var(--accent);padding:1px 6px;border-radius:5px;font-size:.92em}
 
-<header class="article-header">
-  <div class="container">
-    <span class="eyebrow">Case study · Legal operations</span>
-    <h1>Epena Law: a live operations dashboard for a cross-border law firm</h1>
-    <div class="article-meta">
-      <span>By Abraham Otieno</span><span>·</span>
-      <span>Fractional Chief of Staff</span><span>·</span>
-      <span>September 2026</span>
-    </div>
+  /* Mock dashboard (fictional data), drawn in HTML in place of a screenshot */
+  .mock{padding:18px;font-size:14px;line-height:1.45}
+  .mock-top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+  .mock-title{font-weight:700;font-size:16px}
+  .mock-tabs{display:flex;gap:6px;flex-wrap:wrap}
+  .mock-tabs span{padding:4px 10px;border-radius:99px;background:var(--accent);font-size:12.5px}
+  .mock-tabs span.on{background:var(--brand);color:var(--brand-ink)}
+  .mock-week{border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:14px;background:var(--bg)}
+  .mock-week b{display:block;margin-bottom:4px}
+  .mock-week ul{margin:0;padding-left:18px;color:var(--mute)}
+  .mock-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}
+  .mock-kpi{border-radius:12px;padding:10px 12px;border:1px solid var(--line)}
+  .mock-kpi strong{display:block;font-size:24px;line-height:1.1}
+  .mock-kpi.red{background:var(--redbg);color:var(--red)}
+  .mock-kpi.amber{background:var(--amberbg);color:var(--amber)}
+  .mock-kpi.blue{background:var(--accent);color:var(--brand)}
+  .mock-row{display:grid;grid-template-columns:1.2fr 1.4fr .9fr auto;gap:10px;align-items:center;padding:9px 0;border-top:1px solid var(--line)}
+  .mock-row .mute{color:var(--mute)}
+  .pill{font-size:12px;padding:2px 9px;border-radius:99px;white-space:nowrap}
+  .pill.g{background:var(--okbg);color:var(--ok)}
+  .pill.a{background:var(--amberbg);color:var(--amber)}
+  .pill.r{background:var(--redbg);color:var(--red)}
+  @media(max-width:600px){.mock-row{grid-template-columns:1fr auto}.mock-row .hide-sm{display:none}.mock-kpis{grid-template-columns:1fr 1fr 1fr}}
+</style>
+</head>
+<body>
+
+<header class="hero"><div class="wrap">
+  <div class="eyebrow">Case study · Legal operations</div>
+  <h1>From chasing updates to one live view of every matter</h1>
+  <p class="lead">A secure operations dashboard built on the firm's own Microsoft 365. Every matter, its next action and who owns it, in one place, kept current by a simple twice-weekly habit and automatic reminders.</p>
+  <div class="meta">
+    <span><b>Built by</b> Abraham Otieno, Fractional Chief of Staff</span>
+    <span><b>For</b> Epena Law, a corporate law firm in the UK and Cameroon</span>
+    <span><b>Type</b> Operations design · Workflow automation · Web dashboard</span>
   </div>
-</header>
+</div></header>
 
-<article class="article-body">
+<main class="wrap">
 
-<p>Epena Law is a corporate and commercial law firm working across the United Kingdom and Cameroon. As its fractional Chief of Staff, I was asked a simple question by the partners: <em>where does every matter stand right now, and who has to act next?</em> Answering it used to take a round of emails. Now it takes one screen.</p>
+<section>
+  <h2>The problem</h2>
+  <p>Lawyers updated their matters at different times and in different ways. The partners had no single view of the firm's work, deadlines slipped quietly, and closing a matter did not reliably mean the final documents were filed.</p>
+  <p>Finding out where things stood meant a round of emails, and chasing people for updates had become a job in itself. The matter list is also highly confidential, so a generic online tool was not an option.</p>
+</section>
 
-<h2>At a glance</h2>
-<ul>
-  <li><strong>Client:</strong> Epena Law (United Kingdom and Cameroon)</li>
-  <li><strong>My role:</strong> Fractional Chief of Staff, owning the process design, build and rollout</li>
-  <li><strong>Timeline:</strong> brief to live system in under two weeks, September 2026</li>
-  <li><strong>Built on:</strong> the firm's own Microsoft 365 (SharePoint, Microsoft Forms, Power Automate, Entra ID sign-in) with a secure web front end on Azure</li>
-</ul>
+<section>
+  <h2>The solution</h2>
+  <p>One dashboard that every lawyer and partner signs in to with their existing work account. Lawyers see their own matters and what needs doing this week. Partners see the whole firm: what is urgent, who is behind on updates and which next actions are overdue. The data comes straight from a short form the lawyers already use, so nothing is typed twice.</p>
+  <figure>
+    <div class="shot">
+      <div class="mock" role="img" aria-label="Mock dashboard with fictional data: a partner's weekly compliance card, three summary counts, and a list of matters with their status">
+        <div class="mock-top">
+          <div class="mock-title">Operations dashboard</div>
+          <div class="mock-tabs"><span class="on">Home</span><span>Matters</span><span>Client files</span><span>Messages</span><span>Team</span></div>
+        </div>
+        <div class="mock-week">
+          <b>My week: keeping the team on track</b>
+          <ul>
+            <li>Tuesday: 7 of 9 filed · still to file: A. Mensah, K. Diallo</li>
+            <li>Friday reminders: none so far this week</li>
+            <li>Overdue next actions: J. Okafor (3), A. Mensah (2)</li>
+          </ul>
+        </div>
+        <div class="mock-kpis">
+          <div class="mock-kpi red"><strong>4</strong>Urgent</div>
+          <div class="mock-kpi amber"><strong>6</strong>Review this week</div>
+          <div class="mock-kpi blue"><strong>28</strong>Active clients</div>
+        </div>
+        <div class="mock-row"><b>Acme Holdings</b><span class="mute hide-sm">Share purchase agreement</span><span class="mute hide-sm">J. Okafor</span><span class="pill r">Next action overdue</span></div>
+        <div class="mock-row"><b>Sahel Energy</b><span class="mute hide-sm">Joint venture, drafting</span><span class="mute hide-sm">A. Mensah</span><span class="pill a">Amber</span></div>
+        <div class="mock-row"><b>Northwind Capital</b><span class="mute hide-sm">Fund set-up, in review</span><span class="mute hide-sm">K. Diallo</span><span class="pill g">On track</span></div>
+      </div>
+    </div>
+    <figcaption>Illustration with fictional clients and people. No real matter, client or team member is shown.</figcaption>
+  </figure>
+</section>
 
-<h2>The problem</h2>
-<p>Lawyers were updating matters at different times and in different ways. Partners had no single view of the firm's work, deadlines slipped quietly, and closing a matter did not reliably mean the final documents were filed. Chasing people for updates was a job in itself, and nobody could tell at a glance which files needed a decision.</p>
+<section>
+  <h2>How it works</h2>
+  <ol class="steps">
+    <li><div><b>Sign in with a work account</b><span>Anyone on the firm's team list gets in automatically with their existing Microsoft account. Adding or removing someone is one line in a list; there are no new passwords.</span></div></li>
+    <li><div><b>Update twice a week</b><span>The matter form is due every Tuesday and Thursday. Each matter has an "Update on the form" button that opens it with the lawyer's name, the client and the matter already filled in.</span></div></li>
+    <li><div><b>The dashboard refreshes itself</b><span>Each answer lands in the firm's SharePoint and appears on the dashboard, building a history for every matter. Closing a matter automatically asks the owner for the final documents.</span></div></li>
+    <li><div><b>Friday: reminders go out</b><span>Everyone gets a short "Your week" email. Anyone who missed an update gets a reminder, with the partners copied.</span></div></li>
+    <li><div><b>Monday: the partners get the recap</b><span>A final summary of last week for the partners only: who filed on time, late or not at all. No one is chased twice for the same week.</span></div></li>
+  </ol>
+</section>
 
-<h2>What I built</h2>
-<ul>
-  <li><strong>One live view of the firm.</strong> Every open matter, its stage, status, next action and who has to act, updated automatically from the lawyers' form answers.</li>
-  <li><strong>A simple update habit.</strong> A short Matter Status Form, due every Tuesday and Thursday. Each matter has an "Update on the form" button that opens the form with the lawyer's name, client and matter already filled in, so an update takes minutes.</li>
-  <li><strong>Automatic follow-up.</strong> A personal "Your week" email every Friday, a reminder when an update is missed (copied to the partners), and a final Monday recap for the partners only. No manual chasing.</li>
-  <li><strong>Documents and requests in one place.</strong> Client files, shared links and document requests, with a prompt to upload final documents whenever a matter closes.</li>
-  <li><strong>Partner oversight.</strong> A "My week" view that shows who has filed, who is behind and where next actions are overdue, plus a read-only way to see the dashboard exactly as any team member sees it.</li>
-</ul>
+<section>
+  <h2>My approach</h2>
+  <p>I treated the dashboard as an operating rhythm first and software second. The weekly cadence (update on Tuesday and Thursday, reminders on Friday, recap on Monday) was agreed with the Managing Partner before anything was built.</p>
+  <p>Every release then followed the same discipline: plan it, build it, and verify it on the live system before calling it done. When something did not work first time, such as automatic sign-in for the whole team, I traced it to the root cause and fixed it properly rather than working around it.</p>
+</section>
 
-<h2>Confidentiality by design</h2>
-<p>A law firm's matter list is sensitive, so privacy shaped every decision rather than being added at the end.</p>
-<ul>
-  <li>Only people on the firm's team list can sign in, using their existing work accounts. There are no new passwords.</li>
-  <li>Each lawyer sees only their own matters and clients. The partners see the whole firm.</li>
-  <li>Everything stays inside the firm's own Microsoft 365. No client data is copied to outside tools.</li>
-  <li>The partners' "see it as they see it" view is read-only, so nothing can ever be sent in someone else's name.</li>
-</ul>
+<section>
+  <h2>Built to be reliable</h2>
+  <div class="grid g3">
+    <div class="card"><h3>Checks itself daily</h3><p>Every weekday morning the system checks its lists, data and automations, and emails the Chief of Staff only if something needs attention.</p></div>
+    <div class="card"><h3>Tested before every release</h3><p>More than 200 automated tests run before each change goes live. A failing test blocks the release, so a mistake never reaches the team.</p></div>
+    <div class="card"><h3>Runs without anyone's laptop</h3><p>Reminders and recaps run on a cloud schedule, with a written knowledge base so the firm is never dependent on one person to keep it going.</p></div>
+  </div>
+</section>
 
-<h2>How I approached it</h2>
-<p>I treated the dashboard as an operating rhythm first and software second. The weekly cadence (update Tuesday and Thursday, reminders Friday, recap Monday) was agreed with the Managing Partner before anything was built. Then every release went through the same discipline: plan it, build it, and verify it on the live system before calling it done. The system checks its own health every weekday, runs a suite of more than 200 automated tests before each release, and has a written knowledge base so the firm is not dependent on any one person to keep it running.</p>
+<section>
+  <h2>Confidentiality by design</h2>
+  <div class="note">Client and matter data never leaves the firm's own Microsoft 365.</div>
+  <div class="grid g2" style="margin-top:16px">
+    <div class="card"><h3>Team members only</h3><p>Only people on the firm's team list can sign in, using their existing work accounts. Everyone else is turned away at the door.</p></div>
+    <div class="card"><h3>Each person sees their own work</h3><p>Lawyers see only their own matters and clients. The partners see the whole firm. The rule is enforced on the server, not just hidden on screen.</p></div>
+    <div class="card"><h3>Read-only oversight</h3><p>Partners can see the dashboard exactly as any lawyer sees it, in a read-only mode, so nothing can ever be sent in someone else's name.</p></div>
+    <div class="card"><h3>No outside tools</h3><p>Forms, storage, email and sign-in all run on the firm's existing Microsoft 365. No client data is copied to third-party services.</p></div>
+  </div>
+</section>
 
-<h2>Early results</h2>
-<ul>
-  <li>Every matter with a past-due next action became visible on day one, instead of surfacing only when someone asked.</li>
-  <li>Status chasing by email was replaced by automatic, scheduled reminders.</li>
-  <li>The partners moved from asking "where are we?" to deciding what to do next.</li>
-</ul>
-<p>The team rollout began in late September 2026. I will add measured outcomes here, such as on-time update rates and overdue matters cleared, after the first full month of use.</p>
+<section>
+  <h2>Results</h2>
+  <div class="grid g3">
+    <div class="card"><div class="stat">&lt; 2 weeks<small>from brief to a live system</small></div></div>
+    <div class="card"><div class="stat">200+<small>automated tests run before every release</small></div></div>
+    <div class="card"><div class="stat">0<small>status-chasing emails needed: reminders are automatic</small></div></div>
+  </div>
+  <p style="margin-top:16px;color:var(--mute);font-size:15px">Rolled out to the team in late September 2026. On day one it surfaced every matter with a past-due next action, which previously only came to light when someone asked.</p>
+</section>
 
-<h2>Key learning</h2>
-<p>A dashboard only works if the habit behind it is simple. Pre-filling the form, fixing two clear update days and automating the reminders did more for compliance than any chart could. The technology made the habit easy; the rhythm made it stick.</p>
+<section>
+  <h2>What each person sees</h2>
+  <p>One system, three views, all from the same data.</p>
+  <table>
+    <tr><th>Who</th><th>What they see</th></tr>
+    <tr><td><b>Lawyer</b></td><td>Their own matters and clients, "Your week" (form deadline, document requests, overdue next actions) and a pre-filled update button on every matter</td></tr>
+    <tr><td><b>Partner</b></td><td>The whole firm: urgent matters, who has filed this week, overdue next actions by person, and a read-only view as any team member</td></tr>
+    <tr><td><b>Everyone</b></td><td>Announcements, messages, client files and document requests in one place, with an email copy of anything addressed to them</td></tr>
+  </table>
+</section>
 
-<p style="margin-top: var(--space-6);"><a class="btn btn-primary" href="/booking/">Book a free 30-minute consultation</a></p>
+<section>
+  <h2>Under the hood</h2>
+  <ul class="tags">
+    <li>Microsoft 365</li><li>SharePoint lists</li><li>Microsoft Forms</li><li>Power Automate</li>
+    <li>Entra ID sign-in</li><li>Azure Static Web Apps</li><li>Azure Functions (TypeScript)</li><li>Microsoft Graph</li>
+    <li>GitHub Actions</li><li>Automated tests</li>
+  </ul>
+  <p style="margin-top:16px">The firm keeps everything in the tools it already pays for. The only additions are a small web front end and a scheduled job, both inside its own Microsoft and Azure accounts.</p>
+</section>
 
-</article>
+<section>
+  <h2>Key learning</h2>
+  <div class="note">A dashboard only works if the habit behind it is simple.</div>
+  <p style="margin-top:16px">Pre-filling the form, fixing two clear update days and automating the reminders did more for compliance than any chart could. The technology made the habit easy; the rhythm made it stick. I will add measured outcomes, such as on-time update rates and overdue matters cleared, after the first full month of use.</p>
+  <div class="row">
+    <a class="btn" href="https://abrahamotieno.com/booking/">Book a free 30-minute consultation</a>
+    <a class="btn alt" href="https://abrahamotieno.com/case-studies/">More case studies</a>
+  </div>
+</section>
+
+</main>
+
+<footer><div class="wrap">The illustration uses fictional clients and people. The firm's real matters, clients and team are not shown. © Abraham Otieno</div></footer>
+</body>
+</html>
+
+{% endraw %}
