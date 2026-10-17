@@ -128,7 +128,7 @@ eleventyExcludeFromCollections: false
 <section>
   <h2>Confidentiality by design</h2>
   <div class="note">The reports never leave the user's computer.</div>
-  <div class="grid g2" style="margin-top:16px">
+  <div class="grid g2 u-margin-top-16px">
     <div class="card"><h3>Runs entirely in the browser</h3><p>There is no server, database or upload. The PDF reader, OCR engine and Excel writer are bundled with the tool and run locally.</p></div>
     <div class="card"><h3>Locked to its own origin</h3><p>A strict Content-Security-Policy stops the page sending data anywhere else. It was tested with zero blocked or attempted outside requests.</p></div>
     <div class="card"><h3>Nothing is stored</h3><p>No cookies, local storage or caches. Closing the tab erases everything, and it wipes itself after 30 minutes of inactivity.</p></div>
@@ -143,7 +143,7 @@ eleventyExcludeFromCollections: false
     <div class="card"><div class="stat">~9 s<small>for 100 reports of about 5 MB each</small></div></div>
     <div class="card"><div class="stat">2–4 s<small>per scanned page, several read in parallel</small></div></div>
   </div>
-  <p style="margin-top:16px;color:var(--mute);font-size:15px">Measured in a browser test on a laptop. Reading a batch does not freeze the page; page previews load only when a file is opened.</p>
+  <p class="u-margin-top-16px u-color-var-mute u-font-size-15px">Measured in a browser test on a laptop. Reading a batch does not freeze the page; page previews load only when a file is opened.</p>
 </section>
 
 <section>
@@ -164,7 +164,7 @@ eleventyExcludeFromCollections: false
     <li>JavaScript</li><li>pdf.js</li><li>Tesseract OCR (WebAssembly)</li><li>ExcelJS</li>
     <li>Content-Security-Policy</li><li>Web Workers</li><li>Layout-aware text extraction</li><li>Windows one-click launcher</li>
   </ul>
-  <p style="margin-top:16px">It is delivered as a small folder that runs on the user's own machine (or on a private page), with no installation and no accounts.</p>
+  <p class="u-margin-top-16px">It is delivered as a small folder that runs on the user's own machine (or on a private page), with no installation and no accounts.</p>
 </section>
 
 </main>

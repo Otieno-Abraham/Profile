@@ -150,12 +150,12 @@ faq:
       <p>Companies use different titles for the same leverage. Pick the role that matches your search; the operator is the same.</p>
     </div>
     <div class="grid grid-3 reveal">
-      <div class="card"><h3 class="card-title-compact"><a href="/executive-assistant-kenya/" style="text-decoration:none; color:inherit;">Executive Assistant, Kenya</a></h3><p style="font-size:var(--fs-small);">Senior EA support, Nairobi-based, working worldwide.</p></div>
-      <div class="card"><h3 class="card-title-compact"><a href="/chief-of-staff-kenya/" style="text-decoration:none; color:inherit;">Chief of Staff, Kenya &amp; East Africa</a></h3><p style="font-size:var(--fs-small);">Leadership cadence, cross-functional execution, board operations.</p></div>
-      <div class="card"><h3 class="card-title-compact"><a href="/virtual-chief-of-staff/" style="text-decoration:none; color:inherit;">Virtual Chief of Staff</a></h3><p style="font-size:var(--fs-small);">Remote CoS for founders worldwide: strategy to execution.</p></div>
-      <div class="card"><h3 class="card-title-compact"><a href="/fractional-chief-of-staff/" style="text-decoration:none; color:inherit;">Fractional Chief of Staff</a></h3><p style="font-size:var(--fs-small);">Senior CoS leverage at a fraction of the full-time cost.</p></div>
-      <div class="card"><h3 class="card-title-compact"><a href="/operations-manager-kenya/" style="text-decoration:none; color:inherit;">Operations Manager, Remote</a></h3><p style="font-size:var(--fs-small);">Systems, SLAs, and team reliability for scaling companies.</p></div>
-      <div class="card"><h3 class="card-title-compact"><a href="/ea-to-founders/" style="text-decoration:none; color:inherit;">EA to Founders &amp; Startup CEOs</a></h3><p style="font-size:var(--fs-small);">Founder-pace support: investor updates, board prep, momentum.</p></div>
+      <div class="card"><h3 class="card-title-compact"><a href="/executive-assistant-kenya/" class="no-underline text-inherit">Executive Assistant, Kenya</a></h3><p class="text-sm">Senior EA support, Nairobi-based, working worldwide.</p></div>
+      <div class="card"><h3 class="card-title-compact"><a href="/chief-of-staff-kenya/" class="no-underline text-inherit">Chief of Staff, Kenya &amp; East Africa</a></h3><p class="text-sm">Leadership cadence, cross-functional execution, board operations.</p></div>
+      <div class="card"><h3 class="card-title-compact"><a href="/virtual-chief-of-staff/" class="no-underline text-inherit">Virtual Chief of Staff</a></h3><p class="text-sm">Remote CoS for founders worldwide: strategy to execution.</p></div>
+      <div class="card"><h3 class="card-title-compact"><a href="/fractional-chief-of-staff/" class="no-underline text-inherit">Fractional Chief of Staff</a></h3><p class="text-sm">Senior CoS leverage at a fraction of the full-time cost.</p></div>
+      <div class="card"><h3 class="card-title-compact"><a href="/operations-manager-kenya/" class="no-underline text-inherit">Operations Manager, Remote</a></h3><p class="text-sm">Systems, SLAs, and team reliability for scaling companies.</p></div>
+      <div class="card"><h3 class="card-title-compact"><a href="/ea-to-founders/" class="no-underline text-inherit">EA to Founders &amp; Startup CEOs</a></h3><p class="text-sm">Founder-pace support: investor updates, board prep, momentum.</p></div>
     </div>
   </div>
 </section>
@@ -231,14 +231,14 @@ faq:
 
 {# ===================== CTA BANNER ===================== #}
 <section class="section section-bg">
-  <div class="container" style="text-align:center; max-width:780px;">
+  <div class="container text-center u-maxw-780px">
     <div class="reveal">
       <span class="eyebrow">Ready to talk?</span>
       <h2>Hire a Fractional Chief of Staff, Chief of Staff, or Operations Partner in Kenya: Free 30-Minute Consultation</h2>
-      <p style="color:var(--ink-muted); font-size:var(--fs-body-lg); margin: var(--space-4) auto var(--space-6); max-width:64ch;">
+      <p class="text-muted text-lg mt-4 u-margin-right-auto mb-6 u-margin-left-auto u-maxw-64ch">
         We'll cover what's draining your week, where the leverage points are, and whether we're a fit. No pitch. No obligation. Just a useful 30 minutes.
       </p>
-      <div class="hero-ctas" style="justify-content:center;">
+      <div class="hero-ctas justify-center">
         <a href="/booking/" class="btn btn-primary btn-lg">Book the call</a>
         <a href="{{ site.whatsapp }}" class="btn btn-secondary btn-lg" rel="noopener">WhatsApp instead</a>
       </div>
@@ -255,15 +255,15 @@ faq:
     </div>
     <div class="stack-lg reveal">
       {% for item in faq %}
-        <details style="border-top:1px solid var(--line); padding: var(--space-5) 0;">
-          <summary style="cursor:pointer; font-weight: var(--fw-semibold); font-size: var(--fs-body-lg); list-style: none; display:flex; justify-content:space-between; gap: var(--space-4); align-items:center;">
+        <details class="border-t pt-5 pr-0 pb-5 pl-0">
+          <summary class="cursor-pointer fw-semibold text-lg list-none d-flex u-justify-content-space-between gap-4 items-center">
             <span>{{ item.q }}</span>
-            <span aria-hidden="true" style="color:var(--accent);">+</span>
+            <span aria-hidden="true" class="text-accent">+</span>
           </summary>
-          <p style="margin-top: var(--space-3); color: var(--ink-muted);">{{ item.a }}</p>
+          <p class="mt-3 text-muted">{{ item.a }}</p>
         </details>
       {% endfor %}
     </div>
-    <p class="reveal" style="margin-top: var(--space-5);">More questions? The <a href="/faq/">full FAQ</a> covers EA, Chief of Staff, and Operations roles in more depth.</p>
+    <p class="reveal mt-5">More questions? The <a href="/faq/">full FAQ</a> covers EA, Chief of Staff, and Operations roles in more depth.</p>
   </div>
 </section>

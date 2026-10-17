@@ -68,14 +68,18 @@
   <link rel="preload" href="/assets/fonts/inter-variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/poppins-600.woff2" as="font" type="font/woff2" crossorigin>
 
-  {# Stylesheets: linked directly (not via @import) so the browser fetches all six
-     in parallel from the HTML parser instead of serially after parsing style.css #}
+  {# Stylesheets: linked directly (not via @import) so the browser fetches all seven
+     in parallel from the HTML parser instead of serially after parsing style.css.
+     utilities.css loads last so single-declaration utility classes (which replaced
+     the site's former inline style= attributes) reliably win the cascade, the same
+     way inline styles always did. #}
   <link rel="stylesheet" href="/assets/css/fonts.css">
   <link rel="stylesheet" href="/assets/css/tokens.css">
   <link rel="stylesheet" href="/assets/css/base.css">
   <link rel="stylesheet" href="/assets/css/layout.css">
   <link rel="stylesheet" href="/assets/css/components.css">
   <link rel="stylesheet" href="/assets/css/article.css">
+  <link rel="stylesheet" href="/assets/css/utilities.css">
 
   {# Schema: Person + ProfessionalService, present on every page so Google ties pages to the entity #}
   <script type="application/ld+json">

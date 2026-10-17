@@ -12,7 +12,7 @@ breadcrumbs:
   - { name: "Book a Call", url: "/booking/" }
 ---
 
-<section class="section hero" style="padding-bottom: var(--space-7);">
+<section class="section hero pb-7">
   <div class="container">
     <div class="hero-inner reveal">
       <span class="eyebrow">Book a Call</span>
@@ -29,18 +29,18 @@ breadcrumbs:
 
 <section class="section">
   <div class="container container-narrow">
-    <div class="grid grid-2 reveal" style="align-items: start;">
+    <div class="grid grid-2 reveal items-start">
       <div>
         <h2>What we'll cover</h2>
-        <ul style="color:var(--ink-muted); padding-left: var(--space-5); margin-top: var(--space-3);">
+        <ul class="text-muted pl-5 mt-3">
           <li>Where your week is leaking: meetings, inbox, decision delays, follow-ups.</li>
           <li>The two or three highest-leverage moves I'd make in the first 30 days.</li>
           <li>Whether a Virtual EA, Chief of Staff, or project-based engagement fits best.</li>
           <li>Pricing and timeline. No surprises.</li>
         </ul>
 
-        <h2 style="margin-top: var(--space-7);">How to reach me directly</h2>
-        <ul style="color:var(--ink-muted); padding-left: var(--space-5); margin-top: var(--space-3);">
+        <h2 class="mt-7">How to reach me directly</h2>
+        <ul class="text-muted pl-5 mt-3">
           <li>Email: <a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
           <li>WhatsApp: <a href="{{ site.whatsapp }}" rel="noopener">{{ site.phoneDisplay }}</a></li>
           <li>LinkedIn: <a href="{{ site.linkedin }}" rel="noopener">linkedin.com/in/abraham-otieno-665678317</a></li>
@@ -48,9 +48,9 @@ breadcrumbs:
         </ul>
       </div>
 
-      <form action="{{ site.formspreeUrl }}" method="POST" class="card" style="padding: var(--space-6);">
+      <form action="{{ site.formspreeUrl }}" method="POST" class="card pt-6 pr-6 pb-6 pl-6">
         <h3>Send a message</h3>
-        <p style="color:var(--ink-muted); font-size:var(--fs-small); margin-bottom: var(--space-5);">I respond within 24 hours, usually faster.</p>
+        <p class="text-muted text-sm mb-5">I respond within 24 hours, usually faster.</p>
 
         <div class="form-row">
           <label for="name">Your name</label>
@@ -72,8 +72,8 @@ breadcrumbs:
         <input type="hidden" name="_redirect" value="https://abrahamotieno.com/thank-you/">
         <input type="hidden" name="_subject" value="New consultation request from abrahamotieno.com">
 
-        <button type="submit" class="btn btn-primary btn-lg" style="width:100%; margin-top: var(--space-5);">Send message</button>
-        <p class="form-help" style="margin-top: var(--space-3); text-align:center;">Or <a href="{{ site.whatsapp }}" rel="noopener">message on WhatsApp</a> for the fastest reply.</p>
+        <button type="submit" class="btn btn-primary btn-lg u-w-100 mt-5">Send message</button>
+        <p class="form-help mt-3 text-center">Or <a href="{{ site.whatsapp }}" rel="noopener">message on WhatsApp</a> for the fastest reply.</p>
       </form>
     </div>
   </div>

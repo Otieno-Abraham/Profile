@@ -51,7 +51,7 @@ faq:
     a: "Check the named testimonials and companies on this site, the published case studies and live portfolio artifacts, my LinkedIn and Upwork profiles, and ask for direct references on the discovery call, happily provided. NDA comes before any confidential detail moves."
 ---
 
-<section class="section hero" style="padding-bottom: var(--space-7);">
+<section class="section hero pb-7">
   <div class="container">
     <div class="hero-inner reveal">
       <span class="eyebrow">FAQ</span>
@@ -69,17 +69,17 @@ faq:
   <div class="container container-narrow">
     <div class="reveal">
       {% for item in faq %}
-        <details style="border-top:1px solid var(--line); padding: var(--space-5) 0;">
-          <summary style="cursor:pointer; font-weight: var(--fw-semibold); font-size: var(--fs-body-lg); list-style: none; display:flex; justify-content:space-between; gap: var(--space-4); align-items:center;">
+        <details class="border-t pt-5 pr-0 pb-5 pl-0">
+          <summary class="cursor-pointer fw-semibold text-lg list-none d-flex u-justify-content-space-between gap-4 items-center">
             <span>{{ item.q }}</span>
-            <span aria-hidden="true" style="color:var(--accent);">+</span>
+            <span aria-hidden="true" class="text-accent">+</span>
           </summary>
-          <p style="margin-top: var(--space-3); color: var(--ink-muted);">{{ item.a }}</p>
+          <p class="mt-3 text-muted">{{ item.a }}</p>
         </details>
       {% endfor %}
     </div>
 
-    <div class="reveal" style="margin-top: var(--space-7);">
+    <div class="reveal mt-7">
       <h2>Still deciding which role you need?</h2>
       <p>Start with the comparison guide (<a href="/blog/executive-assistant-vs-chief-of-staff-vs-operations-manager/">EA vs Chief of Staff vs Operations Manager</a>), or go straight to the role pages: <a href="/executive-assistant-kenya/">Executive Assistant</a>, <a href="/virtual-chief-of-staff/">Virtual Chief of Staff</a>, <a href="/fractional-chief-of-staff/">Fractional Chief of Staff</a>, <a href="/operations-manager-kenya/">Operations Manager</a>, <a href="/operations-partner/">Operations Partner</a>, <a href="/executive-business-partner/">Executive Business Partner</a>, or <a href="/chief-of-staff-africa/">Chief of Staff, Africa-wide</a>.</p>
     </div>

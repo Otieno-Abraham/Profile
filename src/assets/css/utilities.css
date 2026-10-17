@@ -1,0 +1,91 @@
+/* ============================================================
+   UTILITY CLASSES
+   Generated from the site's former inline style= attributes.
+   Each class maps 1:1 to a single CSS declaration (or a fixed
+   compound declaration for a few common patterns) so markup
+   stays declarative without hand-authored one-off CSS per page.
+   ============================================================ */
+
+.border-b { border-bottom: 1px solid var(--line); }
+.border-t { border-top: 1px solid var(--line); }
+.cursor-pointer { cursor: pointer; }
+.d-block { display: block; }
+.d-flex { display: flex; }
+.fw-regular { font-weight: var(--fw-regular); }
+.fw-semibold { font-weight: var(--fw-semibold); }
+.gap-4 { gap: var(--space-4); }
+.italic { font-style: italic; }
+.items-center { align-items: center; }
+.items-start { align-items: start; }
+.justify-center { justify-content: center; }
+.list-none { list-style: none; }
+.mb-2 { margin-bottom: var(--space-2); }
+.mb-3 { margin-bottom: var(--space-3); }
+.mb-4 { margin-bottom: var(--space-4); }
+.mb-5 { margin-bottom: var(--space-5); }
+.mb-6 { margin-bottom: var(--space-6); }
+.mb-8 { margin-bottom: var(--space-8); }
+.ml-0 { margin-left: 0; }
+.mr-0 { margin-right: 0; }
+.mt-2 { margin-top: var(--space-2); }
+.mt-3 { margin-top: var(--space-3); }
+.mt-4 { margin-top: var(--space-4); }
+.mt-5 { margin-top: var(--space-5); }
+.mt-6 { margin-top: var(--space-6); }
+.mt-7 { margin-top: var(--space-7); }
+.no-underline { text-decoration: none; }
+.object-cover { object-fit: cover; }
+.overflow-hidden { overflow: hidden; }
+.pb-0 { padding-bottom: 0; }
+.pb-3 { padding-bottom: var(--space-3); }
+.pb-5 { padding-bottom: var(--space-5); }
+.pb-6 { padding-bottom: var(--space-6); }
+.pb-7 { padding-bottom: var(--space-7); }
+.pb-9 { padding-bottom: var(--space-9); }
+.pl-0 { padding-left: 0; }
+.pl-5 { padding-left: var(--space-5); }
+.pl-6 { padding-left: var(--space-6); }
+.pr-0 { padding-right: 0; }
+.pr-5 { padding-right: var(--space-5); }
+.pr-6 { padding-right: var(--space-6); }
+.pt-0 { padding-top: 0; }
+.pt-3 { padding-top: var(--space-3); }
+.pt-5 { padding-top: var(--space-5); }
+.pt-6 { padding-top: var(--space-6); }
+.pt-9 { padding-top: var(--space-9); }
+.text-accent { color: var(--accent); }
+.text-body { font-size: var(--fs-body); }
+.text-center { text-align: center; }
+.text-inherit { color: inherit; }
+.text-lg { font-size: var(--fs-body-lg); }
+.text-muted { color: var(--ink-muted); }
+.text-sm { font-size: var(--fs-small); }
+.text-white { color: #fff; }
+.u-aspect-16-10 { aspect-ratio: 16/10; }
+.u-bg-linear-gradient-135deg-var-surface-2-0-v { background: linear-gradient(135deg, var(--surface-2) 0%, var(--accent-soft) 100%); }
+.u-bg-var-surface { background: var(--surface); }
+.u-border-1px-solid-var-line { border: 1px solid var(--line); }
+.u-border-l-3px-solid-var-accent { border-left: 3px solid var(--accent); }
+.u-border-radius-var-radius-md { border-radius: var(--radius-md); }
+.u-color-var-mute { color: var(--mute); }
+.u-color-var-success { color: var(--success); }
+.u-column-gap-var-space-6 { column-gap: var(--space-6); }
+.u-columns-2 { columns: 2; }
+.u-display-inline-flex { display: inline-flex; }
+.u-font-size-0-9rem { font-size: 0.9rem; }
+.u-font-size-15px { font-size: 15px; }
+.u-font-style-normal { font-style: normal; }
+.u-justify-content-space-between { justify-content: space-between; }
+.u-margin-left-auto { margin-left: auto; }
+.u-margin-right-auto { margin-right: auto; }
+.u-margin-top-16px { margin-top: 16px; }
+.u-maxw-36ch { max-width: 36ch; }
+.u-maxw-64ch { max-width: 64ch; }
+.u-maxw-720px { max-width: 720px; }
+.u-maxw-780px { max-width: 780px; }
+.u-maxw-920px { max-width: 920px; }
+.u-minh-40px { min-height: 40px; }
+.u-minh-60vh { min-height: 60vh; }
+.u-padding-left-1rem { padding-left: 1rem; }
+.u-padding-right-1rem { padding-right: 1rem; }
+.u-w-100 { width: 100%; }
