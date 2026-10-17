@@ -25,12 +25,12 @@ breadcrumbs:
 <section class="section">
   <div class="container">
     <div class="grid grid-4 reveal" style="margin-bottom: var(--space-8);">
-      <a href="mailto:{{ site.email }}" class="card" style="text-decoration:none; color:inherit;">
+      <a href="#" data-user="{{ site.email.split('@')[0] }}" data-domain="{{ site.email.split('@')[1] }}" class="card" style="text-decoration:none; color:inherit;">
         <span class="card-icon" aria-hidden="true">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg>
         </span>
         <h3>Email</h3>
-        <p style="font-size: var(--fs-small);">{{ site.email }}</p>
+        <p style="font-size: var(--fs-small);" data-user="{{ site.email.split('@')[0] }}" data-domain="{{ site.email.split('@')[1] }}" data-fill-text>Email (enable JavaScript to view)</p>
       </a>
 
       <a href="{{ site.whatsapp }}" rel="noopener" class="card" style="text-decoration:none; color:inherit;">

@@ -485,6 +485,13 @@
 }
 
 .card h3 { margin-bottom: var(--space-3); }
+.card h3.card-title-compact {
+  font-size: var(--fs-body-lg);
+  font-family: var(--font-body);
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-normal, 1.5);
+  letter-spacing: normal;
+}
 .card p { color: var(--ink-muted); font-size: var(--fs-body); }
 .card-link {
   display: inline-flex;
@@ -609,7 +616,7 @@
   margin-bottom: var(--space-7);
 }
 @media (min-width: 768px) { .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; } }
-.footer-col h4 {
+.footer-col h3 {
   font-size: var(--fs-small);
   font-family: var(--font-body);
   font-weight: var(--fw-semibold);

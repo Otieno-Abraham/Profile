@@ -197,7 +197,6 @@ module.exports = {
   nav: [
     { url: "/", label: "Home", key: "home" },
     { url: "/about/", label: "About", key: "about" },
-    { url: "/services/", label: "Services", key: "services" },
     { url: "/portfolio/", label: "Portfolio", key: "portfolio" },
     { url: "/case-studies/", label: "Case Studies", key: "case-studies" },
     { url: "/blog/", label: "Blog", key: "blog" },

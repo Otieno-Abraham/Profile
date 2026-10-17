@@ -10,7 +10,7 @@
           Fractional Chief of Staff, Chief of Staff &amp; Operations Partner. Based in {{ site.city }}, {{ site.country }}, supporting founders, CEOs, and operators worldwide.
         </p>
         <p style="font-size:var(--fs-small);">
-          <a href="mailto:{{ site.email }}">{{ site.email }}</a><br>
+          <a href="#" data-user="{{ site.email.split('@')[0] }}" data-domain="{{ site.email.split('@')[1] }}" data-fill-text>Email</a><br>
           <a href="{{ site.whatsapp }}" rel="noopener">WhatsApp · {{ site.phoneDisplay }}</a>
         </p>
         <address style="font-size:var(--fs-small); font-style:normal; margin-top:var(--space-3);">
@@ -19,7 +19,7 @@
       </div>
 
       <div class="footer-col">
-        <h4>Site</h4>
+        <h3>Site</h3>
         <ul>
           {% for item in site.nav %}
             <li><a href="{{ item.url }}">{{ item.label }}</a></li>
@@ -32,7 +32,7 @@
       </div>
 
       <div class="footer-col">
-        <h4>Hire me as</h4>
+        <h3>Hire me as</h3>
         <ul>
           {% for p in site.rolePages %}
             <li><a href="{{ p.url }}">{{ p.label }}</a></li>
@@ -41,7 +41,7 @@
       </div>
 
       <div class="footer-col">
-        <h4>Connect</h4>
+        <h3>Connect</h3>
         <ul>
           <li><a href="{{ site.linkedin }}" rel="noopener">LinkedIn</a></li>
           <li><a href="{{ site.upwork }}" rel="noopener">Upwork</a></li>

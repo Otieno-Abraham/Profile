@@ -6,6 +6,19 @@
   "use strict";
 
   document.addEventListener("DOMContentLoaded", function () {
+    // ---- Email de-obfuscation ----
+    // Builds mailto links client-side from data-user/data-domain so the
+    // address never sits as plain text in the static HTML for scrapers.
+    document.querySelectorAll("[data-user][data-domain]").forEach(function (el) {
+      const address = el.getAttribute("data-user") + "@" + el.getAttribute("data-domain");
+      if (el.tagName === "A") {
+        el.href = "mailto:" + address;
+      }
+      if (el.hasAttribute("data-fill-text")) {
+        el.textContent = address;
+      }
+    });
+
     // ---- Mobile nav drawer ----
     const navToggle = document.querySelector("[data-nav-toggle]");
     const drawer = document.querySelector("[data-nav-drawer]");
